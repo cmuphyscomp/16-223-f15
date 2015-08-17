@@ -1,6 +1,9 @@
 # ignore OS X desktop files
 .DS_Store
 
+# ignore Sphinx state files
+.buildinfo
+
 # ignore various editor backups
 *~
 *.swp

@@ -1,0 +1,57 @@
+Computation and Behavior
+========================
+
+This section is about developing a better understanding of computing as
+a symbolic process spanning time. This will specifically explore the
+idea of the finite state machine as a representation of a process with
+history which can model an external process. In the context of physical
+computing, this will assist in conceiving of programs which generate
+more complex time behavior, or which can discover and represent some
+information about the world outside the computer.
+
+Takeaway Lessons
+~~~~~~~~~~~~~~~~
+
+A `Finite-state
+Machine <http://en.wikipedia.org/wiki/Finite-state_machine>`__ is an
+abstract model of computing which assumes the machine exists in one of a
+finite set of *states*, with *transition rules* governing under what
+conditions the machine moves from the *current state* to a *successor
+state*.
+
+Finite-state machines are frequently `illustrated as a directed
+graph <http://en.wikipedia.org/wiki/State_diagram>`__ of state nodes
+linked by transition edges. Conceptually, the machine has one active
+node (the current state), which has rules for each edge defining when
+the active state transitions to another state. States can have
+*self-transitions* which return to the same state for a particular
+input. States can be *final states* if there are no edges leaving the
+state to another state; the machine will not leave this state once it is
+reached.
+
+Every computer has finite memory and thus can be theoretically described
+as a single finite-state machine, however this is not generally useful.
+Even an Arduino UNO with 2K SRAM has at minimum 2\ :sup:`16384` states
+(about 10\ :sup:`4932`); only an infinitesmal fraction of these (approx.
+10\ :sup:`-4907`) could be achieved in the lifetime of the universe.
+
+Finite-state machines can practically be used to describe certain types
+of *parsers*, *protocols*, *interpreters*, user interfaces, and simple
+world models.
+
+The idea of *state* is very powerful in that it encapsulates all history
+of a system. This is closely related to the control-theory notion of the
+*state vector*. In both cases, the idea is that the state of a system
+captures enough information that all future behavior can be predicted
+given the inputs. Put another way, all past inputs and behavior is
+captured in the set of variables comprising the state vector.
+
+Reference Links
+~~~~~~~~~~~~~~~
+
+#. `Wikipedia: Finite-state
+   Machine <http://en.wikipedia.org/wiki/Finite-state_machine>`__
+#. `Wikipedia: State variable (from control
+   theory) <http://en.wikipedia.org/wiki/State_variable>`__
+
+

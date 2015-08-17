@@ -1,0 +1,103 @@
+.. include:: links.rst
+
+.. _ideation:
+
+
+Ideation and Brainstorming
+==========================
+
+We all occasionally become stuck while trying to choose an idea.
+
+
+The primary difference between undergraduates and graduate students is that undergraduates have not yet learned how to follow through on an idea.
+
+Never rest, always relentlessly ask yourself the followup questions.
+
+
+Regressing the Question
+-----------------------
+
+
+(need to write this)
+
+
+General Brainstorming Heuristics
+--------------------------------
+
+Following are a few more general strategies. If ever you feel stuck generating
+ideas, try some of these steps.
+
+#. Let go of your fear, let go of any preconceptions of brilliance.  Ideas are
+   cheap.  Dirt cheap.  The work and interest comes from thinking it through,
+   identifying the questions, fitting into constraints, solving the underlying
+   problems, identifying the difficult parts, finding the novel bits, framing
+   the story.  Ideas mostly arise from other ideas. Don't wait for inspiration,
+   apply some systematic generation and better ideas will almost always evolve.
+   If you're stuck for one idea, generate ten.
+
+#. Look around the room, choose two things, jam them together.  E.g., "door,
+   concrete blocks, what about doors made of concrete?  What about a design
+   system for hinged concrete structures?"  I'm sure you can do better.  Or pick
+   two systems and try to apply arbitrary elements of one to another.  These
+   ideas are rarely useful but will open the doors to others.
+
+#. For a nascent idea, regress the question: what is the more abstract version
+   of this idea?  If I had this thing, what would I really have?  Almost
+   everything can be traced back to something fundamental like survival or love,
+   then back out to something slightly different and better.  This process
+   almost always identifies elements of your idea which can be dropped as
+   inessential or distracting.
+
+#. Look for the hard parts: these might be opportunities, or maybe just hints to
+   simplify.  Follow the path of least resistance: choose your battles carefully
+   and make sure anything hard is actually essential and not a distraction.
+
+#. Look for the rules and metrics: how are you going to evaluate whether the
+   idea fits the need?  Often defining the rubric is harder than generating the
+   idea itself.
+
+#. How would you explain your idea to an alien?  How would your explain your
+   idea to Spock (RIP) or a perfectly rational being?  The point is to tease out
+   your unspoken assumptions and see if they can be adjusted.
+
+#. For the designers lost in the absence of a client: assume *you* are the
+   client.  What needs do you have?  What would you like to see existing in the
+   world?  Or choose your ideal fantasy client: what need would they have?  If
+   you need a dirty canvas, look around you and pick any starting point: design
+   for wherever you are.
+
+
+
+
+
+
+   
+Project Idea Prompts
+--------------------
+
+This is intended to be a pool of interesting project prompts motivating a
+set of simple demonstrations of technique.
+
+(this needs a lot of work)
+
+.. FIXME
+
+Technical: potentiometers (position sensor) 1d transducer, light is a proxy for
+all kinds of processes, microphones (audio energy level, pitch, pulse arrival ->
+basically time-based processes), breath sensor (temperature as a proxy for
+breath), temperature, each process has a characteristic data
+
+Prompts: 
+
+- Design a robot that points to the brightest nearby light source. 
+
+- Design a system to measure excitement, e.g., sensing breath or heartbeat over time. 
+
+- Point to warmest person. 
+
+- Design a system to record the flight path of a paper airplane in 3d space, e.g., using accelerometer, proximity sensor, ultrasonic sensor. 
+
+- Encode and print arbitrary waveform on transparent film, design “record player” using phototransistor. Optical analog record player. 
+
+- Build memory. Encode your name in the physical world, build a device that reads it back. Mercury delay line with bubbles in water. 
+

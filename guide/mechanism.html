@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.3. Mechanical Behavior &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-17',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="3. Topic Area Guides" href="guides.html" />
+    <link rel="next" title="3.4. Computation and Behavior" href="computational_behavior.html" />
+    <link rel="prev" title="3.2. Physical Computation with the Arduino" href="Arduino.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="computational_behavior.html" title="3.4. Computation and Behavior"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Arduino.html" title="3.2. Physical Computation with the Arduino"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" accesskey="U">3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mechanical-behavior">
+<h1>3.3. Mechanical Behavior<a class="headerlink" href="#mechanical-behavior" title="Permalink to this headline">¶</a></h1>
+<p>This section is about encoding <em>behavior</em> in machines, where behavior is
+loosely interpreted as the response of a machine to a varying
+environment in order to achieve an implicit goal. At the limit, this
+encompasses all of robotics. However, machines can achieve their smarts
+through many means including physical form which passively interacts
+with the world, mechanical action which responds to forces, and
+computational models which span complexity from simple reflex reactivity
+to detailed world models.</p>
+<div class="section" id="takeaway-lessons">
+<h2>3.3.1. Takeaway Lessons<a class="headerlink" href="#takeaway-lessons" title="Permalink to this headline">¶</a></h2>
+<p>Machines have parts which move relative to each other; the elements or
+surfaces where relative motion occurs are <em>bearings</em> and serve the
+functions of controlling relative motion and friction. These can be
+rolling-contact devices such as <em>ball bearings</em> in which small steel
+balls roll between concentric surfaces, but many common bearings are
+<em>plain bearings</em> in which two surfaces simply slide over each other.
+Even a book sliding on a table can be considered to be using a planar
+sliding bearing formed by the book jacket and the smooth table: the
+shape constrains motion to the plane, and the smooth materials limit
+friction.</p>
+<p>The common types of bearing components we will use are <em>bushings</em> and
+ball bearings. Bushings are plain bearings made from a low-friction
+material such as bronze.</p>
+<p>The key principles of shaft bearing design are to consider the <em>radial
+force</em> acting perpendicular to the shaft, the <em>axial force</em> (or
+<em>thrust</em>) acting along the shaft, the <em>bending moments</em> induced by the
+loads, and the <em>torque</em> carried by the shaft.</p>
+<p>Most ball bearings have limits on the moments they can support, so a
+good rule of thumb is to <em>always use bearings in pairs</em> such that the
+shaft bending moments are counted by radial forces.</p>
+<p>Common ball bearings can support higher radial loads than axial loads.
+<em>Thrust bearings</em> are specifically designed to carry axial loads, such
+as in a turntable.</p>
+<p>Electric motors are generally high-speed low-torque devices. Actuating a
+mechanism almost always requires some form of <em>transmission</em> to reduce
+speed and increase torque to match a load.</p>
+<p>For our purposes, transmissions will be built from rollers, timing
+pulleys and belts, winches and cable drives, and gears. These are
+mechanisms with constant-ratio <em>transfer functions</em> in which an input to
+output velocities have a fixed ratio.</p>
+<p>In general, any mechanism with a transfer function between input and
+output can act as a type of transmission. Structures with non-constant
+ratios include levers, cams, and linkages.</p>
+<p>Gear tooth design comes down to a straighforward idea: find compatible
+shapes which interact to produce a constant velocity ratio from input to
+output. The classic involute gear tooth shape essentially creates the
+simple input-output behavior of two non-slipping rollers, but with the
+increased load capacity of face contact instead of frictional contact.</p>
+<p>In practice, gears have many problems: the teeth must slide across each
+other, creating noise and friction; involute teeth induce forces which
+press the gears apart; high-torque metal gears are often expensive
+precision parts. However, low-cost gears can be laser-cut and careful
+attention to shaft stiffness can manage tooth pressure forces.</p>
+<p>Other common design problems we will face: attaching gears and pulleys
+to shafts; mounting motors and actuators; attaching feedback sensors;
+using bearings to reduce friction; translating rotational to linear
+motion; building rigid structures; designing for assembly; creating 3D
+structures from flat parts; creating snap-fit and locking features;
+designing using standard parts and fasteners.</p>
+</div>
+<div class="section" id="reference-links">
+<h2>3.3.2. Reference Links<a class="headerlink" href="#reference-links" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Simple_machine">Wikipedia: Simple
+Machines</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Kinematic_pair">Wikipedia: Kinematic
+Pairs</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Involute_gear">Wikipedia: Involute
+Gear</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Bearing_%28mechanical%29">Wikipedia:
+Bearing</a></li>
+<li><a class="reference external" href="http://books.google.com/books?id=vOhIAAAAMAAJ&amp;dq=mechanical%20movements&amp;pg=PR1#v=onepage&amp;q&amp;f=false">Google Books: 507 Mechanical
+Movements</a></li>
+<li><a class="reference external" href="http://books.google.com/books?id=LlYSAAAAIAAJ&amp;dq=mechanical%20movements&amp;pg=PP1#v=onepage&amp;q&amp;f=false">Google Books: The Engineer&#8217;s Sketch-book of Mechanical Movements,
+Devices, Appliances, Contrivances, and
+Details</a></li>
+</ol>
+</div>
+<div class="section" id="resource-links">
+<h2>3.3.3. Resource Links<a class="headerlink" href="#resource-links" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://www.thingiverse.com/thing:16627">Parametric pulley - lots of tooth
+profiles</a></li>
+<li><a class="reference external" href="http://hessmer.org/gears/InvoluteSpurGearBuilder.html">Involute Spur Gear
+Builder</a></li>
+<li><a class="reference external" href="http://woodgears.ca/gear_cutting/template.html">Gear template
+generator</a></li>
+<li><a class="reference external" href="http://www.thingiverse.com/thing:7881">Gear Profile Generator</a></li>
+<li><a class="reference external" href="http://boxmaker.rahulbotics.com/">BoxMaker</a></li>
+<li><a class="reference external" href="http://www.thingiverse.com/">thingiverse</a></li>
+<li><a class="reference external" href="https://sketchfab.com/">sketchfab</a></li>
+<li><a class="reference external" href="https://3dwarehouse.sketchup.com/">3D Warehouse</a></li>
+<li><a class="reference external" href="http://www.3dcontentcentral.com/">3D Content Central</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.3. Mechanical Behavior</a><ul>
+<li><a class="reference internal" href="#takeaway-lessons">3.3.1. Takeaway Lessons</a></li>
+<li><a class="reference internal" href="#reference-links">3.3.2. Reference Links</a></li>
+<li><a class="reference internal" href="#resource-links">3.3.3. Resource Links</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Arduino.html"
+                        title="previous chapter">3.2. Physical Computation with the Arduino</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="computational_behavior.html"
+                        title="next chapter">3.4. Computation and Behavior</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="computational_behavior.html" title="3.4. Computation and Behavior"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Arduino.html" title="3.2. Physical Computation with the Arduino"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" >3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-17.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

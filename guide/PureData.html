@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.5. Physical Computation with Pure Data &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-17',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="3. Topic Area Guides" href="guides.html" />
+    <link rel="prev" title="3.4. Computation and Behavior" href="computational_behavior.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="computational_behavior.html" title="3.4. Computation and Behavior"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" accesskey="U">3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="physical-computation-with-pure-data">
+<h1>3.5. Physical Computation with Pure Data<a class="headerlink" href="#physical-computation-with-pure-data" title="Permalink to this headline">¶</a></h1>
+<p>This section is an introduction to physical computing using <a class="reference external" href="http://en.wikipedia.org/wiki/Dataflow_programming">dataflow
+programming</a>. This
+style expresses computation as a graph in which data messages flow over
+connections between objects which act on the data. We will be using the
+open-source real-time <a class="reference external" href="http://puredata.info">Pure Data (Pd)</a> visual
+programming language, which stems from the same work as the commercial
+<a class="reference external" href="http://cycling74.com/">Max/MSP</a> system.</p>
+<p>Dataflow languages lend themselves well to expressing parallelism,
+event-driven actions, interactive and incremental programming, and
+real-time operation. Pd presents the program as a visual graph which
+follows a visual analogy of graphical modules that intake and process
+data and pass it along to other modules. Pd programs can be edited as
+they are running by making and breaking connections, editing parameters,
+and adding new operators. Pd includes many GUI objects so that controls
+can be embedded directly in the program.</p>
+<div class="section" id="takeaway-lessons">
+<h2>3.5.1. Takeaway Lessons<a class="headerlink" href="#takeaway-lessons" title="Permalink to this headline">¶</a></h2>
+<p>Pure Data offers tremendous flexibility: in one environment you can work
+with physical computing, audio analysis and synthesis, video analysis
+and synthesis, and more. Pure Data is free and open source, and it works
+on personal computers (Windows, OS X, Linux), smart phones (iOS,
+Android), embedded platforms (Raspberry Pi, Udoo, BeagleBone).</p>
+<p>Pure Data is good at: rapid prototyping of interactive audio/visual
+systems, controlling multiple parallel processes with complex timing;
+audio analysis and synthesi.</p>
+<p>Pure Data is bad at: recursive programming, general graphical user
+interfaces, integration of documentation, adhering to computer science
+conventions for naming. The Pd third-party libraries in particular are
+quirky and poorly documented, but many, many features are available.</p>
+<p>Pure Data is very extensible: you can extend Pure Data&#8217;s functionality
+with C/C++, Python or a range of other text-based programming languages.
+Pd has a simple API for compiling binary <em>extensions</em> which can be
+dynamically loaded into a Pd program and operate like native Pd objects.</p>
+<p>Pd programs are called <em>patches</em>. Pd patches can instantiate multiple
+copies of other patches and treat them as a single object; these other
+patches are then called <em>abstractions</em>. This is the primary means for
+creating re-usable modules and subroutines. Patches can also incorporate
+internal subgraphs called <em>subpatches</em> which exist in only one copy, but
+allow for organizing a hierarchy of code within a single file.</p>
+<p>Pd abstractions implementing GUIs often use a <em>graph-on-parent</em> mode
+which allows a region of the abstraction patch to be visible in the
+parent patch. This is typically used to provide GUI control objects
+within a panel.</p>
+</div>
+<div class="section" id="reference-links">
+<h2>3.5.2. Reference Links<a class="headerlink" href="#reference-links" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Pure_Data">Wikipedia: Pure Data</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Dataflow_programming">Wikipedia: Dataflow
+Programming</a></li>
+</ol>
+</div>
+<div class="section" id="project-idea-dream-machine">
+<h2>3.5.3. Project Idea: Dream Machine<a class="headerlink" href="#project-idea-dream-machine" title="Permalink to this headline">¶</a></h2>
+<p>A suggested PureData project is inspired by the <a class="reference external" href="http://en.wikipedia.org/wiki/Dreamachine">Dreamachine</a>, &#8220;a&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Stroboscopic">stroboscopic</a> flicker device that produces
+visual stimuli.&#8221;  Artist <a class="reference external" href="http://en.wikipedia.org/wiki/Brion_Gysin">Brion Gysin</a> and <a class="reference external" href="http://en.wikipedia.org/wiki/William_S._Burroughs">William S.  Burroughs</a>&#8216;s &#8220;systems adviser&#8221; <a class="reference external" href="http://en.wikipedia.org/wiki/Ian_Sommerville_(technician)">Ian
+Sommerville</a> created the
+dreamachine after reading <a class="reference external" href="http://en.wikipedia.org/wiki/William_Grey_Walter">William Grey Walter</a>&#8216;s book, <em>The Living
+Brain</em>.</p>
+<p>The goal is to make an enchanted object that uses sound, light and
+movement to create a dream-like state for the viewer.
+These machines can be simultaneously performed for a coordinated, collaborative, dream
+experience. This is a very open-ended assignment: results may include
+pure-software sound synthesis, physical artifacts which create sound or
+light, physical interfaces for allowing performers to interact with the
+system.</p>
+<p>This project will familiarize you with processes you have already explored with
+micro-controllers, but now with a personal computer or Raspberry Pi. They will
+also familiarize you with the work flow for using Pure Data on a laptop to
+communicate with a micro-controller, as well as Pure Data on a Raspberry Pi.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.5. Physical Computation with Pure Data</a><ul>
+<li><a class="reference internal" href="#takeaway-lessons">3.5.1. Takeaway Lessons</a></li>
+<li><a class="reference internal" href="#reference-links">3.5.2. Reference Links</a></li>
+<li><a class="reference internal" href="#project-idea-dream-machine">3.5.3. Project Idea: Dream Machine</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="computational_behavior.html"
+                        title="previous chapter">3.4. Computation and Behavior</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="computational_behavior.html" title="3.4. Computation and Behavior"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" >3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-17.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

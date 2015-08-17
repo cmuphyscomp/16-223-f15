@@ -1,0 +1,39 @@
+######################
+Fall 2015 Course Guide
+######################
+
+.. include:: links.rst
+
+Welcome to *Introduction to Physical Computing!* This is the starting
+page for the course guide, which includes the following:
+	     
+Contents
+========
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   syllabus
+   resources
+   guides
+
+
+Links
+=====
+
+This course is part of the `Integrative Design, Arts, and Technology`_ (IDeATe)
+program at `Carnegie Mellon University`_ and makes use of the new `IDEATE@Hunt
+Collaborative Making Facility`_ in the lower level of Hunt Library.
+
+This course is an IDeATe Portal Course for CFA/DC/TPR students entering either
+of the IDeATe `Intelligent Environments`_ or `Physical Computing`_ programs.
+CIT/MCS/SCS students can enroll in the `60-223`_ version of the course, with
+whom we are planning some crossover if feasible.
+
+The main course website for Fall 2015 is at
+http://courses.ideate.cmu.edu/physcomp/f15/16-223.  Additional common Physical
+Computing material and the previous Fall 2014 iteration of this course can be
+found at http://physcomp.org.
+
+

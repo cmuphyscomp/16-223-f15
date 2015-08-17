@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.1. Basic Circuits &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-17',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="3. Topic Area Guides" href="guides.html" />
+    <link rel="next" title="3.2. Physical Computation with the Arduino" href="Arduino.html" />
+    <link rel="prev" title="3. Topic Area Guides" href="guides.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Arduino.html" title="3.2. Physical Computation with the Arduino"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="guides.html" title="3. Topic Area Guides"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" accesskey="U">3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="basic-circuits">
+<h1>3.1. Basic Circuits<a class="headerlink" href="#basic-circuits" title="Permalink to this headline">¶</a></h1>
+<p>This first section is about establishing core electrical concepts and
+standard vocabulary for talking about electronics. Everybody in the
+class is starting from a different level of experience (perhaps none)
+but needs to develop a common language for working together.</p>
+<p>The following list is an informal summary of basic electrical concepts
+which will be used throughout the course. Please read through everything
+and keep this for reference. If the terminology is unfamiliar, it will
+become familiar through practice with the exercises. If it is review,
+then please help your classmates with understanding the exercises.</p>
+<div class="section" id="takeaway-lessons">
+<h2>3.1.1. Takeaway Lessons<a class="headerlink" href="#takeaway-lessons" title="Permalink to this headline">¶</a></h2>
+<p>Electricity is the flow of electrons through a conductor.</p>
+<p>Electricity is invisible; we use instruments such as multimeters and
+oscilloscopes to measure it and render it visible.</p>
+<p>An electrical current conveys energy.</p>
+<p>Electric potential is measured in volts. Potential can exist between any
+two points in a circuit or conductor; it is a relative measure. It is a
+measure of potential energy, and exists whether or not a current is
+flowing between those two points.</p>
+<p>Electric current is measured in amperes (amps). Current is the volume of
+electron flow past a point.</p>
+<p>Electrical currents can vary with time. The simplest case is the AC
+(alternating current) wall power in which the voltage is formed as a 60
+Hz sine wave (in the US) for transmission efficiency. In contrast, our
+lab power supplies and batteries will output DC (direct current) which
+has a constant voltage.</p>
+<p>An electrical current can encode information.</p>
+<p>Information can be conveyed even with very small amounts of energy. In
+practice there are very different kinds of electrical signals and
+circuits for processing information (e.g. from sensors) versus actuating
+mechanical systems (e.g. motors, speakers).</p>
+<p>An electric potential across a <em>resistance</em> causes a current to flow
+through it. Resistance is measured in ohms and is measured along a
+pathway through a conductor.</p>
+<p>Virtually all materials have a finite <em>resistivity</em>, which is a property
+of the material. The resistance of a path through a material is a
+function of the resistivity and the length and cross-section of the
+conductive path. Longer and thinner wires have more resistance, shorter
+and thicker wires have less resistance. Copper has lower resistivity
+than aluminum or steel; silver is better yet.</p>
+<p>A current flowing through a resistance converts electrical energy to
+heat. This is commonly termed <em>dissipation</em>.</p>
+<p>An insulator is a material with very high resistance, i.e., a typical
+voltage will cause negligible current flow through it.</p>
+<p>The relationship between current, voltage, and resistance in an
+electrical path is described by Ohm&#8217;s Law: V = i * R, in which V
+represents a voltage measured across a resistance R through which
+current i is flowing. Ohm&#8217;s Law can be trivially rewritten as i = V / R
+and R = V / i.</p>
+<p>Electricity flow is loosely analogous to water flow: current is
+analogous to the volume of flow of water through a pipe, voltage is
+analogous to the pressure difference between two locations, and
+resistance is analogous to friction. However, it is good practice to
+think directly in terms of electrical properties rather than relying on
+this comparison.</p>
+<p>A resistor is a type of electronic component engineered for a precise
+and constant resistance property. Resistors are designed with a
+guaranteed minimum capability for dissipating energy. In general,
+physically larger resistors have more dissipation capacity. Resistors
+come in a variety of physical shapes and means of electrical connection.
+No resistor is precisely the specified value; resistors are specified
+with a tolerance range. Highly precise resistors generally cost more. In
+practice, resistors have no dynamic behavior.</p>
+<p>Resistors have a constant value for any voltage and current within their
+rating. Ohm&#8217;s Law for a resistor means that current and voltage follow a
+simple linear relationship given a constant R.</p>
+<p>Wires can be viewed as resistors with low resistance values. Ideally the
+resistance is low enough not to affect circuit operation, but in
+circuits delivering energy the wire resistance needs to be considered.</p>
+<p>A <em>short-circuit</em> (or &#8220;short&#8221;) is an unintended low-resistance
+connection between two points, e.g. bare wires touching accidentally, a
+stray drop of solder bridging two pins, or a DMM probe touching two
+circuit board traces. The effects of a short can range from nothing to
+smoke and destruction, depending on the location and available energy.</p>
+<p>In practice, resistors are used to relate current and voltage within a
+circuit rather than to generate heat. Heat is normally an undesirable
+side-effect.</p>
+<p>There are many other types of passive and active components: capacitors,
+inductors, diodes, transistors, LEDs, lamps, integrated circuits,
+motors, solenoids, and thousands more.</p>
+<p>Unlike resistors, most components do not have a simple constant
+resistance.</p>
+<p>The DMM (digital multi-meter) measures fundamental properties of an
+electrical signal: voltage and current. It also measures electrical
+properties of materials (either components or conductors): resistance,
+capacitance, and inductance. The DMM is most useful for measuring
+relatively constant properties, as the numeric display doesn&#8217;t show
+rapid variation well.</p>
+<p>Measuring voltage with a DMM requires attaching it between two points,
+since voltage is a relative measure.</p>
+<p>Measuring current with a DMM requires routing a signal <em>through</em> the
+meter, since current is a measurement of flow. This frequently requires
+modifying the circuit by <em>opening</em> a connection and replacing it with
+the path through the meter. The meter itself has a different physical
+connection point for measuring current that offers a low-resistance
+path: for this reason it is very important not to use the current input
+unless actually measuring current, otherwise you will short out a
+circuit and potentially damage the meter.</p>
+<p>The oscilloscope draws a dynamic graph of the voltage of an electrical
+signal. It is most useful for visualizing time-varying signals. The
+oscilloscope can plot a signal over many orders of magnitude of time
+scale; in the course we will generally deal with signals varying at
+scales ranging from microseconds to seconds, but modern electronics
+involves signals at nanosecond scales and shorter. In contrast, human
+perception operates at scales closer to tenths of a second.</p>
+<p>Sensors are transducers which convert a physical signal to an electrical
+signal. Some common transducers have variable resistance, e.g., for a
+given voltage across them, the current through them will vary depending
+upon physical state. Two examples: a switch has a resistance near zero
+or near infinity depending on position, a CdS photocell has a resistance
+varying from about 1000 ohms to millions of ohms depending on light
+intensity. Sensors can have a time-varying response: the switch changes
+resistance near-instantly, the CdS photocell can take hundreds of
+milliseconds to respond to a sudden change. There exists a vast variety
+of sensors to couple nearly any physical process of interest into
+electrical information. Optical sensors are especially useful building
+blocks since many other physical effects can be transduced to a
+variation in light, and then transduced from light to a variation in
+electricity.</p>
+<p>Circuits are arrangements of components and conductors engineered for a
+particular purpose. You must learn to recognize certain fundamental
+circuit structures which will be used throughout the course.</p>
+<p>A circuit is a graph; circuit topology matters more than exact physical
+layout. This becomes less true at the extremes: low-voltage,
+high-current, or high-frequency circuits require more attention to
+physical layout. For this course this will come into play with DC motor
+circuits.</p>
+<p>Electrical engineering has been wildly successful at providing means for
+converting energy and information to and from electrical form and
+providing tools for manipulating electrical energy and information.
+Historically, computation and signal processing has also been performed
+in other domains. The first closed-loop control system was actually a
+mechanical computation performed with a flyball governor. Elaborate
+mechanical computers were constructed to represent mathematical
+functions before the advent of electronic computing. Analog electronic
+computers were used before digital electronic computers were developed.
+None of these methods have scaled to the complexity of digital
+computing, but all still have application for particular problems.</p>
+<p>Analog circuits refer to systems in which the energy or information is
+represented by continuously varying electrical signals. E.g. a
+photoresistor exhibits a continuously varying resistance as a function
+of the incident light, and in a circuit can be wired to produce a
+continuously varying voltage or current. A microphone produces a voltage
+proportional to air pressure and represents sound as an oscillating
+voltage.</p>
+<p>Digital signals are discretized signals in which specific values of
+voltage or current are defined to represent specific symbols. In the
+most common case, only two symbols are represented, labeled zero and
+one. This encodes a single binary digit, or <em>bit</em>, as the current or
+voltage on a wire.</p>
+<p>The specific values of voltage or current representing a digital symbol
+depend on the specific components. The Arduino follows the 5V CMOS
+convention, so voltages below 1.5V are considered zero or LOW and
+voltages above 3.7V are considered one or HIGH. Voltages in-between are
+potentially ambiguous but will be arbitrated into a distinct value when
+passing through a digital input. Please note that other microcontrollers
+such as the Arduino Due operate at 3.3V and circuits in laptops and cell
+phones at even lower voltages, so these thresholds will be different.
+Connecting between different logic families can require
+level-translation circuitry if the values are not compatible.</p>
+<p><em>Schematics</em> are circuit diagrams showing the logical connection of
+electronic components. A schematic does not define the physical layout
+of components or conductors, so constructing a circuit from a schematic
+requires applying additional knowledge. However, a good schematic
+contains enough information to construct a functional circuit assuming
+common engineering experience.</p>
+<p>Schematic signals are often named to convey intended purpose of a
+connection. In digital circuits, a bar over a name or a slash in front
+of it indicates an <em>active-low</em> signal in which the low-voltage state is
+the <em>active</em> state. The meaning of active is relative to the specific
+case: for example, an input labeled /RESET is active-low, so a
+zero-voltage input is “active” in the sense that the circuit is reset
+(and hence not operating).</p>
+</div>
+<div class="section" id="reference-links">
+<h2>3.1.2. Reference Links<a class="headerlink" href="#reference-links" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Electronic_color_code">Wikipedia: resistor color
+code</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Voltage_divider">Wikipedia: voltage
+divider</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws">Wikipedia: Kirchhoff&#8217;s circuit
+laws</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Light_emitting_diode">Wikipedia: Light emitting
+diode</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Cds_cell">Wikipedia: Photoresistor</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Force_Sensitive_Resistor">Wikipedia: Force-sensing
+resistor</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Relay">Wikipedia: Relay</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Transistor">Wikipedia: Transistor</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/MOSFET">Wikipedia: MOSFET</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Integrated_circuit">Wikipedia: Integrated
+circuit</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Logic_level">Wikipedia: Logic level</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.1. Basic Circuits</a><ul>
+<li><a class="reference internal" href="#takeaway-lessons">3.1.1. Takeaway Lessons</a></li>
+<li><a class="reference internal" href="#reference-links">3.1.2. Reference Links</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="guides.html"
+                        title="previous chapter">3. Topic Area Guides</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Arduino.html"
+                        title="next chapter">3.2. Physical Computation with the Arduino</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Arduino.html" title="3.2. Physical Computation with the Arduino"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="guides.html" title="3. Topic Area Guides"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" >3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-17.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

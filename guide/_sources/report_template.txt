@@ -1,0 +1,53 @@
+Project Report Template
+=======================
+
+
+Project Title
+-------------
+
+#. Author 1, Author 2
+#. Submission Date
+#. URL of project video (not to exceed one minute):
+
+Abstract
+++++++++
+
+Provide a brief paragraph summarizing the overall goals and results.
+
+
+Objectives
+++++++++++
+
+State your goals, and discuss what specific features are within scope for the project.
+
+
+Implementation
+++++++++++++++
+
+Discuss your design choices.
+
+
+Outcomes
+++++++++
+
+Discuss the successes and failures of your choices.
+
+
+Contribution
+++++++++++++
+
+Please provide a clear statement of each author's individual contribution to the outcomes.
+
+
+Documentation
++++++++++++++
+
+Provide captioned photos which support your discussion.  Please consider the
+purpose of each photo and write a caption which helps the reader understand your
+intent.
+
+Citations
++++++++++
+
+Please provide references or links to related work.
+

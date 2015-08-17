@@ -1,0 +1,87 @@
+Physical Computation with the Arduino
+=====================================
+
+This section is about establishing core concepts of computation as
+related to physical interface. This connects the behavior of the
+physical world of electrical signals to the logical world of programs,
+numbers, and symbols.
+
+For the exercises and assignments, we will be using the
+`Arduino <http://arduino.cc/>`__, a popular microcontroller for
+physical computing. The following list is an informal summary of basic
+concepts related to computation with physical signals and the Arduino.
+
+Takeaway Lessons
+~~~~~~~~~~~~~~~~
+
+An Arduino is a small low-power computer with many conventional
+elements: read/write memory (RAM), read-only memory (ROM), a CPU which
+executes logical and mathematical instructions, and input/output
+peripheral circuitry. This class of computers are called
+*microcontrollers* reflecting their use as microprocessors controlling
+hardware.
+
+Microcontrollers are appropriate for physical computing tasks with low
+computational requirements. They have low power consumption and
+input/output peripherals specialized for hardware such as
+analog-to-digital converters and PWM waveform generators. They have a
+single-threaded programming model with no operating system so writing
+hardware-oriented programs can be very simple.
+
+Physical properties such as position and light intensity are
+intrinsically *analog* since they have continuity in time and space. In
+contrast, computational processes involve operations on numbers
+representing measurements of the physical properties. We use *analog to
+digital converters* (ADCs) to make periodic measurements of electrical
+signals to create digital representations. These numerical digital
+signals are sampled in both time and value, since ADCs have a finite
+precision and speed.
+
+The physical world is one of simultaneity: all atoms are constantly in
+motion, all physical processes are unfolding in parallel. Computation as
+we know it is essentially serial and local: programs process numbers one
+at a time (or in small batches). Signal processing programs managing
+signals at different sample rates must simulate this simultaneity
+through program structure and time management.
+
+Digital logic signals use voltages to represent discrete symbols,
+usually just a binary one or zero. More complex symbols, e.g. numbers,
+require multiple bits, either encoded on a set of wires (a *parallel
+data bus*) or over time on a single wire used as a *serial data bus*.
+Every digital number is represented using a finite set of bits and thus
+has finite precision and range.
+
+Digital logic circuits are generally intended only to convey information
+and are hence designed to output only small currents at logic-level
+voltages. Controlling enough energy to operate an actuator almost always
+requires amplification via a driver circuit.
+
+Systems which only manipulate outputs are said to be *open-loop*.
+Systems using *feedback* that measures the physical effect of an output
+to govern the output are said to be *closed-loop*. Hobby servos are a
+simple example of a closed-loop position-controlled servomotor.
+
+Many useful physical interfacing components and modules are available
+which communicate using a *serial data bus* such as I\ :sup:`2`\ C or
+SPI. There are corresponding Arduino libraries to simplify interfacing
+to these devices.
+
+Reference Links
+~~~~~~~~~~~~~~~
+
+#. `Arduino: IDE <http://arduino.cc/en/Main/Software>`__
+#. `Arduino: Getting Started <http://arduino.cc/en/Guide/HomePage>`__
+#. `Arduino: Reference <http://arduino.cc/en/Reference/HomePage>`__
+#. `Arduino: Uno circuit
+   diagram <http://arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf>`__
+#. `Arduino Tutorial: Examples (guide to
+   tutorials) <http://arduino.cc/en/Tutorial/Sketch>`__
+#. `Arduino Tutorial: First Sketch (programming
+   introduction) <http://arduino.cc/en/Tutorial/Sketch>`__
+#. `Wikipedia: Stepper
+   motor <http://en.wikipedia.org/wiki/Stepper_motor>`__
+#. `Wikipedia: Nyquist-Shannon sampling
+   theorem <http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem>`__
+#. `Wikipedia: Event loop <http://en.wikipedia.org/wiki/Event_loop>`__
+#. `Wikipedia: PID controller <http://en.wikipedia.org/wiki/PID_controller>`__
+

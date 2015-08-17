@@ -1,0 +1,108 @@
+Mechanical Behavior
+===================
+
+This section is about encoding *behavior* in machines, where behavior is
+loosely interpreted as the response of a machine to a varying
+environment in order to achieve an implicit goal. At the limit, this
+encompasses all of robotics. However, machines can achieve their smarts
+through many means including physical form which passively interacts
+with the world, mechanical action which responds to forces, and
+computational models which span complexity from simple reflex reactivity
+to detailed world models.
+
+Takeaway Lessons
+~~~~~~~~~~~~~~~~
+
+Machines have parts which move relative to each other; the elements or
+surfaces where relative motion occurs are *bearings* and serve the
+functions of controlling relative motion and friction. These can be
+rolling-contact devices such as *ball bearings* in which small steel
+balls roll between concentric surfaces, but many common bearings are
+*plain bearings* in which two surfaces simply slide over each other.
+Even a book sliding on a table can be considered to be using a planar
+sliding bearing formed by the book jacket and the smooth table: the
+shape constrains motion to the plane, and the smooth materials limit
+friction.
+
+The common types of bearing components we will use are *bushings* and
+ball bearings. Bushings are plain bearings made from a low-friction
+material such as bronze.
+
+The key principles of shaft bearing design are to consider the *radial
+force* acting perpendicular to the shaft, the *axial force* (or
+*thrust*) acting along the shaft, the *bending moments* induced by the
+loads, and the *torque* carried by the shaft.
+
+Most ball bearings have limits on the moments they can support, so a
+good rule of thumb is to *always use bearings in pairs* such that the
+shaft bending moments are counted by radial forces.
+
+Common ball bearings can support higher radial loads than axial loads.
+*Thrust bearings* are specifically designed to carry axial loads, such
+as in a turntable.
+
+Electric motors are generally high-speed low-torque devices. Actuating a
+mechanism almost always requires some form of *transmission* to reduce
+speed and increase torque to match a load.
+
+For our purposes, transmissions will be built from rollers, timing
+pulleys and belts, winches and cable drives, and gears. These are
+mechanisms with constant-ratio *transfer functions* in which an input to
+output velocities have a fixed ratio.
+
+In general, any mechanism with a transfer function between input and
+output can act as a type of transmission. Structures with non-constant
+ratios include levers, cams, and linkages.
+
+Gear tooth design comes down to a straighforward idea: find compatible
+shapes which interact to produce a constant velocity ratio from input to
+output. The classic involute gear tooth shape essentially creates the
+simple input-output behavior of two non-slipping rollers, but with the
+increased load capacity of face contact instead of frictional contact.
+
+In practice, gears have many problems: the teeth must slide across each
+other, creating noise and friction; involute teeth induce forces which
+press the gears apart; high-torque metal gears are often expensive
+precision parts. However, low-cost gears can be laser-cut and careful
+attention to shaft stiffness can manage tooth pressure forces.
+
+Other common design problems we will face: attaching gears and pulleys
+to shafts; mounting motors and actuators; attaching feedback sensors;
+using bearings to reduce friction; translating rotational to linear
+motion; building rigid structures; designing for assembly; creating 3D
+structures from flat parts; creating snap-fit and locking features;
+designing using standard parts and fasteners.
+
+Reference Links
+~~~~~~~~~~~~~~~
+
+#. `Wikipedia: Simple
+   Machines <http://en.wikipedia.org/wiki/Simple_machine>`__
+#. `Wikipedia: Kinematic
+   Pairs <http://en.wikipedia.org/wiki/Kinematic_pair>`__
+#. `Wikipedia: Involute
+   Gear <http://en.wikipedia.org/wiki/Involute_gear>`__
+#. `Wikipedia:
+   Bearing <http://en.wikipedia.org/wiki/Bearing_%28mechanical%29>`__
+#. `Google Books: 507 Mechanical
+   Movements <http://books.google.com/books?id=vOhIAAAAMAAJ&dq=mechanical%20movements&pg=PR1#v=onepage&q&f=false>`__
+#. `Google Books: The Engineer's Sketch-book of Mechanical Movements,
+   Devices, Appliances, Contrivances, and
+   Details <http://books.google.com/books?id=LlYSAAAAIAAJ&dq=mechanical%20movements&pg=PP1#v=onepage&q&f=false>`__
+
+Resource Links
+~~~~~~~~~~~~~~
+
+#. `Parametric pulley - lots of tooth
+   profiles <http://www.thingiverse.com/thing:16627>`__
+#. `Involute Spur Gear
+   Builder <http://hessmer.org/gears/InvoluteSpurGearBuilder.html>`__
+#. `Gear template
+   generator <http://woodgears.ca/gear_cutting/template.html>`__
+#. `Gear Profile Generator <http://www.thingiverse.com/thing:7881>`__
+#. `BoxMaker <http://boxmaker.rahulbotics.com/>`__
+#. `thingiverse <http://www.thingiverse.com/>`__
+#. `sketchfab <https://sketchfab.com/>`__
+#. `3D Warehouse <https://3dwarehouse.sketchup.com/>`__
+#. `3D Content Central <http://www.3dcontentcentral.com/>`__
+

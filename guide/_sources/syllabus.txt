@@ -1,0 +1,23 @@
+.. include:: links.rst
+
+******************
+Fall 2015 Syllabus
+******************
+
+  | MW 8:30AM-10:30AM
+  | Hunt Library A10
+  | http://courses.ideate.cmu.edu/physcomp/f15/16-223
+  | Instructor: `Dr. Garth Zeglin`_
+  | Assistant: `Robert Zacharias`_
+  | :ref:`calendar`
+
+   
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   description
+   policies
+   topics
+   assignments
+   calendar

@@ -1,0 +1,18 @@
+.. include:: links.rst
+
+.. _topic-guides:
+      
+*****************
+Topic Area Guides
+*****************
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   basic-circuits
+   Arduino
+   mechanism
+   computational_behavior
+   PureData
+

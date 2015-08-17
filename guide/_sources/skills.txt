@@ -1,0 +1,385 @@
+.. include:: links.rst
+
+.. _essential-skills-list:
+
+Essential Skills List
+*********************
+
+The following lab skills are really *life skills* and students will need to
+learn as many as possible to be effective in a prototyping laboratory
+environment.  It may also be useful to refer to the :ref:`topic-guides` section
+and `the essential skills posts on the F14 course web site`_.
+
+
+#. reading a voltmeter: basics of current, voltage, resistance
+
+   + Reading a multimeter (includes current and voltage basics): http://www.youtube.com/watch?v=ZBbgiBU96mM 
+   + Basics of Resistance:  http://www.youtube.com/watch?v=2l1KijNJQtk
+   + Resistance and circuit basics: http://www.allaboutcircuits.com/vol_1/chpt_1/5.html
+   + Ohm's law: http://www.allaboutcircuits.com/vol_1/chpt_2/1.html
+   + http://www.williamson-labs.com/images/resistor-color-code-all.gif
+   + http://www.cdxetextbook.com/images/resistorratings_01.jpg
+
+#. Switch / Relay / Transistor
+
+
+#. use transducer with DMM and bench power supply
+
+
+#. Bench power supplies, batteries, AC from grid
+
+   + http://www.youtube.com/watch?v=Sr89UbofNgw
+   + Using a bench power supply (overview of voltage and current): http://www.youtube.com/watch?v=T8Z2EFrbtpU 
+   + http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp
+   + http://www.bkprecision.com/support/downloads/power-supply-guide.html
+   + http://www.pyramidcaraudio.com/el/PS32LAB.jpg
+   + http://www.electronickits.com/kit/complete/powe/HY3005D.jpg
+
+#. familiarization with the IDE (go through arduino examples from “Basics”, “Analog”, “Digital”)
+
+
+#. flash an LED with an Arduino
+
+
+#. sampling rate/sampling resolution (bit-depth)
+
+
+#. digital inputs, digital outputs, analog inputs, analog outputs (pwm), i2c/spi/...
+
+
+#. sensor-to-gui - How to display sensor value graphically over time.
+
+
+#. sensor-to-led - Flash an LED in response to data from sensor.
+
+
+#. sensor-to-actuator - Acutate based on sensor data. 
+
+
+#. sensor-to-sound - Make sounds from sensor data.
+
+
+#. breadboard - How to use a breadboard to prototype a circuit. 
+
+
+#. proto-board - How to build circuit on proto-board, solder connections, etc.
+
+
+#. datasheets and schematics - How to read datasheets and schematics.
+
+   + http://www.youtube.com/watch?v=9cps7Q_IrX0
+   + https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview
+   + http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html
+   + http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG
+
+#. making a box to put things in - How to lasercut a press-fit box.
+
+
+#. nRF: NRF24L01 - Communicate wirelessly using the NRF24L01 transceiver.  
+
+
+#. Wixel: - Use the analog inputs from wixel, digital outputs to wixel.
+
+
+#. BLE (Punch Through Light Blue Bean) - Communicate wirelessly using the Light Blue bean.
+
+
+#. Understand the variety of microcontroller platforms and boards, as well as the range of Arduino variants, from Yun and Due, to ATTiny (cost, i/o capabilities, compatibility with IDE, ability to debug)
+
+
+#. Build an enclosure with a laser cutter.
+
+
+#. batteries (off the shelf, LiPo, etc)
+
+
+#. OHM's LAW
+
+
+#. hammering a nail
+
+   + http://www.youtube.com/watch?v=GDE8R51FqJw
+   + http://www.wikihow.com/Hammer-a-Nail
+   + http://www.wikihow.com/Drive-a-Nail-Without-Splitting-the-Wood
+   + http://www.oldschool.com.sg/modpub/1628982395481ebf2063c22
+   + http://4.bp.blogspot.com/-em28AczOaAA/Twj_Ha4zanI/AAAAAAAAGjk/9yByPGo-9_E/s1600/hammer3.jpg
+
+#. using vise-grips
+
+   + http://homerepair.about.com/video/How-to-Use-a-Vise-Grip.htm
+   + http://www.ehow.com/how_6583574_use-vise-grips.html
+   + http://www.doityourself.com/stry/vice-grip-pliers#b
+   + http://s3.amazonaws.com/rapgenius/filepicker%2Fd1mngEU7SdaeG5CkQHkL_vice_grip_pliers.jpg
+
+#. using a bench vise
+
+   + http://www.dailymotion.com/video/xjvuch_how-to-set-up-a-bench-vise_lifestyle
+   + http://us1.webpublications.com.au/static/images/articles/i1129/112908_16lo.jpg
+   + http://us1.webpublications.com.au/static/images/articles/i1129/112908_18lo.jpg
+
+#. electrical safety, chemical safety, eye safety, sharps safety
+
+   + Electrical Safety:  http://www.youtube.com/watch?v=WNot2owIv8c
+   + Chemical Safety: http://www.youtube.com/watch?v=3ELbwzqyuhs , http://www.youtube.com/watch?v=8f1J7LReU14  ,  http://www.youtube.com/watch?v=0Jy4XlxxC48  
+   + Semi-graphic eye safety video:   http://www.youtube.com/watch?v=0DYgLlWzYqk 
+   + http://chemlabs.uoregon.edu/Safety/GeneralInstructions.html
+   + http://www.nsc.org/news_resources/Resources/Pages/ElectricalSafety.aspx#.U4Ys-vldV1E
+   + http://www.safetysupplywarehouse.com/v/vspfiles/photos/WFS17-2.jpg
+   + https://www.umatillaelectric.com/wp-content/uploads/2013/06/ElectricalSafety.jpg
+
+#. joining wires: soldering, splicing, terminals, connectors, wire gauges
+
+   + Soldering Video: http://www.youtube.com/watch?v=Q9G9gaokqvM
+   + Splicing Video: http://www.youtube.com/watch?v=pZ809uTlENE
+   + Installing Terminals: http://www.cdxetextbook.com/electrical/princ/wiresConn/crimping.html 
+   + Wire Gauge Size Chart:   http://www.tedpella.com/company_html/wire-gauge-vs-dia.htm 
+   + Wire Terminal Chart: http://www.homedepot.com/hdus/en_US//DTCCOM/HomePage/How_To/Buying_Guides/Electrical/HT_BG_EL_Wire-Connectors/Body/Images/HT_BG_EL_WCS_Body_Img-wire-connectors-chart.jpg 
+   + Good solder vs. bad solder chart:  http://pink.myshoesaretootight.com/mirrors/amiga.serveftp.net/images/Soldering_examples.jpg
+
+#. wiring on a breadboard
+
+   + Intro to breadboards: http://www.youtube.com/watch?v=q_Q5s9AhCR0 
+   +   
+   + breadboard wiring article:  http://wiring.org.co/learning/tutorials/breadboard/ 
+   + Other wiring website: https://courses.engr.illinois.edu/ece343/Breadboard.htm 
+   + Solderless breadboard layout chart: http://yourduino.com/Photos/BreadBoard-1.jpg 
+
+#. using a lab power supply: DC, AC, polarity, scales of voltage, current, power
+
+   + http://www.youtube.com/watch?v=Sr89UbofNgw
+   + Using a bench power supply (overview of voltage and current): http://www.youtube.com/watch?v=T8Z2EFrbtpU 
+   + http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp
+   + http://www.bkprecision.com/support/downloads/power-supply-guide.html
+   + http://www.pyramidcaraudio.com/el/PS32LAB.jpg
+   + http://www.electronickits.com/kit/complete/powe/HY3005D.jpg
+
+#. soldering through hole parts on circuit boards
+
+   + http://www.youtube.com/watch?v=x0YxEilyQVY
+   + http://www.instructables.com/id/How-to-solder/step4/Soldering-components-onto-a-circuit-board/
+   + http://www.personal.psu.edu/djn5065/throughhole.html
+   + http://www.circuitrework.com/guides/7-2-1.shtml
+   + http://billmaudio.com/wp/wp-content/uploads/2010/04/bend_solder.jpg
+   + http://cdn.instructables.com/F8Q/NF5Q/0DIEWP8729Q/F8QNF5Q0DIEWP8729Q.MEDIUM.jpg
+
+#. circuit board modification: trace cutting, wire patching
+
+   + http://www.youtube.com/watch?v=ozH2F3AX8BY
+   + http://www.instructables.com/id/Solder-on-PCB-traces/
+   + http://cdn1.bigcommerce.com/server5600/a5200/products/2903/images/3459/AFTER_1__27468.1366409660.1280.1280.jpg?c=2
+
+#. creating strain relief: heat shrink, fasteners, knots, clamps
+
+   + http://www.cableorganizer.com/learning-center/how-to/how-to-use-heat-shrink-tubing.htm
+   + http://electrical.about.com/od/wiringcircuitry/a/underwriterknot.htm
+   + http://www.cirris.com/testing/guidelines/images/crushwire-a-350.jpg
+   + http://www.animatedknots.com/imagesprelim/underwriters_knot.jpg
+
+#. using an oscilloscope: scales of time and voltage, frequency, repetition
+
+   + http://www.youtube.com/watch?v=rC8HBcsNm2g
+   + http://www.doctronics.co.uk/scope.htm
+   + http://www.facstaff.bucknell.edu/mastascu/elabs/scope/scope1.html
+   + http://www.doctronics.co.uk/images/osc1.gif
+   + http://digitaloscilloscopedeals.com/wp-content/uploads/2012/05/Digital-Oscilloscope-40MHz-with-7-Widescreen-Display.jpg
+
+#. recognizing time scales: program speed versus physical time
+
+
+#. plotting data in 2D: units, labels, curves
+
+   + http://www.youtube.com/watch?v=LZrgpPflEzM
+   + http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb
+   + https://scipy-lectures.github.io/intro/matplotlib/matplotlib.html
+   + http://archtk.github.io/media/flow.png
+
+#. using wire ties
+
+   + http://www.youtube.com/watch?v=sxEi2nA4_p0
+   + http://www.thomasnet.com/articles/materials-handling/cable-tie-design-use
+   + http://www.wikihow.com/Undo-a-Cable-Tie/-Zip-Tie
+   + http://www.goodbuyguys.com/catalog/images/WIRE_TIES_1.jpg
+
+#. reading a schematic
+
+   + http://www.youtube.com/watch?v=9cps7Q_IrX0
+   + https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview
+   + http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html
+   + http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG
+
+#. drawing a schematic
+
+   + http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html
+
+#. identifying electronic components
+
+   + http://www.uchobby.com/index.php/2007/07/15/identifying-electronic-components/
+   + http://www.electroschematics.com/8247/electronic-components-an-easy-to-use-guide/
+   + http://www.circuitboards1.com/wp-content/uploads/2011/08/Circuit-Board-Parts.jpg
+
+#. soldering surface mount parts on circuit boards
+
+   + http://www.youtube.com/watch?v=3NN7UGWYmBY
+   + http://www.instructables.com/id/Soldering-and-Desoldering-Surface-Mount-Components/
+   + http://daycounter.com/Articles/Solder-Surface-Mount-Parts.phtml
+   + http://makezineblog.files.wordpress.com/2006/09/img413_1088.jpg?w=500&h=400
+
+#. desoldering: braid, flux, heat, suction
+
+   + http://highfields-arc.co.uk/constructors/info/h2desolder.htm
+   + http://www.cableorganizer.com/articles/how-to-remove-solder.html
+   + http://www.tutorialsweb.com/smt/chapter7d.htm
+   + http://i01.i.aliimg.com/img/pb/960/174/106/106174960_030.jpg
+   + http://xmanproject.com/tutorials/samsung-226bw/syncmaster-226bw-10.jpg
+
+#. precisely reading program text (i.e., as a compiler might, without preconceptions)
+
+   + http://www.astro.ufl.edu/~warner/prog/python.html
+   + https://wiki.python.org/moin/SimplePrograms
+
+#. reading a multifile program
+
+   + http://farside.ph.utexas.edu/teaching/329/lectures/node22.html
+   + http://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200401/notes/multi-file.html
+
+#. reading a state transition diagram
+
+   + http://www.cs.unc.edu/~stotts/145/CRC/state.html
+   + http://en.wikipedia.org/wiki/State_diagram
+   + http://www.teach-ict.com/as_a2_ict_new/ocr/A2_G063/331_systems_cycle/analysis_tools/miniweb/images/std_account.gif
+   + http://www.academic.marist.edu/~jzbv/EventDrivenSoftware/StateTransitionDiagram_files/image015.jpg
+
+#. using software version control (even just backup copies)
+
+   + http://www.lynda.com/ALMTFS-tutorials/Overview-software-version-control/106788/115974-4.html
+   + http://oss-watch.ac.uk/resources/versioncontrol
+   + http://git-scm.com/book/en/Getting-Started-About-Version-Control
+
+#. debugging programs: print statements, reasoning, test cases, assertions
+
+   + http://www.youtube.com/watch?v=bZZTeKPRSLQ
+   + http://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/
+   + https://wiki.python.org/moin/UsingAssertionsEffectively
+   + http://msdn.microsoft.com/en-us/library/aa293531(v=vs.60).aspx
+
+#. debugging programs using only digital I/O (i.e. without text output)
+
+   + I/O overview: http://www.tutorialspoint.com/python/python_files_io.htm
+   + http://wingide.com/psupport/wingide-1.1/node7.html#SECTION007130000000000000000
+
+#. identifying fasteners: wood screws, machine screws, nuts, thread pitches, heads
+
+   + http://www.youtube.com/watch?v=R3w2XWOwYS8
+   + http://www.boltdepot.com/fastener-information/type-chart.aspx
+   + http://www.boltdepot.com/fastener-information/identifying-fasteners.aspx
+   + http://www.oocities.org/dtmcbride/home_garden/images/bolts-type.gif
+
+#. drilling: handheld, drill press, plastic, wood, thin metal, circuit boards
+
+   + http://www.youtube.com/watch?v=grnoi528kCY
+   + http://web.mit.edu/course/other/machineshop/Drilling/materials.html
+   + http://www.wikihow.com/Drill-Metal
+   + http://www.bobvila.com/articles/2123-operating-a-drill-press/#.U5IG3fldXIU
+
+#. using cyanoacrylate glues
+
+   + http://www.youtube.com/watch?v=UA7iTuelB3Q
+   + http://www.woodworkersjournal.com/woodworking_blog/index.php/cyanoacrylate-everything-you-need-to-know/?patch_your_sistem?
+   + http://www.evidentcrimescene.com/cata/glue/glue16oz.jpg
+   + http://i01.i.aliimg.com/wsphoto/v3/586792999_1/3-pcs-EVO-BOND-BRAND-Genuine-Cyanoacrylate-Adhesive-font-b-Strong-b-font-Bond-Fast-502.jpg
+
+#. using hot glue
+
+   + http://www.wikihow.com/Use-a-Glue-Gun
+   + http://www.craftsunleashed.com/craft-basics-main/how-to-hot-glue-tips/
+   + http://www.howardelectronics.com/steinel/images/WGF-3002L.jpg
+
+#. identifying material properties: strength, ductility, density, thermal mass
+
+   + http://www.tpub.com/air/1-18.htm
+   + http://www.hoovedesigns.com/woods.html
+   + http://www.engineeringtoolbox.com/density-materials-d_1652.html
+   + http://www.tpub.com/steelworker1/14250_files/image003.jpg
+   + http://blog.dragonheaters.com/wp-content/uploads/2013/07/Heat-Storage-Capacity.jpg
+
+#. measuring dimensions accurately: rulers, calipers, micrometers
+
+   + http://www.youtube.com/watch?v=O8vMFFYNIfo
+   + http://www.wikihow.com/Read-a-Ruler
+   + http://www.instructables.com/id/How-to-read-a-vernier-caliper/?ALLSTEPS
+   + http://www.linnbenton.edu/auto/day/mike/read.html
+
+#. switching between English and metric units
+
+   + http://www.mathsisfun.com/imperial-metric-conversion.html
+   + http://www.metric-conversions.org/converter.htm
+
+#. sketching physical parts in multiple views
+
+   + http://www.youtube.com/watch?v=aqKdUXtJTHg
+   + http://www.answers.com/topic/engineering-drawing
+   + http://facstaff.cbu.edu/~gmcginni/classes/CE%20111%20Engineering%20Design%20Graphics/PowerPoint%20Presentations/Multiview%20Drawing.pdf
+   + http://www.me.umn.edu/courses/me2011/handouts/drawing/blanco-tutorial.html
+   + http://2.bp.blogspot.com/-y7H-fRGKbDM/Tz2mAxEaHsI/AAAAAAAAAI4/2f64EuRgKwE/s1600/1.jpg
+
+#. drawing 2D renderings of planar parts
+
+
+#. using a laser cutter
+
+   + http://www.instructables.com/id/How-to-Use-a-Laser-Cutter/?ALLSTEPS
+   + http://www.grainger.com/content/qt-laser-safety-basics-127
+   + http://img.diytrade.com/cdimg/523970/11341978/0/1260151337/Series_High_Speed_Laser_Cutter.jpg
+
+#. modeling parts in 3D (SolidWorks? Rhino? SketchUp? AutoCad?)
+
+   + http://www.rhino3d.com/tutorials
+   + http://www.solidworks.com/sw/resources/solidworks-tutorials.htm
+   + http://www.sketchup.com/learn/videos
+
+#. using a 3D printer
+
+   + http://www.3ders.org/3d-printing-basics.html
+   + http://3dprintingforbeginners.com/3d-printing-technology/
+   + http://regmedia.co.uk/2013/01/10/3d_touch_3d_printer.jpg
+
+#. building basic structures: mechanical constraint, beam cross-sections
+
+   + http://www.constructionknowledge.net/general_technical_knowledge/general_tech_basic_structural_design.php
+
+#. building basic joints: freedoms, friction, constraint
+
+   + http://en.wikipedia.org/wiki/Woodworking_joints
+   + http://www.shopsmith.com/academy/mortistenon/images/F8_5LG.gif
+
+#. documenting work: notes, sketches, photographs, video
+
+   + http://www.youtube.com/watch?v=6G6FHgWLlkI
+   + http://aib-pro-dev-seminar.blogspot.com/p/documenting-artwork.html
+   + http://www.dynamicmediainstitute.org/projects/documentation-live-performance-and-variable-media-artworks
+
+#. providing constructive critique
+
+   + http://lifehacker.com/5915687/how-to-give-criticism-without-sounding-like-a-jerk
+   + http://www.wikihow.com/Criticize-Constructively
+   + http://en.wikipedia.org/wiki/Constructive_criticism
+
+#. iterating an idea
+
+   + http://teamtreehouse.com/library/mobile-game-design/introduction-to-game-design/sharing-ideas-and-iterating
+   + http://www.slideshare.net/GoAtlassian/starter-2-redfin
+   + http://99u.com/articles/6450/7-tips-for-rapid-iteration-aka-the-quirky-approach
+
+#. teaching a skill
+
+   + http://www.learningforlife.org/exploring-resources/99-720/y13.pdf
+   + specifically psychomotor skills: http://wildernessmedicine.wikispaces.com/teaching+psychomotor+skills
+   + http://wildernessmedicine.wikispaces.com/file/view/Snap_2011.09.03_16h20m34s_009.png/250494886/800x611/Snap_2011.09.03_16h20m34s_009.png
+
+#. using git, using apt-get, using github
+
+   + "What is Git? (8:14) https://www.youtube.com/watch?v=uhtzxPU7Bz0
+   + using git: http://git-scm.com/book/en/Getting-Started-Installing-Git
+   + using apt-get: https://help.ubuntu.com/community/AptGet/Howto
+   + using github: http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1#awesm=~oGfwcqmB8JNeOv and http://lifehacker.com/5744113/learn-to-code-the-full-beginners-guide
+

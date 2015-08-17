@@ -1,0 +1,169 @@
+.. include:: links.rst
+
+Course Description
+==================
+
+Physical computing refers to the design and construction of physical systems
+that use a mix of software and hardware to sense and respond to the surrounding
+world.  Such systems blend digital and physical processes into toys and gadgets,
+kinetic sculpture, functional sensing and assessment tools, mobile instruments,
+interactive wearables, and more.  This is a project-based course that deals with
+all aspects of conceiving, designing and developing projects with physical
+computing: the application, the artifact, the computer-aided design environment,
+and the physical prototyping facilities.  The course is organized around a
+series of practical hands-on exercises which introduce the fundamentals of
+circuits, embedded programming, sensor signal processing, simple mechanisms,
+actuation, and time-based behavior.  The key objective is gaining an intuitive
+understanding of how information and energy move between the physical,
+electronic, and computational domains to create a desired behavior.  The
+exercises provide building blocks for collaborative projects which utilize the
+essential skills and challenge students to not only consider how to make things,
+but also for whom we design, and why the making is worthwhile.
+
+This course is part of the `Integrative Design, Arts, and Technology`_ program
+at `Carnegie Mellon University`_ and makes use of the new `IDeaTe@Hunt
+Collaborative Making Facility`_ in the lower level of Hunt Library.
+The main course website for Fall 2015 is at http://courses.ideate.cmu.edu/physcomp/f15/16-223.
+
+This course is an IDeATe Portal Course for entry into either of the IDeATe
+`Intelligent Environments`_ or `Physical Computing`_ programs.  CFA/DC/TPR
+students can enroll under 16-223; CIT/MCS/SCS students can enroll in the
+`60-223`_ version of the course, with whom we are planning some crossover if
+feasible.
+
+Please note that there will be lab usage and materials
+fees associated with this course, and that students will be required to agree to
+the `IDeATe@Hunt policies`_.
+
+.. _learning-objectives:
+
+Learning Objectives
+===================
+
+Upon completion of this course the students will be able to:
+
+- work in a mixed physical-digital environment and laboratory
+- make effective use of standard hardware and software tools for physical computing
+- approach complex physical computing problems with a systematic overview that integrates iterative research and design steps
+- generate systems specifications from a perceived need
+- partition functionality between hardware and software
+- produce interface specifications for a system composed of numerous subsystems
+- use computer-aided development tools for design, fabrication and testing and debugging
+- evaluate the system in the context of an end user application or experience
+
+Teaching Philosophy
+-------------------
+
+This course is as much an introduction to the IDeATe Physical Computing Program
+as to the technology.  It operates under the following principles:
+
+**Immersion**.  Language shapes thought; thinking clearly about engineering and
+computing requires precise use of language.  The course emphasizes correct use
+of technical terminology from the start, even as the meaning incrementally
+becomes understood.
+
+**Experiential Learning**.  We learn by doing.  The course emphasizes immediate
+application of theory into practical demonstration; it is the success and
+especially the failure of the experiment which creates a vivid understanding of
+the principles.
+
+**Cooperative Learning**.  We teach each other.  Articulating an explanation
+develops and tests knowledge and hones the skill of knowing the bounds of one's
+own knowledge.  Sometimes we will teach each other incorrectly, but careful
+attention to further evidence will correct this over time.
+      
+**Self-motivation**. Students are responsible for their own progress.  Wherever
+possible, the driving motivation will be a self-chosen goal, divided into
+manageable subproblems.  The desire for the goal prompts autonomous exploration.
+If you ever find the course dull, that is an opportunity to reflect on what you
+are trying to achieve and choose a new objective.
+
+**Reflection and Writing**.  Understanding develops through reflection, and the
+best discipline for reflection is writing and drawing.  Mere repetition of the
+examples does not build skill; it is the process of reflection which integrates
+experience into knowledge which can be applied to novel situations.
+
+**Collaboration**.  The aim of IDeATe is to train each student to be excellent
+in one area of technology or arts and be able to collaborate within diverse
+cohorts of technology and arts experts.  Collaborative skill requires excellence
+in one's own areas of expertise, an ability to translate ideas across
+disciplinary bounds, and a proficiency in negotiation and compromise.
+
+
+.. all knowledge is qualified.  working in the physical world exposes the subtle inconsistencies of theory and builds nuanced judgement.
+
+   
+
+Essential Skills
+----------------
+
+The activities, exercises and graded projects in this course address a
+wide range of essential skills for the domain of physical computing.
+They are life skills, not evaluated demonstrations.
+
+The most important essential skill is the ability to learn new skills
+independently and to teach them to others. The course website offers a
+set of online references as a starting point to acquiring the essential
+skills.  These references are provided only as a starting point:
+throughout the course of the semester, students are expected to build
+upon these references by finding more references, finding better
+references, and creating their own video and photo teaching material.
+
+For a detailed list of essential skills, please see the :ref:`essential-skills-list`
+and `the essential skills posts on the F14 course web site`_.
+
+
+Group Work
+----------
+
+This course relies on group work and group learning.  Throughout the course,
+students will work in pairs or groups that are either random, assigned, and
+self-selecting.  Randomly selected groups are intended to give students practice
+with teamwork among unfamiliar collaborators, a common setting in the real
+world.
+
+Members of small teams may have either fixed or fluid roles as long as each
+project responsibility is clearly assigned to a team member.  The purpose of
+naming a role is defining a set of responsibilities for an individual to assume.
+When assuming a role, we expect each individual to fully assume the
+responsibilities of their selected role(s) for the project.  Students are
+expected to reflect on their own successes and failures within each role and to
+develop a better understanding of how their own behavior can affect group
+dynamics and how group dynamics affect the development of a project.
+
+We encourage experimentation with individual roles within each group.  Each
+student is expected to occupy diverse roles over the course of the semester both
+within and outside their expertise.  Some suggested roles include the following:
+
+- Integrator: lead the overall development of the project. Responsibilities
+  include leading the negotiation of a common objective, negotiating assigned
+  roles and expectations for other group members, facilitating communication
+  among group members, setting and maintaining and overall timeline for the
+  project’s execution, and researching existing relevant work.
+
+- Developer: lead the design and fabrication of an aspect of the
+  project. Responsibilities include researching relevant existing solutions,
+  developing concepts which meet the objectives, producing sketches and diagrams
+  to refine the implementation plan, and determining and executing fabrication
+  strategies.
+
+- Iterator: lead the testing and redesign of an aspect of the project.
+  Responsibilities include evaluating prototypes against the agreed objectives,
+  finding solutions to problems, and modifying or refabricating as appropriate.
+
+- Scribe: document the project with photos, videos, and writing.
+  Responsibilities include documenting the development process as well as the
+  final outcome, and creating a well formatted document with text, images, and
+  video describing the project’s goals, methodologies and results.
+
+- Tutor: teach specific techniques or knowledge to teammates.  This role is
+  natural for students with advanced knowledge or experience with the activity
+  who will gain the most by teaching and helping others instead of breezing
+  through familiar territory. Responsibilities include assuring that all group
+  members gain the necessary essential skills required for the project.
+
+A person may flow naturally from one role to the next as projects are subdivided
+into subgoals, as long as an individual clearly takes responsibility for each
+element.  Note that the role of scribe is often best universally shared so that
+each person is continually documenting their own process, and then collaborating
+on final documentation at the end.

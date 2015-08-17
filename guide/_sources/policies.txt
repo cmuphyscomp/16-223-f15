@@ -1,0 +1,209 @@
+.. include:: links.rst
+
+
+Grading Rubric
+==============
+
+Everybody is assumed to start with an **A** in the course.  If you do the work
+you will keep it, but failing to fulfill the expectations will cause you to
+drift downward.
+
+Grading for this course is based on frequent low-stakes assessment.  Each
+assignment is graded on one or more of the following criteria:
+
+- **concept**: clarity of the key idea, articulation of key principles and
+  narrative, applicability to human or artistic needs, selection of appropriate
+  aspects for proof-of-concept.
+
+- **execution**: translation of the concept into design, quality of the
+  technical implementation.
+
+- **documentation**: quality of the reflection, clarity of the presentation,
+  detail of the technical documentation.
+
+Each applicable criterion is rated on a two point scale as follows:
+
+- **0**: incomplete: does not satisfy objectives
+- **1**: satisfactory: answers the prompt
+- **2**: outstanding: surprises, shows deep insight
+
+.. note: I could consider an eight-point scale including technical
+   implementation
+
+Full projects will utilize all three criteria and be graded on a scale of 0-6,
+comprising two points each for concept, execution, and documentation.
+
+Please note that the typical successful score will be a three, not a six; this
+is best regarded as a pass/fail score for each of the three criteria with the
+possibility for bonus points.  The total course grades are scored on a relative
+scale based on weighted point totals.
+
+Please note that project deadlines are strict as outlined in the `Lateness
+Policy`_ section.
+
+Project reports must also adhere carefully to the requirements specified in the
+:ref:`project-report-requirements` section in order to achieve full documentation
+scores.
+
+The full grade includes many categories:
+
+#. group project milestones
+#. group project reports documenting full projects
+#. ideation exercises
+#. reviews of lab notebooks documenting technical exercises
+#. brief individual topical lectures
+#. individual peer-evaluation reports
+#. skills survey
+#. individual interviews
+#. attendance
+
+
+Grades provide only a rough metric for student feedback.  The more nuanced and
+useful feedback comes from in-class verbal critiques, individual interviews, and
+written comments.
+
+
+In-Class Project Reviews
+------------------------
+Several class days will be devoted to in-class demonstration and critique,
+including commentary from peers, instructors, and guest experts.  Given the size
+of the class we must keep a rigid schedule during these reviews.  Each group
+will be expected to make a brief 2-3 minute verbal presentation of their goals
+and results, followed by an open question and critique period.  Successful
+presentation in such a concise form depends on planning; students are expected
+to prepare and rehearse their explanations.
+
+The in-class presentation and critique of projects serves several purposes:
+
+* provides a live performance or demonstration for evaluation
+* demonstrates your ability to speak succintly about your ideas
+* provides the primary opportunity for your peers to see and comment on your work
+
+
+Please prepare for the critique as follows:
+
+#. Please be prepared to give a brief (typically 2 minute) verbal overview of
+   your idea and execution.  Please rehearse this explanation ahead of time.
+
+#. Please be prepared to demonstrate or perform at your designated time.  Please
+   rehearse your performance ahead of time.
+
+#. For the project artifacts and performance, the overall emphasis is on
+   proof-of-concept rather than fit and finish.  Please be prepared to designate
+   what issues were deliberately set aside and which were explored to guide the
+   critique.  But please be prepared to justify this choice in light of the
+   overall concept.
+
+#. In-class critique may still consider all features in relation to their
+   support of the concept, especially when guest instructors are present.  When
+   this happens, please consider this an exploration of your idea that goes
+   beyond the graded evaluation.
+
+
+Interviews
+----------
+
+The course includes students with widely varying experience and highly
+individual learning goals.  In order to clarify individual goals and
+expectations, there will be three private out-of-class interviews with each
+individual student, held near the beginning, midpoint, and end of the semester.
+Students will be prompted in advance in order to prepare statements of their
+objectives, progress, or achievements for each interview stage.  This is not a
+graded exercise but a means of providing individual feedback.
+
+
+
+Project Reports
+---------------
+
+Each assignment serves both learning and evaluative goals.  Fulfilling the
+assignment is an essential step in the learning process, and the result also
+demonstrates learning success.  Please take careful note of the requirements
+each assignment: they represent a contract between student and instructor.
+
+The objective of assigning reports is to encourage evaluative thinking
+throughout the process of development.  Writing and sketching is much faster
+than physically building something, and writing the core of the report *first*
+is a great way to clarify a concept.  It is highly recommended to consider the
+report requirements throughout your process, e.g., by taking in-process notes
+and photos, and fully drawing out designs.  For full project reports, please be
+careful to observe the detailed specifications listed in :ref:`project-report-requirements`.
+
+
+Written Feedback
+----------------
+
+The counterpart to the strict submission deadlines is a committment from the
+instructor to provide timely written feedback within one week of each
+deadline.  This provides an opportunity for constructive critique to be
+applied immediately.
+
+
+Project Gallery
+---------------
+
+Projects of merit may be requested to provide a version of their project
+documentation for the `IDeATe public project gallery`_.  This will not be
+required or graded, but represents an opportunity to have your work publicly
+presented as part of the IDeATe portfolio and should need only minimal
+additional effort to prepare.
+
+
+General Course Policies
+=======================
+
+
+Attendance Policy
+-----------------
+
+Coming to class is important: don't be absent.  I understand that the hour is
+early and your other courses have big deadlines, but the designated class hours
+are the most effective time for communicating among group members and
+instructors.
+
+Attendance will be recorded for each class period and your record will be
+considered during final grading.  Unexcused absences during review days will
+reduce your individual project grades.
+
+
+Physical Computing Lab
+----------------------
+
+The classroom for the course in the IDeATe Physical Computing Lab in Hunt A10.
+
+The lab inventory of components and materials is available online as a Google
+Sheet named `Physical Computing Lab Inventory`_, with separate tabs for tools
+and materials.
+
+All lab users are expected to abide by the `Physical Computing Lab Policies`_.
+
+
+.. _lateness-policy:
+
+Lateness Policy
+---------------
+
+All assignments must be submitted by the required deadline, unless prior
+authorization is obtained from an instructor and documented in email.  Verbal
+authorization is *not* sufficient: any verbal discussion of late submission must
+be documented with an emailed request and reply.
+
+Assignments received within 24 hours of the deadline will receive half-score.
+Assignments received later than 24 hours will not be examined and receive zero
+score.
+
+Assignments bounced for revision at the discretion of the instructor must be
+returned within 24 hours if not otherwise specified.  This rule is meant to
+allow a grace period for reports which overlook a required element; please do
+not assume that incomplete work can be resubmitted.
+
+However, please remember that *something is always better than nothing*.  If the
+deadline is imminent, please submit whatever text, images, and drawings you can
+rather than do nothing.
+
+And please also note that I understand you have other major deadlines,
+so extensions will be forgiving.   *Always ask for an extension rather
+than silently fail to deliver.*
+
+
+	     

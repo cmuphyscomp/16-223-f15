@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.2. Physical Computation with the Arduino &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-17',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="3. Topic Area Guides" href="guides.html" />
+    <link rel="next" title="3.3. Mechanical Behavior" href="mechanism.html" />
+    <link rel="prev" title="3.1. Basic Circuits" href="basic-circuits.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mechanism.html" title="3.3. Mechanical Behavior"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="basic-circuits.html" title="3.1. Basic Circuits"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" accesskey="U">3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="physical-computation-with-the-arduino">
+<h1>3.2. Physical Computation with the Arduino<a class="headerlink" href="#physical-computation-with-the-arduino" title="Permalink to this headline">¶</a></h1>
+<p>This section is about establishing core concepts of computation as
+related to physical interface. This connects the behavior of the
+physical world of electrical signals to the logical world of programs,
+numbers, and symbols.</p>
+<p>For the exercises and assignments, we will be using the
+<a class="reference external" href="http://arduino.cc/">Arduino</a>, a popular microcontroller for
+physical computing. The following list is an informal summary of basic
+concepts related to computation with physical signals and the Arduino.</p>
+<div class="section" id="takeaway-lessons">
+<h2>3.2.1. Takeaway Lessons<a class="headerlink" href="#takeaway-lessons" title="Permalink to this headline">¶</a></h2>
+<p>An Arduino is a small low-power computer with many conventional
+elements: read/write memory (RAM), read-only memory (ROM), a CPU which
+executes logical and mathematical instructions, and input/output
+peripheral circuitry. This class of computers are called
+<em>microcontrollers</em> reflecting their use as microprocessors controlling
+hardware.</p>
+<p>Microcontrollers are appropriate for physical computing tasks with low
+computational requirements. They have low power consumption and
+input/output peripherals specialized for hardware such as
+analog-to-digital converters and PWM waveform generators. They have a
+single-threaded programming model with no operating system so writing
+hardware-oriented programs can be very simple.</p>
+<p>Physical properties such as position and light intensity are
+intrinsically <em>analog</em> since they have continuity in time and space. In
+contrast, computational processes involve operations on numbers
+representing measurements of the physical properties. We use <em>analog to
+digital converters</em> (ADCs) to make periodic measurements of electrical
+signals to create digital representations. These numerical digital
+signals are sampled in both time and value, since ADCs have a finite
+precision and speed.</p>
+<p>The physical world is one of simultaneity: all atoms are constantly in
+motion, all physical processes are unfolding in parallel. Computation as
+we know it is essentially serial and local: programs process numbers one
+at a time (or in small batches). Signal processing programs managing
+signals at different sample rates must simulate this simultaneity
+through program structure and time management.</p>
+<p>Digital logic signals use voltages to represent discrete symbols,
+usually just a binary one or zero. More complex symbols, e.g. numbers,
+require multiple bits, either encoded on a set of wires (a <em>parallel
+data bus</em>) or over time on a single wire used as a <em>serial data bus</em>.
+Every digital number is represented using a finite set of bits and thus
+has finite precision and range.</p>
+<p>Digital logic circuits are generally intended only to convey information
+and are hence designed to output only small currents at logic-level
+voltages. Controlling enough energy to operate an actuator almost always
+requires amplification via a driver circuit.</p>
+<p>Systems which only manipulate outputs are said to be <em>open-loop</em>.
+Systems using <em>feedback</em> that measures the physical effect of an output
+to govern the output are said to be <em>closed-loop</em>. Hobby servos are a
+simple example of a closed-loop position-controlled servomotor.</p>
+<p>Many useful physical interfacing components and modules are available
+which communicate using a <em>serial data bus</em> such as I<sup>2</sup>C or
+SPI. There are corresponding Arduino libraries to simplify interfacing
+to these devices.</p>
+</div>
+<div class="section" id="reference-links">
+<h2>3.2.2. Reference Links<a class="headerlink" href="#reference-links" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://arduino.cc/en/Main/Software">Arduino: IDE</a></li>
+<li><a class="reference external" href="http://arduino.cc/en/Guide/HomePage">Arduino: Getting Started</a></li>
+<li><a class="reference external" href="http://arduino.cc/en/Reference/HomePage">Arduino: Reference</a></li>
+<li><a class="reference external" href="http://arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf">Arduino: Uno circuit
+diagram</a></li>
+<li><a class="reference external" href="http://arduino.cc/en/Tutorial/Sketch">Arduino Tutorial: Examples (guide to
+tutorials)</a></li>
+<li><a class="reference external" href="http://arduino.cc/en/Tutorial/Sketch">Arduino Tutorial: First Sketch (programming
+introduction)</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Stepper_motor">Wikipedia: Stepper
+motor</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">Wikipedia: Nyquist-Shannon sampling
+theorem</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Event_loop">Wikipedia: Event loop</a></li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/PID_controller">Wikipedia: PID controller</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.2. Physical Computation with the Arduino</a><ul>
+<li><a class="reference internal" href="#takeaway-lessons">3.2.1. Takeaway Lessons</a></li>
+<li><a class="reference internal" href="#reference-links">3.2.2. Reference Links</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="basic-circuits.html"
+                        title="previous chapter">3.1. Basic Circuits</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mechanism.html"
+                        title="next chapter">3.3. Mechanical Behavior</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mechanism.html" title="3.3. Mechanical Behavior"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="basic-circuits.html" title="3.1. Basic Circuits"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" >3. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-17.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

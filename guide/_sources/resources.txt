@@ -1,0 +1,17 @@
+.. include:: links.rst
+
+*********
+Resources
+*********
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   related_work
+   ideas
+   skills
+   report_template
+   peer_evaluation
+
+.. git and github

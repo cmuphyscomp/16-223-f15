@@ -1,0 +1,235 @@
+Basic Circuits
+==============
+
+This first section is about establishing core electrical concepts and
+standard vocabulary for talking about electronics. Everybody in the
+class is starting from a different level of experience (perhaps none)
+but needs to develop a common language for working together.
+
+The following list is an informal summary of basic electrical concepts
+which will be used throughout the course. Please read through everything
+and keep this for reference. If the terminology is unfamiliar, it will
+become familiar through practice with the exercises. If it is review,
+then please help your classmates with understanding the exercises.
+
+Takeaway Lessons
+~~~~~~~~~~~~~~~~
+
+Electricity is the flow of electrons through a conductor.
+
+Electricity is invisible; we use instruments such as multimeters and
+oscilloscopes to measure it and render it visible.
+
+An electrical current conveys energy.
+
+Electric potential is measured in volts. Potential can exist between any
+two points in a circuit or conductor; it is a relative measure. It is a
+measure of potential energy, and exists whether or not a current is
+flowing between those two points.
+
+Electric current is measured in amperes (amps). Current is the volume of
+electron flow past a point.
+
+Electrical currents can vary with time. The simplest case is the AC
+(alternating current) wall power in which the voltage is formed as a 60
+Hz sine wave (in the US) for transmission efficiency. In contrast, our
+lab power supplies and batteries will output DC (direct current) which
+has a constant voltage.
+
+An electrical current can encode information.
+
+Information can be conveyed even with very small amounts of energy. In
+practice there are very different kinds of electrical signals and
+circuits for processing information (e.g. from sensors) versus actuating
+mechanical systems (e.g. motors, speakers).
+
+An electric potential across a *resistance* causes a current to flow
+through it. Resistance is measured in ohms and is measured along a
+pathway through a conductor.
+
+Virtually all materials have a finite *resistivity*, which is a property
+of the material. The resistance of a path through a material is a
+function of the resistivity and the length and cross-section of the
+conductive path. Longer and thinner wires have more resistance, shorter
+and thicker wires have less resistance. Copper has lower resistivity
+than aluminum or steel; silver is better yet.
+
+A current flowing through a resistance converts electrical energy to
+heat. This is commonly termed *dissipation*.
+
+An insulator is a material with very high resistance, i.e., a typical
+voltage will cause negligible current flow through it.
+
+The relationship between current, voltage, and resistance in an
+electrical path is described by Ohm's Law: V = i \* R, in which V
+represents a voltage measured across a resistance R through which
+current i is flowing. Ohm's Law can be trivially rewritten as i = V / R
+and R = V / i.
+
+Electricity flow is loosely analogous to water flow: current is
+analogous to the volume of flow of water through a pipe, voltage is
+analogous to the pressure difference between two locations, and
+resistance is analogous to friction. However, it is good practice to
+think directly in terms of electrical properties rather than relying on
+this comparison.
+
+A resistor is a type of electronic component engineered for a precise
+and constant resistance property. Resistors are designed with a
+guaranteed minimum capability for dissipating energy. In general,
+physically larger resistors have more dissipation capacity. Resistors
+come in a variety of physical shapes and means of electrical connection.
+No resistor is precisely the specified value; resistors are specified
+with a tolerance range. Highly precise resistors generally cost more. In
+practice, resistors have no dynamic behavior.
+
+Resistors have a constant value for any voltage and current within their
+rating. Ohm's Law for a resistor means that current and voltage follow a
+simple linear relationship given a constant R.
+
+Wires can be viewed as resistors with low resistance values. Ideally the
+resistance is low enough not to affect circuit operation, but in
+circuits delivering energy the wire resistance needs to be considered.
+
+A *short-circuit* (or "short") is an unintended low-resistance
+connection between two points, e.g. bare wires touching accidentally, a
+stray drop of solder bridging two pins, or a DMM probe touching two
+circuit board traces. The effects of a short can range from nothing to
+smoke and destruction, depending on the location and available energy.
+
+In practice, resistors are used to relate current and voltage within a
+circuit rather than to generate heat. Heat is normally an undesirable
+side-effect.
+
+There are many other types of passive and active components: capacitors,
+inductors, diodes, transistors, LEDs, lamps, integrated circuits,
+motors, solenoids, and thousands more.
+
+Unlike resistors, most components do not have a simple constant
+resistance.
+
+The DMM (digital multi-meter) measures fundamental properties of an
+electrical signal: voltage and current. It also measures electrical
+properties of materials (either components or conductors): resistance,
+capacitance, and inductance. The DMM is most useful for measuring
+relatively constant properties, as the numeric display doesn't show
+rapid variation well.
+
+Measuring voltage with a DMM requires attaching it between two points,
+since voltage is a relative measure.
+
+Measuring current with a DMM requires routing a signal *through* the
+meter, since current is a measurement of flow. This frequently requires
+modifying the circuit by *opening* a connection and replacing it with
+the path through the meter. The meter itself has a different physical
+connection point for measuring current that offers a low-resistance
+path: for this reason it is very important not to use the current input
+unless actually measuring current, otherwise you will short out a
+circuit and potentially damage the meter.
+
+The oscilloscope draws a dynamic graph of the voltage of an electrical
+signal. It is most useful for visualizing time-varying signals. The
+oscilloscope can plot a signal over many orders of magnitude of time
+scale; in the course we will generally deal with signals varying at
+scales ranging from microseconds to seconds, but modern electronics
+involves signals at nanosecond scales and shorter. In contrast, human
+perception operates at scales closer to tenths of a second.
+
+Sensors are transducers which convert a physical signal to an electrical
+signal. Some common transducers have variable resistance, e.g., for a
+given voltage across them, the current through them will vary depending
+upon physical state. Two examples: a switch has a resistance near zero
+or near infinity depending on position, a CdS photocell has a resistance
+varying from about 1000 ohms to millions of ohms depending on light
+intensity. Sensors can have a time-varying response: the switch changes
+resistance near-instantly, the CdS photocell can take hundreds of
+milliseconds to respond to a sudden change. There exists a vast variety
+of sensors to couple nearly any physical process of interest into
+electrical information. Optical sensors are especially useful building
+blocks since many other physical effects can be transduced to a
+variation in light, and then transduced from light to a variation in
+electricity.
+
+Circuits are arrangements of components and conductors engineered for a
+particular purpose. You must learn to recognize certain fundamental
+circuit structures which will be used throughout the course.
+
+A circuit is a graph; circuit topology matters more than exact physical
+layout. This becomes less true at the extremes: low-voltage,
+high-current, or high-frequency circuits require more attention to
+physical layout. For this course this will come into play with DC motor
+circuits.
+
+Electrical engineering has been wildly successful at providing means for
+converting energy and information to and from electrical form and
+providing tools for manipulating electrical energy and information.
+Historically, computation and signal processing has also been performed
+in other domains. The first closed-loop control system was actually a
+mechanical computation performed with a flyball governor. Elaborate
+mechanical computers were constructed to represent mathematical
+functions before the advent of electronic computing. Analog electronic
+computers were used before digital electronic computers were developed.
+None of these methods have scaled to the complexity of digital
+computing, but all still have application for particular problems.
+
+Analog circuits refer to systems in which the energy or information is
+represented by continuously varying electrical signals. E.g. a
+photoresistor exhibits a continuously varying resistance as a function
+of the incident light, and in a circuit can be wired to produce a
+continuously varying voltage or current. A microphone produces a voltage
+proportional to air pressure and represents sound as an oscillating
+voltage.
+
+Digital signals are discretized signals in which specific values of
+voltage or current are defined to represent specific symbols. In the
+most common case, only two symbols are represented, labeled zero and
+one. This encodes a single binary digit, or *bit*, as the current or
+voltage on a wire.
+
+The specific values of voltage or current representing a digital symbol
+depend on the specific components. The Arduino follows the 5V CMOS
+convention, so voltages below 1.5V are considered zero or LOW and
+voltages above 3.7V are considered one or HIGH. Voltages in-between are
+potentially ambiguous but will be arbitrated into a distinct value when
+passing through a digital input. Please note that other microcontrollers
+such as the Arduino Due operate at 3.3V and circuits in laptops and cell
+phones at even lower voltages, so these thresholds will be different.
+Connecting between different logic families can require
+level-translation circuitry if the values are not compatible.
+
+*Schematics* are circuit diagrams showing the logical connection of
+electronic components. A schematic does not define the physical layout
+of components or conductors, so constructing a circuit from a schematic
+requires applying additional knowledge. However, a good schematic
+contains enough information to construct a functional circuit assuming
+common engineering experience.
+
+Schematic signals are often named to convey intended purpose of a
+connection. In digital circuits, a bar over a name or a slash in front
+of it indicates an *active-low* signal in which the low-voltage state is
+the *active* state. The meaning of active is relative to the specific
+case: for example, an input labeled /RESET is active-low, so a
+zero-voltage input is “active” in the sense that the circuit is reset
+(and hence not operating).
+
+Reference Links
+~~~~~~~~~~~~~~~
+
+#. `Wikipedia: resistor color
+   code <http://en.wikipedia.org/wiki/Electronic_color_code>`__
+#. `Wikipedia: voltage
+   divider <http://en.wikipedia.org/wiki/Voltage_divider>`__
+#. `Wikipedia: Kirchhoff's circuit
+   laws <http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws>`__
+#. `Wikipedia: Light emitting
+   diode <http://en.wikipedia.org/wiki/Light_emitting_diode>`__
+#. `Wikipedia: Photoresistor <http://en.wikipedia.org/wiki/Cds_cell>`__
+#. `Wikipedia: Force-sensing
+   resistor <http://en.wikipedia.org/wiki/Force_Sensitive_Resistor>`__
+#. `Wikipedia: Relay <http://en.wikipedia.org/wiki/Relay>`__
+#. `Wikipedia: Transistor <http://en.wikipedia.org/wiki/Transistor>`__
+#. `Wikipedia: MOSFET <http://en.wikipedia.org/wiki/MOSFET>`__
+#. `Wikipedia: Integrated
+   circuit <http://en.wikipedia.org/wiki/Integrated_circuit>`__
+#. `Wikipedia: Logic level <http://en.wikipedia.org/wiki/Logic_level>`__
+
+

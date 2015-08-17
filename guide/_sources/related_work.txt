@@ -1,0 +1,49 @@
+.. include:: links.rst
+
+.. _related-work:
+
+Related Work
+************
+
+There are a huge number of projects related to physical computing documented
+online.  The following resources represent a tiny slice of where to look for
+inspiring examples.
+
+
+Pinterest
+---------
+
+If you are a Pinterest user, you may view the `CMU Physcomp boards <https://www.pinterest.com/cmuphyscomp/>`__:
+
+  * `Physical Computing Projects <https://www.pinterest.com/cmuphyscomp/physical-computing-projects/>`__
+  * `Physical Computing Technologies <https://www.pinterest.com/cmuphyscomp/physical-computing-technologies/>`__
+  * `Physical Computing Readings <https://www.pinterest.com/cmuphyscomp/physical-computing-readings/>`__
+  * `Physical Computing Shopping <https://www.pinterest.com/cmuphyscomp/physical-computing-shopping/>`__
+
+
+Other courses in IDeATe
+-----------------------
+
+  * `projects from the IDeATe Gallery <http://ideate.xsead.cmu.edu/gallery/>`__
+  * `projects from Fall 2014 Introduction to Physical Computing <http://physcomp.org/posts/>`__
+
+
+Tutorials and Guides
+--------------------
+
+  * `SparkFun tutorials <https://learn.sparkfun.com/tutorials>`__
+  * `Adafruit tutorials <https://learn.adafruit.com/>`__
+  * `Arduino Playground <http://playground.arduino.cc/>`__
+    
+
+Academic papers
+---------------
+
+If you have a specific area in mind, `Google Scholar
+<https://scholar.google.com/>`__ is a convenient starting point for finding
+research papers on a given topic.
+
+The Carnegie Mellon Library offers free on-campus access to many `research
+databases <http://www.library.cmu.edu/find/databases>`__ via the `unified search
+interface <http://www.library.cmu.edu/>`__.  Many databases are full-text and
+papers can be downloaded as PDF files.

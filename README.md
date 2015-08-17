@@ -1,19 +1,33 @@
-physcomp-f15
-============
+16-223-f15
+==========
 
-This repository provides course materials for several courses in Physical
-Computing at Carnegie Mellon University as part of the IDeATe program.  For
-details, see [www.cmu.edu/ideate](http://www.cmu.edu/ideate/).
+This repository contains course materials for the 16-223 section of the Fall
+2015 Intro to Physical Computing courses at Carnegie Mellon University.  It is a
+downstream fork of the physcomp-f15 repository which contains materials common
+to several courses.
+
+This repo includes the specific course guide for 16-223 as found on the [16-223
+course web site](http://courses.ideate.cmu.edu/physcomp/f15/16-223/).  This
+course is offered as part of the IDeATe program.  For details, see
+[www.cmu.edu/ideate](http://www.cmu.edu/ideate/).
+
+The following command will check out a copy of this repository:
+
+    git clone git@github.com:cmuphyscomp/16-223-f15.git
+
 
 Contents
 --------
 
-The exercises/ folder contains many small self-contained lab projects with
-sample circuits and code.  Each includes explanatory text and demonstrates a
-practical technique.  These are intended as a common pool of reference material
-used by several courses.
+The [guide/ folder](guide/index.html) contains the course guide, including the
+syllabus, assignments, reference information, and resource links.
 
-The support/ folder contains libraries and other background material.
+The [exercises/ folder](exercises/index.html) contains many small self-contained
+lab projects with sample circuits and code.  Each includes explanatory text and
+demonstrates a practical technique.  These are intended as a common pool of
+reference material used by several courses.
+
+The [support/ folder](support/index.html) contains libraries and other background material.
 
 
 File Types
