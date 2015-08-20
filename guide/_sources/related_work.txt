@@ -31,6 +31,7 @@ Other courses in IDeATe
 Tutorials and Guides
 --------------------
 
+  * `tutorials from Fall 2014 Introduction to Physical Computing <http://physcomp.org/category/tutorials/>`__
   * `SparkFun tutorials <https://learn.sparkfun.com/tutorials>`__
   * `Adafruit tutorials <https://learn.adafruit.com/>`__
   * `Arduino Playground <http://playground.arduino.cc/>`__

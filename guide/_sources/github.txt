@@ -1,0 +1,92 @@
+.. include:: links.rst
+
+.. _github:
+
+Course Repository on Github
+***************************
+
+All course materials (including this guide) are available as a `public
+repository on github`_.  It is highly recommend that you learn to use git well
+enough to checkout and update a copy of the course materials on your own
+computer.  Many exercises have sample source code which is most easily used if
+fetched via git rather than laboriously downloaded one file at a time from the
+course site.  The course materials will continue to change during the semester so
+we will periodically ask you to update your local copy to an up-to-date version.
+
+
+Basics
+======
+
+**Git** is a software tool for *version control* which provides the means to
+track changes in a set of files over time and share them with other people.
+We are using the free service offered by `github <https://github.com>`__ to host
+the official *upstream repository* of the course materials.  Github adds *issue
+tracking* and *social coding* features on top of the standard git repository
+service.
+
+Students will not be *pushing* to this repository, although we welcome *bug
+reports* documenting any errors that may be submitted via the `repository issue
+tracker`_.
+
+There are many online tutorials related to git.  Some good starting points follow:
+
+   * `official git documentation <http://git-scm.com/>`__
+   * `official installation guide <http://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`__
+   * `git tutorials from github <https://help.github.com/categories/bootcamp/>`__
+
+Note that there are many different *git clients* available, ranging from the
+standard command line tools to visual GUI-based applications.  Each has their
+merits; the visual interfaces are much more beginner-friendly, but some
+sophisticated operations are only possible from the command line, so many users
+will install both to use as needed.
+
+Github offers their own `native visual clients <https://desktop.github.com>`__
+for Mac or Windows.
+
+The IDeATe cluster MacBook Pros should have three different git clients:
+
+  =======================  ===============================================
+  GitX.app                 `GitX visual client for OS X <http://rowanj.github.io/gitx/>`__
+  /opt/local/bin/git       command line client provided via `MacPorts`_
+  /usr/bin/git             outdated command line client provided by Apple
+  =======================  ===============================================
+
+
+Using the Course Repository
+===========================
+
+The first step is to *clone* the repository, which will create a local copy in a
+new folder on your local machine.  If you are using a command line client, the
+command is follows:
+
+::
+   
+    git clone git@github.com:cmuphyscomp/16-223-f15
+
+This will create a new folder named :file:`16-223-f15` in the current folder.
+
+The repository can be updated to the current version using *pull*, which will
+*fetch* the upstream changes and *merge* them into the local copy:
+
+::
+   
+    cd 16-223-f15
+    git pull
+
+The :command:`cd` command makes the repository folder current, and the
+:command:`git pull` command performs the fetch and merge.  Note that if you have
+made incompatible changes, this may result in *conflicts*.  Please refer to the
+git manual to learn how to create your own *branches* and *resolve conflicts*.
+
+	   
+
+Advanced Usage
+==============
+
+Experienced users of github may know they can *fork* a personal copy of a
+repository and submit *pull requests* containing suggested patches.
+
+If you would like to submit a pull request pertaining to the exercises rather
+than the course guide, it would be easiest for us if you actually submit it
+against the `upstream physcomp-f15 repository`_ from which 16-223-f15 is derived.
+

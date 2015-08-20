@@ -9,6 +9,8 @@ For all assignments, please consult the :ref:`calendar` for precise due dates.
 Please also become aware of the stringent requirements of the
 :ref:`lateness-policy`.
 
+.. _skills-survey:
+
 Skills Survey
 =============
 
@@ -71,7 +73,8 @@ The physical format is very important as we will be passing around and reviewing
 idea lists at the start of class.  Some general heuristics for brainstorming
 success can be found in the :ref:`ideation` resource section.  For inspiring
 examples, see :ref:`related-work` for starting points.
-   
+
+.. _lab-exercises:
 
 Lab Exercises and Lab Notebook
 ==============================
@@ -85,6 +88,7 @@ as needed. Each student should keep their own lab notebook as detailed above.
 Anyone who completes the basic exercises should consider undertaking more of the
 optional challenge activities listed at the end of most exercises.
 
+.. _unit-1-exercises:
 
 Unit 1: Energy, Information, Transduction
 -----------------------------------------
@@ -111,9 +115,6 @@ complex, however the sequence is not strict.
 
 Please explore and document N of the following electronics exercises:
 
-   * `smoke-a-resistor <../exercises/electronics/smoke-a-resistor/index.html>`__
-   * `voltage-regulation <../exercises/electronics/voltage-regulation/index.html>`__
-   * `capacitance <../exercises/electronics/capacitance/index.html>`__
    * `bench-battery-grid <../exercises/electronics/bench-battery-grid/index.html>`__
    * `continuity-tests <../exercises/electronics/continuity-tests/index.html>`__
    * `power-switch <../exercises/electronics/power-switch/index.html>`__
@@ -123,11 +124,15 @@ Please explore and document N of the following electronics exercises:
    * `photocell-with-bias-resistor <../exercises/electronics/photocell-with-bias-resistor/index.html>`__
    * `pressure-pad-with-bias-resistor <../exercises/electronics/pressure-pad-with-bias-resistor/index.html>`__
    * `transducer-with-dmm <../exercises/electronics/transducer-with-dmm/index.html>`__
+   * `smoke-a-resistor <../exercises/electronics/smoke-a-resistor/index.html>`__
+   * `voltage-regulation <../exercises/electronics/voltage-regulation/index.html>`__
+   * `capacitance <../exercises/electronics/capacitance/index.html>`__
+   * `op-amp-level-translation <../exercises/electronics/op-amp-level-translation/index.html>`__
    * `relay-driver <../exercises/electronics/relay-driver/index.html>`__
    * `transistor-driver <../exercises/electronics/transistor-driver/index.html>`__
    * `multichannel-driver <../exercises/electronics/multichannel-driver/index.html>`__
    * `transistor-and-sensor-for-power <../exercises/electronics/transistor-and-sensor-for-power/index.html>`__
-   * `op-amp-level-translation <../exercises/electronics/op-amp-level-translation/index.html>`__
+
 
 Please explore and document N of the following Arduino exercises:
 
@@ -139,8 +144,6 @@ Please explore and document N of the following Arduino exercises:
    * `digital-read-serial <../exercises/Arduino/digital-read-serial/index.html>`__
    * `servo-sweep <../exercises/Arduino/servo-sweep/index.html>`__
    * `stepper-motor-knob <../exercises/Arduino/stepper-motor-knob/index.html>`__
-
-
 
 
 Unit 2: Signals, Time, and Dynamics
@@ -224,7 +227,7 @@ the detailed requirements for all reports.
    reflect the as-built state.  Schematics must use conventional symbols and
    notation.  Hand-drawn or illustrated schematics are acceptable, but the use
    of schematic capture software such as EAGLE is recommended as it will help
-   reduce errors.
+   reduce errors.  **Breadboard diagrams are not acceptable substitutes.**
 
 #. Mechanical drawings or sketches must be provided in PDF form, either embedded
    in the main report or as a separate PDF.  Mechanical drawings must clearly

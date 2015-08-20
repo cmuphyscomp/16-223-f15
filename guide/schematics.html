@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.4. Drawing Electronic Schematics &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-20',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="2. Resources" href="resources.html" />
+    <link rel="next" title="2.5. Essential Skills List" href="skills.html" />
+    <link rel="prev" title="2.3. Ideation and Brainstorming" href="ideas.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="skills.html" title="2.5. Essential Skills List"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ideas.html" title="2.3. Ideation and Brainstorming"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" accesskey="U">2. Resources</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="drawing-electronic-schematics">
+<span id="schematics"></span><h1>2.4. Drawing Electronic Schematics<a class="headerlink" href="#drawing-electronic-schematics" title="Permalink to this headline">¶</a></h1>
+<p>Learning to draw <em>accurate</em> schematic diagrams is an essential skill for
+communicating your electronic design, and a <a class="reference internal" href="assignments.html#project-report-requirements"><span>required element</span></a> for project reports.</p>
+<p>Traditionally schematics were simply drawn on paper using drafting tools, and it
+is still feasible to draw schematic in ordinary graphics tools such as
+Illustrator, but specialized CAD software makes it easier to follow conventions
+and edit diagrams without damaging them.</p>
+<p>Please note that a schematic is an <em>abstract</em> connection diagram and shows
+circuit topology without necessarily reflecting the physical shape.  The
+breadboard diagrams are <strong>not</strong> acceptable for our documentation purposes.</p>
+<p>The schematic diagrams in the course materials were mostly produced using
+<a class="reference external" href="http://fritzing.org/home/">Fritzing</a> with a few produced using <a class="reference external" href="http://www.cadsoftusa.com/">EAGLE</a>.  Fritzing is a relatively new
+DIY-friendly system which is quick to learn but limited.  EAGLE is the de-facto
+standard for hobby electronics since they offer a feature-limited free edition,
+but has a quirky user interface and takes a long time to learn.  EAGLE is quite
+capable of producing sophisticated designs, but can be very time-consuming.</p>
+<p>We recommend learning to use Fritzing first.  The course repository contains
+several folders of Fritzing parts resources which may help: see the <a class="reference external" href="../support/fritzing-parts">Fritzing
+parts folder</a> for our locally-defined parts, and
+the <a class="reference external" href="../support/fritzing-images/">Fritzing images folder</a> for source images
+useful in creating new parts.</p>
+<p>We also have a few <a class="reference external" href="../support/EAGLE/">EAGLE resources</a> for those you wish to
+try that route.</p>
+<div class="section" id="pcb-design">
+<h2>2.4.1. PCB Design<a class="headerlink" href="#pcb-design" title="Permalink to this headline">¶</a></h2>
+<p>Printed circuit board design is not included in this course.  But please note
+that for many electronic CAD programs, drawing the schematic is the first step
+in the <em>physical</em> design of the circuit in the form of a PCB board.  It is for
+this reason that these programs include <em>part footprints</em> in the specification
+of a part.  If the mechanical description in the footprint precisely corresponds
+to the abstract symbolic description in the schematic symbol, then a correctly
+drawn schematic can be translated into a correct copper design for circuit board
+traces and drill pattern using these tools.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.4. Drawing Electronic Schematics</a><ul>
+<li><a class="reference internal" href="#pcb-design">2.4.1. PCB Design</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ideas.html"
+                        title="previous chapter">2.3. Ideation and Brainstorming</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="skills.html"
+                        title="next chapter">2.5. Essential Skills List</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="skills.html" title="2.5. Essential Skills List"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ideas.html" title="2.3. Ideation and Brainstorming"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" >2. Resources</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-20.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

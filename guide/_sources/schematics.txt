@@ -1,0 +1,48 @@
+.. include:: links.rst
+
+.. _schematics:
+
+Drawing Electronic Schematics
+=============================
+
+Learning to draw *accurate* schematic diagrams is an essential skill for
+communicating your electronic design, and a :ref:`required element
+<project-report-requirements>` for project reports.
+
+Traditionally schematics were simply drawn on paper using drafting tools, and it
+is still feasible to draw schematic in ordinary graphics tools such as
+Illustrator, but specialized CAD software makes it easier to follow conventions
+and edit diagrams without damaging them.
+
+Please note that a schematic is an *abstract* connection diagram and shows
+circuit topology without necessarily reflecting the physical shape.  The
+breadboard diagrams are **not** acceptable for our documentation purposes.
+
+The schematic diagrams in the course materials were mostly produced using
+`Fritzing`_ with a few produced using `EAGLE`_.  Fritzing is a relatively new
+DIY-friendly system which is quick to learn but limited.  EAGLE is the de-facto
+standard for hobby electronics since they offer a feature-limited free edition,
+but has a quirky user interface and takes a long time to learn.  EAGLE is quite
+capable of producing sophisticated designs, but can be very time-consuming.
+
+We recommend learning to use Fritzing first.  The course repository contains
+several folders of Fritzing parts resources which may help: see the `Fritzing
+parts folder <../support/fritzing-parts>`__ for our locally-defined parts, and
+the `Fritzing images folder <../support/fritzing-images/>`__ for source images
+useful in creating new parts.
+
+We also have a few `EAGLE resources <../support/EAGLE/>`__ for those you wish to
+try that route.
+
+
+PCB Design
+----------
+
+Printed circuit board design is not included in this course.  But please note
+that for many electronic CAD programs, drawing the schematic is the first step
+in the *physical* design of the circuit in the form of a PCB board.  It is for
+this reason that these programs include *part footprints* in the specification
+of a part.  If the mechanical description in the footprint precisely corresponds
+to the abstract symbolic description in the schematic symbol, then a correctly
+drawn schematic can be translated into a correct copper design for circuit board
+traces and drill pattern using these tools.

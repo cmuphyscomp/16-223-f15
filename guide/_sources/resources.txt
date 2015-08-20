@@ -8,10 +8,10 @@ Resources
    :maxdepth: 2
    :numbered:
 
+   github
    related_work
    ideas
+   schematics
    skills
    report_template
    peer_evaluation
-
-.. git and github

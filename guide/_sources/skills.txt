@@ -208,8 +208,9 @@ and `the essential skills posts on the F14 course web site`_.
    + http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG
 
 #. drawing a schematic
-
    + http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html
+   + http://fritzing.org/learning/
+   + https://learn.sparkfun.com/tutorials/using-eagle-schematic
 
 #. identifying electronic components
 
