@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.1. OneInOneOutASCII Arduino Sketch &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-24',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="4. Libraries and Sample Code" href="code.html" />
+    <link rel="next" title="5. Log Book" href="logbook.html" />
+    <link rel="prev" title="4. Libraries and Sample Code" href="code.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="logbook.html" title="5. Log Book"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="4. Libraries and Sample Code"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">4. Libraries and Sample Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="oneinoneoutascii-arduino-sketch">
+<span id="oneinoneoutascii-doxygen"></span><h1><a class="toc-backref" href="#id2">4.1. OneInOneOutASCII Arduino Sketch</a><a class="headerlink" href="#oneinoneoutascii-arduino-sketch" title="Permalink to this headline">¶</a></h1>
+<p>This sketch is an Arduino program which acts as an simplified hardware I/O
+server using a simple readable message protocol.  The intent is to provide an
+easily modified and extended real-time embedded hardware controller which can
+interface easily with a non-real-time client running on a laptop or Raspberry
+Pi.</p>
+<p>The following documentation was extracted from the <a class="reference external" href="../support/Arduino/OneInOneOutASCII/index.html">OneInOneOutASCII</a> sample
+sketch and highlights particular functions, variables, and classes within the
+code.</p>
+<p>Note that if your only objective is basic hardware access the <a class="reference external" href="https://www.arduino.cc/en/Reference/Firmata">Firmata</a>
+firmware is more efficient and complete.  It however is significantly harder to
+extend, and the binary protocol is harder to debug.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#oneinoneoutascii-arduino-sketch" id="id2">OneInOneOutASCII Arduino Sketch</a><ul>
+<li><a class="reference internal" href="#top-level-functions" id="id3">Top-Level Functions</a></li>
+<li><a class="reference internal" href="#ascii-messaging-protocol" id="id4">ASCII Messaging Protocol</a></li>
+<li><a class="reference internal" href="#full-source-code" id="id5">Full Source Code</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="top-level-functions">
+<h2><a class="toc-backref" href="#id3">4.1.1. Top-Level Functions</a><a class="headerlink" href="#top-level-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv25setupv">
+<span id="setup"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a4fc01d736fe50cf5b977f755b675f11d"></span>void <code class="descclassname"></code><code class="descname">setup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv25setupv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard Arduino initialization function to configure the system. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv24loopv">
+<span id="loop"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1afe461d27b9c48d5921c00d521181f12f"></span>void <code class="descclassname"></code><code class="descname">loop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv24loopv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard Arduino polling function to handle all I/O and periodic processing. This loop should never be allowed to stall or block so that all tasks can be constantly serviced. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ascii-messaging-protocol">
+<h2><a class="toc-backref" href="#id4">4.1.2. ASCII Messaging Protocol</a><a class="headerlink" href="#ascii-messaging-protocol" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="_CPPv219parse_input_messageiPc">
+<span id="parse_input_message__i.cP"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a0cb300a80c775f36d93efbd47fdea2b7"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">parse_input_message</code><span class="sig-paren">(</span>int <em>argc</em>, char *<em>argv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219parse_input_messageiPc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process an input message. Unrecognized commands are silently ignored. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><code class="first docutils literal"><span class="pre">argc</span></code> - <p>number of argument tokens </p>
+</li>
+<li><code class="first docutils literal"><span class="pre">argv</span></code> - <p>array of pointers to strings, one per token </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv219hardware_input_pollv">
+<span id="hardware_input_poll__void"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a54ffc5394aae986d39bc34389e1bf696"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">hardware_input_poll</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv219hardware_input_pollv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polling function to read and send specific input values at periodic intervals. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv217serial_input_pollv">
+<span id="serial_input_poll__void"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a91be20638c581c12322e33a2b137a093"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">serial_input_poll</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217serial_input_pollv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Polling function to process messages arriving over the serial port. Each iteration through this polling function processes at most one character. It records the input message line into a buffer while simultaneously dividing it into &#8216;tokens&#8217; delimited by whitespace. Each token is a string of non-whitespace characters, and might represent either a symbol or an integer. Once a message is complete, <a class="reference internal" href="#project0_one_in_one_out_a_s_c_i_i_8ino_1a0cb300a80c775f36d93efbd47fdea2b7"><span>parse_input_message()</span></a> is called. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv218send_debug_messagePKc">
+<span id="send_debug_message__cCP"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a23999325e97d73d68942c6b989654853"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">send_debug_message</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218send_debug_messagePKc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a single debugging string to the console. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv218send_debug_messagei">
+<span id="send_debug_message__i"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a5abfa982f996f78f34c1240f8cccf22b"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">send_debug_message</code><span class="sig-paren">(</span>int <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218send_debug_messagei" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a single debugging integer to the console. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv212send_messagePKcl">
+<span id="send_message__cCP.l"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1ae56325bf340f03486cfbe5a64479d212"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">send_message</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>command</em>, long <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212send_messagePKcl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a single-argument message back to the host. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv212send_messagePKcll">
+<span id="send_message__cCP.l.l"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a1403cddc53cac27cdf039966a890cd6f"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">send_message</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>command</em>, long <em>value1</em>, long <em>value2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212send_messagePKcll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a two-argument message back to the host. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214user_message_0Pc">
+<span id="user_message_0__cP"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a3c6d19c885df0d6a77a88f67bf2afb2e"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">user_message_0</code><span class="sig-paren">(</span>char *<em>command</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214user_message_0Pc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function provided to help with extending the messaging protocol; this function receives zero-argument messages which just contain a token as a string, e.g. &#8220;stop&#8221;. The protocol can also be extended by modifying <a class="reference internal" href="#project0_one_in_one_out_a_s_c_i_i_8ino_1a0cb300a80c775f36d93efbd47fdea2b7"><span>parse_input_message()</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214user_message_1Pci">
+<span id="user_message_1__cP.i"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a7cefb76717a05809c50d573e7c99383d"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">user_message_1</code><span class="sig-paren">(</span>char *<em>command</em>, int <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214user_message_1Pci" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to user_message_0; process one-argument messages with a single value. E.g. &#8220;speed 33&#8221;. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv214user_message_2Pcii">
+<span id="user_message_2__cP.i.i"></span><span class="target" id="project0_one_in_one_out_a_s_c_i_i_8ino_1a91b5911a7bc306c58caf9d2986372a6f"></span><em class="property">static</em> void <code class="descclassname"></code><code class="descname">user_message_2</code><span class="sig-paren">(</span>char *<em>command</em>, int <em>value1</em>, int <em>value2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214user_message_2Pcii" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to user_message_0; process two-argument messages. E.g. &#8220;pantilt 0
+33&#8221;. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="full-source-code">
+<h2><a class="toc-backref" href="#id5">4.1.3. Full Source Code</a><a class="headerlink" href="#full-source-code" title="Permalink to this headline">¶</a></h2>
+<p>The full code is all in one file <a class="reference external" href="../support/Arduino/OneInOneOutASCII/OneInOneOutASCII.ino">OneInOneOutASCII.ino</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.1. OneInOneOutASCII Arduino Sketch</a><ul>
+<li><a class="reference internal" href="#top-level-functions">4.1.1. Top-Level Functions</a></li>
+<li><a class="reference internal" href="#ascii-messaging-protocol">4.1.2. ASCII Messaging Protocol</a></li>
+<li><a class="reference internal" href="#full-source-code">4.1.3. Full Source Code</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="code.html"
+                        title="previous chapter">4. Libraries and Sample Code</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="logbook.html"
+                        title="next chapter">5. Log Book</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="logbook.html" title="5. Log Book"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="code.html" title="4. Libraries and Sample Code"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >4. Libraries and Sample Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-24.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

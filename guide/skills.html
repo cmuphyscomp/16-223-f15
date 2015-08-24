@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-08-20',
+        VERSION:     '2015-08-24',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,6 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
     <link rel="up" title="2. Resources" href="resources.html" />
     <link rel="next" title="2.6. Project Report Template" href="report_template.html" />
@@ -58,6 +57,8 @@
 learn as many as possible to be effective in a prototyping laboratory
 environment.  It may also be useful to refer to the <a class="reference internal" href="guides.html#topic-guides"><span>Topic Area Guides</span></a> section
 and <a class="reference external" href="http://physcomp.org/category/essential-skills/">the essential skills posts on the F14 course web site</a>.</p>
+<p>Following each recommended skill is a very rough list of links to tutorials;
+probably many will be obsolete by the time you read this.</p>
 <ol class="arabic simple">
 <li>reading a voltmeter: basics of current, voltage, resistance<ul>
 <li>Reading a multimeter (includes current and voltage basics): <a class="reference external" href="http://www.youtube.com/watch?v=ZBbgiBU96mM">http://www.youtube.com/watch?v=ZBbgiBU96mM</a></li>
@@ -68,9 +69,7 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://www.cdxetextbook.com/images/resistorratings_01.jpg">http://www.cdxetextbook.com/images/resistorratings_01.jpg</a></li>
 </ul>
 </li>
-<li>Switch / Relay / Transistor</li>
-<li>use transducer with DMM and bench power supply</li>
-<li>Bench power supplies, batteries, AC from grid<ul>
+<li>using a lab power supply<ul>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=Sr89UbofNgw">http://www.youtube.com/watch?v=Sr89UbofNgw</a></li>
 <li>Using a bench power supply (overview of voltage and current): <a class="reference external" href="http://www.youtube.com/watch?v=T8Z2EFrbtpU">http://www.youtube.com/watch?v=T8Z2EFrbtpU</a></li>
 <li><a class="reference external" href="http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp">http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp</a></li>
@@ -79,31 +78,33 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://www.electronickits.com/kit/complete/powe/HY3005D.jpg">http://www.electronickits.com/kit/complete/powe/HY3005D.jpg</a></li>
 </ul>
 </li>
-<li>familiarization with the IDE (go through arduino examples from “Basics”, “Analog”, “Digital”)</li>
-<li>flash an LED with an Arduino</li>
-<li>sampling rate/sampling resolution (bit-depth)</li>
-<li>digital inputs, digital outputs, analog inputs, analog outputs (pwm), i2c/spi/...</li>
-<li>sensor-to-gui - How to display sensor value graphically over time.</li>
-<li>sensor-to-led - Flash an LED in response to data from sensor.</li>
-<li>sensor-to-actuator - Acutate based on sensor data.</li>
-<li>sensor-to-sound - Make sounds from sensor data.</li>
-<li>breadboard - How to use a breadboard to prototype a circuit.</li>
-<li>proto-board - How to build circuit on proto-board, solder connections, etc.</li>
-<li>datasheets and schematics - How to read datasheets and schematics.<ul>
+<li>reading datasheets and schematics<ul>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=9cps7Q_IrX0">http://www.youtube.com/watch?v=9cps7Q_IrX0</a></li>
 <li><a class="reference external" href="https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview">https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview</a></li>
 <li><a class="reference external" href="http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html">http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html</a></li>
 <li><a class="reference external" href="http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG">http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG</a></li>
 </ul>
 </li>
-<li>making a box to put things in - How to lasercut a press-fit box.</li>
-<li>nRF: NRF24L01 - Communicate wirelessly using the NRF24L01 transceiver.</li>
-<li>Wixel: - Use the analog inputs from wixel, digital outputs to wixel.</li>
-<li>BLE (Punch Through Light Blue Bean) - Communicate wirelessly using the Light Blue bean.</li>
-<li>Understand the variety of microcontroller platforms and boards, as well as the range of Arduino variants, from Yun and Due, to ATTiny (cost, i/o capabilities, compatibility with IDE, ability to debug)</li>
-<li>Build an enclosure with a laser cutter.</li>
-<li>batteries (off the shelf, LiPo, etc)</li>
-<li>OHM&#8217;s LAW</li>
+<li>drawing a schematic<ul>
+<li><a class="reference external" href="http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html">http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html</a></li>
+<li><a class="reference external" href="http://fritzing.org/learning/">http://fritzing.org/learning/</a></li>
+<li><a class="reference external" href="https://learn.sparkfun.com/tutorials/using-eagle-schematic">https://learn.sparkfun.com/tutorials/using-eagle-schematic</a></li>
+</ul>
+</li>
+<li>identifying electronic components<ul>
+<li><a class="reference external" href="http://www.uchobby.com/index.php/2007/07/15/identifying-electronic-components/">http://www.uchobby.com/index.php/2007/07/15/identifying-electronic-components/</a></li>
+<li><a class="reference external" href="http://www.electroschematics.com/8247/electronic-components-an-easy-to-use-guide/">http://www.electroschematics.com/8247/electronic-components-an-easy-to-use-guide/</a></li>
+<li><a class="reference external" href="http://www.circuitboards1.com/wp-content/uploads/2011/08/Circuit-Board-Parts.jpg">http://www.circuitboards1.com/wp-content/uploads/2011/08/Circuit-Board-Parts.jpg</a></li>
+</ul>
+</li>
+<li>using an oscilloscope: scales of time and voltage, frequency, repetition<ul>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=rC8HBcsNm2g">http://www.youtube.com/watch?v=rC8HBcsNm2g</a></li>
+<li><a class="reference external" href="http://www.doctronics.co.uk/scope.htm">http://www.doctronics.co.uk/scope.htm</a></li>
+<li><a class="reference external" href="http://www.facstaff.bucknell.edu/mastascu/elabs/scope/scope1.html">http://www.facstaff.bucknell.edu/mastascu/elabs/scope/scope1.html</a></li>
+<li><a class="reference external" href="http://www.doctronics.co.uk/images/osc1.gif">http://www.doctronics.co.uk/images/osc1.gif</a></li>
+<li><a class="reference external" href="http://digitaloscilloscopedeals.com/wp-content/uploads/2012/05/Digital-Oscilloscope-40MHz-with-7-Widescreen-Display.jpg">http://digitaloscilloscopedeals.com/wp-content/uploads/2012/05/Digital-Oscilloscope-40MHz-with-7-Widescreen-Display.jpg</a></li>
+</ul>
+</li>
 <li>hammering a nail<ul>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=GDE8R51FqJw">http://www.youtube.com/watch?v=GDE8R51FqJw</a></li>
 <li><a class="reference external" href="http://www.wikihow.com/Hammer-a-Nail">http://www.wikihow.com/Hammer-a-Nail</a></li>
@@ -126,8 +127,13 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 </ul>
 </li>
 <li>electrical safety, chemical safety, eye safety, sharps safety<ul>
-<li>Electrical Safety:  <a class="reference external" href="http://www.youtube.com/watch?v=WNot2owIv8c">http://www.youtube.com/watch?v=WNot2owIv8c</a></li>
-<li>Chemical Safety: <a class="reference external" href="http://www.youtube.com/watch?v=3ELbwzqyuhs">http://www.youtube.com/watch?v=3ELbwzqyuhs</a> , <a class="reference external" href="http://www.youtube.com/watch?v=8f1J7LReU14">http://www.youtube.com/watch?v=8f1J7LReU14</a>  ,  <a class="reference external" href="http://www.youtube.com/watch?v=0Jy4XlxxC48">http://www.youtube.com/watch?v=0Jy4XlxxC48</a></li>
+<li>Electrical Safety: <a class="reference external" href="http://www.youtube.com/watch?v=WNot2owIv8c">http://www.youtube.com/watch?v=WNot2owIv8c</a></li>
+<li>Chemical Safety:<ul>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=3ELbwzqyuhs">http://www.youtube.com/watch?v=3ELbwzqyuhs</a></li>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=8f1J7LReU14">http://www.youtube.com/watch?v=8f1J7LReU14</a></li>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=0Jy4XlxxC48">http://www.youtube.com/watch?v=0Jy4XlxxC48</a></li>
+</ul>
+</li>
 <li>Semi-graphic eye safety video:   <a class="reference external" href="http://www.youtube.com/watch?v=0DYgLlWzYqk">http://www.youtube.com/watch?v=0DYgLlWzYqk</a></li>
 <li><a class="reference external" href="http://chemlabs.uoregon.edu/Safety/GeneralInstructions.html">http://chemlabs.uoregon.edu/Safety/GeneralInstructions.html</a></li>
 <li><a class="reference external" href="http://www.nsc.org/news_resources/Resources/Pages/ElectricalSafety.aspx#.U4Ys-vldV1E">http://www.nsc.org/news_resources/Resources/Pages/ElectricalSafety.aspx#.U4Ys-vldV1E</a></li>
@@ -144,24 +150,14 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li>Good solder vs. bad solder chart:  <a class="reference external" href="http://pink.myshoesaretootight.com/mirrors/amiga.serveftp.net/images/Soldering_examples.jpg">http://pink.myshoesaretootight.com/mirrors/amiga.serveftp.net/images/Soldering_examples.jpg</a></li>
 </ul>
 </li>
-<li>wiring on a breadboard<ul>
+<li>building circuits on a solderless breadboard<ul>
 <li>Intro to breadboards: <a class="reference external" href="http://www.youtube.com/watch?v=q_Q5s9AhCR0">http://www.youtube.com/watch?v=q_Q5s9AhCR0</a></li>
-<li></li>
 <li>breadboard wiring article:  <a class="reference external" href="http://wiring.org.co/learning/tutorials/breadboard/">http://wiring.org.co/learning/tutorials/breadboard/</a></li>
 <li>Other wiring website: <a class="reference external" href="https://courses.engr.illinois.edu/ece343/Breadboard.htm">https://courses.engr.illinois.edu/ece343/Breadboard.htm</a></li>
 <li>Solderless breadboard layout chart: <a class="reference external" href="http://yourduino.com/Photos/BreadBoard-1.jpg">http://yourduino.com/Photos/BreadBoard-1.jpg</a></li>
 </ul>
 </li>
-<li>using a lab power supply: DC, AC, polarity, scales of voltage, current, power<ul>
-<li><a class="reference external" href="http://www.youtube.com/watch?v=Sr89UbofNgw">http://www.youtube.com/watch?v=Sr89UbofNgw</a></li>
-<li>Using a bench power supply (overview of voltage and current): <a class="reference external" href="http://www.youtube.com/watch?v=T8Z2EFrbtpU">http://www.youtube.com/watch?v=T8Z2EFrbtpU</a></li>
-<li><a class="reference external" href="http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp">http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp</a></li>
-<li><a class="reference external" href="http://www.bkprecision.com/support/downloads/power-supply-guide.html">http://www.bkprecision.com/support/downloads/power-supply-guide.html</a></li>
-<li><a class="reference external" href="http://www.pyramidcaraudio.com/el/PS32LAB.jpg">http://www.pyramidcaraudio.com/el/PS32LAB.jpg</a></li>
-<li><a class="reference external" href="http://www.electronickits.com/kit/complete/powe/HY3005D.jpg">http://www.electronickits.com/kit/complete/powe/HY3005D.jpg</a></li>
-</ul>
-</li>
-<li>soldering through hole parts on circuit boards<ul>
+<li>soldering through-hole parts on circuit boards<ul>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=x0YxEilyQVY">http://www.youtube.com/watch?v=x0YxEilyQVY</a></li>
 <li><a class="reference external" href="http://www.instructables.com/id/How-to-solder/step4/Soldering-components-onto-a-circuit-board/">http://www.instructables.com/id/How-to-solder/step4/Soldering-components-onto-a-circuit-board/</a></li>
 <li><a class="reference external" href="http://www.personal.psu.edu/djn5065/throughhole.html">http://www.personal.psu.edu/djn5065/throughhole.html</a></li>
@@ -176,6 +172,14 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://cdn1.bigcommerce.com/server5600/a5200/products/2903/images/3459/AFTER_1__27468.1366409660.1280.1280.jpg?c=2">http://cdn1.bigcommerce.com/server5600/a5200/products/2903/images/3459/AFTER_1__27468.1366409660.1280.1280.jpg?c=2</a></li>
 </ul>
 </li>
+<li>desoldering: braid, flux, heat, suction<ul>
+<li><a class="reference external" href="http://highfields-arc.co.uk/constructors/info/h2desolder.htm">http://highfields-arc.co.uk/constructors/info/h2desolder.htm</a></li>
+<li><a class="reference external" href="http://www.cableorganizer.com/articles/how-to-remove-solder.html">http://www.cableorganizer.com/articles/how-to-remove-solder.html</a></li>
+<li><a class="reference external" href="http://www.tutorialsweb.com/smt/chapter7d.htm">http://www.tutorialsweb.com/smt/chapter7d.htm</a></li>
+<li><a class="reference external" href="http://i01.i.aliimg.com/img/pb/960/174/106/106174960_030.jpg">http://i01.i.aliimg.com/img/pb/960/174/106/106174960_030.jpg</a></li>
+<li><a class="reference external" href="http://xmanproject.com/tutorials/samsung-226bw/syncmaster-226bw-10.jpg">http://xmanproject.com/tutorials/samsung-226bw/syncmaster-226bw-10.jpg</a></li>
+</ul>
+</li>
 <li>creating strain relief: heat shrink, fasteners, knots, clamps<ul>
 <li><a class="reference external" href="http://www.cableorganizer.com/learning-center/how-to/how-to-use-heat-shrink-tubing.htm">http://www.cableorganizer.com/learning-center/how-to/how-to-use-heat-shrink-tubing.htm</a></li>
 <li><a class="reference external" href="http://electrical.about.com/od/wiringcircuitry/a/underwriterknot.htm">http://electrical.about.com/od/wiringcircuitry/a/underwriterknot.htm</a></li>
@@ -183,15 +187,6 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://www.animatedknots.com/imagesprelim/underwriters_knot.jpg">http://www.animatedknots.com/imagesprelim/underwriters_knot.jpg</a></li>
 </ul>
 </li>
-<li>using an oscilloscope: scales of time and voltage, frequency, repetition<ul>
-<li><a class="reference external" href="http://www.youtube.com/watch?v=rC8HBcsNm2g">http://www.youtube.com/watch?v=rC8HBcsNm2g</a></li>
-<li><a class="reference external" href="http://www.doctronics.co.uk/scope.htm">http://www.doctronics.co.uk/scope.htm</a></li>
-<li><a class="reference external" href="http://www.facstaff.bucknell.edu/mastascu/elabs/scope/scope1.html">http://www.facstaff.bucknell.edu/mastascu/elabs/scope/scope1.html</a></li>
-<li><a class="reference external" href="http://www.doctronics.co.uk/images/osc1.gif">http://www.doctronics.co.uk/images/osc1.gif</a></li>
-<li><a class="reference external" href="http://digitaloscilloscopedeals.com/wp-content/uploads/2012/05/Digital-Oscilloscope-40MHz-with-7-Widescreen-Display.jpg">http://digitaloscilloscopedeals.com/wp-content/uploads/2012/05/Digital-Oscilloscope-40MHz-with-7-Widescreen-Display.jpg</a></li>
-</ul>
-</li>
-<li>recognizing time scales: program speed versus physical time</li>
 <li>plotting data in 2D: units, labels, curves<ul>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=LZrgpPflEzM">http://www.youtube.com/watch?v=LZrgpPflEzM</a></li>
 <li><a class="reference external" href="http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb">http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb</a></li>
@@ -206,36 +201,11 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://www.goodbuyguys.com/catalog/images/WIRE_TIES_1.jpg">http://www.goodbuyguys.com/catalog/images/WIRE_TIES_1.jpg</a></li>
 </ul>
 </li>
-<li>reading a schematic<ul>
-<li><a class="reference external" href="http://www.youtube.com/watch?v=9cps7Q_IrX0">http://www.youtube.com/watch?v=9cps7Q_IrX0</a></li>
-<li><a class="reference external" href="https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview">https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview</a></li>
-<li><a class="reference external" href="http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html">http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html</a></li>
-<li><a class="reference external" href="http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG">http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG</a></li>
-</ul>
-</li>
-<li>drawing a schematic
-+ <a class="reference external" href="http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html">http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html</a>
-+ <a class="reference external" href="http://fritzing.org/learning/">http://fritzing.org/learning/</a>
-+ <a class="reference external" href="https://learn.sparkfun.com/tutorials/using-eagle-schematic">https://learn.sparkfun.com/tutorials/using-eagle-schematic</a></li>
-<li>identifying electronic components<ul>
-<li><a class="reference external" href="http://www.uchobby.com/index.php/2007/07/15/identifying-electronic-components/">http://www.uchobby.com/index.php/2007/07/15/identifying-electronic-components/</a></li>
-<li><a class="reference external" href="http://www.electroschematics.com/8247/electronic-components-an-easy-to-use-guide/">http://www.electroschematics.com/8247/electronic-components-an-easy-to-use-guide/</a></li>
-<li><a class="reference external" href="http://www.circuitboards1.com/wp-content/uploads/2011/08/Circuit-Board-Parts.jpg">http://www.circuitboards1.com/wp-content/uploads/2011/08/Circuit-Board-Parts.jpg</a></li>
-</ul>
-</li>
 <li>soldering surface mount parts on circuit boards<ul>
 <li><a class="reference external" href="http://www.youtube.com/watch?v=3NN7UGWYmBY">http://www.youtube.com/watch?v=3NN7UGWYmBY</a></li>
 <li><a class="reference external" href="http://www.instructables.com/id/Soldering-and-Desoldering-Surface-Mount-Components/">http://www.instructables.com/id/Soldering-and-Desoldering-Surface-Mount-Components/</a></li>
 <li><a class="reference external" href="http://daycounter.com/Articles/Solder-Surface-Mount-Parts.phtml">http://daycounter.com/Articles/Solder-Surface-Mount-Parts.phtml</a></li>
 <li><a class="reference external" href="http://makezineblog.files.wordpress.com/2006/09/img413_1088.jpg?w=500&amp;h=400">http://makezineblog.files.wordpress.com/2006/09/img413_1088.jpg?w=500&amp;h=400</a></li>
-</ul>
-</li>
-<li>desoldering: braid, flux, heat, suction<ul>
-<li><a class="reference external" href="http://highfields-arc.co.uk/constructors/info/h2desolder.htm">http://highfields-arc.co.uk/constructors/info/h2desolder.htm</a></li>
-<li><a class="reference external" href="http://www.cableorganizer.com/articles/how-to-remove-solder.html">http://www.cableorganizer.com/articles/how-to-remove-solder.html</a></li>
-<li><a class="reference external" href="http://www.tutorialsweb.com/smt/chapter7d.htm">http://www.tutorialsweb.com/smt/chapter7d.htm</a></li>
-<li><a class="reference external" href="http://i01.i.aliimg.com/img/pb/960/174/106/106174960_030.jpg">http://i01.i.aliimg.com/img/pb/960/174/106/106174960_030.jpg</a></li>
-<li><a class="reference external" href="http://xmanproject.com/tutorials/samsung-226bw/syncmaster-226bw-10.jpg">http://xmanproject.com/tutorials/samsung-226bw/syncmaster-226bw-10.jpg</a></li>
 </ul>
 </li>
 <li>precisely reading program text (i.e., as a compiler might, without preconceptions)<ul>
@@ -253,12 +223,6 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://en.wikipedia.org/wiki/State_diagram">http://en.wikipedia.org/wiki/State_diagram</a></li>
 <li><a class="reference external" href="http://www.teach-ict.com/as_a2_ict_new/ocr/A2_G063/331_systems_cycle/analysis_tools/miniweb/images/std_account.gif">http://www.teach-ict.com/as_a2_ict_new/ocr/A2_G063/331_systems_cycle/analysis_tools/miniweb/images/std_account.gif</a></li>
 <li><a class="reference external" href="http://www.academic.marist.edu/~jzbv/EventDrivenSoftware/StateTransitionDiagram_files/image015.jpg">http://www.academic.marist.edu/~jzbv/EventDrivenSoftware/StateTransitionDiagram_files/image015.jpg</a></li>
-</ul>
-</li>
-<li>using software version control (even just backup copies)<ul>
-<li><a class="reference external" href="http://www.lynda.com/ALMTFS-tutorials/Overview-software-version-control/106788/115974-4.html">http://www.lynda.com/ALMTFS-tutorials/Overview-software-version-control/106788/115974-4.html</a></li>
-<li><a class="reference external" href="http://oss-watch.ac.uk/resources/versioncontrol">http://oss-watch.ac.uk/resources/versioncontrol</a></li>
-<li><a class="reference external" href="http://git-scm.com/book/en/Getting-Started-About-Version-Control">http://git-scm.com/book/en/Getting-Started-About-Version-Control</a></li>
 </ul>
 </li>
 <li>debugging programs: print statements, reasoning, test cases, assertions<ul>
@@ -328,7 +292,6 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://2.bp.blogspot.com/-y7H-fRGKbDM/Tz2mAxEaHsI/AAAAAAAAAI4/2f64EuRgKwE/s1600/1.jpg">http://2.bp.blogspot.com/-y7H-fRGKbDM/Tz2mAxEaHsI/AAAAAAAAAI4/2f64EuRgKwE/s1600/1.jpg</a></li>
 </ul>
 </li>
-<li>drawing 2D renderings of planar parts</li>
 <li>using a laser cutter<ul>
 <li><a class="reference external" href="http://www.instructables.com/id/How-to-Use-a-Laser-Cutter/?ALLSTEPS">http://www.instructables.com/id/How-to-Use-a-Laser-Cutter/?ALLSTEPS</a></li>
 <li><a class="reference external" href="http://www.grainger.com/content/qt-laser-safety-basics-127">http://www.grainger.com/content/qt-laser-safety-basics-127</a></li>
@@ -378,6 +341,12 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
 <li><a class="reference external" href="http://www.learningforlife.org/exploring-resources/99-720/y13.pdf">http://www.learningforlife.org/exploring-resources/99-720/y13.pdf</a></li>
 <li>specifically psychomotor skills: <a class="reference external" href="http://wildernessmedicine.wikispaces.com/teaching+psychomotor+skills">http://wildernessmedicine.wikispaces.com/teaching+psychomotor+skills</a></li>
 <li><a class="reference external" href="http://wildernessmedicine.wikispaces.com/file/view/Snap_2011.09.03_16h20m34s_009.png/250494886/800x611/Snap_2011.09.03_16h20m34s_009.png">http://wildernessmedicine.wikispaces.com/file/view/Snap_2011.09.03_16h20m34s_009.png/250494886/800x611/Snap_2011.09.03_16h20m34s_009.png</a></li>
+</ul>
+</li>
+<li>using software version control<ul>
+<li><a class="reference external" href="http://www.lynda.com/ALMTFS-tutorials/Overview-software-version-control/106788/115974-4.html">http://www.lynda.com/ALMTFS-tutorials/Overview-software-version-control/106788/115974-4.html</a></li>
+<li><a class="reference external" href="http://oss-watch.ac.uk/resources/versioncontrol">http://oss-watch.ac.uk/resources/versioncontrol</a></li>
+<li><a class="reference external" href="http://git-scm.com/book/en/Getting-Started-About-Version-Control">http://git-scm.com/book/en/Getting-Started-About-Version-Control</a></li>
 </ul>
 </li>
 <li>using git, using apt-get, using github<ul>
@@ -437,7 +406,7 @@ and <a class="reference external" href="http://physcomp.org/category/essential-s
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-08-20.
+      Last updated on 2015-08-24.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

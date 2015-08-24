@@ -41,7 +41,7 @@ sophisticated operations are only possible from the command line, so many users
 will install both to use as needed.
 
 Github offers their own `native visual clients <https://desktop.github.com>`__
-for Mac or Windows.
+for Mac or Windows as *GitHub Desktop*.
 
 The IDeATe cluster MacBook Pros should have three different git clients:
 
@@ -64,6 +64,12 @@ command is follows:
     git clone git@github.com:cmuphyscomp/16-223-f15
 
 This will create a new folder named :file:`16-223-f15` in the current folder.
+
+If you are using the `GitHub Desktop`_ software, open the `course repository on
+github`_ in a browser and then select the "Clone in Desktop" button; you may
+then select the destination for the :file:`16-223-f15` folder.  If that doesn't
+work, try dragging the URL from the browser and dropping it onto the GitHub
+Desktop application window.
 
 The repository can be updated to the current version using *pull*, which will
 *fetch* the upstream changes and *merge* them into the local copy:

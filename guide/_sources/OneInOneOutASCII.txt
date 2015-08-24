@@ -1,0 +1,51 @@
+.. include:: links.rst
+
+.. _OneInOneOutASCII-doxygen:
+
+OneInOneOutASCII Arduino Sketch
+===============================
+
+This sketch is an Arduino program which acts as an simplified hardware I/O
+server using a simple readable message protocol.  The intent is to provide an
+easily modified and extended real-time embedded hardware controller which can
+interface easily with a non-real-time client running on a laptop or Raspberry
+Pi.
+
+The following documentation was extracted from the `OneInOneOutASCII`_ sample
+sketch and highlights particular functions, variables, and classes within the
+code.
+
+Note that if your only objective is basic hardware access the `Firmata`_
+firmware is more efficient and complete.  It however is significantly harder to
+extend, and the binary protocol is harder to debug.
+
+.. contents::
+
+  
+Top-Level Functions
+-------------------
+
+.. doxygenfunction:: setup
+.. doxygenfunction:: loop
+
+
+ASCII Messaging Protocol
+------------------------
+
+.. doxygenfunction:: parse_input_message
+.. doxygenfunction:: hardware_input_poll
+.. doxygenfunction:: serial_input_poll
+.. doxygenfunction:: send_debug_message(const char *)
+.. doxygenfunction:: send_debug_message(int)
+.. doxygenfunction:: send_message(const char *,long)
+.. doxygenfunction:: send_message(const char *,long, long)
+.. doxygenfunction:: user_message_0
+.. doxygenfunction:: user_message_1
+.. doxygenfunction:: user_message_2
+
+Full Source Code
+----------------
+
+The full code is all in one file `OneInOneOutASCII.ino
+<../support/Arduino/OneInOneOutASCII/OneInOneOutASCII.ino>`__.
+

@@ -17,6 +17,8 @@ Contents
    syllabus
    resources
    guides
+   code
+   logbook
 
 
 Links

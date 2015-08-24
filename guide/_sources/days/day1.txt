@@ -1,0 +1,33 @@
+.. include:: ../links.rst
+   
+Day 1: Introduction and Welcome
+=======================================
+
+Notes for 2015-08-31.  See also the :ref:`calendar`.
+
+
+Agenda
+------
+
+#. Welcome.
+   
+#. Administrative questions
+
+   * Enrollment and waitlist.
+   * IDeATe Computing Virtual Cluster.
+   * Card access.
+   * Fabrication resources and policy.
+   * Fire safety for the laser cutter.
+   * Physical Computing Lab use and abuse.
+   * Course fees and costs.
+
+#. Assignments
+   
+   * Skill survey.
+   * Initial interviews.
+     
+#. Exercises
+   
+   * Course git repository.
+   * Start Unit 1 exercises.
+   

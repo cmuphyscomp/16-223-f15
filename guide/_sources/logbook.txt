@@ -1,0 +1,17 @@
+.. include:: links.rst
+
+.. _logbook:
+
+Log Book
+========
+
+Following are daily agenda and notes related to the actual progress of the course.
+Day numbers are as per the :ref:`calendar`.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   days/day*
+
+For comparison, the `Fall 2014 Progress Log <http://physcomp.org/category/progress/>`__.
