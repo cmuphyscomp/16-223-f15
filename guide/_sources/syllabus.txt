@@ -9,7 +9,7 @@ Fall 2015 Syllabus
   | http://courses.ideate.cmu.edu/physcomp/f15/16-223
   | Instructor: `Dr. Garth Zeglin`_
   | 16-223 TA: `Robert Zacharias`_
-  | 60-223 TA: Hugh Dyar
+  | 60-223 TA: Hugh "Smokey" Dyar
   | :ref:`calendar`
 
    

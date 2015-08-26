@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.3. ArduinoGUI Library &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="4. Libraries and Sample Code" href="code.html" />
+    <link rel="next" title="5. Log Book" href="logbook.html" />
+    <link rel="prev" title="4.2. OneInOneOutGUI Example" href="OneInOneOutGUI.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logbook.html" title="5. Log Book"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="OneInOneOutGUI.html" title="4.2. OneInOneOutGUI Example"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">4. Libraries and Sample Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-ArduinoGUI"></span><div class="section" id="arduinogui-library">
+<span id="arduinogui"></span><h1><a class="toc-backref" href="#id2">4.3. ArduinoGUI Library</a><a class="headerlink" href="#arduinogui-library" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#module-ArduinoGUI" title="ArduinoGUI"><code class="xref py py-mod docutils literal"><span class="pre">ArduinoGUI</span></code></a> module provides tools to create simple graphical user
+interfaces for Arduino programs using the PyQt4 library.  It may optionally use
+the PyQwt library to render a dynamic plot window.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#arduinogui-library" id="id2">ArduinoGUI Library</a><ul>
+<li><a class="reference internal" href="#module-ArduinoGUI.ArduinoConsole" id="id3">ArduinoConsole.py</a></li>
+<li><a class="reference internal" href="#module-ArduinoGUI.ArduinoScope" id="id4">ArduinoScope.py</a></li>
+<li><a class="reference internal" href="#arduinoconsolewindow-py" id="id5">ArduinoConsoleWindow.py</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="module-ArduinoGUI.ArduinoConsole">
+<span id="arduinoconsole-py"></span><h2><a class="toc-backref" href="#id3">4.3.1. ArduinoConsole.py</a><a class="headerlink" href="#module-ArduinoGUI.ArduinoConsole" title="Permalink to this headline">¶</a></h2>
+<p>ArduinoConsole.py</p>
+<p>PyQt4 window implementing a generic control console for an Arduino sketch,
+including command line, plot window, and serial port controls.  Functions are
+provide to allow extending the basic interface with custom buttons and sliders
+without needing to use Qt Designer.</p>
+<p>Copyright (c) 2013-2015, Garth Zeglin. All rights reserved. Licensed under the
+terms of the BSD 3-clause license as included in LICENSE.</p>
+<dl class="class">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole">
+<em class="property">class </em><code class="descclassname">ArduinoGUI.ArduinoConsole.</code><code class="descname">ArduinoConsole</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole" title="Permalink to this definition">¶</a></dt>
+<dd><p>A custom window which inherits both from the QMainWindow class and the custom
+Ui_ArduinoConsoleWindow defined using Qt Designer.</p>
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.ArduinoConnectToggled">
+<code class="descname">ArduinoConnectToggled</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.ArduinoConnectToggled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.ArduinoConnectToggled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback invoked whenever the Arduino Connect checkbox changes state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.ArduinoPortEntered">
+<code class="descname">ArduinoPortEntered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.ArduinoPortEntered"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.ArduinoPortEntered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback invoked whenever text is entered into the Arduino Port field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.addButton">
+<code class="descname">addButton</code><span class="sig-paren">(</span><em>title</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.addButton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.addButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a button to the general-purpose button area of the interface.  The title
+argument should be a short string to appear on the face of the button.
+The callback function is invoked whenever the button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.addScope">
+<code class="descname">addScope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.addScope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.addScope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an ArduinoScope widget to the top of the layout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.addScopeChannel">
+<code class="descname">addScopeChannel</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.addScopeChannel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.addScopeChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a named channel to the ArduinoScope plotting widget.  The arguments are
+passed unchanged to add_channel().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.addScopeSamples">
+<code class="descname">addScopeSamples</code><span class="sig-paren">(</span><em>name</em>, <em>y</em>, <em>t</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.addScopeSamples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.addScopeSamples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a set of new samples to a given named channel to the ArduinoScope
+plotting widget.  The arguments are passed unchanged to
+add_samples().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.addSlider">
+<code class="descname">addSlider</code><span class="sig-paren">(</span><em>title</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.addSlider"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.addSlider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a horizontal slider to the controls area.  The range is fixed over [0,1.0).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> &#8211; string used as a tooltip</li>
+<li><strong>callback</strong> &#8211; function receiving floating slider value</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.attachCommandCallback">
+<code class="descname">attachCommandCallback</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.attachCommandCallback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.attachCommandCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the callback function to be invoked when the user enters a command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callback</strong> &#8211; callback( command_string )</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.attachConnectCallback">
+<code class="descname">attachConnectCallback</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.attachConnectCallback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.attachConnectCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the callback function to be invoked when the user requests a connect or disconnect from the Arduino.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callback</strong> &#8211; callback( port_name, flag )  flag is True for connect, False for disconnect</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.commandEntered">
+<code class="descname">commandEntered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.commandEntered"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.commandEntered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback invoked whenever command line text is entered.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.isShowingRawData">
+<code class="descname">isShowingRawData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.isShowingRawData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.isShowingRawData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the Show Raw Data checkbox is selected.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.newInputMonitor">
+<code class="descname">newInputMonitor</code><span class="sig-paren">(</span><em>fd</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.newInputMonitor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.newInputMonitor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to create a notification callback when input is available on a file descriptor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fd</strong> &#8211; integer file descriptor</li>
+<li><strong>callback</strong> &#8211; one-argument function callback(fd) to be called with the file descriptor</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the underlying QSocketNotifier object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.newPeriodicTimer">
+<code class="descname">newPeriodicTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.newPeriodicTimer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.newPeriodicTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to create a periodic timer which calls a function at the
+given interval.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>interval</strong> &#8211; interval in milliseconds</li>
+<li><strong>callback</strong> &#8211; no-argument function callback() to be called at intervals</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the underlying QTimer object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.newSingleShotTimer">
+<code class="descname">newSingleShotTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>callback</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.newSingleShotTimer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.newSingleShotTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience function to set up a single-shot timer which calls a function
+once after the given interval.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>interval</strong> &#8211; interval in milliseconds</li>
+<li><strong>callback</strong> &#8211; no-argument function callback() to be called once after a delay</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.replotScope">
+<code class="descname">replotScope</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.replotScope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.replotScope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the ArduinoScope plot area after all new data has been added.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.resetPlotPressed">
+<code class="descname">resetPlotPressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.resetPlotPressed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.resetPlotPressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback invoked whenever the Reset Plot button is clicked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.setArduinoPortName">
+<code class="descname">setArduinoPortName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.setArduinoPortName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.setArduinoPortName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the initial state of the Arduino Port name field (e.g., from command-line arguments).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsole.ArduinoConsole.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsole.html#ArduinoConsole.write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsole.ArduinoConsole.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write output to the console text area.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ArduinoGUI.ArduinoScope">
+<span id="arduinoscope-py"></span><h2><a class="toc-backref" href="#id4">4.3.2. ArduinoScope.py</a><a class="headerlink" href="#module-ArduinoGUI.ArduinoScope" title="Permalink to this headline">¶</a></h2>
+<p>ArduinoScope.py : Qt/Qwt widget to show a real-time oscilloscope-like display of signals</p>
+<p>Copyright (c) 2015, Garth Zeglin.  All rights reserved. Licensed under the terms
+of the BSD 3-clause license.</p>
+<dl class="class">
+<dt id="ArduinoGUI.ArduinoScope.ArduinoScope">
+<em class="property">class </em><code class="descclassname">ArduinoGUI.ArduinoScope.</code><code class="descname">ArduinoScope</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ArduinoScope"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ArduinoScope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot widget to show real-time data like a multichannel oscilloscope.
+Implemented as a subclass of the QwtPlot widget provided in the Qwt5
+package.  Requires Qwt5 and PyQwt5.</p>
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoScope.ArduinoScope.add_channel">
+<code class="descname">add_channel</code><span class="sig-paren">(</span><em>name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ArduinoScope.add_channel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ArduinoScope.add_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new channel to the oscilloscope.  The parameters are passed to ScopeChannel.init.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; short name with which to identify the channel internally</li>
+<li><strong>title</strong> &#8211; optional title string to use on plot (default is to use the name value)</li>
+<li><strong>color</strong> &#8211; optional color name string.  Examples: &#8216;red&#8217;, &#8216;purple, &#8216;#80ff30&#8217; (default is random)</li>
+<li><strong>duration</strong> &#8211; optional limit on the length of the time history to store</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoScope.ArduinoScope.add_samples">
+<code class="descname">add_samples</code><span class="sig-paren">(</span><em>name</em>, <em>y</em>, <em>t</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ArduinoScope.add_samples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ArduinoScope.add_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more data samples to the buffer in the channel.  If a maximum
+duration was specified during creation, the data buffer will be
+truncated to hold the specified maximum amount of history.  After all
+channels have been updated, call the replot() method to update the
+display.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; channel name as supplied during creation</li>
+<li><strong>y</strong> &#8211; list or ndarray of signal values</li>
+<li><strong>t</strong> &#8211; list or ndarray of times, must be same length as y</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoScope.ArduinoScope.reset_plot">
+<code class="descname">reset_plot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ArduinoScope.reset_plot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ArduinoScope.reset_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all the sample buffers.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ArduinoGUI.ArduinoScope.ScopeChannel">
+<em class="property">class </em><code class="descclassname">ArduinoGUI.ArduinoScope.</code><code class="descname">ScopeChannel</code><span class="sig-paren">(</span><em>name</em>, <em>title=None</em>, <em>color=None</em>, <em>duration=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ScopeChannel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ScopeChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal class to represent the state of one channel in an ArduinoScope
+widget.  See ArduinoScope.add_channel() for arguments.</p>
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoScope.ScopeChannel.add_samples">
+<code class="descname">add_samples</code><span class="sig-paren">(</span><em>y</em>, <em>t</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ScopeChannel.add_samples"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ScopeChannel.add_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add one or more data samples to the buffer in the channel.  If a maximum
+duration was specified during creation, the data buffer will be
+truncated to hold the specified maximum amount of history.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>y</strong> &#8211; list or ndarray of signal values</li>
+<li><strong>t</strong> &#8211; list or ndarray of times, must be same length as y</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoScope.ScopeChannel.clear_data">
+<code class="descname">clear_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoScope.html#ScopeChannel.clear_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoScope.ScopeChannel.clear_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="arduinoconsolewindow-py">
+<h2><a class="toc-backref" href="#id5">4.3.3. ArduinoConsoleWindow.py</a><a class="headerlink" href="#arduinoconsolewindow-py" title="Permalink to this headline">¶</a></h2>
+<p>This file is generated from an XML interface description using the
+<strong class="command">pyuic</strong> interface compiler.  The XML description represents the basic
+interface layout, created and edited using Qt Designer and saved as the XML file
+<code class="file docutils literal"><span class="pre">ArduinoConsoleWindow.ui</span></code>.</p>
+<span class="target" id="module-ArduinoGUI.ArduinoConsoleWindow"></span><dl class="class">
+<dt id="ArduinoGUI.ArduinoConsoleWindow.Ui_ArduinoConsoleWindow">
+<em class="property">class </em><code class="descclassname">ArduinoGUI.ArduinoConsoleWindow.</code><code class="descname">Ui_ArduinoConsoleWindow</code><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsoleWindow.html#Ui_ArduinoConsoleWindow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsoleWindow.Ui_ArduinoConsoleWindow" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ArduinoGUI.ArduinoConsoleWindow.Ui_ArduinoConsoleWindow.retranslateUi">
+<code class="descname">retranslateUi</code><span class="sig-paren">(</span><em>ArduinoConsoleWindow</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsoleWindow.html#Ui_ArduinoConsoleWindow.retranslateUi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsoleWindow.Ui_ArduinoConsoleWindow.retranslateUi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ArduinoGUI.ArduinoConsoleWindow.Ui_ArduinoConsoleWindow.setupUi">
+<code class="descname">setupUi</code><span class="sig-paren">(</span><em>ArduinoConsoleWindow</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ArduinoGUI/ArduinoConsoleWindow.html#Ui_ArduinoConsoleWindow.setupUi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ArduinoGUI.ArduinoConsoleWindow.Ui_ArduinoConsoleWindow.setupUi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.3. ArduinoGUI Library</a><ul>
+<li><a class="reference internal" href="#module-ArduinoGUI.ArduinoConsole">4.3.1. ArduinoConsole.py</a></li>
+<li><a class="reference internal" href="#module-ArduinoGUI.ArduinoScope">4.3.2. ArduinoScope.py</a></li>
+<li><a class="reference internal" href="#arduinoconsolewindow-py">4.3.3. ArduinoConsoleWindow.py</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="OneInOneOutGUI.html"
+                        title="previous chapter">4.2. OneInOneOutGUI Example</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="logbook.html"
+                        title="next chapter">5. Log Book</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logbook.html" title="5. Log Book"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="OneInOneOutGUI.html" title="4.2. OneInOneOutGUI Example"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >4. Libraries and Sample Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -26,7 +26,7 @@ Collaborative Making Facility`_ in the lower level of Hunt Library.
 The main course website for Fall 2015 is at http://courses.ideate.cmu.edu/physcomp/f15/16-223.
 
 This course is an IDeATe Portal Course for entry into either of the IDeATe
-`Intelligent Environments`_ or `Physical Computing`_ programs.  CFA/DC/TPR
+`Intelligent Environments`_ or `Physical Computing`_ programs.  CFA/DC/TSB
 students can enroll under 16-223; CIT/MCS/SCS students can enroll in the
 `60-223`_ version of the course, with whom we are planning some crossover if
 feasible.
@@ -35,6 +35,35 @@ Please note that there will be lab usage and materials
 fees associated with this course, and that students will be required to agree to
 the `IDeATe@Hunt policies`_.
 
+Course Sections
+===============
+
+Introduction to Physical Computing is offered in two sections.
+
+  * The 16-223 section trains students with a focus in art, design, performance,
+    or business to approach physical computing as a study of *systems theory*
+    expressed through the development of practical prototypes.  The goal is an
+    intuitive high-level understanding of the analysis of energetic and
+    informational processes which span the physical, electronic, and algorithmic
+    domains.  The informal subtitle of the course is *"How to think like an
+    engineer"* since many of the lessons are embedded in the thought processes
+    of engineering: consideration of interfaces, boundaries, abstractions,
+    representation, and systematic approaches to diagnosis.  This is intended to
+    provide analytic intellectual tools to complement and extend their academic
+    experience in conceptualization and narrative, while also teaching a host of
+    practical techniques for successfully executing project ideas.
+
+  * The `60-223`_ section trains students with a focus in computer science and
+    engineering to approach physical computing from an art and design
+    perspective.  The goal is to helps students develop a culturally expansive,
+    inclusive and critical perspective to projects, products and services that
+    bring computation into the physical world.  Since the students have a
+    technical academic focus outside of IDEATE, this section offers
+    complementary experiences that characterize training in the arts, design,
+    architecture and drama: self-directed learning, critical making, performance
+    and storytelling, discussion and critique. (Quoted from the `60-223
+    Syllabus`_.)
+
 .. _learning-objectives:
 
 Learning Objectives
@@ -42,14 +71,17 @@ Learning Objectives
 
 Upon completion of this course the students will be able to:
 
+- participate in collaborative teams by negotiating common goals and coordinating roles
+- communicate with technical collaborators using precise language
+- approach complex physical computing problems with a systematic overview that integrates iterative research and design steps
+- evaluate systems in the context of an end user application or experience
 - work in a mixed physical-digital environment and laboratory
 - make effective use of standard hardware and software tools for physical computing
-- approach complex physical computing problems with a systematic overview that integrates iterative research and design steps
 - generate systems specifications from a perceived need
 - partition functionality between hardware and software
 - produce interface specifications for a system composed of numerous subsystems
 - use computer-aided development tools for design, fabrication and testing and debugging
-- evaluate the system in the context of an end user application or experience
+
 
 Teaching Philosophy
 -------------------

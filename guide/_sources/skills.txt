@@ -3,7 +3,7 @@
 .. _essential-skills-list:
 
 Essential Skills List
-*********************
+=====================
 
 The following lab skills are really *life skills* and students will need to
 learn as many as possible to be effective in a prototyping laboratory
@@ -15,17 +15,17 @@ probably many will be obsolete by the time you read this.
 
 #. reading a voltmeter: basics of current, voltage, resistance
 
-   + Reading a multimeter (includes current and voltage basics): http://www.youtube.com/watch?v=ZBbgiBU96mM
-   + Basics of Resistance:  http://www.youtube.com/watch?v=2l1KijNJQtk
-   + Resistance and circuit basics: http://www.allaboutcircuits.com/vol_1/chpt_1/5.html
-   + Ohm's law: http://www.allaboutcircuits.com/vol_1/chpt_2/1.html
+   + Reading a multimeter (includes current and voltage basics): https://www.youtube.com/watch?v=ZBbgiBU96mM
+   + Basics of Resistance:  https://www.youtube.com/watch?v=2l1KijNJQtk
+   + Resistance and circuit basics: http://www.allaboutcircuits.com/textbook/direct-current/chpt-1/resistance/
+   + Ohm's law: http://www.allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate/
    + http://www.williamson-labs.com/images/resistor-color-code-all.gif
    + http://www.cdxetextbook.com/images/resistorratings_01.jpg
 
 #. using a lab power supply
 
-   + http://www.youtube.com/watch?v=Sr89UbofNgw
-   + Using a bench power supply (overview of voltage and current): http://www.youtube.com/watch?v=T8Z2EFrbtpU
+   + https://www.youtube.com/watch?v=Sr89UbofNgw
+   + Using a bench power supply (overview of voltage and current): https://www.youtube.com/watch?v=T8Z2EFrbtpU
    + http://www.mpja.com/how-to-use-a-variable-benchtop-power-supply.asp
    + http://www.bkprecision.com/support/downloads/power-supply-guide.html
    + http://www.pyramidcaraudio.com/el/PS32LAB.jpg
@@ -33,7 +33,7 @@ probably many will be obsolete by the time you read this.
 
 #. reading datasheets and schematics
 
-   + http://www.youtube.com/watch?v=9cps7Q_IrX0
+   + https://www.youtube.com/watch?v=9cps7Q_IrX0
    + https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/overview
    + http://artsites.ucsc.edu/ems/music/tech_background/schematics/readschem.html
    + http://images.tutorvista.com/cms/images/83/electric-symbol-circuit.PNG
@@ -52,7 +52,7 @@ probably many will be obsolete by the time you read this.
 
 #. using an oscilloscope: scales of time and voltage, frequency, repetition
 
-   + http://www.youtube.com/watch?v=rC8HBcsNm2g
+   + https://www.youtube.com/watch?v=rC8HBcsNm2g
    + http://www.doctronics.co.uk/scope.htm
    + http://www.facstaff.bucknell.edu/mastascu/elabs/scope/scope1.html
    + http://www.doctronics.co.uk/images/osc1.gif
@@ -60,7 +60,7 @@ probably many will be obsolete by the time you read this.
 
 #. hammering a nail
 
-   + http://www.youtube.com/watch?v=GDE8R51FqJw
+   + https://www.youtube.com/watch?v=GDE8R51FqJw
    + http://www.wikihow.com/Hammer-a-Nail
    + http://www.wikihow.com/Drive-a-Nail-Without-Splitting-the-Wood
    + http://www.oldschool.com.sg/modpub/1628982395481ebf2063c22
@@ -81,14 +81,14 @@ probably many will be obsolete by the time you read this.
 
 #. electrical safety, chemical safety, eye safety, sharps safety
 
-   * Electrical Safety: http://www.youtube.com/watch?v=WNot2owIv8c
+   * Electrical Safety: https://www.youtube.com/watch?v=WNot2owIv8c
    * Chemical Safety:
 
-     - http://www.youtube.com/watch?v=3ELbwzqyuhs
-     - http://www.youtube.com/watch?v=8f1J7LReU14
-     - http://www.youtube.com/watch?v=0Jy4XlxxC48
+     - https://www.youtube.com/watch?v=3ELbwzqyuhs
+     - https://www.youtube.com/watch?v=8f1J7LReU14
+     - https://www.youtube.com/watch?v=0Jy4XlxxC48
 
-   * Semi-graphic eye safety video:   http://www.youtube.com/watch?v=0DYgLlWzYqk
+   * Semi-graphic eye safety video:   https://www.youtube.com/watch?v=0DYgLlWzYqk
    * http://chemlabs.uoregon.edu/Safety/GeneralInstructions.html
    * http://www.nsc.org/news_resources/Resources/Pages/ElectricalSafety.aspx#.U4Ys-vldV1E
    * http://www.safetysupplywarehouse.com/v/vspfiles/photos/WFS17-2.jpg
@@ -96,8 +96,8 @@ probably many will be obsolete by the time you read this.
 
 #. joining wires: soldering, splicing, terminals, connectors, wire gauges
 
-   + Soldering Video: http://www.youtube.com/watch?v=Q9G9gaokqvM
-   + Splicing Video: http://www.youtube.com/watch?v=pZ809uTlENE
+   + Soldering Video: https://www.youtube.com/watch?v=Q9G9gaokqvM
+   + Splicing Video: https://www.youtube.com/watch?v=pZ809uTlENE
    + Installing Terminals: http://www.cdxetextbook.com/electrical/princ/wiresConn/crimping.html
    + Wire Gauge Size Chart:   http://www.tedpella.com/company_html/wire-gauge-vs-dia.htm
    + Wire Terminal Chart: http://www.homedepot.com/hdus/en_US//DTCCOM/HomePage/How_To/Buying_Guides/Electrical/HT_BG_EL_Wire-Connectors/Body/Images/HT_BG_EL_WCS_Body_Img-wire-connectors-chart.jpg
@@ -105,14 +105,14 @@ probably many will be obsolete by the time you read this.
 
 #. building circuits on a solderless breadboard
 
-   + Intro to breadboards: http://www.youtube.com/watch?v=q_Q5s9AhCR0
+   + Intro to breadboards: https://www.youtube.com/watch?v=q_Q5s9AhCR0
    + breadboard wiring article:  http://wiring.org.co/learning/tutorials/breadboard/
    + Other wiring website: https://courses.engr.illinois.edu/ece343/Breadboard.htm
    + Solderless breadboard layout chart: http://yourduino.com/Photos/BreadBoard-1.jpg
 
 #. soldering through-hole parts on circuit boards
 
-   + http://www.youtube.com/watch?v=x0YxEilyQVY
+   + https://www.youtube.com/watch?v=x0YxEilyQVY
    + http://www.instructables.com/id/How-to-solder/step4/Soldering-components-onto-a-circuit-board/
    + http://www.personal.psu.edu/djn5065/throughhole.html
    + http://www.circuitrework.com/guides/7-2-1.shtml
@@ -121,7 +121,7 @@ probably many will be obsolete by the time you read this.
 
 #. circuit board modification: trace cutting, wire patching
 
-   + http://www.youtube.com/watch?v=ozH2F3AX8BY
+   + https://www.youtube.com/watch?v=ozH2F3AX8BY
    + http://www.instructables.com/id/Solder-on-PCB-traces/
    + http://cdn1.bigcommerce.com/server5600/a5200/products/2903/images/3459/AFTER_1__27468.1366409660.1280.1280.jpg?c=2
 
@@ -143,14 +143,14 @@ probably many will be obsolete by the time you read this.
 
 #. plotting data in 2D: units, labels, curves
 
-   + http://www.youtube.com/watch?v=LZrgpPflEzM
+   + https://www.youtube.com/watch?v=LZrgpPflEzM
    + http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb
    + https://scipy-lectures.github.io/intro/matplotlib/matplotlib.html
    + http://archtk.github.io/media/flow.png
 
 #. using wire ties
 
-   + http://www.youtube.com/watch?v=sxEi2nA4_p0
+   + https://www.youtube.com/watch?v=sxEi2nA4_p0
    + http://www.thomasnet.com/articles/materials-handling/cable-tie-design-use
    + http://www.wikihow.com/Undo-a-Cable-Tie/-Zip-Tie
    + http://www.goodbuyguys.com/catalog/images/WIRE_TIES_1.jpg
@@ -158,7 +158,7 @@ probably many will be obsolete by the time you read this.
 
 #. soldering surface mount parts on circuit boards
 
-   + http://www.youtube.com/watch?v=3NN7UGWYmBY
+   + https://www.youtube.com/watch?v=3NN7UGWYmBY
    + http://www.instructables.com/id/Soldering-and-Desoldering-Surface-Mount-Components/
    + http://daycounter.com/Articles/Solder-Surface-Mount-Parts.phtml
    + http://makezineblog.files.wordpress.com/2006/09/img413_1088.jpg?w=500&h=400
@@ -176,16 +176,16 @@ probably many will be obsolete by the time you read this.
 #. reading a state transition diagram
 
    + http://www.cs.unc.edu/~stotts/145/CRC/state.html
-   + http://en.wikipedia.org/wiki/State_diagram
+   + https://en.wikipedia.org/wiki/State_diagram
    + http://www.teach-ict.com/as_a2_ict_new/ocr/A2_G063/331_systems_cycle/analysis_tools/miniweb/images/std_account.gif
    + http://www.academic.marist.edu/~jzbv/EventDrivenSoftware/StateTransitionDiagram_files/image015.jpg
 
 #. debugging programs: print statements, reasoning, test cases, assertions
 
-   + http://www.youtube.com/watch?v=bZZTeKPRSLQ
-   + http://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/
+   + https://www.youtube.com/watch?v=bZZTeKPRSLQ
+   + https://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/
    + https://wiki.python.org/moin/UsingAssertionsEffectively
-   + http://msdn.microsoft.com/en-us/library/aa293531(v=vs.60).aspx
+   + https://msdn.microsoft.com/en-us/library/aa293531(v=vs.60).aspx
 
 #. debugging programs using only digital I/O (i.e. without text output)
 
@@ -194,21 +194,21 @@ probably many will be obsolete by the time you read this.
 
 #. identifying fasteners: wood screws, machine screws, nuts, thread pitches, heads
 
-   + http://www.youtube.com/watch?v=R3w2XWOwYS8
-   + http://www.boltdepot.com/fastener-information/type-chart.aspx
-   + http://www.boltdepot.com/fastener-information/identifying-fasteners.aspx
+   + https://www.youtube.com/watch?v=R3w2XWOwYS8
+   + https://www.boltdepot.com/fastener-information/type-chart.aspx
+   + https://www.boltdepot.com/fastener-information/identifying-fasteners.aspx
    + http://www.oocities.org/dtmcbride/home_garden/images/bolts-type.gif
 
 #. drilling: handheld, drill press, plastic, wood, thin metal, circuit boards
 
-   + http://www.youtube.com/watch?v=grnoi528kCY
+   + https://www.youtube.com/watch?v=grnoi528kCY
    + http://web.mit.edu/course/other/machineshop/Drilling/materials.html
    + http://www.wikihow.com/Drill-Metal
    + http://www.bobvila.com/articles/2123-operating-a-drill-press/#.U5IG3fldXIU
 
 #. using cyanoacrylate glues
 
-   + http://www.youtube.com/watch?v=UA7iTuelB3Q
+   + https://www.youtube.com/watch?v=UA7iTuelB3Q
    + http://www.woodworkersjournal.com/woodworking_blog/index.php/cyanoacrylate-everything-you-need-to-know/?patch_your_sistem?
    + http://www.evidentcrimescene.com/cata/glue/glue16oz.jpg
    + http://i01.i.aliimg.com/wsphoto/v3/586792999_1/3-pcs-EVO-BOND-BRAND-Genuine-Cyanoacrylate-Adhesive-font-b-Strong-b-font-Bond-Fast-502.jpg
@@ -229,7 +229,7 @@ probably many will be obsolete by the time you read this.
 
 #. measuring dimensions accurately: rulers, calipers, micrometers
 
-   + http://www.youtube.com/watch?v=O8vMFFYNIfo
+   + https://www.youtube.com/watch?v=O8vMFFYNIfo
    + http://www.wikihow.com/Read-a-Ruler
    + http://www.instructables.com/id/How-to-read-a-vernier-caliper/?ALLSTEPS
    + http://www.linnbenton.edu/auto/day/mike/read.html
@@ -241,7 +241,7 @@ probably many will be obsolete by the time you read this.
 
 #. sketching physical parts in multiple views
 
-   + http://www.youtube.com/watch?v=aqKdUXtJTHg
+   + https://www.youtube.com/watch?v=aqKdUXtJTHg
    + http://www.answers.com/topic/engineering-drawing
    + http://facstaff.cbu.edu/~gmcginni/classes/CE%20111%20Engineering%20Design%20Graphics/PowerPoint%20Presentations/Multiview%20Drawing.pdf
    + http://www.me.umn.edu/courses/me2011/handouts/drawing/blanco-tutorial.html
@@ -257,7 +257,7 @@ probably many will be obsolete by the time you read this.
 
    + http://www.rhino3d.com/tutorials
    + http://www.solidworks.com/sw/resources/solidworks-tutorials.htm
-   + http://www.sketchup.com/learn/videos
+   + https://www.sketchup.com/learn/videos/58
 
 #. using a 3D printer
 
@@ -271,12 +271,12 @@ probably many will be obsolete by the time you read this.
 
 #. building basic joints: freedoms, friction, constraint
 
-   + http://en.wikipedia.org/wiki/Woodworking_joints
+   + https://en.wikipedia.org/wiki/Woodworking_joints
    + http://www.shopsmith.com/academy/mortistenon/images/F8_5LG.gif
 
 #. documenting work: notes, sketches, photographs, video
 
-   + http://www.youtube.com/watch?v=6G6FHgWLlkI
+   + https://www.youtube.com/watch?v=6G6FHgWLlkI
    + http://aib-pro-dev-seminar.blogspot.com/p/documenting-artwork.html
    + http://www.dynamicmediainstitute.org/projects/documentation-live-performance-and-variable-media-artworks
 
@@ -284,30 +284,30 @@ probably many will be obsolete by the time you read this.
 
    + http://lifehacker.com/5915687/how-to-give-criticism-without-sounding-like-a-jerk
    + http://www.wikihow.com/Criticize-Constructively
-   + http://en.wikipedia.org/wiki/Constructive_criticism
+   + https://en.wikipedia.org/wiki/Constructive_criticism
 
 #. iterating an idea
 
-   + http://teamtreehouse.com/library/mobile-game-design/introduction-to-game-design/sharing-ideas-and-iterating
+   + https://teamtreehouse.com/library/mobile-game-design/introduction-to-game-design/sharing-ideas-and-iterating
    + http://www.slideshare.net/GoAtlassian/starter-2-redfin
    + http://99u.com/articles/6450/7-tips-for-rapid-iteration-aka-the-quirky-approach
 
 #. teaching a skill
 
    + http://www.learningforlife.org/exploring-resources/99-720/y13.pdf
-   + specifically psychomotor skills: http://wildernessmedicine.wikispaces.com/teaching+psychomotor+skills
-   + http://wildernessmedicine.wikispaces.com/file/view/Snap_2011.09.03_16h20m34s_009.png/250494886/800x611/Snap_2011.09.03_16h20m34s_009.png
+   + specifically psychomotor skills: https://wildernessmedicine.wikispaces.com/teaching+psychomotor+skills
+   + https://wildernessmedicine.wikispaces.com/file/view/Snap_2011.09.03_16h20m34s_009.png/250494886/800x611/Snap_2011.09.03_16h20m34s_009.png
 
 #. using software version control
 
    + http://www.lynda.com/ALMTFS-tutorials/Overview-software-version-control/106788/115974-4.html
    + http://oss-watch.ac.uk/resources/versioncontrol
-   + http://git-scm.com/book/en/Getting-Started-About-Version-Control
+   + http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
 
 #. using git, using apt-get, using github
 
    + "What is Git? (8:14) https://www.youtube.com/watch?v=uhtzxPU7Bz0
-   + using git: http://git-scm.com/book/en/Getting-Started-Installing-Git
+   + using git: http://git-scm.com/book/en/v2/Getting-Started-Installing-Git
    + using apt-get: https://help.ubuntu.com/community/AptGet/Howto
    + using github: http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1#awesm=~oGfwcqmB8JNeOv and http://lifehacker.com/5744113/learn-to-code-the-full-beginners-guide
 

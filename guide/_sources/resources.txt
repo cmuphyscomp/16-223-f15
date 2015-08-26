@@ -8,10 +8,13 @@ Resources
    :maxdepth: 2
    :numbered:
 
+   errata
    github
+   cluster
    related_work
    ideas
    schematics
    skills
+   tips_and_tricks
    report_template
    peer_evaluation

@@ -1,0 +1,39 @@
+.. include:: links.rst
+
+.. py:module:: OneInOneOutGUI
+
+.. _OneInOneOutGUI:
+
+OneInOneOutGUI Example
+======================
+
+This module provides a graphical interface to an Arduino running
+the :ref:`OneInOneOutASCII-doxygen`.  It is built on top of the :py:mod:`ArduinoGUI`
+module.
+
+.. contents::
+
+Screenshot
+----------
+
+.. image:: /images/OneInOneOutGUI-screenshot.png
+   :alt: Screenshot of the OneInOneOutGUI Python application.
+
+
+OneInOneOutGUI.py
+-----------------
+
+.. automodule:: OneInOneOutGUI.OneInOneOutGUI
+   :members:
+   :undoc-members:
+
+
+run_gui.py
+----------
+
+This script launches the GUI.
+
+.. literalinclude:: ../python/OneInOneOutGUI/run_gui.py
+   :language: python
+   :linenos:
+

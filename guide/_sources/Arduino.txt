@@ -1,3 +1,7 @@
+.. include:: links.rst
+
+.. _Arduino-guide:
+
 Physical Computation with the Arduino
 =====================================
 
@@ -7,7 +11,7 @@ physical world of electrical signals to the logical world of programs,
 numbers, and symbols.
 
 For the exercises and assignments, we will be using the
-`Arduino <http://arduino.cc/>`__, a popular microcontroller for
+`Arduino <https://www.arduino.cc/>`__, a popular microcontroller for
 physical computing. The following list is an informal summary of basic
 concepts related to computation with physical signals and the Arduino.
 
@@ -69,19 +73,19 @@ to these devices.
 Reference Links
 ~~~~~~~~~~~~~~~
 
-#. `Arduino: IDE <http://arduino.cc/en/Main/Software>`__
-#. `Arduino: Getting Started <http://arduino.cc/en/Guide/HomePage>`__
-#. `Arduino: Reference <http://arduino.cc/en/Reference/HomePage>`__
+#. `Arduino: IDE <https://www.arduino.cc/en/Main/Software>`__
+#. `Arduino: Getting Started <https://www.arduino.cc/en/Guide/HomePage>`__
+#. `Arduino: Reference <https://www.arduino.cc/en/Reference/HomePage>`__
 #. `Arduino: Uno circuit
-   diagram <http://arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf>`__
+   diagram <https://www.arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf>`__
 #. `Arduino Tutorial: Examples (guide to
-   tutorials) <http://arduino.cc/en/Tutorial/Sketch>`__
+   tutorials) <https://www.arduino.cc/en/Tutorial/Sketch>`__
 #. `Arduino Tutorial: First Sketch (programming
-   introduction) <http://arduino.cc/en/Tutorial/Sketch>`__
+   introduction) <https://www.arduino.cc/en/Tutorial/Sketch>`__
 #. `Wikipedia: Stepper
-   motor <http://en.wikipedia.org/wiki/Stepper_motor>`__
-#. `Wikipedia: Nyquist-Shannon sampling
-   theorem <http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem>`__
-#. `Wikipedia: Event loop <http://en.wikipedia.org/wiki/Event_loop>`__
-#. `Wikipedia: PID controller <http://en.wikipedia.org/wiki/PID_controller>`__
+   motor <https://en.wikipedia.org/wiki/Stepper_motor>`__
+#. `Wikipedia: Nyquist-Shannon sampling theorem
+   <https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem>`__
+#. `Wikipedia: Event loop <https://en.wikipedia.org/wiki/Event_loop>`__
+#. `Wikipedia: PID controller <https://en.wikipedia.org/wiki/PID_controller>`__
 

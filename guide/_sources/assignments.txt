@@ -3,7 +3,7 @@
 
 	     
 Assignments
-***********
+===========
 
 For all assignments, please consult the :ref:`calendar` for precise due dates.
 Please also become aware of the stringent requirements of the
@@ -12,16 +12,39 @@ Please also become aware of the stringent requirements of the
 .. _skills-survey:
 
 Skills Survey
-=============
+-------------
 
 The first assignment is to complete a survey covering a wide range of skills and
 experiences.  Please complete the following Google form: `Skill Survey Form`_
 
 The results are also being collected for `60-223`_ for comparison.
 
+.. _xsead-profile:
+
+IDeATe Gallery Profile
+----------------------
+
+We strongly consider every student create an account on the `IDeATe project
+gallery`_ and fill out profile information.  It will help us to know you better
+and help you to discover your cohort via the `IDeATe profile index`_.
+
+I recommend that you consider using a pseudonymous handle for your account.  The
+system allows for either private or public postings; some students are more
+comfortable posting work publicly if it won't be forever linked to their real
+name.
+
+Here is what you will need to answer during the profile interview:
+
+#. username (real or pseudonymous)
+#. real name (for internal use)
+#. profile image (square is best)
+#. one-paragraph biography (200 chars amx)
+#. focus areas (IDeATe program area interests)
+#. skills with which you identify (brief phrases)
+
 
 Research Talk
-=============
+-------------
 
 Each student is required to give a five-minute research talk on a topic of their
 choosing.  The short length is actually a challenge, it requires careful
@@ -41,9 +64,10 @@ The topic may be chosen in one of several ways:
 Please see :ref:`related-work` for starting points for finding sources to
 research.
 
+.. FIXME need specific prompts
 
 Ideation Exercise 1
-===================
+-------------------
 
 The first ideation exercise is intended to generate and share an abundance of
 potential project ideas related to physical computing.
@@ -77,21 +101,21 @@ examples, see :ref:`related-work` for starting points.
 .. _lab-exercises:
 
 Lab Exercises and Lab Notebook
-==============================
+------------------------------
 
 The lab exercises are intended to be performed by pairs of students.  The
 exercises will be performed in the lab during class time, but also outside class
 as needed. Each student should keep their own lab notebook as detailed above.
 
-(still need to detail the notebook requirements)
+.. FIXME need to detail the notebook requirements
 
 Anyone who completes the basic exercises should consider undertaking more of the
 optional challenge activities listed at the end of most exercises.
 
 .. _unit-1-exercises:
 
-Unit 1: Energy, Information, Transduction
------------------------------------------
+Unit 1 Exercises: Energy, Information, Transduction
+---------------------------------------------------
 
 The first unit has many exercises intended familiarize you with the lab and
 basic electronic equipment and are essential for developing the vocabulary and
@@ -103,16 +127,19 @@ physical and measurement skill. Part of the exercise is absorbing a set
 of technical terms; the meaning will become apparent in time through
 immersion in practice.
 
-There are more exercises available for this section than time so individuals may
-choose exercises according to the experience and discretion.  If something is
-too elementary for your experience level, please choose something new for you.
-If an exercise requires a part which is not available, please move on to
-something feasible.
-
-
 The following is a suggested order which generally develops from simple to more
-complex, however the sequence is not strict.
+complex, however the sequence is not strict.  There are more exercises available
+for this section than time so individuals may choose exercises according to the
+experience and discretion.  If something is too elementary for your experience
+level, please choose something new for you.  If an exercise requires a part
+which is not available, please move on to something feasible.
+  
+Please be sure to read the :ref:`basic-circuits-guide` section for a review of
+terminology and concepts.  Also, please skim the :ref:`errata` section if you
+have trouble to identify mistakes in the text or general hints.
 
+.. FIXME need to define number of required exercises
+   
 Please explore and document N of the following electronics exercises:
 
    * `bench-battery-grid <../exercises/electronics/bench-battery-grid/index.html>`__
@@ -133,6 +160,11 @@ Please explore and document N of the following electronics exercises:
    * `multichannel-driver <../exercises/electronics/multichannel-driver/index.html>`__
    * `transistor-and-sensor-for-power <../exercises/electronics/transistor-and-sensor-for-power/index.html>`__
 
+.. FIXME need to define number of required exercises
+
+Please be sure to read the :ref:`Arduino-guide` section for a review of
+terminology and concepts.  Also, please skim the :ref:`errata` section if you
+have trouble to identify mistakes in the text or general hints.
 
 Please explore and document N of the following Arduino exercises:
 
@@ -146,9 +178,14 @@ Please explore and document N of the following Arduino exercises:
    * `stepper-motor-knob <../exercises/Arduino/stepper-motor-knob/index.html>`__
 
 
-Unit 2: Signals, Time, and Dynamics
------------------------------------
+Unit 2 Exercises: Signals, Time, and Dynamics
+---------------------------------------------
 
+.. FIXME need to define number of required exercises
+
+Please be sure to read the :ref:`computation-guide` section for a review of
+computational terminology and concepts.
+   
 Please explore and document N of the following exercises:
 
    * `event-loop-programming <../exercises/Arduino/event-loop-programming/index.html>`__
@@ -157,27 +194,34 @@ Please explore and document N of the following exercises:
    * `MPU6050-IMU-I2C <../exercises/Arduino/MPU6050-IMU-I2C/index.html>`__
    * `WS2801-LED-SPI <../exercises/Arduino/WS2801-LED-SPI/index.html>`__
 
-Unit 3: Algorithms and State
-----------------------------
+.. FIXME need more mechanical exercises
+
+Please be sure to read the :ref:`mechanism-guide` section for a review of
+mechanical terminology and concepts.
+
+     
+Unit 3 Exercises: Algorithms and State
+--------------------------------------
 
 Please explore and document N of the following exercises:
 
    * `input-matching <../exercises/Arduino/input-matching/index.html>`__
 
+.. FIXME need a Python exercise with OneInOneOut
 
-Projects and Project Reports
-============================
-
+Please be sure to see the :ref:`OneInOneOutASCII-doxygen` section for background
+on dividing a process between the Arduino and a laptop.
 
 .. _project-report-requirements:
 
-Project Report Deliverables
----------------------------
+Project Reports
+---------------
 
 All projects require an accompanying report document in PDF format.  An outline
 of specific prompt questions will be provided for each assignment, with a
 denotation of specific required and optional elements.  The following specifies
-the detailed requirements for all reports.
+the detailed formatting requirements for all reports.  The content itself should
+generally follow the :ref:`project-report-template`.
 
 #. All report documents must be submitted as PDF files.  Original document
    formats (.doc, Word, .tex, etc.) will be returned unread.

@@ -80,10 +80,14 @@ The repository can be updated to the current version using *pull*, which will
     git pull
 
 The :command:`cd` command makes the repository folder current, and the
-:command:`git pull` command performs the fetch and merge.  Note that if you have
-made incompatible changes, this may result in *conflicts*.  Please refer to the
-git manual to learn how to create your own *branches* and *resolve conflicts*.
+:command:`git pull` command performs the fetch and merge.
 
+Note that if you have made incompatible changes, this may result in *conflicts*.
+Please refer to the git manual to learn how to create your own *branches* and
+*resolve conflicts*.  **The most common conflict problems are caused by
+modifying the course source files in-place**.  If you are not planning to keep
+your own revisions in version control, the recommended practice is to duplicate
+provided files before modifying them to minimize your trouble later.
 	   
 
 Advanced Usage

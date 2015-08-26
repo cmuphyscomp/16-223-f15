@@ -2,12 +2,12 @@ Physical Computation with Pure Data
 ===================================
 
 This section is an introduction to physical computing using `dataflow
-programming <http://en.wikipedia.org/wiki/Dataflow_programming>`__. This
+programming <https://en.wikipedia.org/wiki/Dataflow_programming>`__. This
 style expresses computation as a graph in which data messages flow over
 connections between objects which act on the data. We will be using the
 open-source real-time `Pure Data (Pd) <http://puredata.info>`__ visual
 programming language, which stems from the same work as the commercial
-`Max/MSP <http://cycling74.com/>`__ system.
+`Max/MSP <https://cycling74.com/>`__ system.
 
 Dataflow languages lend themselves well to expressing parallelism,
 event-driven actions, interactive and incremental programming, and
@@ -56,9 +56,9 @@ within a panel.
 Reference Links
 ~~~~~~~~~~~~~~~
 
-#. `Wikipedia: Pure Data <http://en.wikipedia.org/wiki/Pure_Data>`__
+#. `Wikipedia: Pure Data <https://en.wikipedia.org/wiki/Pure_Data>`__
 #. `Wikipedia: Dataflow
-   Programming <http://en.wikipedia.org/wiki/Dataflow_programming>`__
+   Programming <https://en.wikipedia.org/wiki/Dataflow_programming>`__
 
 
    
@@ -67,15 +67,15 @@ Project Idea: Dream Machine
 
 
 A suggested PureData project is inspired by the `Dreamachine
-<http://en.wikipedia.org/wiki/Dreamachine>`__, "a \ `stroboscopic
-<http://en.wikipedia.org/wiki/Stroboscopic>`__ flicker device that produces
+<https://en.wikipedia.org/wiki/Dreamachine>`__, "a \ `stroboscopic
+<https://en.wikipedia.org/wiki/Stroboscopic>`__ flicker device that produces
 visual stimuli."  Artist `Brion Gysin
-<http://en.wikipedia.org/wiki/Brion_Gysin>`__ and `William S.  Burroughs
-<http://en.wikipedia.org/wiki/William_S._Burroughs>`__'s "systems adviser" `Ian
+<https://en.wikipedia.org/wiki/Brion_Gysin>`__ and `William S.  Burroughs
+<https://en.wikipedia.org/wiki/William_S._Burroughs>`__'s "systems adviser" `Ian
 Sommerville
-<http://en.wikipedia.org/wiki/Ian_Sommerville_(technician)>`__ created the
+<https://en.wikipedia.org/wiki/Ian_Sommerville_(technician)>`__ created the
 dreamachine after reading `William Grey Walter
-<http://en.wikipedia.org/wiki/William_Grey_Walter>`__'s book, *The Living
+<https://en.wikipedia.org/wiki/William_Grey_Walter>`__'s book, *The Living
 Brain*.
 
 The goal is to make an enchanted object that uses sound, light and

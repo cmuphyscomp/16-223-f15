@@ -20,10 +20,12 @@ Agenda
    * Fire safety for the laser cutter.
    * Physical Computing Lab use and abuse.
    * Course fees and costs.
+   * `IDeATE@Hunt User Agreement`_
 
 #. Assignments
    
    * Skill survey.
+   * Gallery profile.
    * Initial interviews.
      
 #. Exercises

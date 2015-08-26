@@ -1,3 +1,7 @@
+.. include:: links.rst
+
+.. _mechanism-guide:
+
 Mechanical Behavior
 ===================
 
@@ -77,13 +81,13 @@ Reference Links
 ~~~~~~~~~~~~~~~
 
 #. `Wikipedia: Simple
-   Machines <http://en.wikipedia.org/wiki/Simple_machine>`__
+   Machines <https://en.wikipedia.org/wiki/Simple_machine>`__
 #. `Wikipedia: Kinematic
-   Pairs <http://en.wikipedia.org/wiki/Kinematic_pair>`__
+   Pairs <https://en.wikipedia.org/wiki/Kinematic_pair>`__
 #. `Wikipedia: Involute
-   Gear <http://en.wikipedia.org/wiki/Involute_gear>`__
+   Gear <https://en.wikipedia.org/wiki/Involute_gear>`__
 #. `Wikipedia:
-   Bearing <http://en.wikipedia.org/wiki/Bearing_%28mechanical%29>`__
+   Bearing <https://en.wikipedia.org/wiki/Bearing_%28mechanical%29>`__
 #. `Google Books: 507 Mechanical
    Movements <http://books.google.com/books?id=vOhIAAAAMAAJ&dq=mechanical%20movements&pg=PR1#v=onepage&q&f=false>`__
 #. `Google Books: The Engineer's Sketch-book of Mechanical Movements,
@@ -100,7 +104,7 @@ Resource Links
 #. `Gear template
    generator <http://woodgears.ca/gear_cutting/template.html>`__
 #. `Gear Profile Generator <http://www.thingiverse.com/thing:7881>`__
-#. `BoxMaker <http://boxmaker.rahulbotics.com/>`__
+#. `BoxMaker <http://boxmaker.connectionlab.org/>`__
 #. `thingiverse <http://www.thingiverse.com/>`__
 #. `sketchfab <https://sketchfab.com/>`__
 #. `3D Warehouse <https://3dwarehouse.sketchup.com/>`__

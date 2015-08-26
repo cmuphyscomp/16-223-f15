@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1. Errata &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="2. Resources" href="resources.html" />
+    <link rel="next" title="2.2. Course Repository on Github" href="github.html" />
+    <link rel="prev" title="2. Resources" href="resources.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="github.html" title="2.2. Course Repository on Github"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="2. Resources"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" accesskey="U">2. Resources</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="errata">
+<span id="id2"></span><h1>2.1. Errata<a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h1>
+<p>The term <em>errata</em> in the electronics industry refers not only to printing errors
+in documentation, but also errors in the design or manufacture of parts which
+lead to deviations from the specification.</p>
+<p>This page documents several kinds of &#8220;errata&#8221;: errors in the exercises which
+have not yet been corrected in the text, specific problems we have
+discovered with lab equipment, and common mistakes we have seen students make.</p>
+<p>If you discover a mistake in an exercise, please file a bug report using the
+github <a class="reference external" href="https://github.com/cmuphyscomp/physcomp-f15/issues">repository issue tracker</a>.</p>
+<p>General information on techniques can also be found under <a class="reference internal" href="tips_and_tricks.html#tips-and-tricks"><span>Tips and Tricks</span></a>
+and <a class="reference internal" href="skills.html#essential-skills-list"><span>Essential Skills List</span></a>.</p>
+<div class="section" id="common-mistakes">
+<h2>2.1.1. Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The power supplies have current limit settings which govern the maximum
+current it will output from each channel. If the draw is too high (e.g. load
+resistance too low), it will drop the voltage to meet this limit. Some power
+supplies had this knob set at zero and were properly refusing to output any
+current.</li>
+<li>The power supplies have series, parallel, and independent modes: we will
+almost always use independent mode. The other two modes gang the two halves
+together: series can offer higher voltages, parallel can offer high
+currents. If in doubt, check the manual.</li>
+<li>The relay schematic is a logical illustration, unlike the pinout illustration
+which shows the physical connection layout; the two only correspond via the
+pin naming. This is common in electronics diagrams since schematics are
+intended to convey the logic of an electronics design.</li>
+</ol>
+</div>
+<div class="section" id="errors-in-exercises">
+<h2>2.1.2. Errors in Exercises<a class="headerlink" href="#errors-in-exercises" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The Pololu A4988 module is a newer, compatible replacement for the A4983
+module used in the stepper motor exercise.</li>
+<li>The digital input using a switch needs a pullup resistor to function
+properly, otherwise the input pin is switched between an ambiguous ‘floating’
+state and ground.</li>
+<li>The thermistors we have in stock are Vishay parts from SparkFun, who hosts a
+<a class="reference external" href="https://www.sparkfun.com/products/250">data sheet</a>.</li>
+<li>The LED PWM exercise should be rewritten to use Pin 3; Pin 2 won’t generate a
+proper PWM signal, our mistake.</li>
+</ol>
+</div>
+<div class="section" id="lab-electronics">
+<h2>2.1.3. Lab Electronics<a class="headerlink" href="#lab-electronics" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Apparently our RGB LEDs are common-anode (determined empirically). The
+longest lead is the common.  When in doubt, test with the DMM diode function.
+(The anode is the positive terminal, the cathode is the negative terminal.)</li>
+<li>Some of the modular illuminance sensors for the transducers exercise are
+brand-new and will need the three-pin connector soldered on.</li>
+<li>The A4988 is rated for an 8-35V motor supply voltage, but it can be used with
+a low-voltage stepper motor if the current limit is set correctly.</li>
+<li>The DRV8834 stepper motor driver is rated for a 2.5–10.8V motor supply
+voltage and should be compatible with the A4988 pinout.</li>
+<li>The pins should be soldered on the back side of the A4988 such that the
+driver chip is visible. This does mean that the pad silkscreen text is on the
+bottom and out of sight, but allows the chip to dissipate heat. If your
+module is <em>not</em> soldered in this orientation, please be especially careful
+when wiring the circuit.</li>
+<li>If you are unclear on the wiring of a stepper motor, use a DMM to measure the
+resistance between the wires. A bipolar stepper will have four wires, two per
+coil, and the low-resistance of the coil should be unambiguously measurable.</li>
+</ol>
+</div>
+<div class="section" id="lab-equipment">
+<h2>2.1.4. Lab Equipment<a class="headerlink" href="#lab-equipment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Not all of the DMMs had the probes with the long tips; the long tips make the
+AC wall measurement much easier.</li>
+<li>The DMMs have a diode measurement mode for measuring the forward voltage
+drop, but it doesn’t work for the purple LEDs, most likely because the
+forward voltage drop is too high because of the particular chemistry, which
+is also related to the color. The lab meters don’t even work for the red
+LEDs, although they will measure the 0.6 volt drop of a 1N914 diode. I used a
+better meter (a Fluke 179) to test one of our red LEDs and it showed a
+voltage drop of 1.79V. However, even the better meter was only able to light
+the purple LED but not register its voltage drop.</li>
+</ol>
+</div>
+<div class="section" id="cluster-software">
+<h2>2.1.5. Cluster Software<a class="headerlink" href="#cluster-software" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pure-data">
+<h2>2.1.6. Pure Data<a class="headerlink" href="#pure-data" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Pd on a Mac is defaulting to Airplay output; be sure to set the default audio
+device to ‘built-in audio’ using the Media menu.</li>
+<li>For Mac OS X we recommend the 32-bit version of Pd, not the 64-bit version.</li>
+<li>Windows serial ports have a name beginning with COM, e.g. COM12.</li>
+<li>The Arduino Pd exercise depend on libraries not included with Pd vanilla. The
+simplest solution is to use Pd-extended.</li>
+<li>Serial ports (e.g. your Arduino) can only be opened by one program at a
+time. You may need to close the Arduino IDE for Pd to connect properly.</li>
+</ol>
+</div>
+<div class="section" id="closed-issues">
+<h2>2.1.7. Closed Issues<a class="headerlink" href="#closed-issues" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The Arduino IDE versions 1.0.5 is missing the LED_BUILTIN definition for the
+Uno; the OneInOneOutASCII sketch has been updated.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1. Errata</a><ul>
+<li><a class="reference internal" href="#common-mistakes">2.1.1. Common Mistakes</a></li>
+<li><a class="reference internal" href="#errors-in-exercises">2.1.2. Errors in Exercises</a></li>
+<li><a class="reference internal" href="#lab-electronics">2.1.3. Lab Electronics</a></li>
+<li><a class="reference internal" href="#lab-equipment">2.1.4. Lab Equipment</a></li>
+<li><a class="reference internal" href="#cluster-software">2.1.5. Cluster Software</a></li>
+<li><a class="reference internal" href="#pure-data">2.1.6. Pure Data</a></li>
+<li><a class="reference internal" href="#closed-issues">2.1.7. Closed Issues</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="resources.html"
+                        title="previous chapter">2. Resources</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="github.html"
+                        title="next chapter">2.2. Course Repository on Github</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="github.html" title="2.2. Course Repository on Github"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="2. Resources"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" >2. Resources</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

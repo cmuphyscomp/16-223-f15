@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-08-24',
+        VERSION:     '2015-08-26',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
     <link rel="up" title="4. Libraries and Sample Code" href="code.html" />
-    <link rel="next" title="5. Log Book" href="logbook.html" />
+    <link rel="next" title="4.2. OneInOneOutGUI Example" href="OneInOneOutGUI.html" />
     <link rel="prev" title="4. Libraries and Sample Code" href="code.html" /> 
   </head>
   <body role="document">
@@ -36,7 +36,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="logbook.html" title="5. Log Book"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="OneInOneOutGUI.html" title="4.2. OneInOneOutGUI Example"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="code.html" title="4. Libraries and Sample Code"
@@ -167,6 +170,765 @@ extend, and the binary protocol is harder to debug.</p>
 <div class="section" id="full-source-code">
 <h2><a class="toc-backref" href="#id5">4.1.3. Full Source Code</a><a class="headerlink" href="#full-source-code" title="Permalink to this headline">¶</a></h2>
 <p>The full code is all in one file <a class="reference external" href="../support/Arduino/OneInOneOutASCII/OneInOneOutASCII.ino">OneInOneOutASCII.ino</a>.</p>
+<div class="highlight-cpp"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">/// \file OneInOneOutASCII.ino</span>
+<span class="c1">/// \brief Arduino program to act as an simplified hardware I/O server using a simple message protocol.</span>
+
+<span class="c1">/// \copyright Copyright (c) 2014, Garth Zeglin.  All rights reserved. Licensed</span>
+<span class="c1">///            under the terms of the BSD 3-clause license as included in</span>
+<span class="c1">///            LICENSE.</span>
+
+<span class="c1">/// \details This example is intended as a starting point for adding low-latency</span>
+<span class="c1">///          hardware-level computing on an Arduino coupled to dynamic code</span>
+<span class="c1">///          (e.g. Pure Data or Python) on a laptop or Raspberry Pi.  The</span>
+<span class="c1">///          communications between the Arduino and the host uses a simple</span>
+<span class="c1">///          message protocol based on lines of ASCII text.</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/**** ASCII messaging scheme ************************************/</span>
+<span class="cm">/****************************************************************/</span>
+
+<span class="c1">// The message protocol is based on commands encoded as a sequence of string</span>
+<span class="c1">// tokens and integers in a line of text.  One line is one message.  All the</span>
+<span class="c1">// input message formats begin with a string naming a specific command or</span>
+<span class="c1">// destination followed by one or two argument integers.  The output formats are</span>
+<span class="c1">// similar but include more general debugging output with a variable number of</span>
+<span class="c1">// tokens.</span>
+
+<span class="c1">// The following message formats are recognized by this program.  Note that not</span>
+<span class="c1">// all pins or channels are supported, e.g., servo output is only supported on a</span>
+<span class="c1">// particular pin.</span>
+
+<span class="c1">// Command	Arguments		Meaning</span>
+<span class="c1">// led		&lt;value&gt;			controls the built-in LED, value is 0 or non-zero</span>
+<span class="c1">// poll         &lt;value&gt;                 set the input polling rate, value is milliseconds </span>
+<span class="c1">// pwm		&lt;pin&gt; &lt;value&gt;		PWM control on given pin</span>
+<span class="c1">// dig		&lt;pin&gt; &lt;value&gt;		digital output on given pin, value is 0 or non-zero</span>
+<span class="c1">// svo		&lt;pin&gt; &lt;value&gt;	 	hobby servo PWM control signal on given pin, value is angle in degrees</span>
+
+<span class="c1">// Additional messages can be added by inserting code in the user_message_#() functions below.</span>
+
+<span class="c1">// This program generates the following messages:</span>
+
+<span class="c1">// Command	Arguments		Meaning</span>
+<span class="c1">// dbg		&lt;value-or-token&gt;+	debugging message to print for user</span>
+<span class="c1">// clk		&lt;microseconds&gt;		Arduino clock time in microseconds</span>
+<span class="c1">// led		&lt;value&gt;			reply with current LED state</span>
+<span class="c1">// ana		&lt;channel&gt; &lt;value&gt;	analog input value on given channel, value is 0 to 1023</span>
+<span class="c1">// dig		&lt;pin&gt; &lt;value&gt;		digital input value on PIN8, value is 0 or 1</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/**** Library imports *******************************************/</span>
+<span class="cm">/****************************************************************/</span>
+
+<span class="c1">// Use the Servo library for generating control signals for hobby servomotors.</span>
+<span class="c1">// Hobby servos require a specific form of pulse-width modulated control signal,</span>
+<span class="c1">// usually with positive-going pulses between 1 and 2 milliseconds repeated at</span>
+<span class="c1">// 50 Hz.  Note that this is a significantly different signal than the PWM</span>
+<span class="c1">// usually required for powering a motor at variable torque.</span>
+<span class="cp">#include &lt;Servo.h&gt;</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/**** Global variables and constants ****************************/</span>
+<span class="cm">/****************************************************************/</span>
+
+<span class="c1">// The baud rate is the number of bits per second transmitted over the serial port.</span>
+<span class="cp">#define BAUD_RATE 115200</span>
+
+<span class="c1">// Interval in milliseconds between input samples.</span>
+<span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">hardware_polling_interval</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="c1">// 20 Hz samples to start</span>
+
+<span class="c1">// Create a hobby servo control signal generator.</span>
+<span class="k">static</span> <span class="n">Servo</span> <span class="n">servo_output</span><span class="p">;</span>
+<span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">servo_output_pin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="c1">// The maximum message line length.</span>
+<span class="cp">#define MAX_LINE_LENGTH 80</span>
+
+<span class="c1">// The maximum number of tokens in a single message.</span>
+<span class="cp">#define MAX_TOKENS 10</span>
+
+<span class="c1">// Some version of the Arduino IDE don&#39;t correctly define this symbol for an</span>
+<span class="c1">// Arduino Uno.</span>
+<span class="cp">#ifndef LED_BUILTIN</span>
+<span class="cp">#define LED_BUILTIN 13</span>
+<span class="cp">#endif</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/**** Utility functions *****************************************/</span>
+<span class="cm">/****************************************************************/</span>
+
+<span class="c1">/// Send a single debugging string to the console.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">send_debug_message</span><span class="p">(</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;dbg &quot;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span> <span class="n">str</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Send a single debugging integer to the console.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">send_debug_message</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;dbg &quot;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span> <span class="n">i</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Send a single-argument message back to the host.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">send_message</span><span class="p">(</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">command</span><span class="p">,</span> <span class="kt">long</span> <span class="n">value</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span> <span class="n">command</span> <span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span> <span class="s">&quot; &quot;</span> <span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span> <span class="n">value</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Send a two-argument message back to the host.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">send_message</span><span class="p">(</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">command</span><span class="p">,</span> <span class="kt">long</span> <span class="n">value1</span><span class="p">,</span> <span class="kt">long</span> <span class="n">value2</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span> <span class="n">command</span> <span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span> <span class="s">&quot; &quot;</span> <span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span> <span class="n">value1</span> <span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span> <span class="s">&quot; &quot;</span> <span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span> <span class="n">value2</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">// Wrapper on strcmp for clarity of code.  Returns true if strings are</span>
+<span class="c1">// identical.</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="nf">string_equal</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str1</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str2</span><span class="p">)</span> 
+<span class="p">{</span>
+  <span class="k">return</span> <span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/****************************************************************/</span>
+<span class="c1">// Application-specific message processing.  You can customize these functions</span>
+<span class="c1">// to add additional message types.</span>
+
+<span class="c1">/// Convenience function provided to help with extending the messaging protocol;</span>
+<span class="c1">/// this function receives zero-argument messages which just contain a token as</span>
+<span class="c1">/// a string, e.g. &quot;stop&quot;.  The protocol can also be extended by modifying</span>
+<span class="c1">/// parse_input_message().</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">user_message_0</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">command</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">string_equal</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">&quot;stop&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// do something to set the stop state here</span>
+
+    <span class="n">send_debug_message</span><span class="p">(</span><span class="s">&quot;now stopped&quot;</span><span class="p">);</span>
+
+  <span class="p">}</span> <span class="k">else</span>  <span class="k">if</span> <span class="p">(</span><span class="n">string_equal</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">&quot;start&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// do something to set the start state here</span>
+
+    <span class="n">send_debug_message</span><span class="p">(</span><span class="s">&quot;starting&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">/// Similar to user_message_0; process one-argument messages with a single</span>
+<span class="c1">/// value. E.g. &quot;speed 33&quot;.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">user_message_1</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">command</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">string_equal</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">&quot;speed&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// do something to set the stop state using &#39;value&#39;</span>
+
+  <span class="p">}</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">/// Similar to user_message_0; process two-argument messages. E.g. &quot;pantilt 0</span>
+<span class="c1">/// 33&quot;.</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">user_message_2</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">command</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value2</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">string_equal</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="s">&quot;pantilt&quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// do something using value1 and value2</span>
+  <span class="p">}</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Process an input message.  Unrecognized commands are silently ignored.</span>
+<span class="c1">///   \param argc   number of argument tokens</span>
+<span class="c1">///   \param argv   array of pointers to strings, one per token</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">parse_input_message</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+  <span class="c1">// Interpret the first token as a command symbol.</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">command</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+  <span class="cm">/* -- process zero-argument commands --------------------------- */</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// just pass it along</span>
+    <span class="n">user_message_0</span><span class="p">(</span> <span class="n">command</span> <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* -- process one-argument commands --------------------------- */</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+
+    <span class="c1">// Process the &#39;led&#39; command.</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">string_equal</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="s">&quot;led&quot;</span> <span class="p">))</span> <span class="p">{</span>
+<span class="cp">#ifdef LED_BUILTIN</span>
+      <span class="n">pinMode</span><span class="p">(</span> <span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">OUTPUT</span> <span class="p">);</span>
+      <span class="c1">// turn on the LED if that value is true, then echo it back as a handshake</span>
+      <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nl">HIGH</span> <span class="p">:</span> <span class="n">LOW</span><span class="p">);</span>
+<span class="cp">#endif</span>
+      <span class="n">send_message</span><span class="p">(</span> <span class="s">&quot;led&quot;</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">string_equal</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="s">&quot;poll&quot;</span> <span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>  <span class="n">hardware_polling_interval</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+      <span class="k">else</span> <span class="n">send_debug_message</span><span class="p">(</span><span class="s">&quot;invalid poll value&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// else just pass it along</span>
+    <span class="k">else</span> <span class="n">user_message_1</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
+  <span class="p">}</span> 
+
+  <span class="cm">/* -- process two-argument commands --------------------------- */</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">pin</span>   <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">);</span>
+
+
+    <span class="c1">// Process the &#39;pwm&#39; command to generate a variable duty-cycle PWM signal on</span>
+    <span class="c1">// any digital pin.  The value must be between 0 and 255.</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">string_equal</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="s">&quot;pwm&quot;</span> <span class="p">))</span> <span class="p">{</span>
+      <span class="n">analogWrite</span><span class="p">(</span> <span class="n">pin</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Process the &#39;dig&#39; command to set a pin to output mode and control its level.</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">string_equal</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="s">&quot;dig&quot;</span> <span class="p">))</span> <span class="p">{</span>
+      <span class="n">pinMode</span><span class="p">(</span> <span class="n">pin</span><span class="p">,</span> <span class="n">OUTPUT</span> <span class="p">);</span>
+      <span class="n">digitalWrite</span><span class="p">(</span> <span class="n">pin</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// Process the &#39;svo&#39; command to generate a hobby-servo PWM signal on a particular pin.</span>
+    <span class="c1">// The value must be an angle between 0 and 180.</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">string_equal</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="s">&quot;svo&quot;</span> <span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">pin</span> <span class="o">==</span> <span class="n">servo_output_pin</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">servo_output</span><span class="p">.</span><span class="n">write</span><span class="p">(</span> <span class="n">value</span> <span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+	<span class="n">send_debug_message</span><span class="p">(</span><span class="s">&quot;unsupported servo pin&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// else just pass it along</span>
+    <span class="k">else</span> <span class="n">user_message_2</span><span class="p">(</span> <span class="n">command</span><span class="p">,</span> <span class="n">pin</span><span class="p">,</span> <span class="n">value</span> <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Polling function to process messages arriving over the serial port.  Each</span>
+<span class="c1">/// iteration through this polling function processes at most one character.  It</span>
+<span class="c1">/// records the input message line into a buffer while simultaneously dividing it</span>
+<span class="c1">/// into &#39;tokens&#39; delimited by whitespace.  Each token is a string of</span>
+<span class="c1">/// non-whitespace characters, and might represent either a symbol or an integer.</span>
+<span class="c1">/// Once a message is complete, parse_input_message() is called.</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">serial_input_poll</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="kt">char</span> <span class="n">input_buffer</span><span class="p">[</span> <span class="n">MAX_LINE_LENGTH</span> <span class="p">];</span>   <span class="c1">// buffer for input characters</span>
+  <span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[</span><span class="n">MAX_TOKENS</span><span class="p">];</span>                 <span class="c1">// buffer for pointers to tokens</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">chars_in_buffer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// counter for characters in buffer</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">chars_in_token</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// counter for characters in current partially-received token (the &#39;open&#39; token)</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">argc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>             <span class="c1">// counter for tokens in argv</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>            <span class="c1">// flag for any error condition in the current message</span>
+
+  <span class="c1">// Check if at least one byte is available on the serial input.</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">input</span> <span class="o">=</span> <span class="n">Serial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+
+    <span class="c1">// If the input is a whitespace character, end any currently open token.</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">isspace</span><span class="p">(</span><span class="n">input</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">error</span> <span class="o">&amp;&amp;</span> <span class="n">chars_in_token</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">chars_in_buffer</span> <span class="o">==</span> <span class="n">MAX_LINE_LENGTH</span><span class="p">)</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">else</span> <span class="p">{</span>
+	  <span class="n">input_buffer</span><span class="p">[</span><span class="n">chars_in_buffer</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// end the current token</span>
+	  <span class="n">argc</span><span class="o">++</span><span class="p">;</span>                               <span class="c1">// increase the argument count</span>
+	  <span class="n">chars_in_token</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                   <span class="c1">// reset the token state</span>
+	<span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="c1">// If the whitespace input is an end-of-line character, then pass the message buffer along for interpretation.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">input</span> <span class="o">==</span> <span class="sc">&#39;\r&#39;</span> <span class="o">||</span> <span class="n">input</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="c1">// if the message included too many tokens or too many characters, report an error</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="n">send_debug_message</span><span class="p">(</span><span class="s">&quot;excessive input error&quot;</span><span class="p">);</span>
+
+	<span class="c1">// else process any complete message</span>
+	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">parse_input_message</span><span class="p">(</span> <span class="n">argc</span><span class="p">,</span> <span class="n">argv</span> <span class="p">);</span> 
+
+	<span class="c1">// reset the full input state</span>
+	<span class="n">error</span> <span class="o">=</span> <span class="n">chars_in_token</span> <span class="o">=</span> <span class="n">chars_in_buffer</span> <span class="o">=</span> <span class="n">argc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                     
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Else the input is a character to store in the buffer at the end of the current token.</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// if beginning a new token</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">chars_in_token</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+	<span class="c1">// if the token array is full, set an error state</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">==</span> <span class="n">MAX_TOKENS</span><span class="p">)</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+	<span class="c1">// otherwise save a pointer to the start of the token</span>
+	<span class="k">else</span> <span class="n">argv</span><span class="p">[</span> <span class="n">argc</span> <span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">input_buffer</span><span class="p">[</span><span class="n">chars_in_buffer</span><span class="p">];</span>
+      <span class="p">}</span>
+
+      <span class="c1">// the save the input and update the counters</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">chars_in_buffer</span> <span class="o">==</span> <span class="n">MAX_LINE_LENGTH</span><span class="p">)</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">else</span> <span class="p">{</span>
+	  <span class="n">input_buffer</span><span class="p">[</span><span class="n">chars_in_buffer</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">input</span><span class="p">;</span>
+	  <span class="n">chars_in_token</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Polling function to read and send specific input values at periodic</span>
+<span class="c1">/// intervals.</span>
+
+<span class="c1">// N.B. The timing calculation could be improved to reduce jitter.</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">hardware_input_poll</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">last_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">now</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">((</span><span class="n">now</span> <span class="o">-</span> <span class="n">last_time</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">hardware_polling_interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">last_time</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+    
+    <span class="c1">// send A0 analog state</span>
+    <span class="n">send_message</span><span class="p">(</span> <span class="s">&quot;ana&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">analogRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">);</span>
+
+    <span class="c1">// send PIN8 digital state</span>
+    <span class="n">send_message</span><span class="p">(</span> <span class="s">&quot;dig&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">digitalRead</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="p">);</span>
+
+    <span class="c1">// send a time reading</span>
+    <span class="kt">long</span> <span class="n">clock</span> <span class="o">=</span> <span class="n">micros</span><span class="p">();</span>
+    <span class="n">send_message</span><span class="p">(</span> <span class="s">&quot;clk&quot;</span><span class="p">,</span> <span class="n">clock</span> <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/**** Standard entry points for Arduino system ******************/</span>
+<span class="cm">/****************************************************************/</span>
+
+<span class="c1">/// Standard Arduino initialization function to configure the system.</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// initialize the Serial port</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span> <span class="n">BAUD_RATE</span> <span class="p">);</span>
+
+  <span class="c1">// send a message as a diagnostic</span>
+  <span class="n">send_debug_message</span><span class="p">(</span><span class="s">&quot;wakeup&quot;</span><span class="p">);</span>
+
+  <span class="c1">// set up the hobby servo control output</span>
+  <span class="n">servo_output</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span> <span class="n">servo_output_pin</span> <span class="p">);</span>
+
+  <span class="c1">// additional hardware configuration can go here</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="c1">/// Standard Arduino polling function to handle all I/O and periodic processing.</span>
+<span class="c1">/// This loop should never be allowed to stall or block so that all tasks can be</span>
+<span class="c1">/// constantly serviced.</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">serial_input_poll</span><span class="p">();</span>
+  <span class="n">hardware_input_poll</span><span class="p">();</span>
+
+  <span class="c1">// other polled tasks can go here</span>
+<span class="p">}</span>
+
+<span class="cm">/****************************************************************/</span>
+<span class="cm">/****************************************************************/</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -190,8 +952,8 @@ extend, and the binary protocol is harder to debug.</p>
   <p class="topless"><a href="code.html"
                         title="previous chapter">4. Libraries and Sample Code</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="logbook.html"
-                        title="next chapter">5. Log Book</a></p>
+  <p class="topless"><a href="OneInOneOutGUI.html"
+                        title="next chapter">4.2. OneInOneOutGUI Example</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -216,7 +978,10 @@ extend, and the binary protocol is harder to debug.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="logbook.html" title="5. Log Book"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="OneInOneOutGUI.html" title="4.2. OneInOneOutGUI Example"
              >next</a> |</li>
         <li class="right" >
           <a href="code.html" title="4. Libraries and Sample Code"
@@ -227,7 +992,7 @@ extend, and the binary protocol is harder to debug.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-08-24.
+      Last updated on 2015-08-26.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

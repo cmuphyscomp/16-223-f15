@@ -142,11 +142,11 @@ applied immediately.
 Project Gallery
 ---------------
 
-Projects of merit may be requested to provide a version of their project
-documentation for the `IDeATe public project gallery`_.  This will not be
-required or graded, but represents an opportunity to have your work publicly
-presented as part of the IDeATe portfolio and should need only minimal
-additional effort to prepare.
+Projects of merit may be requested to provide a public version of their project
+documentation for the `IDeATe project gallery`_.  This will not be required or
+graded, but represents an opportunity to have your work publicly presented as
+part of the IDeATe portfolio and should need only minimal additional effort to
+prepare.
 
 
 General Course Policies

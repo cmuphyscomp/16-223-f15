@@ -1,0 +1,130 @@
+.. include:: links.rst
+
+.. _errata:
+
+Errata
+======
+
+The term *errata* in the electronics industry refers not only to printing errors
+in documentation, but also errors in the design or manufacture of parts which
+lead to deviations from the specification.
+
+This page documents several kinds of "errata": errors in the exercises which
+have not yet been corrected in the text, specific problems we have
+discovered with lab equipment, and common mistakes we have seen students make.
+
+If you discover a mistake in an exercise, please file a bug report using the
+github `repository issue tracker`_.
+
+General information on techniques can also be found under :ref:`tips-and-tricks`
+and :ref:`essential-skills-list`.
+
+Common Mistakes
+---------------
+
+#. The power supplies have current limit settings which govern the maximum
+   current it will output from each channel. If the draw is too high (e.g. load
+   resistance too low), it will drop the voltage to meet this limit. Some power
+   supplies had this knob set at zero and were properly refusing to output any
+   current.
+
+#. The power supplies have series, parallel, and independent modes: we will
+   almost always use independent mode. The other two modes gang the two halves
+   together: series can offer higher voltages, parallel can offer high
+   currents. If in doubt, check the manual.
+   
+#. The relay schematic is a logical illustration, unlike the pinout illustration
+   which shows the physical connection layout; the two only correspond via the
+   pin naming. This is common in electronics diagrams since schematics are
+   intended to convey the logic of an electronics design.
+
+   
+
+Errors in Exercises
+-------------------
+
+#. The Pololu A4988 module is a newer, compatible replacement for the A4983
+   module used in the stepper motor exercise.
+
+#. The digital input using a switch needs a pullup resistor to function
+   properly, otherwise the input pin is switched between an ambiguous ‘floating’
+   state and ground.
+
+#. The thermistors we have in stock are Vishay parts from SparkFun, who hosts a
+   `data sheet <https://www.sparkfun.com/products/250>`__.
+
+#. The LED PWM exercise should be rewritten to use Pin 3; Pin 2 won’t generate a
+   proper PWM signal, our mistake.
+
+
+Lab Electronics
+---------------
+
+#. Apparently our RGB LEDs are common-anode (determined empirically). The
+   longest lead is the common.  When in doubt, test with the DMM diode function.
+   (The anode is the positive terminal, the cathode is the negative terminal.)
+
+#. Some of the modular illuminance sensors for the transducers exercise are
+   brand-new and will need the three-pin connector soldered on.
+
+#. The A4988 is rated for an 8-35V motor supply voltage, but it can be used with
+   a low-voltage stepper motor if the current limit is set correctly.
+
+#. The DRV8834 stepper motor driver is rated for a 2.5–10.8V motor supply
+   voltage and should be compatible with the A4988 pinout.
+
+#. The pins should be soldered on the back side of the A4988 such that the
+   driver chip is visible. This does mean that the pad silkscreen text is on the
+   bottom and out of sight, but allows the chip to dissipate heat. If your
+   module is *not* soldered in this orientation, please be especially careful
+   when wiring the circuit.
+
+#. If you are unclear on the wiring of a stepper motor, use a DMM to measure the
+   resistance between the wires. A bipolar stepper will have four wires, two per
+   coil, and the low-resistance of the coil should be unambiguously measurable.
+
+
+   
+Lab Equipment
+-------------
+
+#. Not all of the DMMs had the probes with the long tips; the long tips make the
+   AC wall measurement much easier.
+
+#. The DMMs have a diode measurement mode for measuring the forward voltage
+   drop, but it doesn’t work for the purple LEDs, most likely because the
+   forward voltage drop is too high because of the particular chemistry, which
+   is also related to the color. The lab meters don’t even work for the red
+   LEDs, although they will measure the 0.6 volt drop of a 1N914 diode. I used a
+   better meter (a Fluke 179) to test one of our red LEDs and it showed a
+   voltage drop of 1.79V. However, even the better meter was only able to light
+   the purple LED but not register its voltage drop.
+
+
+Cluster Software
+----------------
+
+
+
+Pure Data
+---------
+
+#. Pd on a Mac is defaulting to Airplay output; be sure to set the default audio
+   device to ‘built-in audio’ using the Media menu.
+
+#. For Mac OS X we recommend the 32-bit version of Pd, not the 64-bit version.
+
+#. Windows serial ports have a name beginning with COM, e.g. COM12.
+
+#. The Arduino Pd exercise depend on libraries not included with Pd vanilla. The
+   simplest solution is to use Pd-extended.
+
+#. Serial ports (e.g. your Arduino) can only be opened by one program at a
+   time. You may need to close the Arduino IDE for Pd to connect properly.
+
+
+Closed Issues
+-------------
+
+#. The Arduino IDE versions 1.0.5 is missing the LED_BUILTIN definition for the
+   Uno; the OneInOneOutASCII sketch has been updated.

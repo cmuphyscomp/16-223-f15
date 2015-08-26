@@ -1,53 +1,62 @@
+.. include:: links.rst
+
+.. _project-report-template:
+
 Project Report Template
 =======================
 
+.. FIXME this could still use more specific prompt questions
 
-Project Title
--------------
+This course puts a heavy emphasis on careful documentation of projects and
+meaningful reflection on outcomes and process.  The technical specifications for
+projects reports are in the :ref:`project-report-requirements` section.
+Following are the general prompts for expected content for the main report text
+in outline form.
 
-#. Author 1, Author 2
-#. Submission Date
-#. URL of project video (not to exceed one minute):
+#. Project Title
+   
+   #. Author 1, Author 2
+   #. Submission Date
+   #. URL of project video (not to exceed specified limit, generally one minute)
 
-Abstract
-++++++++
+#. Abstract
 
-Provide a brief paragraph summarizing the overall goals and results.
+   Provide a brief paragraph summarizing the overall goals and results.
 
+#. Objectives
+   
+   State your goals, and discuss what specific features are within scope for the project.
 
-Objectives
-++++++++++
+#. Implementation
 
-State your goals, and discuss what specific features are within scope for the project.
+   Discuss your design choices.
 
+#. Outcomes
 
-Implementation
-++++++++++++++
+   Discuss the successes and failures of your choices.
 
-Discuss your design choices.
+#. Contribution
 
+   Please provide a clear statement of each author's individual contribution to the outcomes.
 
-Outcomes
-++++++++
+#. Photo Documentation.
 
-Discuss the successes and failures of your choices.
+   Provide captioned photos which support your discussion.  Please consider the
+   purpose of each photo and write a caption which helps the reader understand
+   your intent.
 
+#. Citations
 
-Contribution
-++++++++++++
+   Please provide references or links to related work.
 
-Please provide a clear statement of each author's individual contribution to the outcomes.
+   
+Required Supporting Material
+----------------------------
 
+As detailed in :ref:`project-report-requirements`, the following additional
+elements must be included separately from the main report text:
 
-Documentation
-+++++++++++++
-
-Provide captioned photos which support your discussion.  Please consider the
-purpose of each photo and write a caption which helps the reader understand your
-intent.
-
-Citations
-+++++++++
-
-Please provide references or links to related work.
-
+#. electronic schematics
+#. mechanical drawings
+#. source code
+#. CAD files

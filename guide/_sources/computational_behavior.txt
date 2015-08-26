@@ -1,3 +1,7 @@
+.. include:: links.rst
+
+.. _computation-guide:
+
 Computation and Behavior
 ========================
 
@@ -13,14 +17,14 @@ Takeaway Lessons
 ~~~~~~~~~~~~~~~~
 
 A `Finite-state
-Machine <http://en.wikipedia.org/wiki/Finite-state_machine>`__ is an
+Machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__ is an
 abstract model of computing which assumes the machine exists in one of a
 finite set of *states*, with *transition rules* governing under what
 conditions the machine moves from the *current state* to a *successor
 state*.
 
 Finite-state machines are frequently `illustrated as a directed
-graph <http://en.wikipedia.org/wiki/State_diagram>`__ of state nodes
+graph <https://en.wikipedia.org/wiki/State_diagram>`__ of state nodes
 linked by transition edges. Conceptually, the machine has one active
 node (the current state), which has rules for each edge defining when
 the active state transitions to another state. States can have
@@ -50,8 +54,8 @@ Reference Links
 ~~~~~~~~~~~~~~~
 
 #. `Wikipedia: Finite-state
-   Machine <http://en.wikipedia.org/wiki/Finite-state_machine>`__
+   Machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__
 #. `Wikipedia: State variable (from control
-   theory) <http://en.wikipedia.org/wiki/State_variable>`__
+   theory) <https://en.wikipedia.org/wiki/State_variable>`__
 
 

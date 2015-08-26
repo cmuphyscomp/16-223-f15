@@ -1,0 +1,41 @@
+.. include:: links.rst
+
+.. py:module:: ArduinoGUI
+
+.. _ArduinoGUI:
+
+ArduinoGUI Library
+==================
+
+The :py:mod:`ArduinoGUI` module provides tools to create simple graphical user
+interfaces for Arduino programs using the PyQt4 library.  It may optionally use
+the PyQwt library to render a dynamic plot window.
+
+.. contents::
+
+ArduinoConsole.py
+-----------------
+
+.. automodule:: ArduinoGUI.ArduinoConsole
+   :members:
+   :undoc-members:
+
+ArduinoScope.py
+---------------
+
+.. automodule:: ArduinoGUI.ArduinoScope
+   :members:
+   :undoc-members:
+      
+ArduinoConsoleWindow.py
+-----------------------
+
+This file is generated from an XML interface description using the
+:command:`pyuic` interface compiler.  The XML description represents the basic
+interface layout, created and edited using Qt Designer and saved as the XML file
+:file:`ArduinoConsoleWindow.ui`.
+
+.. automodule:: ArduinoGUI.ArduinoConsoleWindow
+   :members:
+   :undoc-members:
+

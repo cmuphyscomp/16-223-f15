@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ArduinoGUI.ArduinoScope &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015-08-26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for ArduinoGUI.ArduinoScope</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;\</span>
+<span class="sd">ArduinoScope.py : Qt/Qwt widget to show a real-time oscilloscope-like display of signals</span>
+
+<span class="sd">Copyright (c) 2015, Garth Zeglin.  All rights reserved. Licensed under the terms</span>
+<span class="sd">of the BSD 3-clause license.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># Based on the Python version of Qwt-5.0.0/examples/data_plot</span>
+<span class="c"># For reference documentation, see:</span>
+<span class="c">#   https://github.com/PyQwt</span>
+<span class="c">#   http://qwt.sourceforge.net/</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">bisect</span>
+
+<span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">Qt</span>
+<span class="kn">import</span> <span class="nn">PyQt4.Qwt5</span> <span class="kn">as</span> <span class="nn">Qwt</span>
+
+<span class="c">################################################################</span>
+<div class="viewcode-block" id="ScopeChannel"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ScopeChannel">[docs]</a><span class="k">class</span> <span class="nc">ScopeChannel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Internal class to represent the state of one channel in an ArduinoScope</span>
+<span class="sd">    widget.  See ArduinoScope.add_channel() for arguments.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="bp">None</span> <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">red</span>   <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+            <span class="n">green</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+            <span class="n">blue</span>  <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QColor</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span> <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span>
+
+        <span class="c"># start with an empty sample buffer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="c"># create and configure the associated curve object to show the data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curve</span> <span class="o">=</span> <span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlotCurve</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">setPen</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">QPen</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="c">#================================================================</span>
+<div class="viewcode-block" id="ScopeChannel.clear_data"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ScopeChannel.clear_data">[docs]</a>    <span class="k">def</span> <span class="nf">clear_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c"># update the associated QwtPlotCurve</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c">#================================================================</span></div>
+<div class="viewcode-block" id="ScopeChannel.add_samples"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ScopeChannel.add_samples">[docs]</a>    <span class="k">def</span> <span class="nf">add_samples</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add one or more data samples to the buffer in the channel.  If a maximum</span>
+<span class="sd">        duration was specified during creation, the data buffer will be</span>
+<span class="sd">        truncated to hold the specified maximum amount of history.</span>
+
+<span class="sd">        :param y: list or ndarray of signal values</span>
+<span class="sd">        :param t: list or ndarray of times, must be same length as y</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># append the new data to the existing buffers</span>
+        <span class="c"># N.B. this could be more efficient with memory allocation, but this is simpler</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">first_allowable_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">duration</span>
+            <span class="k">if</span> <span class="n">first_allowable_time</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="c"># search for the position of the first sample with allowable time index</span>
+                <span class="n">first_index</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">first_allowable_time</span> <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="n">first_index</span><span class="p">:]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">first_index</span><span class="p">:]</span>
+
+        <span class="c"># update the associated QwtPlotCurve</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="p">)</span>
+        <span class="k">return</span>
+                     
+<span class="c">################################################################</span></div></div>
+<div class="viewcode-block" id="ArduinoScope"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ArduinoScope">[docs]</a><span class="k">class</span> <span class="nc">ArduinoScope</span><span class="p">(</span><span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlot</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Plot widget to show real-time data like a multichannel oscilloscope.</span>
+<span class="sd">    Implemented as a subclass of the QwtPlot widget provided in the Qwt5</span>
+<span class="sd">    package.  Requires Qwt5 and PyQwt5.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+        <span class="c"># initialize the parent class</span>
+        <span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlot</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+        <span class="c"># set of ScopeChannel objects, indexed by name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span> 
+
+        <span class="c"># configure the parent QwtPlot widget for a reasonable display</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCanvasBackground</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">white</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_alignScales</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">&quot;ArduinoScope&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">insertLegend</span><span class="p">(</span><span class="n">Qwt</span><span class="o">.</span><span class="n">QwtLegend</span><span class="p">(),</span> <span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlot</span><span class="o">.</span><span class="n">BottomLegend</span><span class="p">);</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setAxisTitle</span><span class="p">(</span><span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlot</span><span class="o">.</span><span class="n">xBottom</span><span class="p">,</span> <span class="s">&quot;Time (seconds)&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setAxisTitle</span><span class="p">(</span><span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlot</span><span class="o">.</span><span class="n">yLeft</span><span class="p">,</span> <span class="s">&quot;Values&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span>
+
+    <span class="c">#================================================================    </span>
+    <span class="k">def</span> <span class="nf">_alignScales</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Internal function to configure details of the QwtPlot.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">()</span><span class="o">.</span><span class="n">setFrameStyle</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">QFrame</span><span class="o">.</span><span class="n">Box</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QFrame</span><span class="o">.</span><span class="n">Plain</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">()</span><span class="o">.</span><span class="n">setLineWidth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Qwt</span><span class="o">.</span><span class="n">QwtPlot</span><span class="o">.</span><span class="n">axisCnt</span><span class="p">):</span>
+            <span class="n">scaleWidget</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axisWidget</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">scaleWidget</span><span class="p">:</span>
+                <span class="n">scaleWidget</span><span class="o">.</span><span class="n">setMargin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">scaleDraw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axisScaleDraw</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">scaleDraw</span><span class="p">:</span>
+                <span class="n">scaleDraw</span><span class="o">.</span><span class="n">enableComponent</span><span class="p">(</span> <span class="n">Qwt</span><span class="o">.</span><span class="n">QwtAbstractScaleDraw</span><span class="o">.</span><span class="n">Backbone</span><span class="p">,</span> <span class="bp">False</span> <span class="p">)</span>
+    
+    <span class="c">#================================================================</span>
+<div class="viewcode-block" id="ArduinoScope.add_channel"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ArduinoScope.add_channel">[docs]</a>    <span class="k">def</span> <span class="nf">add_channel</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a new channel to the oscilloscope.  The parameters are passed to ScopeChannel.init.</span>
+
+<span class="sd">        :param name: short name with which to identify the channel internally</span>
+<span class="sd">        :param title: optional title string to use on plot (default is to use the name value)</span>
+<span class="sd">        :param color: optional color name string.  Examples: &#39;red&#39;, &#39;purple, &#39;#80ff30&#39; (default is random)</span>
+<span class="sd">        :param duration: optional limit on the length of the time history to store</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">new_channel</span> <span class="o">=</span> <span class="n">ScopeChannel</span><span class="p">(</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_channel</span>
+
+        <span class="c"># attach the associated QwtPlotCurve object to the oscilloscope widgt</span>
+        <span class="n">new_channel</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c">#================================================================</span></div>
+<div class="viewcode-block" id="ArduinoScope.add_samples"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ArduinoScope.add_samples">[docs]</a>    <span class="k">def</span> <span class="nf">add_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add one or more data samples to the buffer in the channel.  If a maximum</span>
+<span class="sd">        duration was specified during creation, the data buffer will be</span>
+<span class="sd">        truncated to hold the specified maximum amount of history.  After all</span>
+<span class="sd">        channels have been updated, call the replot() method to update the</span>
+<span class="sd">        display.</span>
+
+<span class="sd">        :param name: channel name as supplied during creation</span>
+<span class="sd">        :param y: list or ndarray of signal values</span>
+<span class="sd">        :param t: list or ndarray of times, must be same length as y</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">add_samples</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c">#================================================================</span></div>
+<div class="viewcode-block" id="ArduinoScope.reset_plot"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoScope.ArduinoScope.reset_plot">[docs]</a>    <span class="k">def</span> <span class="nf">reset_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Clear all the sample buffers.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span>
+            <span class="n">channel</span><span class="o">.</span><span class="n">clear_data</span><span class="p">()</span>
+
+<span class="c">################################################################</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

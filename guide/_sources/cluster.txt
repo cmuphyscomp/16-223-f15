@@ -1,0 +1,118 @@
+.. include:: links.rst
+
+.. _cluster:
+
+IDeATe Virtual Cluster Software
+===============================
+
+The IDeATe equipment desk includes a 'virtual cluster' of MacBook Pros with a
+variety of software installed for course use which are available for checkout
+from the desk.  We recommend that you use one of these computers for all
+assignments.  We will provide support for helping you maintain and run the
+course materials on the cluster laptops.  The :ref:`complete list of requested
+software <cluster-course-software>` appears below.
+
+You are welcome to use your own computer if you prefer, and we will endeavor to
+keep the course materials widely compatible.  However, we cannot promise support
+since experience has shown that troubleshooting individual student laptops can
+become an unreasonable time sink.  In particular, some examples were developed
+and tested under Mac OS X and are not tested in detail under Windows.  We encourage
+Windows users to offer peer support to each other.
+
+All work in this course can be performed using open-source or free software.
+The following guide may help you in setting up course materials on your personal
+computer.  We welcome questions, but these instructions are offered as a
+courtesy and we will not be responsible for maintaining your personal system.
+
+.. contents::
+
+Installation on Personal OS X Computers
+---------------------------------------
+
+
+Recommended Applications
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+As a minimum it is recommended to install the following applications.  See the list below for links.
+
+#. Arduino IDE (requires Java)
+#. Fritzing
+
+Other useful applications include:
+
+#. GitX-dev
+#. CoolTerm
+
+
+MacPorts
+^^^^^^^^
+
+Much of the basic open-source software can be installed via `MacPorts`_, an
+open-source package installation system for OS X.  Effective use of MacPorts
+requires some willingness to use the command line (e.g. Terminal.app).
+
+The `MacPorts Quickstart instructions`_ are the best reference for initial installation, but in even shorter form:
+
+#. Install the current XCode system from Apple if necessary.
+#. Install the base system from the .pkg package file appropriate to your OS version.
+#. Run an initial self-update from the command line::
+     
+     sudo port -v selfupdate
+
+#. Install essential packages.  Note that this may take some time as it will download many packages and perhaps compile a few::
+
+     sudo port install coreutils git gnuplot minicom py27-numpy py27-pyqt4 py27-pyqwt py27-scikit-learn py27-scipy py27-serial python27 qt4-mac sox
+
+   Note that you may see many other packages installed by MacPorts as it automatically installs packages required by the ones you specify.
+
+#. Install additional packages.  Some of these are more relevant to Raspberry Pi users::
+
+     sudo port install Fugu doxygen emacs-app graphviz md5sha1sum nmap opencv +python27 p7zip py27-ipython py27-protobuf py27-sphinx py27-twisted py27-yaml sshfs unison xz
+   
+   
+Installation on Personal Windows Computers
+------------------------------------------
+
+As a minimum it is recommended to install the following applications.  See the list below for links.
+
+#. Arduino IDE (requires Java)
+#. Fritzing
+
+Other useful applications include:
+
+#. `SourceTree <https://www.sourcetreeapp.com/>`__
+
+The closest equivalent to MacPorts is the `Cygwin <https://www.cygwin.com/>`__
+package system.  For the Python support the recommended solution is python(x,y).
+
+   
+.. _cluster-course-software:
+
+Cluster Course Software
+-----------------------
+
+Following is the table of software requested for the virtual cluster MacBook
+Pros from `Computing Services`_ on behalf of the course.
+
+.. csv-table::
+   :header-rows: 1
+   :widths: 15, 10, 20, 20, 40
+   :file: software.csv
+
+
+In addition, I made the following requests for the baseline OS X installation:
+
+#. Python, Processing, and Pd must be entered into the firewall permissions
+   list; students will write networking programs which will trigger the firewall
+   rules, but which they do not have authority to permit.
+
+#. Shared profile with proper AFS support.  The current local profiles means
+   students get a different environment each time they check out a cluster
+   laptop, which is highly inefficient.  AFS is preferred to DFS; the DFS
+   support apparently changes file metadata, rendering git nearly unusable.
+
+Errata:
+
+#. MacPorts package ``py27-pyqwt`` was omitted from the request list in F15.
+#. OpenSCAM is now CAMotics.
+#. Python(x,y) moved from Google Code to github.

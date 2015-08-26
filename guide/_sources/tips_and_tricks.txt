@@ -1,0 +1,41 @@
+.. include:: links.rst
+
+.. _tips-and-tricks:
+
+Tips and Tricks
+===============
+
+We expect you to look to outside resources for information on practical skills;
+we have some starting points on the :ref:`essential-skills-list`.  For specific
+problems with the lab equipment, you might the :ref:`errata` section handy.
+However, this page also includes some miscellaneous notes you may find useful.
+
+
+Soldering
+---------
+
+My essential soldering tips:
+
+#. Lead is poisonous: wash your hands afterwards.
+#. Turn on the fan to absorb the rosin fumes.
+#. Put a little water on the sponge.
+#. Melt a little solder on the tip to “tin” it.
+#. Use the sponge to clean off excess solder and flux from the tip.
+#. Soldering is all about heat, oxides, and surface tension: the rosin flux
+   vaporizes in the heat and removes oxides so the solder can wet the metal; the
+   melted solder wicks into the freshly cleaned gaps.
+#. Heat the joint with the iron; let the hot joint melt the solder. The solder
+   is applied to the joint, not the tip.
+#. Look for a shiny, symmetrical meniscus of solder when you’re done.
+
+
+Electronics
+-----------
+
+#. If an analog sensor doesn’t emit the right voltage to drive a particular
+   circuit, it is possible to construct a passive resistor network to add an
+   offset voltage, or an active op-amp circuit to offset and scale the signal to
+   the appropriate level. E.g., the Sharp rangefinder output is too low a
+   voltage to directly trigger our MOSFETs.  For more discussion see the `Op Amp
+   Level Translation Exercise
+   <../exercises/electronics/op-amp-level-translation/index.html>`__.

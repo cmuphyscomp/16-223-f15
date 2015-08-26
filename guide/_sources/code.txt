@@ -8,3 +8,5 @@ Libraries and Sample Code
    :numbered:
 
    OneInOneOutASCII
+   OneInOneOutGUI
+   ArduinoGUI

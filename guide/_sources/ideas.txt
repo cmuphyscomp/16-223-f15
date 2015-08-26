@@ -2,30 +2,18 @@
 
 .. _ideation:
 
-
 Ideation and Brainstorming
 ==========================
 
-We all occasionally become stuck while trying to choose an idea.
+We all occasionally become stuck while trying to choose an idea.  Following are
+a few general strategies to overcome your blocks.  If ever you feel stuck
+generating ideas, try some of these steps.  Use what works, ignore the rest.
 
-
-The primary difference between undergraduates and graduate students is that undergraduates have not yet learned how to follow through on an idea.
-
-Never rest, always relentlessly ask yourself the followup questions.
-
-
-Regressing the Question
------------------------
-
-
-(need to write this)
+You also find inspiration from the :ref:`related-work` page.
 
 
 General Brainstorming Heuristics
 --------------------------------
-
-Following are a few more general strategies. If ever you feel stuck generating
-ideas, try some of these steps.
 
 #. Let go of your fear, let go of any preconceptions of brilliance.  Ideas are
    cheap.  Dirt cheap.  The work and interest comes from thinking it through,
@@ -35,18 +23,17 @@ ideas, try some of these steps.
    apply some systematic generation and better ideas will almost always evolve.
    If you're stuck for one idea, generate ten.
 
+#. *All ideas can be rendered at all scales.* The essence of a big idea can be
+   isolated down to an elegant small example.  If an appealing idea seems
+   intimidating or unmanageable, what is the essential bit which could tested
+   first as a proof of concept?  This is a good use for
+   :ref:`regressing-the-question`.
+   
 #. Look around the room, choose two things, jam them together.  E.g., "door,
    concrete blocks, what about doors made of concrete?  What about a design
    system for hinged concrete structures?"  I'm sure you can do better.  Or pick
    two systems and try to apply arbitrary elements of one to another.  These
    ideas are rarely useful but will open the doors to others.
-
-#. For a nascent idea, regress the question: what is the more abstract version
-   of this idea?  If I had this thing, what would I really have?  Almost
-   everything can be traced back to something fundamental like survival or love,
-   then back out to something slightly different and better.  This process
-   almost always identifies elements of your idea which can be dropped as
-   inessential or distracting.
 
 #. Look for the hard parts: these might be opportunities, or maybe just hints to
    simplify.  Follow the path of least resistance: choose your battles carefully
@@ -66,38 +53,39 @@ ideas, try some of these steps.
    you need a dirty canvas, look around you and pick any starting point: design
    for wherever you are.
 
+#. It may help to think of a project as the first step in a larger project; for
+   more ambitious ideas try to think of the smallest first step which can be
+   tested with some basic circuitry and mechanism.
 
-
-
-
+#. The primary difference between undergraduates and graduate students is that
+   undergraduates have not yet learned how to follow through on an idea.  Never
+   rest, always relentlessly ask yourself the followup questions.
 
    
-Project Idea Prompts
---------------------
+.. _regressing-the-question:
 
-This is intended to be a pool of interesting project prompts motivating a
-set of simple demonstrations of technique.
+Regressing the Question
+-----------------------
 
-(this needs a lot of work)
+I first heard this articulated by `Bernie Roth`_ in 1996 in the early days of
+the `Stanford d.school`_, although the closest technique in their current
+vocabulary of methods is `Why-How Laddering`_.
 
-.. FIXME
+In the original form, the process works as follows.  Given an idea, ask the
+question: "If I actually had that solution, what would it really provide?"  This
+*regression* is a means of discovering what underlying abstract needs the idea
+might fulfill.  Carried out iteratively, it frequently ends up following a chain
+of abstract needs to something quite fundamental (e.g. the elements of `Maslow's
+Hierarchy`_).  This process almost always identifies elements of your idea which
+can be dropped as inessential or distracting.  From there it is possible to
+follow a similar chain in reverse and find other ideas related to the first, but
+frequently better and more focused.
 
-Technical: potentiometers (position sensor) 1d transducer, light is a proxy for
-all kinds of processes, microphones (audio energy level, pitch, pulse arrival ->
-basically time-based processes), breath sensor (temperature as a proxy for
-breath), temperature, each process has a characteristic data
+The "why-how ladder" is a more concrete articulation of the process.  Given a
+user need, asking "why?" questions will develop more abstract needs, possibly
+iteratively.  Then asking "how?" questions will uncover more concrete
+realizations parallel to the first need.
 
-Prompts: 
-
-- Design a robot that points to the brightest nearby light source. 
-
-- Design a system to measure excitement, e.g., sensing breath or heartbeat over time. 
-
-- Point to warmest person. 
-
-- Design a system to record the flight path of a paper airplane in 3d space, e.g., using accelerometer, proximity sensor, ultrasonic sensor. 
-
-- Encode and print arbitrary waveform on transparent film, design “record player” using phototransistor. Optical analog record player. 
-
-- Build memory. Encode your name in the physical world, build a device that reads it back. Mercury delay line with bubbles in water. 
+If you like this approach, the `Stanford d.school methods`_ page has many more
+resources related to design thinking.
 

@@ -1,3 +1,7 @@
+.. include:: links.rst
+
+.. _basic-circuits-guide:
+
 Basic Circuits
 ==============
 
@@ -215,21 +219,21 @@ Reference Links
 ~~~~~~~~~~~~~~~
 
 #. `Wikipedia: resistor color
-   code <http://en.wikipedia.org/wiki/Electronic_color_code>`__
+   code <https://en.wikipedia.org/wiki/Electronic_color_code>`__
 #. `Wikipedia: voltage
-   divider <http://en.wikipedia.org/wiki/Voltage_divider>`__
+   divider <https://en.wikipedia.org/wiki/Voltage_divider>`__
 #. `Wikipedia: Kirchhoff's circuit
-   laws <http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws>`__
+   laws <https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws>`__
 #. `Wikipedia: Light emitting
-   diode <http://en.wikipedia.org/wiki/Light_emitting_diode>`__
-#. `Wikipedia: Photoresistor <http://en.wikipedia.org/wiki/Cds_cell>`__
+   diode <https://en.wikipedia.org/wiki/Light_emitting_diode>`__
+#. `Wikipedia: Photoresistor <https://en.wikipedia.org/wiki/Cds_cell>`__
 #. `Wikipedia: Force-sensing
-   resistor <http://en.wikipedia.org/wiki/Force_Sensitive_Resistor>`__
-#. `Wikipedia: Relay <http://en.wikipedia.org/wiki/Relay>`__
-#. `Wikipedia: Transistor <http://en.wikipedia.org/wiki/Transistor>`__
-#. `Wikipedia: MOSFET <http://en.wikipedia.org/wiki/MOSFET>`__
+   resistor <https://en.wikipedia.org/wiki/Force_Sensitive_Resistor>`__
+#. `Wikipedia: Relay <https://en.wikipedia.org/wiki/Relay>`__
+#. `Wikipedia: Transistor <https://en.wikipedia.org/wiki/Transistor>`__
+#. `Wikipedia: MOSFET <https://en.wikipedia.org/wiki/MOSFET>`__
 #. `Wikipedia: Integrated
-   circuit <http://en.wikipedia.org/wiki/Integrated_circuit>`__
-#. `Wikipedia: Logic level <http://en.wikipedia.org/wiki/Logic_level>`__
+   circuit <https://en.wikipedia.org/wiki/Integrated_circuit>`__
+#. `Wikipedia: Logic level <https://en.wikipedia.org/wiki/Logic_level>`__
 
 

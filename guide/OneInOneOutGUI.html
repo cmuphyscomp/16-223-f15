@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.2. OneInOneOutGUI Example &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-08-26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="4. Libraries and Sample Code" href="code.html" />
+    <link rel="next" title="4.3. ArduinoGUI Library" href="ArduinoGUI.html" />
+    <link rel="prev" title="4.1. OneInOneOutASCII Arduino Sketch" href="OneInOneOutASCII.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ArduinoGUI.html" title="4.3. ArduinoGUI Library"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="OneInOneOutASCII.html" title="4.1. OneInOneOutASCII Arduino Sketch"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" accesskey="U">4. Libraries and Sample Code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-OneInOneOutGUI"></span><div class="section" id="oneinoneoutgui-example">
+<span id="oneinoneoutgui"></span><h1><a class="toc-backref" href="#id2">4.2. OneInOneOutGUI Example</a><a class="headerlink" href="#oneinoneoutgui-example" title="Permalink to this headline">¶</a></h1>
+<p>This module provides a graphical interface to an Arduino running
+the <a class="reference internal" href="OneInOneOutASCII.html#oneinoneoutascii-doxygen"><span>OneInOneOutASCII Arduino Sketch</span></a>.  It is built on top of the <a class="reference internal" href="ArduinoGUI.html#module-ArduinoGUI" title="ArduinoGUI"><code class="xref py py-mod docutils literal"><span class="pre">ArduinoGUI</span></code></a>
+module.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#oneinoneoutgui-example" id="id2">OneInOneOutGUI Example</a><ul>
+<li><a class="reference internal" href="#screenshot" id="id3">Screenshot</a></li>
+<li><a class="reference internal" href="#module-OneInOneOutGUI.OneInOneOutGUI" id="id4">OneInOneOutGUI.py</a></li>
+<li><a class="reference internal" href="#run-gui-py" id="id5">run_gui.py</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="screenshot">
+<h2><a class="toc-backref" href="#id3">4.2.1. Screenshot</a><a class="headerlink" href="#screenshot" title="Permalink to this headline">¶</a></h2>
+<img alt="Screenshot of the OneInOneOutGUI Python application." src="_images/OneInOneOutGUI-screenshot.png" />
+</div>
+<div class="section" id="module-OneInOneOutGUI.OneInOneOutGUI">
+<span id="oneinoneoutgui-py"></span><h2><a class="toc-backref" href="#id4">4.2.2. OneInOneOutGUI.py</a><a class="headerlink" href="#module-OneInOneOutGUI.OneInOneOutGUI" title="Permalink to this headline">¶</a></h2>
+<p>OneInOneOutGUI.py</p>
+<p>GUI controller for the OneInOneOutASCII Arduino sketch.  This interface shell
+communicates over a serial port to an Arduino running a sketch which includes
+line-oriented text input and output.</p>
+<p>Copyright (c) 2015, Garth Zeglin.  All rights reserved. Licensed under the terms
+of the BSD 3-clause license.</p>
+<dl class="class">
+<dt id="OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController">
+<em class="property">class </em><code class="descclassname">OneInOneOutGUI.OneInOneOutGUI.</code><code class="descname">OneInOneOutGUIController</code><span class="sig-paren">(</span><em>port=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/OneInOneOutGUI/OneInOneOutGUI.html#OneInOneOutGUIController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Application-specific control object to manage the GUI for OneInOneOutASCII.
+This class creates a generic ArduinoConsole GUI, adds application-specific
+GUI controls, and manages basic I/O.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> &#8211; the name of the serial port device</li>
+<li><strong>kwargs</strong> &#8211; collect any unused keyword arguments</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.led_off_button_pressed">
+<code class="descname">led_off_button_pressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/OneInOneOutGUI/OneInOneOutGUI.html#OneInOneOutGUIController.led_off_button_pressed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.led_off_button_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback function activated to disable the LED.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.led_on_button_pressed">
+<code class="descname">led_on_button_pressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/OneInOneOutGUI/OneInOneOutGUI.html#OneInOneOutGUIController.led_on_button_pressed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.led_on_button_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback function activated to enable the LED.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.port_data_ready">
+<code class="descname">port_data_ready</code><span class="sig-paren">(</span><em>fd</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/OneInOneOutGUI/OneInOneOutGUI.html#OneInOneOutGUIController.port_data_ready"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.port_data_ready" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback function activated when data is received from the Arduino.  This
+performs some basic processing of the status stream, but could be
+extended to handle more events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.pwm_slider_moved">
+<code class="descname">pwm_slider_moved</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/OneInOneOutGUI/OneInOneOutGUI.html#OneInOneOutGUIController.pwm_slider_moved"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.pwm_slider_moved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback function activated when the PWM slider is moved.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.servo_slider_moved">
+<code class="descname">servo_slider_moved</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/OneInOneOutGUI/OneInOneOutGUI.html#OneInOneOutGUIController.servo_slider_moved"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#OneInOneOutGUI.OneInOneOutGUI.OneInOneOutGUIController.servo_slider_moved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Callback function activated when the Servo slider is moved.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="run-gui-py">
+<h2><a class="toc-backref" href="#id5">4.2.3. run_gui.py</a><a class="headerlink" href="#run-gui-py" title="Permalink to this headline">¶</a></h2>
+<p>This script launches the GUI.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+
+<span class="sd">&quot;&quot;&quot;\</span>
+<span class="sd">run_gui.py</span>
+
+<span class="sd">Sample script to create and operate a graphical user interface for an Arduino</span>
+<span class="sd">program.  This interface shell communicates over a serial port to an Arduino</span>
+<span class="sd">running a sketch which includes line-oriented text input and output.</span>
+
+<span class="sd">Copyright (c) 2015, Garth Zeglin.  All rights reserved. Licensed under the terms</span>
+<span class="sd">of the BSD 3-clause license.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">argparse</span>
+
+<span class="c"># This requires the PyQt4 module to interface to the Qt GUI toolkit.  For</span>
+<span class="c"># documentation on the PyQt4 API, see http://pyqt.sourceforge.net/Docs/PyQt4/index.html</span>
+<span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span>
+
+<span class="c"># Make sure that the Python libraries also contained within this course package</span>
+<span class="c"># are on the load path.  This adds the parent folder to the load path, assuming that this</span>
+<span class="c"># script is still located within a subfolder of the Python library tree.</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s">&quot;..&quot;</span><span class="p">))</span>
+
+<span class="c"># Import the custom GUI class.</span>
+<span class="kn">from</span> <span class="nn">OneInOneOutGUI.OneInOneOutGUI</span> <span class="kn">import</span> <span class="n">OneInOneOutGUIController</span>
+
+<span class="c">################################################################</span>
+<span class="c"># Main script follows.  This sequence is executed when the script is initiated from the command line.</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c"># process command line arguments</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;Run the GUI for the OneInOneOutGUIASCII Arduino sketch.&quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span> <span class="s">&#39;-v&#39;</span><span class="p">,</span> <span class="s">&#39;--verbose&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;Enable more detailed output.&#39;</span> <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span> <span class="s">&#39;-p&#39;</span><span class="p">,</span> <span class="s">&#39;--port&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s">&#39;/dev/tty.usbmodem1411&#39;</span><span class="p">,</span> \
+                         <span class="n">help</span><span class="o">=</span><span class="s">&#39;Specify the name of the Arduino serial port device (default is /dev/tty.usbmodem1411).&#39;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="c"># initialize the Qt system itself</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+
+    <span class="c"># create the interface window</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">OneInOneOutGUIController</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;&quot;&quot;Starting up OneInOneOutGUI.</span>
+<span class="s">Toggle the &#39;Connected&#39; switch to open the Arduino serial port.</span>
+<span class="s">Click &#39;Enable&#39; while connected to enable motor drivers.</span>
+<span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+
+    <span class="c"># run the event loop until the user is done</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.2. OneInOneOutGUI Example</a><ul>
+<li><a class="reference internal" href="#screenshot">4.2.1. Screenshot</a></li>
+<li><a class="reference internal" href="#module-OneInOneOutGUI.OneInOneOutGUI">4.2.2. OneInOneOutGUI.py</a></li>
+<li><a class="reference internal" href="#run-gui-py">4.2.3. run_gui.py</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="OneInOneOutASCII.html"
+                        title="previous chapter">4.1. OneInOneOutASCII Arduino Sketch</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ArduinoGUI.html"
+                        title="next chapter">4.3. ArduinoGUI Library</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="ArduinoGUI.html" title="4.3. ArduinoGUI Library"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="OneInOneOutASCII.html" title="4.1. OneInOneOutASCII Arduino Sketch"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="code.html" >4. Libraries and Sample Code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

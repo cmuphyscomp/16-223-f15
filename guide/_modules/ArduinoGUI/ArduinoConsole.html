@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ArduinoGUI.ArduinoConsole &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2015-08-26',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for ArduinoGUI.ArduinoConsole</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot;\</span>
+<span class="sd">ArduinoConsole.py</span>
+
+<span class="sd">PyQt4 window implementing a generic control console for an Arduino sketch,</span>
+<span class="sd">including command line, plot window, and serial port controls.  Functions are</span>
+<span class="sd">provide to allow extending the basic interface with custom buttons and sliders</span>
+<span class="sd">without needing to use Qt Designer.</span>
+
+<span class="sd">Copyright (c) 2013-2015, Garth Zeglin. All rights reserved. Licensed under the</span>
+<span class="sd">terms of the BSD 3-clause license as included in LICENSE.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># for documentation on the PyQt4 API, see http://pyqt.sourceforge.net/Docs/PyQt4/index.html</span>
+
+<span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">_fromUtf8</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QString</span><span class="o">.</span><span class="n">fromUtf8</span>
+
+<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">_fromUtf8</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+<span class="c"># import the underlying class created using Qt Designer and pyuic</span>
+<span class="kn">from</span> <span class="nn">ArduinoConsoleWindow</span> <span class="kn">import</span> <span class="n">Ui_ArduinoConsoleWindow</span>
+
+<span class="c">#================================================================</span>
+<span class="c"># The Qwt technical widgets system may or may not be available for showing the plot widget.</span>
+<span class="c"># For details see:</span>
+<span class="c">#  https://github.com/PyQwt</span>
+<span class="c">#  http://qwt.sourceforge.net/</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">ArduinoScope</span> <span class="kn">import</span> <span class="n">ArduinoScope</span>
+    
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Unable to load the ArduinoScope module, perhaps the pyqwt or qwt52 modules are not installed.&quot;</span><span class="p">)</span>
+    <span class="n">ArduinoScope</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c">################################################################</span>
+
+<div class="viewcode-block" id="ArduinoConsole"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole">[docs]</a><span class="k">class</span> <span class="nc">ArduinoConsole</span><span class="p">(</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">,</span> <span class="n">Ui_ArduinoConsoleWindow</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A custom window which inherits both from the QMainWindow class and the custom</span>
+<span class="sd">    Ui_ArduinoConsoleWindow defined using Qt Designer.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">view</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span> <span class="bp">self</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setupUi</span><span class="p">(</span> <span class="bp">self</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect_callback</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">command_callback</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">return</span>
+
+<div class="viewcode-block" id="ArduinoConsole.write"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">string</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Write output to the console text area.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">consoleOutput</span><span class="o">.</span><span class="n">insertPlainText</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">consoleOutput</span><span class="o">.</span><span class="n">ensureCursorVisible</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="c"># --------- callbacks from Ui_ArduinoConsoleWindow ---------------</span></div>
+<div class="viewcode-block" id="ArduinoConsole.commandEntered"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.commandEntered">[docs]</a>    <span class="k">def</span> <span class="nf">commandEntered</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Callback invoked whenever command line text is entered.&quot;&quot;&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">commandLine</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commandLine</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">command_callback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">command_callback</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">command</span><span class="p">))</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.ArduinoConnectToggled"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.ArduinoConnectToggled">[docs]</a>    <span class="k">def</span> <span class="nf">ArduinoConnectToggled</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">flag</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Callback invoked whenever the Arduino Connect checkbox changes state.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_callback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">connect_callback</span><span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ArduinoPortName</span><span class="o">.</span><span class="n">text</span><span class="p">()),</span> <span class="n">flag</span> <span class="p">)</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.ArduinoPortEntered"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.ArduinoPortEntered">[docs]</a>    <span class="k">def</span> <span class="nf">ArduinoPortEntered</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Callback invoked whenever text is entered into the Arduino Port field.&quot;&quot;&quot;</span>
+        <span class="n">port_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ArduinoPortName</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+        <span class="k">return</span>
+    </div>
+<div class="viewcode-block" id="ArduinoConsole.resetPlotPressed"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.resetPlotPressed">[docs]</a>    <span class="k">def</span> <span class="nf">resetPlotPressed</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Callback invoked whenever the Reset Plot button is clicked.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">reset_plot</span><span class="p">()</span>
+        <span class="k">return</span>
+    
+    <span class="c">#----- functions to manage events -------------------------------</span></div>
+<div class="viewcode-block" id="ArduinoConsole.attachConnectCallback"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.attachConnectCallback">[docs]</a>    <span class="k">def</span> <span class="nf">attachConnectCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the callback function to be invoked when the user requests a connect or disconnect from the Arduino.</span>
+
+<span class="sd">        :param callback: callback( port_name, flag )  flag is True for connect, False for disconnect</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connect_callback</span> <span class="o">=</span> <span class="n">callback</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.attachCommandCallback"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.attachCommandCallback">[docs]</a>    <span class="k">def</span> <span class="nf">attachCommandCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the callback function to be invoked when the user enters a command.</span>
+
+<span class="sd">        :param callback: callback( command_string )</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">command_callback</span> <span class="o">=</span> <span class="n">callback</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.setArduinoPortName"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.setArduinoPortName">[docs]</a>    <span class="k">def</span> <span class="nf">setArduinoPortName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the initial state of the Arduino Port name field (e.g., from command-line arguments).&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ArduinoPortName</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.isShowingRawData"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.isShowingRawData">[docs]</a>    <span class="k">def</span> <span class="nf">isShowingRawData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns true if the Show Raw Data checkbox is selected.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ArduinoRawSwitch</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.newPeriodicTimer"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.newPeriodicTimer">[docs]</a>    <span class="k">def</span> <span class="nf">newPeriodicTimer</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convenience function to create a periodic timer which calls a function at the</span>
+<span class="sd">        given interval.</span>
+
+<span class="sd">        :param interval: interval in milliseconds</span>
+<span class="sd">        :param callback: no-argument function callback() to be called at intervals</span>
+<span class="sd">        :return: the underlying QTimer object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">timer</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QTimer</span><span class="p">()</span>         <span class="c"># create a polling timer</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>   <span class="p">)</span>   <span class="c"># units are milliseconds</span>
+        <span class="n">timer</span><span class="o">.</span><span class="n">timeout</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span> <span class="c"># attach to callback</span>
+        <span class="k">return</span> <span class="n">timer</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.newSingleShotTimer"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.newSingleShotTimer">[docs]</a>    <span class="k">def</span> <span class="nf">newSingleShotTimer</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convenience function to set up a single-shot timer which calls a function</span>
+<span class="sd">        once after the given interval.</span>
+
+<span class="sd">        :param interval: interval in milliseconds</span>
+<span class="sd">        :param callback: no-argument function callback() to be called once after a delay</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QTimer</span><span class="o">.</span><span class="n">singleShot</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">interval</span><span class="p">),</span> <span class="n">callback</span> <span class="p">)</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.newInputMonitor"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.newInputMonitor">[docs]</a>    <span class="k">def</span> <span class="nf">newInputMonitor</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convenience function to create a notification callback when input is available on a file descriptor.</span>
+
+<span class="sd">        :param fd: integer file descriptor</span>
+<span class="sd">        :param callback: one-argument function callback(fd) to be called with the file descriptor</span>
+<span class="sd">        :return: the underlying QSocketNotifier object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">notifier</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSocketNotifier</span><span class="p">(</span> <span class="n">fd</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSocketNotifier</span><span class="o">.</span><span class="n">Read</span> <span class="p">)</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span> <span class="n">notifier</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QString</span><span class="o">.</span><span class="n">fromUtf8</span><span class="p">(</span><span class="s">&quot;activated(int)&quot;</span><span class="p">)),</span> <span class="n">callback</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">notifier</span>
+
+    <span class="c">#------ functions to programmatically extend the GUI ------------</span></div>
+<div class="viewcode-block" id="ArduinoConsole.addButton"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.addButton">[docs]</a>    <span class="k">def</span> <span class="nf">addButton</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a button to the general-purpose button area of the interface.  The title</span>
+<span class="sd">        argument should be a short string to appear on the face of the button.</span>
+<span class="sd">        The callback function is invoked whenever the button is pressed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">newButton</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QPushButton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="n">newButton</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span> <span class="n">title</span> <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttonLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span> <span class="n">newButton</span> <span class="p">)</span>
+        <span class="n">newButton</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span> <span class="n">title</span> <span class="p">)</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span> <span class="n">newButton</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;clicked()&quot;</span><span class="p">)),</span> <span class="n">callback</span> <span class="p">)</span>
+        <span class="k">return</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.addSlider"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.addSlider">[docs]</a>    <span class="k">def</span> <span class="nf">addSlider</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">callback</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a horizontal slider to the controls area.  The range is fixed over [0,1.0).</span>
+
+<span class="sd">        :param title: string used as a tooltip</span>
+<span class="sd">        :param callback: function receiving floating slider value</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">newSlider</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QSlider</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+        <span class="n">newSlider</span><span class="o">.</span><span class="n">setOrientation</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">Horizontal</span><span class="p">)</span>
+        <span class="n">newSlider</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span> <span class="n">title</span> <span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sliderLayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span> <span class="n">newSlider</span> <span class="p">)</span>
+
+        <span class="c"># This sets a fixed maximum larger than any current screen resolution; the user can scale to what they require.</span>
+        <span class="n">newSlider</span><span class="o">.</span><span class="n">setMaximum</span><span class="p">(</span> <span class="mi">10000</span> <span class="p">)</span>
+
+        <span class="c"># this slider does not itself have text, so this sets a tooltip for it</span>
+        <span class="n">newSlider</span><span class="o">.</span><span class="n">setToolTip</span><span class="p">(</span> <span class="s">&quot;&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;</span><span class="si">%s</span><span class="s">&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span> <span class="o">%</span> <span class="n">title</span> <span class="p">)</span>
+
+        <span class="c"># create a wrapper function to rescale the slider value to [0,1]</span>
+        <span class="n">wrapper</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">ticks</span><span class="p">:</span> <span class="n">callback</span><span class="p">(</span><span class="mf">0.0001</span><span class="o">*</span><span class="n">ticks</span><span class="p">)</span>
+
+        <span class="c"># connect the slider motion signal to the wrapper</span>
+        <span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span> <span class="n">newSlider</span><span class="p">,</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">SIGNAL</span><span class="p">(</span><span class="n">_fromUtf8</span><span class="p">(</span><span class="s">&quot;sliderMoved(int)&quot;</span><span class="p">)),</span> <span class="n">wrapper</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">newSlider</span>
+
+    <span class="c">#------ functions to control the data plot area -----------------</span></div>
+<div class="viewcode-block" id="ArduinoConsole.addScope"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.addScope">[docs]</a>    <span class="k">def</span> <span class="nf">addScope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add an ArduinoScope widget to the top of the layout.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">ArduinoScope</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Warning, the ArduinoScope object is not available.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># add the plot area to the top of the window</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="o">=</span> <span class="n">ArduinoScope</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">centralwidget</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">verticalLayout</span><span class="o">.</span><span class="n">insertWidget</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scope</span><span class="p">)</span>
+            </div>
+<div class="viewcode-block" id="ArduinoConsole.addScopeChannel"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.addScopeChannel">[docs]</a>    <span class="k">def</span> <span class="nf">addScopeChannel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a named channel to the ArduinoScope plotting widget.  The arguments are</span>
+<span class="sd">        passed unchanged to add_channel().&quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">add_channel</span><span class="p">(</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.addScopeSamples"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.addScopeSamples">[docs]</a>    <span class="k">def</span> <span class="nf">addScopeSamples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a set of new samples to a given named channel to the ArduinoScope</span>
+<span class="sd">        plotting widget.  The arguments are passed unchanged to</span>
+<span class="sd">        add_samples().</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">add_samples</span><span class="p">(</span> <span class="n">name</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">t</span> <span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ArduinoConsole.replotScope"><a class="viewcode-back" href="../../ArduinoGUI.html#ArduinoGUI.ArduinoConsole.ArduinoConsole.replotScope">[docs]</a>    <span class="k">def</span> <span class="nf">replotScope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update the ArduinoScope plot area after all new data has been added.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">replot</span><span class="p">()</span>
+
+
+<span class="c">################################################################</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-08-26.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

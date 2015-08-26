@@ -28,7 +28,7 @@ This course is part of the `Integrative Design, Arts, and Technology`_ (IDeATe)
 program at `Carnegie Mellon University`_ and makes use of the new `IDEATE@Hunt
 Collaborative Making Facility`_ in the lower level of Hunt Library.
 
-This course is an IDeATe Portal Course for CFA/DC/TPR students entering either
+This course is an IDeATe Portal Course for CFA/DC/TSB students entering either
 of the IDeATe `Intelligent Environments`_ or `Physical Computing`_ programs.
 CIT/MCS/SCS students can enroll in the `60-223`_ version of the course, with
 whom we are planning some crossover if feasible.
