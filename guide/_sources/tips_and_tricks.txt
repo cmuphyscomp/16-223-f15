@@ -39,3 +39,9 @@ Electronics
    voltage to directly trigger our MOSFETs.  For more discussion see the `Op Amp
    Level Translation Exercise
    <../exercises/electronics/op-amp-level-translation/index.html>`__.
+
+#. If you are unclear on the wiring of a stepper motor, use a DMM to measure the
+   resistance between the wires. A bipolar stepper will have four wires, two per
+   coil, and the low-resistance of the coil should be unambiguously measurable.
+
+   

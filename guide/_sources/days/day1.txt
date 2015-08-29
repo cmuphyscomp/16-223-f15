@@ -10,7 +10,11 @@ Agenda
 ------
 
 #. Welcome.
-   
+
+   * What is IDeATe?
+   * What is *Physical Computing*?
+   * video
+
 #. Administrative questions
 
    * Enrollment and waitlist.
@@ -20,16 +24,32 @@ Agenda
    * Fire safety for the laser cutter.
    * Physical Computing Lab use and abuse.
    * Course fees and costs.
-   * `IDeATE@Hunt User Agreement`_
 
 #. Assignments
    
    * Skill survey.
    * Gallery profile.
    * Initial interviews.
-     
+
 #. Exercises
    
    * Course git repository.
    * Start Unit 1 exercises.
-   
+
+
+Videos
+------
+
+Arthur Ganson, *Faster*
+
+.. youtube:: JJvK47ncVjU
+
+Louis-Phillipe Demers, *Tiller Girls*
+
+.. youtube:: IdmYtZk88Lw
+
+Norman White, *Helpless Robot*
+
+.. youtube:: y0blJsgbcho
+
+.. .. youtube:: LYyAHOxY7jU

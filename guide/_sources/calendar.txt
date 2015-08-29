@@ -5,7 +5,13 @@
 Fall 2015 Calendar
 ******************
 
-The following calendar is tentative and subject to change.  For a description of
+Our TA schedule will appear on our own lab usage calendar at `Physical Computing
+Lab Calendar`_.  The official reservations calendar for Hunt A10 is `IDeATe@Hunt
+PhysComp Lab Calendar`_.  Please note that the Hunt library building does not
+begin 24 hour operation until September 14 as indicated on the `Hunt Library
+Hours`_ calendar.
+
+The following course calendar is tentative and subject to change.  For a description of
 the specific deliverables, please see `the assignments page <assignments.html>`__.
 
 .. csv-table::

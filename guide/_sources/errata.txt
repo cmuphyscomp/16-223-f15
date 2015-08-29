@@ -43,18 +43,12 @@ Common Mistakes
 Errors in Exercises
 -------------------
 
-#. The Pololu A4988 module is a newer, compatible replacement for the A4983
-   module used in the stepper motor exercise.
-
 #. The digital input using a switch needs a pullup resistor to function
    properly, otherwise the input pin is switched between an ambiguous ‘floating’
    state and ground.
 
 #. The thermistors we have in stock are Vishay parts from SparkFun, who hosts a
    `data sheet <https://www.sparkfun.com/products/250>`__.
-
-#. The LED PWM exercise should be rewritten to use Pin 3; Pin 2 won’t generate a
-   proper PWM signal, our mistake.
 
 
 Lab Electronics
@@ -67,22 +61,11 @@ Lab Electronics
 #. Some of the modular illuminance sensors for the transducers exercise are
    brand-new and will need the three-pin connector soldered on.
 
-#. The A4988 is rated for an 8-35V motor supply voltage, but it can be used with
-   a low-voltage stepper motor if the current limit is set correctly.
-
-#. The DRV8834 stepper motor driver is rated for a 2.5–10.8V motor supply
-   voltage and should be compatible with the A4988 pinout.
-
 #. The pins should be soldered on the back side of the A4988 such that the
    driver chip is visible. This does mean that the pad silkscreen text is on the
    bottom and out of sight, but allows the chip to dissipate heat. If your
    module is *not* soldered in this orientation, please be especially careful
    when wiring the circuit.
-
-#. If you are unclear on the wiring of a stepper motor, use a DMM to measure the
-   resistance between the wires. A bipolar stepper will have four wires, two per
-   coil, and the low-resistance of the coil should be unambiguously measurable.
-
 
    
 Lab Equipment
@@ -104,6 +87,7 @@ Lab Equipment
 Cluster Software
 ----------------
 
+#. MacPorts package ``py27-pyqwt`` was omitted from the request list in Fall 2015.
 
 
 Pure Data
@@ -126,5 +110,18 @@ Pure Data
 Closed Issues
 -------------
 
+#. The Pololu A4988 module is a newer, compatible replacement for the A4983
+   module used in the stepper motor exercise.
+
+#. The A4988 is rated for an 8-35V motor supply voltage, but it can be used with
+   a low-voltage stepper motor if the current limit is set correctly.
+
+#. The DRV8834 stepper motor driver is rated for a 2.5–10.8V motor supply
+   voltage and should be compatible with the A4988 pinout.
+
 #. The Arduino IDE versions 1.0.5 is missing the LED_BUILTIN definition for the
    Uno; the OneInOneOutASCII sketch has been updated.
+
+#. The LED PWM exercise in Pure-Data should be rewritten to use Pin 3; Pin 2
+   won’t generate a proper PWM signal, our mistake.
+

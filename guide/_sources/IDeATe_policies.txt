@@ -1,0 +1,75 @@
+.. include:: links.rst
+
+.. _ideate-facilities-policies:
+	     
+IDeATe Facilities Policies and Fees
+===================================
+
+The IDeATe Program is special because the courses dedicate instruction toward
+related workflows among multiple fields. As a result, IDeATe affiliated
+resources, equipment and spaces are tailored to support various processes and
+projects. After completing a course within the IDeATe\@Hunt facilities, you will
+become apart of IDeATe\@Hunt community. As an IDeATe\@Hunt member, you will gain
+access to a network of faculty, facilities, resources, and like-minded 'makers'.
+
+The IDeATe\@Hunt facilities feature several resources dedicated toward creative
+output. Many of these resources are expensive, including the service time
+devoted toward continued operation and maintenance. In addition, some of the
+spaces and equipment involve real hazards, posing safety concerns for all
+users. To resolve these issues, IDeATe\@Hunt has implemented (2) primary
+solutions:
+
+#. Safety, Training & Instruction
+
+   Spaces involving hazardous processes are only accessible by trained members
+   of the IDeATe\@Hunt community. Training is fundamentally offered through
+   introductory (portal) courses & workshops. Additional training is also
+   offered through various IDeATe\@Hunt courses. During training you will
+   receive all the instruction you require to utilize the spaces and/or
+   equipment in a safe, efficient, and respectful manner.
+
+#. Membership and Course Fees
+
+   Course fees are charged to students participating in any IDeATe\@Hunt courses
+   approximately (1) day after the ADD/DROP Deadline. These fees are determined
+   by resource access (i.e. spaces & equipment), consumables (i.e. materials),
+   and any other course related fees (i.e. field trips). Course fees will
+   provide you with continued access to IDeATe\@Hunt resources for the remainder
+   of your course participation. If you continue participating in IDeATe\@Hunt
+   courses, you will receive continued access. If you choose not to participate
+   in an IDeATe\@Hunt course, you may receive continued access to previously
+   approved resources by purchasing an `IDeATe@Hunt membership pass`_. These
+   fees are committed to future IDeATe improvements specifically related to
+   improving students' experience within these spaces. Expansion projects,
+   facility updates, equipment upgrades, and purchases are some of the more
+   common developments these fees are dedicated toward. As an IDeATe\@Hunt
+   member, your input is invaluable, therefore, IDeATe\@Hunt members determine
+   where this funding is directed. Every member will gain access to a voting
+   system, allowing members to submit ideas and proposals for future
+   improvements and vote on which enhancements are integrated.
+
+
+Course Fees
+-----------
+
+Participation in this course  will include a course fee of $150.00.
+This covers the following:
+
+**Facility Access**: You will gain access to the following Spaces: Physical
+Computing Lab, Experimental Fabrication Lab.
+
+**Resource Access**: You will gain access to the following Resources: Physical
+Computing Lab Hardware/Equipment, Laser Cutting/Engraving Equipment.
+
+**Borrowing**: You will also gain access to IDeATe Lending (A29); providing you
+with immediate availability of various materials, tools, electronics,
+peripherals, equipment, and computing platforms related to your specific
+workflows.
+
+**Consumable Credit**: A portion of your course fee is dedicated toward the
+purchase of course related project materials, consumables, and hardware.
+
+If you have questions, comments, or concerns regarding these fees, please
+contact P. Zach Ali (IDeATe Technical Director) via email at pzali@cmu.edu.
+ 
+ 

@@ -10,6 +10,7 @@ Resources
 
    errata
    github
+   ideate_labs
    cluster
    related_work
    ideas

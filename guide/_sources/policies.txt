@@ -30,13 +30,12 @@ Each applicable criterion is rated on a two point scale as follows:
 .. note: I could consider an eight-point scale including technical
    implementation
 
-Full projects will utilize all three criteria and be graded on a scale of 0-6,
-comprising two points each for concept, execution, and documentation.
+Full project reports will utilize all three criteria and be graded on a scale of
+0-6, comprising two points each for concept, execution, and documentation.
 
 Please note that the typical successful score will be a three, not a six; this
 is best regarded as a pass/fail score for each of the three criteria with the
-possibility for bonus points.  The total course grades are scored on a relative
-scale based on weighted point totals.
+possibility for bonus points.
 
 Please note that project deadlines are strict as outlined in the `Lateness
 Policy`_ section.
@@ -45,8 +44,11 @@ Project reports must also adhere carefully to the requirements specified in the
 :ref:`project-report-requirements` section in order to achieve full documentation
 scores.
 
-The full grade includes many categories:
+The total course grades are scored on a relative scale based on weighted point
+totals.  The approximate total weighting is 60% for projects, 30% for exercises,
+and 10% for other.  The full grade includes many categories:
 
+#. group project proposals
 #. group project milestones
 #. group project reports documenting full projects
 #. ideation exercises
@@ -56,7 +58,6 @@ The full grade includes many categories:
 #. skills survey
 #. individual interviews
 #. attendance
-
 
 Grades provide only a rough metric for student feedback.  The more nuanced and
 useful feedback comes from in-class verbal critiques, individual interviews, and
@@ -170,13 +171,19 @@ Physical Computing Lab
 ----------------------
 
 The classroom for the course in the IDeATe Physical Computing Lab in Hunt A10.
+It is part of the `IDeATe@Hunt Collaborative Making Facility`_ and students will
+be required to follow the `IDeATe@Hunt policies`_ as detailed under
+:ref:`ideate-facilities-policies`.
 
+All lab users are expected to abide by the `Physical Computing Lab Policies`_.
 The lab inventory of components and materials is available online as a Google
 Sheet named `Physical Computing Lab Inventory`_, with separate tabs for tools
 and materials.
 
-All lab users are expected to abide by the `Physical Computing Lab Policies`_.
+The room is used quite a bit during Mon-Thu, see `Physical Computing Lab
+Calendar`_ or `IDeATe@Hunt PhysComp Lab Calendar`_.
 
+Other resources may be reserved using the `IDeATe@Hunt Reservations Calendar`_.
 
 .. _lateness-policy:
 

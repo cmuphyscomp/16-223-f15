@@ -3,7 +3,7 @@
 .. _github:
 
 Course Repository on Github
-***************************
+===========================
 
 All course materials (including this guide) are available as a `public
 repository on github`_.  It is highly recommend that you learn to use git well
@@ -15,7 +15,8 @@ we will periodically ask you to update your local copy to an up-to-date version.
 
 
 Basics
-======
+------
+
 
 **Git** is a software tool for *version control* which provides the means to
 track changes in a set of files over time and share them with other people.
@@ -53,7 +54,7 @@ The IDeATe cluster MacBook Pros should have three different git clients:
 
 
 Using the Course Repository
-===========================
+---------------------------
 
 The first step is to *clone* the repository, which will create a local copy in a
 new folder on your local machine.  If you are using a command line client, the
@@ -88,10 +89,18 @@ Please refer to the git manual to learn how to create your own *branches* and
 modifying the course source files in-place**.  If you are not planning to keep
 your own revisions in version control, the recommended practice is to duplicate
 provided files before modifying them to minimize your trouble later.
-	   
+
+
+SolidWorks Examples
+-------------------
+
+We have an additional repository of sample CAD files for SolidWorks at `PhysComp
+SolidWorks repository`_.  This is not strictly required for the course but may
+be useful if you know or learn 3D CAD.
+
 
 Advanced Usage
-==============
+--------------
 
 Experienced users of github may know they can *fork* a personal copy of a
 repository and submit *pull requests* containing suggested patches.

@@ -1,0 +1,47 @@
+.. include:: links.rst
+
+	     
+IDeATe Lab Resources
+====================
+
+**Physical Computing Lab in Hunt A10**
+
+  #. `Physical Computing Lab Policies`_
+
+  #. `Physical Computing Lab Calendar`_ with scheduled TA times. See also the
+     calendar for this course at :ref:`calendar`.
+
+  #. `Physical Computing Lab Inventory`_.  The lab inventory of components and
+     materials is available online as a Google Sheet with separate tabs for
+     tools and materials.  Please note that many parts have purchasing links 
+     or datasheet links which can lead to detailed specifications.
+
+  #. `Physical Computing Lab Purchase Requests`_.  We don't promise to buy
+     anything you request, but a portion of your course fee is allocated for
+     purchasing project supplies.
+     
+**IDeATe\@Hunt Fabrication Labs**
+
+See also the :ref:`ideate-facilities-policies` and :ref:`cluster` sections.
+
+  #. `IDeATe@Hunt Collaborative Making Facility`_.  The Hunt facility web site
+     includes the reservation system, fabrication policies, machine tutorials,
+     and reference material.
+
+  #. `IDeATe@Hunt Reservations Calendar`_
+
+  #. Reservations calendar for A10: `IDeATe@Hunt PhysComp Lab Calendar`_
+
+  #. `Hunt Library Hours`_
+     
+**IDeATe Web**   
+
+  #. `IDeATe project gallery`_.  Selected IDeATe course projects are
+     posted on the public gallery.
+
+  #. `IDeATe Course Guide`_
+     
+  #. `IDeATe Course Sites`_
+
+  #. main `IDeATe`_
+     

@@ -21,7 +21,7 @@ essential skills and challenge students to not only consider how to make things,
 but also for whom we design, and why the making is worthwhile.
 
 This course is part of the `Integrative Design, Arts, and Technology`_ program
-at `Carnegie Mellon University`_ and makes use of the new `IDeaTe@Hunt
+at `Carnegie Mellon University`_ and makes use of the new `IDeATe@Hunt
 Collaborative Making Facility`_ in the lower level of Hunt Library.
 The main course website for Fall 2015 is at http://courses.ideate.cmu.edu/physcomp/f15/16-223.
 
@@ -31,9 +31,9 @@ students can enroll under 16-223; CIT/MCS/SCS students can enroll in the
 `60-223`_ version of the course, with whom we are planning some crossover if
 feasible.
 
-Please note that there will be lab usage and materials
-fees associated with this course, and that students will be required to agree to
-the `IDeATe@Hunt policies`_.
+Please note that there will be :ref:`lab usage and materials
+fees<ideate-facilities-policies>` associated with this course, and that students
+will be required to follow the `IDeATe@Hunt policies`_.
 
 Course Sections
 ===============

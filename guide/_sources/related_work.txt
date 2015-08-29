@@ -35,6 +35,13 @@ Tutorials and Guides
   * `SparkFun tutorials <https://learn.sparkfun.com/tutorials>`__
   * `Adafruit tutorials <https://learn.adafruit.com/>`__
   * `Arduino Playground <http://playground.arduino.cc/>`__
+
+
+Other Programs
+--------------
+
+  * `ITP Physical Computing <https://itp.nyu.edu/physcomp/>`__
+  * `Tangible Media Group at MIT Media Lab <http://tangible.media.mit.edu/>`__
     
 
 Academic papers

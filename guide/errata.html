@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-08-26',
+        VERSION:     '2015-08-29',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -87,15 +87,11 @@ intended to convey the logic of an electronics design.</li>
 <div class="section" id="errors-in-exercises">
 <h2>2.1.2. Errors in Exercises<a class="headerlink" href="#errors-in-exercises" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The Pololu A4988 module is a newer, compatible replacement for the A4983
-module used in the stepper motor exercise.</li>
 <li>The digital input using a switch needs a pullup resistor to function
 properly, otherwise the input pin is switched between an ambiguous ‘floating’
 state and ground.</li>
 <li>The thermistors we have in stock are Vishay parts from SparkFun, who hosts a
 <a class="reference external" href="https://www.sparkfun.com/products/250">data sheet</a>.</li>
-<li>The LED PWM exercise should be rewritten to use Pin 3; Pin 2 won’t generate a
-proper PWM signal, our mistake.</li>
 </ol>
 </div>
 <div class="section" id="lab-electronics">
@@ -106,18 +102,11 @@ longest lead is the common.  When in doubt, test with the DMM diode function.
 (The anode is the positive terminal, the cathode is the negative terminal.)</li>
 <li>Some of the modular illuminance sensors for the transducers exercise are
 brand-new and will need the three-pin connector soldered on.</li>
-<li>The A4988 is rated for an 8-35V motor supply voltage, but it can be used with
-a low-voltage stepper motor if the current limit is set correctly.</li>
-<li>The DRV8834 stepper motor driver is rated for a 2.5–10.8V motor supply
-voltage and should be compatible with the A4988 pinout.</li>
 <li>The pins should be soldered on the back side of the A4988 such that the
 driver chip is visible. This does mean that the pad silkscreen text is on the
 bottom and out of sight, but allows the chip to dissipate heat. If your
 module is <em>not</em> soldered in this orientation, please be especially careful
 when wiring the circuit.</li>
-<li>If you are unclear on the wiring of a stepper motor, use a DMM to measure the
-resistance between the wires. A bipolar stepper will have four wires, two per
-coil, and the low-resistance of the coil should be unambiguously measurable.</li>
 </ol>
 </div>
 <div class="section" id="lab-equipment">
@@ -137,6 +126,9 @@ the purple LED but not register its voltage drop.</li>
 </div>
 <div class="section" id="cluster-software">
 <h2>2.1.5. Cluster Software<a class="headerlink" href="#cluster-software" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>MacPorts package <code class="docutils literal"><span class="pre">py27-pyqwt</span></code> was omitted from the request list in Fall 2015.</li>
+</ol>
 </div>
 <div class="section" id="pure-data">
 <h2>2.1.6. Pure Data<a class="headerlink" href="#pure-data" title="Permalink to this headline">¶</a></h2>
@@ -154,8 +146,16 @@ time. You may need to close the Arduino IDE for Pd to connect properly.</li>
 <div class="section" id="closed-issues">
 <h2>2.1.7. Closed Issues<a class="headerlink" href="#closed-issues" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
+<li>The Pololu A4988 module is a newer, compatible replacement for the A4983
+module used in the stepper motor exercise.</li>
+<li>The A4988 is rated for an 8-35V motor supply voltage, but it can be used with
+a low-voltage stepper motor if the current limit is set correctly.</li>
+<li>The DRV8834 stepper motor driver is rated for a 2.5–10.8V motor supply
+voltage and should be compatible with the A4988 pinout.</li>
 <li>The Arduino IDE versions 1.0.5 is missing the LED_BUILTIN definition for the
 Uno; the OneInOneOutASCII sketch has been updated.</li>
+<li>The LED PWM exercise in Pure-Data should be rewritten to use Pin 3; Pin 2
+won’t generate a proper PWM signal, our mistake.</li>
 </ol>
 </div>
 </div>
@@ -224,7 +224,7 @@ Uno; the OneInOneOutASCII sketch has been updated.</li>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-08-26.
+      Last updated on 2015-08-29.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
