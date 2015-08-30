@@ -1,0 +1,26 @@
+.. include:: ../links.rst
+   
+Day 2: Digging into Unit 1
+==========================
+
+Notes for 2015-09-02.  See also the :ref:`calendar`.
+
+Agenda
+------
+
+#. Administrative
+
+   * Discuss lab TA hours.
+   * Possible visitors.
+
+#. Assignments
+   
+   * In-class: individual research presentation sign-ups.
+   * In-class: Fire safety sign-ups.
+   * Due 9/9: Ideation exercise 1.
+   * End of 9/9: First notebook review.
+
+#. Exercises
+
+   * Continue Unit 1 exercises.
+

@@ -13,27 +13,31 @@ Agenda
 
    * What is IDeATe?
    * What is *Physical Computing*?
-   * video
+   * Video.
 
 #. Administrative questions
 
    * Enrollment and waitlist.
+   * Blackboard.
    * IDeATe Computing Virtual Cluster.
    * Card access.
    * Fabrication resources and policy.
    * Fire safety for the laser cutter.
    * Physical Computing Lab use and abuse.
    * Course fees and costs.
+   * Photos.
+   * Discuss lab TA hours.
 
 #. Assignments
    
-   * Skill survey.
-   * Gallery profile.
-   * Initial interviews.
+   * Due 9/2: Skill survey.
+   * Soon: Gallery profile.
+   * Soon: Initial interviews.
 
 #. Exercises
    
-   * Course git repository.
+   * Clone course git repository.
+   * Start lab notebook.
    * Start Unit 1 exercises.
 
 
