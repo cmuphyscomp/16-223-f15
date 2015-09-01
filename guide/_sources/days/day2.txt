@@ -5,11 +5,21 @@ Day 2: Digging into Unit 1
 
 Notes for 2015-09-02.  See also the :ref:`calendar`.
 
+Notes from Day 1
+----------------
+
+  * The power supplies have a current limit.  See :ref:`common-mistakes`.
+  * LEDs are not the same as incandescent lamps.
+  * Some meter probes are too short for the AC outlets.
+  * The most important element of a lab notebook entry is the reflection prompt.  See :ref:`lab-notebook`.
+
 Agenda
 ------
 
 #. Administrative
-
+   
+   * Fabrication resources and policy.
+   * Fire safety for the laser cutter.
    * Discuss lab TA hours.
    * Possible visitors.
 

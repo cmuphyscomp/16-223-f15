@@ -67,7 +67,7 @@ The `MacPorts Quickstart instructions`_ are the best reference for initial insta
 
 #. Install additional packages.  Some of these are more relevant to Raspberry Pi users::
 
-     sudo port install Fugu doxygen emacs-app graphviz md5sha1sum nmap opencv +python27 p7zip py27-ipython py27-protobuf py27-sphinx py27-twisted py27-yaml sshfs unison xz
+     sudo port install Fugu doxygen emacs-app graphviz md5sha1sum nmap opencv +python27 p7zip py27-ipython py27-protobuf py27-sphinx py27-twisted py27-yaml sshfs unison xz eric4
    
    
 Installation on Personal Windows Computers
@@ -99,7 +99,6 @@ Pros from `Computing Services`_ on behalf of the course.
    :widths: 15, 10, 20, 20, 40
    :file: software.csv
 
-
 In addition, I made the following requests for the baseline OS X installation:
 
 #. Python, Processing, and Pd must be entered into the firewall permissions
@@ -114,5 +113,6 @@ In addition, I made the following requests for the baseline OS X installation:
 Errata:
 
 #. MacPorts package ``py27-pyqwt`` was omitted from the request list in F15.
+#. MacPorts package ``eric4`` was omitted from the request list in F15.
 #. OpenSCAM is now CAMotics.
 #. Python(x,y) moved from Google Code to github.

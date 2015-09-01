@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.5. IDeATe Laser Cutter Guide &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-09-01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="2. Resources" href="resources.html" />
+    <link rel="next" title="2.6. Related Work" href="related_work.html" />
+    <link rel="prev" title="2.4. IDeATe Virtual Cluster Software" href="cluster.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="related_work.html" title="2.6. Related Work"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cluster.html" title="2.4. IDeATe Virtual Cluster Software"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" accesskey="U">2. Resources</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="laser-cutter">
+<span id="ideate-laser-cutter-guide"></span><h1>2.5. IDeATe Laser Cutter Guide<a class="headerlink" href="#laser-cutter" title="Permalink to this headline">¶</a></h1>
+<p>The IDeATe&#64;Hunt fabrication facility includes three Rabbit laser cutters.
+These are extremely useful tools for cutting complex 2D forms.  The best feature
+of these tools is the speed with which an idea be tested: it is possible to
+conceive of a part, create a 2D drawing, output a DXF, and cut material to make
+a functional part within <em>minutes</em>.</p>
+<p>The laser cuts flat materials such as cardboard, fabric, paper, MDF, plywood,
+and acrylic.  It is however <em>limited</em> to these materials and other commmon
+materials are unsafe to cut due either to fire or chemical hazard.</p>
+<p>Before you begin, please review the <a class="reference external" href="http://ideate.andrew.cmu.edu/policy-proc/rabbitlaser?target=policy">IDeATe&#64;Hunt Laser Cutter Policy</a>. <strong>You
+are responsible for understanding and following all details of the policy.</strong></p>
+<p>Instructions for preparing design files to cut can be found below under
+<a class="reference internal" href="#laser-cutter-cad"><span>Laser Cutter Files</span></a>.  The general instructions for operating the cutter can
+be found under <a class="reference external" href="http://ideate.andrew.cmu.edu/policy-proc/rabbitlaser?target=procedure">IDeATe&#64;Hunt Laser Cutter Procedure</a>.</p>
+<p>General information on the cutters can be found under <a class="reference external" href="http://ideate.andrew.cmu.edu/process/rabbit/">IDeATe&#64;Hunt Rabbit Laser
+Cutters</a>.  Materials available for puchase at the desk can be found at the
+<a class="reference external" href="http://ideate.andrew.cmu.edu/category/resource/material/">IDeATe&#64;Hunt Material Inventory</a>.</p>
+<div class="section" id="process-overview">
+<h2>2.5.1. Process Overview<a class="headerlink" href="#process-overview" title="Permalink to this headline">¶</a></h2>
+<p>Laser cutters are intrinsically two-dimensional tools: a focused beam of
+infrared laser light (e.g. invisible to the human eye) moves on an XY gantry
+under computer control to trace out curves and lines.  The beam is turned on and
+off to start and end lines during cutting.  It may also be used in a raster
+engraving mode in which it sweeps an area while modulating the beam power very
+quickly to vary the cut and create an image on the surface.</p>
+<p>The fundamental cutting process is <em>melting</em> or <em>burning</em> from the heat
+resulting from absorbing the energy of the light.  An air jet blows downwards
+into the cut area to help move melted material out of the cut before it
+resolidifies.  The cutter bed can be moved up or down prior to cutting to place
+the top plane of the flat material at the focal point of the laser.</p>
+</div>
+<div class="section" id="laser-cutter-files">
+<span id="laser-cutter-cad"></span><h2>2.5.2. Laser Cutter Files<a class="headerlink" href="#laser-cutter-files" title="Permalink to this headline">¶</a></h2>
+<p>The most up-to-date hints for preparing files is included in the guide offered
+by the Rapid Prototyping Technologies course under <a class="reference external" href="http://www.cs.cmu.edu/afs/cs/academic/class/15294-f14/rabbit-laser-instructions.html">15-294 Rabbit Laser
+Instructions</a>.</p>
+<p>A printed copy may also be found in a binder in the laser cutter room, or can be
+read on a browser on the laser cutter station computers.</p>
+</div>
+<div class="section" id="file-formats">
+<h2>2.5.3. File Formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h2>
+<p>The best format for a cutting plan drawing is <a class="reference external" href="https://en.wikipedia.org/wiki/AutoCAD_DXF">DXF</a> with millimeter units and
+1:1 scale.  The key rule is that every line on the drawing will create a cut in
+the material, so make sure there are no stray marks, text, annotations, frames,
+or labels.  These files are 2D drawings, so can be generated from drawing
+programs such as Inkscape or Illustrator, 2D CAD programs such as DraftSight, or
+3D CAD such as SolidWorks or Rhino by creating the appropriate 2D drawing
+outputs.</p>
+</div>
+<div class="section" id="design-rules">
+<h2>2.5.4. Design Rules<a class="headerlink" href="#design-rules" title="Permalink to this headline">¶</a></h2>
+<p>The typical kerf in thin acrylic can be 0.005 to 0.010 inches and is slightly
+tapered, so parts typically are slightly smaller than the designed form and the
+edges are not perfectly square.</p>
+<p>Even though the parts are flat, complex 3D structures can be created by using
+tabs and slots to connect part edges to part faces.</p>
+<p>For other hints, see <a class="reference internal" href="skills.html#cad-cam-resources"><span>CAD/CAM Resources</span></a>.</p>
+</div>
+<div class="section" id="best-practices">
+<h2>2.5.5. Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Thick acrylic cuts can tend to re-fuse, so it is best to remove your parts
+promptly from the cutter and use a tool to press out all the small pieces.
+Careful, acrylic is brittle and can crack.</li>
+<li>Be sure to wash your hands after handling freshly cut acrylic, it leaves a
+residue.</li>
+</ol>
+</div>
+<div class="section" id="errata">
+<h2>2.5.6. Errata<a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The instructions refer to checking the &#8220;equipment room behind the laser
+cutters&#8221;, but that door is generally locked with physical key access only.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.5. IDeATe Laser Cutter Guide</a><ul>
+<li><a class="reference internal" href="#process-overview">2.5.1. Process Overview</a></li>
+<li><a class="reference internal" href="#laser-cutter-files">2.5.2. Laser Cutter Files</a></li>
+<li><a class="reference internal" href="#file-formats">2.5.3. File Formats</a></li>
+<li><a class="reference internal" href="#design-rules">2.5.4. Design Rules</a></li>
+<li><a class="reference internal" href="#best-practices">2.5.5. Best Practices</a></li>
+<li><a class="reference internal" href="#errata">2.5.6. Errata</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cluster.html"
+                        title="previous chapter">2.4. IDeATe Virtual Cluster Software</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="related_work.html"
+                        title="next chapter">2.6. Related Work</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="related_work.html" title="2.6. Related Work"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cluster.html" title="2.4. IDeATe Virtual Cluster Software"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" >2. Resources</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-09-01.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

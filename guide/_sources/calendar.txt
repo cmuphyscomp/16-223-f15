@@ -13,6 +13,7 @@ Hours`_ calendar.
 
 The following course calendar is tentative and subject to change.  For a description of
 the specific deliverables, please see `the assignments page <assignments.html>`__.
+For the day by day agendas, please see :ref:`logbook`.
 
 .. csv-table::
    :header-rows: 1

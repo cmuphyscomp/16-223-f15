@@ -12,6 +12,7 @@ Resources
    github
    ideate_labs
    cluster
+   laser_cutter
    related_work
    ideas
    schematics

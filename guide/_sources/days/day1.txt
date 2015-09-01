@@ -17,16 +17,18 @@ Agenda
 
 #. Administrative questions
 
+   * Course site: **http://courses.ideate.cmu.edu/physcomp/f15/16-223**
    * Enrollment and waitlist.
    * Blackboard.
    * IDeATe Computing Virtual Cluster.
    * Card access.
-   * Fabrication resources and policy.
-   * Fire safety for the laser cutter.
+   * omitted: Fabrication resources and policy.
+   * omitted: Fire safety for the laser cutter.
    * Physical Computing Lab use and abuse.
    * Course fees and costs.
    * Photos.
    * Discuss lab TA hours.
+   * Music.
 
 #. Assignments
    

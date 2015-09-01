@@ -19,6 +19,8 @@ github `repository issue tracker`_.
 General information on techniques can also be found under :ref:`tips-and-tricks`
 and :ref:`essential-skills-list`.
 
+.. _common-mistakes:
+
 Common Mistakes
 ---------------
 

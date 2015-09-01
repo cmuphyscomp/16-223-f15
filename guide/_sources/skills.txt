@@ -311,3 +311,55 @@ probably many will be obsolete by the time you read this.
    + using apt-get: https://help.ubuntu.com/community/AptGet/Howto
    + using github: http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1#awesm=~oGfwcqmB8JNeOv and http://lifehacker.com/5744113/learn-to-code-the-full-beginners-guide
 
+
+.. _cad-cam-resources:
+
+CAD/CAM Resources
+=================
+
+**Online repositories of shared 3d models:**
+
+-  `Thingiverse <http://www.thingiverse.com/>`__: "MakerBot's
+   Thingiverse is a thriving design community for discovering, making,
+   and sharing 3D printable things. "
+-  `SketchFab <https://sketchfab.com/>`__: "Sketchfab is the leading
+   platform to publish, share and embed interactive 3D content, anywhere
+   online. "
+-  `Google 3d Warehouse <https://3dwarehouse.sketchup.com/>`__: The
+   Google company's database of 3d models
+-  `3D Content Central <http://www.3dcontentcentral.com/>`__ Free 2D and
+   3D CAD Models run by the makers of SolidWorks
+
+**Online tools for CAD/CAM:**
+
+-  `BoxMaker <boxmaker.rahulbotics.com/>`__: designing laser cut finger
+   joint boxes made easy
+-  `AutoDesk 123 Make <http://www.123dapp.com/make>`__: "3D meets DIY.
+    Turn your amazing 3D models into even more amazing do-it-yourself
+   projects. "
+-  `GearMaker <https://woodgears.ca/gear_cutting/template.html>`__:
+   Online tool for designing Gears
+-  `Involute Spur Gear
+   Builder <http://hessmer.org/gears/InvoluteSpurGearBuilder.html>`__:
+   can generate DXF files to import into SolidWorks or Rhino
+
+**References for designers:**
+
+-  `CNC Joinery <http://artfab.art.cmu.edu/cnc-joinery/>`__: Read all
+   about it
+-  `Curved/Bending hard materials with Laser
+   Cutter <http://www.instructables.com/id/Curved-laser-bent-wood/>`__:
+   Read all about it
+-  `Google Books: 507 Mechanical
+   Movements <http://books.google.com/books?id=vOhIAAAAMAAJ&dq=mechanical%20movements&pg=PR1#v=onepage&q&f=false>`__
+-  `Google Books: The Engineer's Sketch-book of Mechanical Movements,
+   Devices, Appliances, Contrivances, and
+   Details <http://books.google.com/books?id=LlYSAAAAIAAJ&dq=mechanical%20movements&pg=PP1#v=onepage&q&f=false>`__
+
+**Awesome Little Free (or almost free) Programs:**
+
+-  `Pepakura <http://www.tamasoft.co.jp/pepakura-en/>`__: Origami tool;  unfold complex 3d objects and cut out of flat material
+-  `Meshlab <http://meshlab.sourceforge.net/>`__:  Opensource/Multiplatform mesh manipulator
+-  `SketchUp <http://www.sketchup.com/>`__: "The easiest way to draw in 3D"
+-  `Grasshopper <http://grasshopper.com/>`__: Parametric design for  Rhino
+

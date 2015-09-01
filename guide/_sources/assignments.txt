@@ -160,6 +160,8 @@ concise paragraph:
   * What was the most surprising outcome?
   * How specifically will this help me achieve my goals?
 
+Think in terms of an *articulable principle* which you could teach to others.
+
 **Documenting Progress.** If your instructors and peers can see what you've done
 they may be able to point out details or suggest alternatives.  The minimum
 requirements for documentation are as follows:

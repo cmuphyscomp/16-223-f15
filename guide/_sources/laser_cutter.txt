@@ -1,0 +1,96 @@
+.. include:: links.rst
+
+.. _laser-cutter:
+
+IDeATe Laser Cutter Guide
+=========================
+
+The IDeATe\@Hunt fabrication facility includes three Rabbit laser cutters.
+These are extremely useful tools for cutting complex 2D forms.  The best feature
+of these tools is the speed with which an idea be tested: it is possible to
+conceive of a part, create a 2D drawing, output a DXF, and cut material to make
+a functional part within *minutes*.
+
+The laser cuts flat materials such as cardboard, fabric, paper, MDF, plywood,
+and acrylic.  It is however *limited* to these materials and other commmon
+materials are unsafe to cut due either to fire or chemical hazard.
+
+Before you begin, please review the `IDeATe@Hunt Laser Cutter Policy`_. **You
+are responsible for understanding and following all details of the policy.**
+
+Instructions for preparing design files to cut can be found below under
+:ref:`laser-cutter-cad`.  The general instructions for operating the cutter can
+be found under `IDeATe@Hunt Laser Cutter Procedure`_.
+
+General information on the cutters can be found under `IDeATe@Hunt Rabbit Laser
+Cutters`_.  Materials available for puchase at the desk can be found at the
+`IDeATe@Hunt Material Inventory`_.
+
+Process Overview
+----------------
+
+Laser cutters are intrinsically two-dimensional tools: a focused beam of
+infrared laser light (e.g. invisible to the human eye) moves on an XY gantry
+under computer control to trace out curves and lines.  The beam is turned on and
+off to start and end lines during cutting.  It may also be used in a raster
+engraving mode in which it sweeps an area while modulating the beam power very
+quickly to vary the cut and create an image on the surface.
+
+The fundamental cutting process is *melting* or *burning* from the heat
+resulting from absorbing the energy of the light.  An air jet blows downwards
+into the cut area to help move melted material out of the cut before it
+resolidifies.  The cutter bed can be moved up or down prior to cutting to place
+the top plane of the flat material at the focal point of the laser.
+
+.. _laser-cutter-cad:
+
+Laser Cutter Files
+------------------
+
+The most up-to-date hints for preparing files is included in the guide offered
+by the Rapid Prototyping Technologies course under `15-294 Rabbit Laser
+Instructions`_.
+
+A printed copy may also be found in a binder in the laser cutter room, or can be
+read on a browser on the laser cutter station computers.
+
+File Formats
+------------
+
+The best format for a cutting plan drawing is `DXF`_ with millimeter units and
+1:1 scale.  The key rule is that every line on the drawing will create a cut in
+the material, so make sure there are no stray marks, text, annotations, frames,
+or labels.  These files are 2D drawings, so can be generated from drawing
+programs such as Inkscape or Illustrator, 2D CAD programs such as DraftSight, or
+3D CAD such as SolidWorks or Rhino by creating the appropriate 2D drawing
+outputs.
+
+
+Design Rules
+------------
+
+The typical kerf in thin acrylic can be 0.005 to 0.010 inches and is slightly
+tapered, so parts typically are slightly smaller than the designed form and the
+edges are not perfectly square.
+
+Even though the parts are flat, complex 3D structures can be created by using
+tabs and slots to connect part edges to part faces.
+
+For other hints, see :ref:`cad-cam-resources`.
+
+Best Practices
+--------------
+
+#. Thick acrylic cuts can tend to re-fuse, so it is best to remove your parts
+   promptly from the cutter and use a tool to press out all the small pieces.
+   Careful, acrylic is brittle and can crack.
+
+#. Be sure to wash your hands after handling freshly cut acrylic, it leaves a
+   residue.
+
+
+Errata
+------
+
+#. The instructions refer to checking the "equipment room behind the laser
+   cutters", but that door is generally locked with physical key access only.
