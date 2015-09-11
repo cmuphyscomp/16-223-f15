@@ -1,0 +1,15 @@
+.. include:: ../links.rst
+
+.. _day2-survey:
+
+Day 2: 16-223 Skill Survey Results
+==================================
+
+Notes for 2015-09-02.  See also the :ref:`calendar`.
+
+The following table is sorted from most to least positive responses.
+
+.. csv-table::
+   :header-rows: 1
+   :widths: 30, 5, 5
+   :file: skill-survey.csv

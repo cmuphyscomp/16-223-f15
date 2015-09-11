@@ -1,0 +1,72 @@
+.. include:: links.rst
+
+.. _project-report-requirements:
+
+Project Reports
+===============
+
+All projects require an accompanying report document in **PDF** format.  An outline
+of specific prompt questions will be provided for each assignment, with a
+denotation of specific required and optional elements.  The following specifies
+the detailed formatting requirements for all reports.  The content itself should
+generally follow the :ref:`project-report-template`.
+
+#. All report documents must be submitted as PDF files.  Original document
+   formats (.doc, Word, .tex, etc.) will be returned unread.
+
+#. Report documents must be submitted within a single zip file which also
+   contains the implementation supporting code and engineering files.
+
+#. The zip file name must include a unique project identifier.  E.g. it should
+   have a meaningful name ('talking-clock.zip') not a generic name
+   ('project.zip').
+   
+#. Each group must submit one joint report.  If a group member fails to fulfill
+   their documentation role, the other group members should submit what they can
+   on time and ask for an extension with an explanation.
+
+#. Each report should clearly attribute the contribution of each group member.
+   Individual grades may be adjusted from group grades if it becomes apparent
+   that contribution is not equitable.  A separate confidential peer evaluation
+   may be requested individually from each group member at the instructor's
+   discretion.
+
+#. Reports must generally include a statement of objectives, general descriptive
+   text, narrative, results, photos, technical documentation, and citations of
+   related work.
+
+#. Any project photos must be embedded within the PDF document, and provided at
+   a print-ready resolution (e.g. 300dpi).
+
+#. Project videos must be uploaded to the hosting service of your choice and an
+   *active, clickable link* provided within the body of the PDF report.  Please
+   check the documentation of your authoring software if you need help making
+   your links active.
+
+#. Project videos must adhere to the minimum and maximum duration limits,
+   including titles and credits.
+
+#. Project videos are encouraged to include a title and credits.
+
+#. In general, enough technical documentation must be provided that a person of
+   equal skill could replicate the construction of the project.
+
+#. All program source code is required and must be provided within the single zip
+   file.
+
+#. Electronic schematics and fabrication diagrams must be provided in PDF form,
+   either embedded in the main report or as a separate PDF.  Schematics must
+   reflect the as-built state.  Schematics must use conventional symbols and
+   notation.  Hand-drawn or illustrated schematics are acceptable, but the use
+   of schematic capture software such as EAGLE is recommended as it will help
+   reduce errors.  **Breadboard diagrams are not acceptable substitutes.**
+
+#. Mechanical drawings or sketches must be provided in PDF form, either embedded
+   in the main report or as a separate PDF.  Mechanical drawings must clearly
+   specify the scale and units.
+
+#. Any original CAD files are required.  Multi-file designs (typical for
+   SolidWorks) must be provided within the single zip file.
+
+#. Formatting and typography are at your discretion.  However, beautiful graphic
+   design won't be rewarded, so please use your effort wisely.

@@ -21,5 +21,4 @@ Fall 2015 Syllabus
    policies
    IDeATe_policies
    topics
-   assignments
    calendar

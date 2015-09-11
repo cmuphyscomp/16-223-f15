@@ -1,5 +1,11 @@
+.. _peer-evaluation-form:
+
 Peer Evaluation Form
 ====================
+
+The deliverable for each project includes a brief peer evaluation response to be
+submitted confidentially.  Please answer the following questions in your
+evaluation.
 
 #. Overall were you satisfied with the group dynamic of your team (why or why not)?
 

@@ -26,6 +26,37 @@ courtesy and we will not be responsible for maintaining your personal system.
 
 .. contents::
 
+Notes on Cluster MacBook Pros for F15
+-------------------------------------
+
+#. The cluster MacBook Pros can be checked out from the IDeATe equipment desk.
+   The basic specs: 15" Retina MacBook Pro (2014), 2.2 GHz, 16G RAM, 500G SSD,
+   Iris Pro graphics.
+
+#. They must not leave the Hunt Library building.  The IDeATe desk is not open
+   24/7, so please plan your usage time appropriately.
+
+#. They have Bootcamp installed and run either OS X 10.10 or Windows 8.
+
+#. The OS X installation is configured to create user accounts on the local
+   disk.  This means that the first time you log onto any given laptop, all your
+   settings will be the default, and none of your personal files will be
+   directly available.
+
+#. Your Andrew AFS folder (and DFS folder?) can easily be mounted.
+
+**File Management Strategies.**
+
+#. Work from your AFS or DFS space.
+
+#. Bring an external drive or USB stick to carry around your files.
+
+#. I am working on a strategy for myself which involves backing up my
+   Library/Preferences folder to and from AFS to ease transferring settings from
+   one laptop to another, but I am still developing this.
+
+
+
 Installation on Personal OS X Computers
 ---------------------------------------
 
@@ -56,7 +87,7 @@ The `MacPorts Quickstart instructions`_ are the best reference for initial insta
 #. Install the current XCode system from Apple if necessary.
 #. Install the base system from the .pkg package file appropriate to your OS version.
 #. Run an initial self-update from the command line::
-     
+
      sudo port -v selfupdate
 
 #. Install essential packages.  Note that this may take some time as it will download many packages and perhaps compile a few::
@@ -68,8 +99,8 @@ The `MacPorts Quickstart instructions`_ are the best reference for initial insta
 #. Install additional packages.  Some of these are more relevant to Raspberry Pi users::
 
      sudo port install Fugu doxygen emacs-app graphviz md5sha1sum nmap opencv +python27 p7zip py27-ipython py27-protobuf py27-sphinx py27-twisted py27-yaml sshfs unison xz eric4
-   
-   
+
+
 Installation on Personal Windows Computers
 ------------------------------------------
 
@@ -85,7 +116,7 @@ Other useful applications include:
 The closest equivalent to MacPorts is the `Cygwin <https://www.cygwin.com/>`__
 package system.  For the Python support the recommended solution is python(x,y).
 
-   
+
 .. _cluster-course-software:
 
 Cluster Course Software
@@ -113,6 +144,8 @@ In addition, I made the following requests for the baseline OS X installation:
 Errata:
 
 #. MacPorts package ``py27-pyqwt`` was omitted from the request list in F15.
-#. MacPorts package ``eric4`` was omitted from the request list in F15.
+#. MacPorts package ``py27-opengl`` was omitted from the request list in F15.
 #. OpenSCAM is now CAMotics.
 #. Python(x,y) moved from Google Code to github.
+
+.. #. MacPorts package ``eric4`` was omitted from the request list in F15.

@@ -1,0 +1,22 @@
+.. include:: ../links.rst
+   
+Day 5: Project 1 Proposals
+==========================
+
+Notes for 2015-09-16.  See also the :ref:`calendar`.
+
+Notes from Day 4
+----------------
+     
+Agenda
+------
+
+#. Administrative
+   
+#. Assignments
+
+   * Sep 14: Project 1 proposal.
+     
+#. In-class
+   
+   * Project 1 proposal reviews.

@@ -1,0 +1,95 @@
+
+Videos
+======
+
+.. contents::
+
+Arthur Ganson
+-------------
+
+*Faster*
+
+.. youtube:: JJvK47ncVjU
+
+Louis-Phillipe Demers
+---------------------
+
+*Tiller Girls*
+
+.. youtube:: IdmYtZk88Lw
+
+Norman White
+------------
+
+*Helpless Robot*
+
+.. youtube:: y0blJsgbcho
+
+.. youtube:: LYyAHOxY7jU
+
+
+Useless Box With Surprises
+--------------------------
+
+.. youtube:: apVR5Htz0K4
+
+
+Reuben Margolin
+---------------
+
+http://www.reubenmargolin.com/waves/
+
+.. youtube:: Zo93l-MICUM
+
+.. youtube:: RDQsp9pPnjM
+
+Simon Penny
+-----------
+
+*Petit Mal*
+
+.. youtube:: aBkm9mUkRMM
+
+
+Stelarc
+-------
+
+*Exoskeleton*
+
+.. youtube:: R2MntBUwUxY
+
+Beatbots, Marek Michalowski
+---------------------------
+
+*Keepon*
+
+.. youtube:: 3g-yrjh58ms
+
+Jacob Tonski
+------------
+
+*Balance From Within*
+
+.. youtube:: UXwFjRTArRM
+
+
+Jordan Wolfson
+--------------
+
+*(Female Figure)*
+
+.. youtube:: 8H8S4ITNbW8
+
+* `artnet news article <https://news.artnet.com/in-brief/say-hello-to-jordan-wolfsons-terrifying-animatronic-dancer-at-david-zwirner-6611>`__
+* `shorter video <https://www.youtube.com/watch?v=yy7G1A0ucK4>`__
+
+
+Raffaello D'Andrea
+-------------------------
+
+*Self Healing Chair*
+
+.. youtube:: Pxq2chA5AT8
+
+* http://raffaello.name/projects/robotic-chair/	     
+* also https://www.youtube.com/watch?v=vlXh8RvvcuI

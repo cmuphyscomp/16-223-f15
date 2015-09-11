@@ -16,7 +16,9 @@ Resources
    related_work
    ideas
    schematics
+   SolidWorks
    skills
    tips_and_tricks
    report_template
    peer_evaluation
+   videos

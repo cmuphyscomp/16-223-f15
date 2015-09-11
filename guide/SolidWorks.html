@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>3.9. SolidWorks Overview &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-09-11',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="3. Resources" href="resources.html" />
+    <link rel="next" title="3.10. Essential Skills List" href="skills.html" />
+    <link rel="prev" title="3.8. Drawing Electronic Schematics" href="schematics.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="skills.html" title="3.10. Essential Skills List"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="schematics.html" title="3.8. Drawing Electronic Schematics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" accesskey="U">3. Resources</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="solidworks-overview">
+<span id="id2"></span><h1>3.9. SolidWorks Overview<a class="headerlink" href="#solidworks-overview" title="Permalink to this headline">¶</a></h1>
+<p>We have several CAD (<a class="reference external" href="http://en.wikipedia.org/wiki/Computer-aided_design">computer-aided design</a>) tools available for designing
+physical structures, namely <a class="reference external" href="http://www.rhino3d.com">Rhino</a> and <a class="reference external" href="http://www.solidworks.com">SolidWorks</a>. This overview is
+intended as a high-level introduction to the essential features of SolidWorks
+which make it useful for this course.</p>
+<p>SolidWorks is a <em>parametric</em> design tool. In the broadest sense, this makes it
+closer to visual programming than drawing: parts are defined by geometric
+<strong>sketch</strong> primitives constrained by <strong>relations</strong> and processed into geometric
+<strong>features</strong> through operations. So a cylindrical part might be defined by a
+circle on a plane that is extruded for a given distance or up to a given
+point.</p>
+<p>Unlike Rhino, that tree of elements is what <em>defines</em> the part and is kept
+through the life of the part. So if that circle is moved, or split or reshaped,
+or the extrusion distance changed, the geometry of the solid form can be
+recomputed.</p>
+<p>Using parametric design efficiently involves structuring the part model so that
+it accurately captures <em>design intent</em>. E.g. if two particular holes are
+mechanically related, their relative position can be defined by dimensions and
+relations which capture that mechanical relationship.  That way, if other
+features change and the part shape changes, the holes can maintain their
+relationship and preserve the intent.</p>
+<p>SolidWorks is especially suited for designing <strong>assemblies</strong> of
+<strong>parts</strong>. Machines are typically built from individually manufactured parts
+assembled together. This is captured in the design model by creating assemblies
+which define the relative position of individual parts via <strong>mates</strong> which
+define geometric constraints. For example, a shaft can be mated to a bearing
+hole by a concentric mate which limits it to axial rotation and translation (2
+remaining freedoms), then further limited by a co-planarity mate between a
+groove face, snap-ring face, and bearing face which then leaves only axial
+rotation free. If mates correctly correspond to actual physical constraints, the
+model helps visualize that all parts have the correct freedoms. And the
+parametric nature of the constraint tree means that many part dimensions can be
+changed and other part positions can adapt.</p>
+<p>A negative side-effect of the parametric <strong>feature tree</strong> is that if the
+structure of the the design intent changes, it can be difficult to modify the
+tree structure to match. This is because all features are defined in relation to
+existing features, so if a <strong>parent feature</strong> is removed, the <strong>child feature</strong>
+becomes only partly defined. It takes a great deal of practice to learn to
+structure models well at the beginning to minimize these problems later.</p>
+<div class="section" id="essential-ideas-and-actions">
+<h2>3.9.1. Essential Ideas and Actions<a class="headerlink" href="#essential-ideas-and-actions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>reference features: planes, faces</li>
+<li>sketch entities: lines, circles, construction lines</li>
+<li>sketch relations: symmetric, equal, collinear, concentric, tangent,
+dimension</li>
+<li>feature operations: extrude, cut, mirror, radial and linear patterns</li>
+<li>assembly mates: coincident, concentric, distance, parallel</li>
+<li>number entry boxes: numeric input can include units and calculations</li>
+<li>hole wizard</li>
+<li>configurations</li>
+<li>view mates, isolate, suppress</li>
+</ol>
+</div>
+<div class="section" id="some-good-heuristics">
+<h2>3.9.2. Some Good Heuristics<a class="headerlink" href="#some-good-heuristics" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Always sketch your parts on paper first.</li>
+<li>If you think it&#8217;s time to start modeling, <em>wait</em> and do another paper
+sketch first. It is so much faster and generative.</li>
+<li>If you need a standard component, check online sources for a free
+model before drawing it from scratch. Be warned, though, that the exact part
+models may have much more detail than you need. Modeling geometry is as much
+a process of knowing what to <em>leave out</em> for a particular problem.</li>
+<li>Choose a system of units and stick with it. The reality of working in
+the USA is that metric and inch exist side by side throughout the catalogs
+and stock. It can be cheaper to buy inch-sized parts and fasteners, but many
+imported parts are designed in millimeters.</li>
+<li>Before you begin modeling, consider the following: natural symmetries
+in the part, the core form which is most unlikely to change and thus suitable
+to be a base feature, whether the part may exist in several variations.</li>
+<li>It can be hard to appreciate the scale of a CAD feature as the
+computer monitor can perfectly magnify or shrink details. I recommend keeping
+rulers and calipers handy for reference to remind you of exactly how much
+0.001 inch or 0.1 mm actually looks in the world.</li>
+<li>A solid model defined by mathematical primitives is <em>mathematically
+exact</em>. Of course, any rendering of it as pixels, cutting line segments, or
+rendered polygons is an approximation, and the precision is ultimately
+limited by computer numerical representation. But best results are achieved
+by taking advantage of mathematical constraints such as relations and mates
+to maintain that exactitude. So for example, it is possible just to visually
+position parts very closely in an assembly without defining mates and have it
+look acceptable for a drawing. But these small errors will tend to cause
+problems later when dimensions are slightly wrong in cut parts, and it
+defeats the ability of the tool to help find errors such as overlapping
+parts.</li>
+</ol>
+</div>
+<div class="section" id="examples">
+<h2>3.9.3. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>We maintain a separate git repository on github for sample parts and projects at
+<a class="reference external" href="https://github.com/cmuphyscomp/physcomp-solidworks">physcomp-solidworks</a>.  This repository includes sample parts and projects, see
+<code class="file docutils literal"><span class="pre">README.md</span></code>.</p>
+<p>A complex snap-fit plastic robot assembly example is available for reference
+here: <a class="reference external" href="https://github.com/OrigamiRobotics/romibo-mechanism">romibo-mechanism</a>.  This was largely designed by Garth Zeglin, and
+demonstrates several ideas for creating 3-D structures from flat parts using
+interlocking joints.</p>
+</div>
+<div class="section" id="references">
+<h2>3.9.4. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>The IDeATe <a class="reference external" href="http://www.cs.cmu.edu/afs/cs/academic/class/15294-f14/">15-294 Rapid Prototyping Technologies</a> course taught by Dave
+Touretzky has many links to information and tutorials.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3.9. SolidWorks Overview</a><ul>
+<li><a class="reference internal" href="#essential-ideas-and-actions">3.9.1. Essential Ideas and Actions</a></li>
+<li><a class="reference internal" href="#some-good-heuristics">3.9.2. Some Good Heuristics</a></li>
+<li><a class="reference internal" href="#examples">3.9.3. Examples</a></li>
+<li><a class="reference internal" href="#references">3.9.4. References</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="schematics.html"
+                        title="previous chapter">3.8. Drawing Electronic Schematics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="skills.html"
+                        title="next chapter">3.10. Essential Skills List</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="skills.html" title="3.10. Essential Skills List"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="schematics.html" title="3.8. Drawing Electronic Schematics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="resources.html" >3. Resources</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-09-11.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

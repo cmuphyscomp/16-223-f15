@@ -36,8 +36,8 @@ See also the :ref:`ideate-facilities-policies` and :ref:`cluster` sections.
      
 **IDeATe Web**   
 
-  #. `IDeATe project gallery`_.  Selected IDeATe course projects are
-     posted on the public gallery.
+  #. `IDeATe project gallery`_.  Selected IDeATe course projects are posted on
+     the public gallery, and we will contribute to the `16-223 Gallery Pool`_.
 
   #. `IDeATe Course Guide`_
      

@@ -1,141 +1,43 @@
-
 .. include:: links.rst
 
-	     
+.. _assignments:
+
 Assignments
-===========
+***********
 
 For all assignments, please consult the :ref:`calendar` for precise due dates.
 Please also become aware of the stringent requirements of the
 :ref:`lateness-policy`.
 
-.. _skills-survey:
-
-Skills Survey
--------------
-
-The first assignment is to complete a survey covering a wide range of skills and
-experiences.  Please complete the following Google form: `Skill Survey Form`_
-
-Completing the skill survey is **mandatory**.  It does not count toward your
-grade, but no other assignments will be accepted if is unfinished.
-
-The results are also being collected for `60-223`_ for comparison.
-
-.. _xsead-profile:
-
-IDeATe Gallery Profile
-----------------------
-
-We strongly consider every student create an account on the `IDeATe project
-gallery`_ and fill out profile information.  It will help us to know you better
-and help you to discover your cohort via the `IDeATe profile index`_.
-
-I recommend that you consider using a pseudonymous handle for your account.  The
-system allows for either private or public postings; some students are more
-comfortable posting work publicly if it won't be forever linked to their real
-name.
-
-Here is what you will need to answer during the profile interview:
-
-#. username (real or pseudonymous)
-#. real name (for internal use)
-#. profile image (square is best)
-#. one-paragraph biography (200 chars amx)
-#. focus areas (IDeATe program area interests)
-#. skills with which you identify (brief phrases)
-
-.. _research-talk:
-
-Research Talk
--------------
-
-Each student is required to give a five-minute research talk on a topic of their
-choosing.  The short length is actually a challenge, it requires careful
-attention to developing and practicing a clear delivery of a few key ideas.
-This assignment provides practice in technical speaking and will serve to bring
-additional ideas into our discussion.
-
-The topic may be chosen in one of several ways:
-
-#. Describe an existing project involving physical computing that was developed
-   elsewhere.
-#. Present a synopsis of a published research paper of interest to physical
-   computing.
-#. Research and teach a documented analytic or design technique (which must be
-   new to you).
-
-Please see :ref:`related-work` for starting points for finding sources to
-research.
-
-The primary objective of this talk is to teach a single concrete idea to your
-fellow students.  It shouldn't just be an vague invitation for them to go read
-the material; it should identify a specific lesson learned and be organized
-around teaching that. Here are some prompt questions which may help you plan:
-
-  * What was the problem the paper is addressing?
-  * Why is it important?  What is the context?
-  * What new insight was involved in the solution?
-  * How well did it work?
-  * What is the one key takeaway lesson?
-  * Is there a way your peers could apply this solution?
-
-In general, please focus on the thought process of the *author*, not your own
-reflections.  I.e., it isn't that helpful for your audience to hear about your
-personal reactions; once they hear the idea themselves they will have naturally
-have their own response, but a fair assessment requires a fair hearing.
-
-Talks of this nature are usually accompanied by slides which show visual content
-which reinforces the explanation.  Please refrain from plunking down lots of
-bullet-point text to read; we would prefer to hear your explanations verbally.
-Instead, please consider the available photographs, drawings, diagrams, or
-equations.  Due to the short nature of the talk, video clips are not recommended
-unless extremely short.
-
-In order to expedite quick transitions from talk to talk, it is *highly
-recommended* that you place your presentation materials online in a format you
-can quickly access in-place or download so we may use one shared cluster Mac
-connected to the projector.  Please arrive a few minutes early on the day of
-your presentation to get your materials in place.
    
-.. _ideation-1:
+.. toctree::
 
-Ideation Exercise 1
--------------------
+   project_reports
+   project1
 
-The first ideation exercise is intended to generate and share an abundance of
-potential project ideas related to physical computing.
 
-#. Please consider all the themes we will be exploring through physical
-   computing: human needs for expression, communication, life support, and
-   pleasure; embodiment, measurement, time, signals, and algorithm; and the
-   nature of processes which flow from physical to digital forms and back.
+Project 2 
+=========
 
-#. **Come up with fifty ideas for projects which address the themes above.**  When
-   devising ideas, consider holding back your presumptions about what is or is
-   not possible technically: at this stage we encourage broad, unbounded
-   thinking.
+Details TBD.
 
-#. **Bring your ideas to class on a physical printout following these rules**:
-   
-   * all ideas on a single 8.5" x 11" piece of paper
-   * one line per idea
-   * number the lines
-   * leave a 2-inch margin on the left hand side
 
-#. **Submit a PDF version** of your single page as a response to the Blackboard
-   assignment.  **Only PDF will be accepted**: do not submit document files such
-   as .doc.
+Project 3 
+=========
 
-The physical format is very important as we will be passing around and reviewing
-idea lists at the start of class.  Some general heuristics for brainstorming
-success can be found in the :ref:`ideation` resource section.  For inspiring
-examples, see :ref:`related-work` for starting points.
+Details TBD.
+
+
+Final Project
+=============
+
+Details TBD.
+
 
 .. _lab-notebook:
 
 Lab Notebook
-------------
+============
 
 Each student is required to keep a personal record of the technical lab
 exercises they complete.  We will call this the 'lab notebook', although the
@@ -143,8 +45,9 @@ physical format is up to the student as long as it meets deliverable
 requirements.
 
 There are several checkpoints in the semester when your instructor will examine
-your documents.  The first is early just so we have a chance to clear up any
-misunderstanding about expectations.  The others occur at the end of each unit.
+your documents.  The first deadline is early (Notebook 1A) just so we have a
+chance to clear up any misunderstanding about expectations.  The others occur at
+the end of each unit (Notebook 1B,2,3).
 
 The main purposes for requiring you to keep a record of your lab exercises are
 prompting reflection and documenting your progress.  We also hope it may form a
@@ -153,14 +56,15 @@ working on projects.
 
 **Prompting Reflection.** Learning isn't just about doing, it's about
 *integrating* new experience into knowledge by *reflecting* on the process.
-Each lab notebook entry should answer one or more of the following prompts in a
-concise paragraph:
+Each lab notebook entry should answer **one or more** of the following prompts in a
+concise sentence or two:
 
   * What did I learn?
+  * What do you think the instructor intended you to learn?
   * What was the most surprising outcome?
   * How specifically will this help me achieve my goals?
 
-Think in terms of an *articulable principle* which you could teach to others.
+Think in terms of an **articulable principle** which you could teach to others.
 
 **Documenting Progress.** If your instructors and peers can see what you've done
 they may be able to point out details or suggest alternatives.  The minimum
@@ -209,7 +113,7 @@ but digital can be duplicated more easily for submission.  Here are some suggest
 .. _unit-1-exercises:
 
 Unit 1 Exercises: Energy, Information, Transduction
----------------------------------------------------
+===================================================
 
 The first unit has many exercises intended familiarize you with the lab and
 basic electronic equipment and are essential for developing the vocabulary and
@@ -263,7 +167,9 @@ Please be sure to read the :ref:`Arduino-guide` section for a review of
 terminology and concepts.  Also, please skim the :ref:`errata` section if you
 have trouble to identify mistakes in the text or general hints.
 
-**Please explore and document at least 6 of the following Arduino exercises:**
+**Please explore and document at least 6 of the following exercises:**
+
+Arduino-related:
 
    * `arduino-intro <../exercises/Arduino/arduino-intro/index.html>`__
    * `coding-compiling-deploying <../exercises/Arduino/coding-compiling-deploying/index.html>`__
@@ -274,10 +180,14 @@ have trouble to identify mistakes in the text or general hints.
    * `servo-sweep <../exercises/Arduino/servo-sweep/index.html>`__
    * `stepper-motor-knob <../exercises/Arduino/stepper-motor-knob/index.html>`__
 
+Mechanism-related:
+
+   * `Laser Cutting Features and Tolerances <../exercises/mechanism/laser-tolerance/index.html>`__
+     
 .. _unit-2-exercises:
 
 Unit 2 Exercises: Signals, Time, and Dynamics
----------------------------------------------
+=============================================
 
 
 Please be sure to read the :ref:`computation-guide` section for a review of
@@ -299,7 +209,7 @@ mechanical terminology and concepts.
 .. _unit-3-exercises:
 
 Unit 3 Exercises: Algorithms and State
---------------------------------------
+======================================
 
 **Please explore and document at least 4 of the following exercises:**
 
@@ -310,98 +220,166 @@ Unit 3 Exercises: Algorithms and State
 Please be sure to see the :ref:`OneInOneOutASCII-doxygen` section for background
 on dividing a process between the Arduino and a laptop.
 
-.. _project-report-requirements:
+.. _research-talk:
 
-Project Reports
----------------
+Research Talk
+=============
 
-All projects require an accompanying report document in **PDF** format.  An outline
-of specific prompt questions will be provided for each assignment, with a
-denotation of specific required and optional elements.  The following specifies
-the detailed formatting requirements for all reports.  The content itself should
-generally follow the :ref:`project-report-template`.
+Each student is required to give a five-minute research talk on a topic of their
+choosing.  The short length is actually a challenge, it requires careful
+attention to developing and practicing a clear delivery of a few key ideas.
+This assignment provides practice in technical speaking and will serve to bring
+additional ideas into our discussion.
 
-#. All report documents must be submitted as PDF files.  Original document
-   formats (.doc, Word, .tex, etc.) will be returned unread.
+The topic may be chosen in one of several ways:
 
-#. Report documents must be submitted within a single zip file which also
-   contains the implementation supporting code and engineering files.
+#. Describe an existing project involving physical computing that was developed
+   elsewhere.
+#. Present a synopsis of a published research paper of interest to physical
+   computing.
+#. Research and teach a documented analytic or design technique (which must be
+   new to you).
 
-#. The zip file name must include a unique project identifier.  E.g. it should
-   have a meaningful name ('talking-clock.zip') not a generic name
-   ('project.zip').
+Please see :ref:`related-work` for starting points for finding sources to
+research.
+
+The primary objective of this talk is to teach a single concrete idea to your
+fellow students.  It shouldn't just be an vague invitation for them to go read
+the material; it should identify a specific lesson learned and be organized
+around teaching that. Here are some prompt questions which may help you plan:
+
+  * What was the problem the paper is addressing?
+  * Why is it important?  What is the context?
+  * What new insight was involved in the solution?
+  * How well did it work?
+  * What is the one key takeaway lesson?
+  * Is there a way your peers could apply this solution?
+
+In general, please focus on the thought process of the *author*, not your own
+reflections.  I.e., it isn't that helpful for your audience to hear about your
+personal reactions; once they hear the idea themselves they will have naturally
+have their own response, but a fair assessment requires a fair hearing.
+
+Talks of this nature are usually accompanied by slides which show visual content
+which reinforces the explanation.  Please refrain from plunking down lots of
+bullet-point text to read; we would prefer to hear your explanations verbally.
+Instead, please consider the available photographs, drawings, diagrams, or
+equations.  Due to the short nature of the talk, video clips are not recommended
+unless extremely short.
+
+In order to expedite quick transitions from talk to talk, it is *highly
+recommended* that you place your presentation materials online in a format you
+can quickly access in-place or download so we may use one shared cluster Mac
+connected to the projector.  Please arrive a few minutes early on the day of
+your presentation to get your materials in place.
    
-#. Each group must submit one joint report.  If a group member fails to fulfill
-   their documentation role, the other group members should submit what they can
-   on time and ask for an extension with an explanation.
+.. _ideation-1:
 
-#. Each report should clearly attribute the contribution of each group member.
-   Individual grades may be adjusted from group grades if it becomes apparent
-   that contribution is not equitable.  A separate confidential peer evaluation
-   may be requested individually from each group member at the instructor's
-   discretion.
+Ideation Exercise 1
+===================
 
-#. Reports must generally include a statement of objectives, general descriptive
-   text, narrative, results, photos, technical documentation, and citations of
-   related work.
+The first ideation exercise is intended to generate and share an abundance of
+potential project ideas related to physical computing.
 
-#. Any project photos must be embedded within the PDF document, and provided at
-   a print-ready resolution (e.g. 300dpi).
+#. Please consider all the themes we will be exploring through physical
+   computing: human needs for expression, communication, life support, and
+   pleasure; embodiment, measurement, time, signals, and algorithm; and the
+   nature of processes which flow from physical to digital forms and back.
 
-#. Project videos must be uploaded to the hosting service of your choice and an
-   *active, clickable link* provided within the body of the PDF report.  Please
-   check the documentation of your authoring software if you need help making
-   your links active.
+#. **Come up with fifty ideas for projects which address the themes above.**  When
+   devising ideas, consider holding back your presumptions about what is or is
+   not possible technically: at this stage we encourage broad, unbounded
+   thinking.
 
-#. Project videos must adhere to the minimum and maximum duration limits,
-   including titles and credits.
+#. **Bring your ideas to class on a physical printout following these rules**:
+   
+   * all ideas on a single 8.5" x 11" piece of paper
+   * one line per idea
+   * number the lines
+   * leave a 2-inch margin on the left hand side
 
-#. Project videos are encouraged to include a title and credits.
+#. **Submit a PDF version** of your single page as a response to the Blackboard
+   assignment.  **Only PDF will be accepted**: do not submit document files such
+   as .doc.
 
-#. In general, enough technical documentation must be provided that a person of
-   equal skill could replicate the construction of the project.
-
-#. All program source code is required and must be provided within the single zip
-   file.
-
-#. Electronic schematics and fabrication diagrams must be provided in PDF form,
-   either embedded in the main report or as a separate PDF.  Schematics must
-   reflect the as-built state.  Schematics must use conventional symbols and
-   notation.  Hand-drawn or illustrated schematics are acceptable, but the use
-   of schematic capture software such as EAGLE is recommended as it will help
-   reduce errors.  **Breadboard diagrams are not acceptable substitutes.**
-
-#. Mechanical drawings or sketches must be provided in PDF form, either embedded
-   in the main report or as a separate PDF.  Mechanical drawings must clearly
-   specify the scale and units.
-
-#. Any original CAD files are required.  Multi-file designs (typical for
-   SolidWorks) must be provided within the single zip file.
-
-#. Formatting and typography are at your discretion.  However, beautiful graphic
-   design won't be rewarded, so please use your effort wisely.
+The physical format is very important as we will be passing around and reviewing
+idea lists at the start of class.  Some general heuristics for brainstorming
+success can be found in the :ref:`ideation` resource section.  For inspiring
+examples, see :ref:`related-work` for starting points.
 
 
+.. _initial-interview:
 
-Project 1 
----------
+Initial Interview Preparation
+=============================
 
-Details TBD.
+The primary objective of the initial interview is to formulate your individual
+goals for the semester.  It also serves as an opportunity for your instructor to
+know you better, which will greatly help with giving constructive advice all
+semester.  I hope to make this as casual, conversational, and friendly as
+possible.  This is a new element of the course so I ask for your patience as the
+process gets worked out.
+
+The interview is scheduled for 15 minutes, please come promptly on time so we
+can stay on schedule.
+
+Please consider the following prompts in advance:
+
+#. What do you hope to learn in this course?
+#. What skills are familiar to you and could be an area for high achievement?
+#. What is brand-new to you?
+#. What topics seem most important?
+#. What topics seem irrelevant?
+#. Do you have a concrete vision for what kind of ability you'd like at the end?
+#. Is there a role model you seek to emulate for this kind of work?
+
+After some discussion we will formulate a few concrete objectives.  These will
+be reviewed at the mid-semester and final interviews.
+
+   
+.. _skills-survey:
+
+Skills Survey
+=============
+
+The first assignment is to complete a survey covering a wide range of skills and
+experiences.  Please complete the following Google form: `Skill Survey Form`_
+
+Completing the skill survey is **mandatory**.  It does not count toward your
+grade, but no other assignments will be accepted if is unfinished.
+
+The results are also being collected for `60-223`_ for comparison.
 
 
-Project 2 
----------
 
-Details TBD.
+.. _xsead-profile:
 
+IDeATe Gallery Profile
+======================
 
-Project 3 
----------
+We strongly consider every student create an account on the `IDeATe project
+gallery`_ and fill out profile information.  It will help us to know you better
+and help you to discover your cohort via the `IDeATe profile index`_.
 
-Details TBD.
+I recommend that you consider using a pseudonymous handle for your account.  The
+system allows for either private or public postings; some students are more
+comfortable posting work publicly if it won't be forever linked to their real
+name.
 
+Here is what you will need to answer during the profile interview:
 
-Final Project
--------------
+#. username (real or pseudonymous)
+#. real name (for internal use)
+#. profile image (square is best)
+#. one-paragraph biography (200 chars amx)
+#. focus areas (IDeATe program area interests)
+#. skills with which you identify (brief phrases)
 
-Details TBD.
+If you'd like more detailed directions, we have a :download:`PDF info sheet
+</images/GalleryInfoSheet.pdf>` which also addresses creating *projects* and
+placing them in *pools*.
+
+You may be requested to post a version of your project documentation to the
+`16-223 Gallery Pool`_.  You may also do so at your discretion.  Postings may
+either be 'semi-private' and viewable only by other logged-in IDeATe members or
+may be 'public' and open to the world.

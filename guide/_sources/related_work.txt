@@ -33,7 +33,9 @@ Tutorials and Guides
 
   * `tutorials from Fall 2014 Introduction to Physical Computing <http://physcomp.org/category/tutorials/>`__
   * `SparkFun tutorials <https://learn.sparkfun.com/tutorials>`__
+  * `SparkFun YouTube channel <https://www.youtube.com/user/sparkfun/videos>`__
   * `Adafruit tutorials <https://learn.adafruit.com/>`__
+  * `Adafruit YouTube Channel <https://www.youtube.com/user/adafruit/videos>`__
   * `Arduino Playground <http://playground.arduino.cc/>`__
 
 

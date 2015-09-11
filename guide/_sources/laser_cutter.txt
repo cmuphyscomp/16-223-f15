@@ -7,7 +7,7 @@ IDeATe Laser Cutter Guide
 
 The IDeATe\@Hunt fabrication facility includes three Rabbit laser cutters.
 These are extremely useful tools for cutting complex 2D forms.  The best feature
-of these tools is the speed with which an idea be tested: it is possible to
+of these tools is the speed with which an idea can be tested: it is possible to
 conceive of a part, create a 2D drawing, output a DXF, and cut material to make
 a functional part within *minutes*.
 
@@ -80,6 +80,14 @@ For other hints, see :ref:`cad-cam-resources`.
 
 Best Practices
 --------------
+
+#. If the laser cutter catches on fire, use the **Carbon Dioxide fire
+   extinguisher** (CO\ :sub:`2` for Class C fire) located nearby.  This is very
+   short-range: the nozzle will need to be approximately over the machine.
+
+#. Small flames in cardboard can usually just be blown out with your breath.
+   Even acrylic can sometimes generate a brief flame.  **Never use
+   polycarbonate, it will burn.**
 
 #. Thick acrylic cuts can tend to re-fuse, so it is best to remove your parts
    promptly from the cutter and use a tool to press out all the small pieces.

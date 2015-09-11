@@ -145,6 +145,8 @@ For a detailed list of essential skills, please see the :ref:`essential-skills-l
 and `the essential skills posts on the F14 course web site`_.
 
 
+.. _group-roles:
+
 Group Work
 ----------
 

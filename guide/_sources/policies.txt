@@ -63,6 +63,7 @@ Grades provide only a rough metric for student feedback.  The more nuanced and
 useful feedback comes from in-class verbal critiques, individual interviews, and
 written comments.
 
+.. _critiques:
 
 In-Class Project Reviews
 ------------------------
@@ -79,7 +80,6 @@ The in-class presentation and critique of projects serves several purposes:
 * provides a live performance or demonstration for evaluation
 * demonstrates your ability to speak succintly about your ideas
 * provides the primary opportunity for your peers to see and comment on your work
-
 
 Please prepare for the critique as follows:
 
@@ -111,7 +111,6 @@ individual student, held near the beginning, midpoint, and end of the semester.
 Students will be prompted in advance in order to prepare statements of their
 objectives, progress, or achievements for each interview stage.  This is not a
 graded exercise but a means of providing individual feedback.
-
 
 
 Project Reports
@@ -147,7 +146,7 @@ Projects of merit may be requested to provide a public version of their project
 documentation for the `IDeATe project gallery`_.  This will not be required or
 graded, but represents an opportunity to have your work publicly presented as
 part of the IDeATe portfolio and should need only minimal additional effort to
-prepare.
+prepare. The course pool will be at `16-223 Gallery Pool`_.
 
 
 General Course Policies

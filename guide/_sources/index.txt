@@ -6,7 +6,9 @@ Fall 2015 Course Guide
 
 Welcome to *Introduction to Physical Computing!* This is the starting
 page for the course guide, which includes the following:
-	     
+
+**Note**: The :ref:`Assignments` section has now moved to the top level.
+
 Contents
 ========
 
@@ -15,6 +17,7 @@ Contents
    :numbered:
 
    syllabus
+   assignments
    resources
    guides
    code

@@ -1,0 +1,26 @@
+.. include:: ../links.rst
+   
+Day 4: Project 1 Kickoff
+========================
+
+Notes for 2015-09-14.  See also the :ref:`calendar`.
+
+Notes from Day 3
+----------------
+     
+Agenda
+------
+
+#. Administrative
+
+   * During class: Fire safety sign-ups.
+   
+#. Assignments
+
+   * Sep 16: Project 1 proposal.
+     
+#. In-class
+   
+   * First round of research talks.
+   * Quick round of project 1 team formation review.
+   * Continue Unit 1 exercises.  See :ref:`unit-1-exercises`.

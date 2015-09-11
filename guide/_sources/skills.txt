@@ -332,7 +332,7 @@ CAD/CAM Resources
 
 **Online tools for CAD/CAM:**
 
--  `BoxMaker <boxmaker.rahulbotics.com/>`__: designing laser cut finger
+-  `BoxMaker <http://http://boxmaker.connectionlab.org/>`__: designing laser cut finger
    joint boxes made easy
 -  `AutoDesk 123 Make <http://www.123dapp.com/make>`__: "3D meets DIY.
     Turn your amazing 3D models into even more amazing do-it-yourself
