@@ -1,0 +1,61 @@
+.. include:: ../links.rst
+   
+Day 1: Introduction and Welcome
+=======================================
+
+Notes for 2015-08-31.  See also the :ref:`calendar`.
+
+
+Agenda
+------
+
+#. Welcome.
+
+   * What is IDeATe?
+   * What is *Physical Computing*?
+   * Video.
+
+#. Administrative questions
+
+   * Course site: **http://courses.ideate.cmu.edu/physcomp/f15/16-223**
+   * Enrollment and waitlist.
+   * Blackboard.
+   * IDeATe Computing Virtual Cluster.
+   * Card access.
+   * omitted: Fabrication resources and policy.
+   * omitted: Fire safety for the laser cutter.
+   * Physical Computing Lab use and abuse.
+   * Course fees and costs.
+   * Photos.
+   * Discuss lab TA hours.
+   * Music.
+
+#. Assignments
+   
+   * Due 9/2: Skill survey.
+   * Soon: Gallery profile.
+   * Soon: Initial interviews.
+
+#. Exercises
+   
+   * Clone course git repository.
+   * Start lab notebook.
+   * Start Unit 1 exercises.
+
+
+Videos
+------
+
+Arthur Ganson, *Faster*
+
+.. youtube:: JJvK47ncVjU
+
+Louis-Phillipe Demers, *Tiller Girls*
+
+.. youtube:: IdmYtZk88Lw
+
+Norman White, *Helpless Robot*
+
+.. youtube:: y0blJsgbcho
+
+.. .. youtube:: LYyAHOxY7jU

@@ -39,8 +39,16 @@ Tutorials and Guides
   * `Arduino Playground <http://playground.arduino.cc/>`__
 
 
-Other Programs
---------------
+DIY Fabric Sensors
+-------------------
+
+  * `Kobakant DIY: extensive guide to homebrew fabric sensors. <http://www.kobakant.at/DIY/?cat=26>`__
+  * `Stickytape Sensors: quick and simple pressure and bend sensors. <http://www.instructables.com/id/Stickytape-Sensors/>`__
+  * `Handcrafting Sensors: long guide to variety of fabric sensors. <http://www.adafruit.com/datasheets/HandcraftingSensors.pdf>`__
+
+
+Other Academic Programs
+-----------------------
 
   * `ITP Physical Computing <https://itp.nyu.edu/physcomp/>`__
   * `Tangible Media Group at MIT Media Lab <http://tangible.media.mit.edu/>`__

@@ -127,8 +127,9 @@ the process.
 The primary review of the proposal will be verbal in-class commentary in order
 to provide the fastest possible approval.  To speed this along, please provide
 in-class a **one-page document which concisely summarizes the project plan**.
-Please submit a version of the document to Blackboard before the end of the day
-on which the proposal review occurs.
+Please also submit a **PDF version of the document to Blackboard** before the
+end of the day on which the proposal review occurs.  Only one document need be
+submitted per group, but be sure to include the names of all contributors.
 
 A good proposal will answer as many of the following questions as pertinent.
 These are prompts, not a checklist, so use your judgment as to how to formulate

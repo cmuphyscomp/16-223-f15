@@ -1,0 +1,35 @@
+.. include:: ../links.rst
+   
+Day 6: Project 1 Proof-of-concept (Sep 21)
+==========================================
+
+Notes for 2015-09-21.  See also the :ref:`calendar`.
+
+Notes from Day 5
+----------------
+
+
+Agenda
+------
+
+#. Administrative
+   
+   * During class: Fire safety sign-ups.
+
+#. Assignments
+
+   * Sep 23, start of class: turn in Notebook 1B.
+     
+#. In-class
+
+.. apalatuc tswarsta cperry mvella jalee
+
+   * Second round of research talks (30 minutes).
+     
+     * Alex:
+     * Treat:
+     * Chris:
+     * Mark:
+     * Jeremy:
+
+   * Project 1 proof-of-concept reviews.

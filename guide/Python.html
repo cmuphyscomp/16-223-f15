@@ -1,0 +1,1267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4.5. Python by Example &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-09-18',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="4. Topic Area Guides" href="guides.html" />
+    <link rel="next" title="4.6. Physical Computation with Pure Data" href="PureData.html" />
+    <link rel="prev" title="4.4. Computation and Behavior" href="computational_behavior.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="PureData.html" title="4.6. Physical Computation with Pure Data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="computational_behavior.html" title="4.4. Computation and Behavior"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" accesskey="U">4. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="python-by-example">
+<span id="id2"></span><h1><a class="toc-backref" href="#id3">4.5. Python by Example</a><a class="headerlink" href="#python-by-example" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#python-by-example" id="id3">Python by Example</a><ul>
+<li><a class="reference internal" href="#reference-links" id="id4">Reference Links</a></li>
+<li><a class="reference internal" href="#preparation" id="id5">Preparation</a></li>
+<li><a class="reference internal" href="#using-python-as-a-calculator" id="id6">Using Python as a Calculator</a><ul>
+<li><a class="reference internal" href="#numbers" id="id7">Numbers</a></li>
+<li><a class="reference internal" href="#strings" id="id8">Strings</a></li>
+<li><a class="reference internal" href="#lists" id="id9">Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#first-steps-towards-programming" id="id10">First Steps Towards Programming</a></li>
+<li><a class="reference internal" href="#interlude-running-code-from-files" id="id11">Interlude: Running Code from Files</a></li>
+<li><a class="reference internal" href="#if-statements" id="id12"><cite>if</cite> Statements</a></li>
+<li><a class="reference internal" href="#for-statements" id="id13"><cite>for</cite> Statements</a></li>
+<li><a class="reference internal" href="#the-range-function" id="id14">The <code class="xref py py-func docutils literal"><span class="pre">range()</span></code> Function</a></li>
+<li><a class="reference internal" href="#break-and-continue-statements-and-else-clauses-on-loops" id="id15"><cite>break</cite> and <cite>continue</cite> Statements, and <cite>else</cite> Clauses on Loops</a></li>
+<li><a class="reference internal" href="#pass-statements" id="id16"><cite>pass</cite> Statements</a></li>
+<li><a class="reference internal" href="#defining-functions" id="id17">Defining Functions</a></li>
+<li><a class="reference internal" href="#more-on-defining-functions" id="id18">More on Defining Functions</a><ul>
+<li><a class="reference internal" href="#default-argument-values" id="id19">Default Argument Values</a></li>
+<li><a class="reference internal" href="#keyword-arguments" id="id20">Keyword Arguments</a></li>
+<li><a class="reference internal" href="#documentation-strings" id="id21">Documentation Strings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-on-lists" id="id22">More on Lists</a><ul>
+<li><a class="reference internal" href="#list-comprehensions" id="id23">List Comprehensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-del-statement" id="id24">The <cite>del</cite> statement</a></li>
+<li><a class="reference internal" href="#tuples-and-sequences" id="id25">Tuples and Sequences</a></li>
+<li><a class="reference internal" href="#numpy-efficient-numerical-computation" id="id26">NumPy: Efficient Numerical Computation</a></li>
+<li><a class="reference internal" href="#acknowledgement" id="id27">Acknowledgement</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This section presents a crash course in the Python programming language through
+a series of examples.  The bulk of the examples are derived directly from the
+first part of the official <a class="reference external" href="https://docs.python.org/2/tutorial/index.html">Python 2.7 Tutorial</a>, modified somewhat to
+emphasize the features I tend to use in physical computing systems.  This is not
+intended to replace any of the many excellent on-line Python courses available,
+it is only intended to serve as notes for an in-class tutorial or as a quick
+review aid for those who have used the language before.</p>
+<p>Python has two distinct &#8216;current&#8217; versions, since Python 3 introduced
+incompatible language changes, but many projects have stuck with the stable
+Python 2.7 version.  Many OS distributions still only provide 2.7 by default in
+order to maintain compatibility with existing libraries and code.  Right now,
+the latest stable releases available are Python 3.4.3 and Python 2.7.10.</p>
+<p>I recommend using Python 2.7 for this course as that is the version under which
+the examples are tested.  Our intention is that the library code should all
+eventually be cross-compatible.  The following tutorial however is specific to
+2.7 for ease of getting started.</p>
+<div class="section" id="reference-links">
+<h2><a class="toc-backref" href="#id4">4.5.1. Reference Links</a><a class="headerlink" href="#reference-links" title="Permalink to this headline">¶</a></h2>
+<p>If you are learning the language on your own or for the first time, you may wish
+to start with a full-featured tutorial or online course:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://docs.python.org/2/tutorial/index.html">Python 2.7 Tutorial</a>, from python.org</li>
+<li><a class="reference external" href="https://docs.python.org/3/tutorial/index.html">Python 3.4 Tutorial</a>, from python.org</li>
+<li><a class="reference external" href="https://wiki.python.org/moin/BeginnersGuide">Beginner&#8217;s Guide to Python</a>, from python.org</li>
+<li><a class="reference external" href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a>, online book with very hands-on approach</li>
+<li><a class="reference external" href="https://www.codecademy.com/tracks/python">codecademy Python course</a>, online interactive course</li>
+<li><a class="reference external" href="https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-5">MIT edX 6.001 Intro to CS</a>, complete course</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="preparation">
+<h2><a class="toc-backref" href="#id5">4.5.2. Preparation</a><a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>Python is a text-based interpreted language and so tutorial presentation
+involves several ways of testing code:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>typing (or pasting) Python code directly to an interactive interpreter from
+the system command line (e.g. see <a class="reference external" href="https://docs.python.org/2/tutorial/interpreter.html">Using the Python Interpreter</a>)</li>
+<li>writing Python code in a <strong>syntax-aware text editor</strong> and then running it
+from the command line (e.g. see <a class="reference external" href="http://learnpythonthehardway.org/book/ex0.html">Exercise 0: The Setup</a>)</li>
+<li>working within an <strong>Integrated Development Environment</strong> (IDE), a general
+term for a system for editing, running, and debugging code within one
+application (e.g. see <a class="reference external" href="https://hkn.eecs.berkeley.edu/~dyoo/python/idle_intro/index.html">One Day of IDLE Toying</a>)</li>
+</ol>
+</div></blockquote>
+<p>Just getting your computer set up to run your very first line of code can be a
+messy problem which stalls beginners.  For simplicity, I will assume you are
+using <strong class="command">IDLE</strong>, a simple IDE which comes standard with Python.  It&#8217;s not
+very pretty, and most people outgrow it very soon, but it is an available tool
+which gets us past the first hurdle.</p>
+<p>The standard computing platform for this course is described in <a class="reference internal" href="cluster.html#cluster"><span>IDeATe Virtual Cluster Software</span></a>.
+On the cluster Macs, we will start by just running IDLE.  Open a Terminal
+windows, then run it directly from the command line:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ idle
+</pre></div>
+</div>
+<p>It will open a new window titled &#8220;Python 2.7.10 Shell&#8221; or similar, running as
+the Python application (which has a rocket-ship icon).  The default font is very
+small, but may be changed via the Preferences dialog.  Single lines of code can
+be typed or pasted directly into the command line of this shell, and any printed
+output will appear directly in the same window.  So type the following into the shell window:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Hello, world.&quot;</span>
+<span class="k">print</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>And the result will look similar to the following screenshot.</p>
+<img alt="_images/idle-hello-world.png" src="_images/idle-hello-world.png" />
+<p>You&#8217;ll need to be able to save code in a file in order to do anything useful.
+The <span class="guilabel">File/New File</span> menu item will open a <em>syntax-aware</em> text editor
+to edit files.  A syntax-aware editor can help you write correct code by
+highlighting language keywords, inserting correct indentation, and detecting
+some syntax errors.  After saving the file (with a <code class="file docutils literal"><span class="pre">.py</span></code> extension), it
+may be run using the <span class="guilabel">Run/Run Module</span> menu item (or F5).  Console
+output will print in the shell window.</p>
+<p>This is enough to get through the basic examples, although in the long run, you
+will need to figure out which tools are most productive for you.  There are many
+other more fully-featured editors and IDEs.</p>
+</div>
+<div class="section" id="using-python-as-a-calculator">
+<span id="tut-calculator"></span><h2><a class="toc-backref" href="#id6">4.5.3. Using Python as a Calculator</a><a class="headerlink" href="#using-python-as-a-calculator" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s try some simple Python commands.  Start the interpreter and wait for the
+primary prompt, <code class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></code>.  (It shouldn&#8217;t take long.)</p>
+<div class="section" id="numbers">
+<span id="tut-numbers"></span><h3><a class="toc-backref" href="#id7">4.5.3.1. Numbers</a><a class="headerlink" href="#numbers" title="Permalink to this headline">¶</a></h3>
+<p>The interpreter acts as a simple calculator: you can type an expression at it
+and it will write the value.  Expression syntax is straightforward: the
+operators <code class="docutils literal"><span class="pre">+</span></code>, <code class="docutils literal"><span class="pre">-</span></code>, <code class="docutils literal"><span class="pre">*</span></code> and <code class="docutils literal"><span class="pre">/</span></code> work just like in most other languages
+(for example, Pascal or C); parentheses (<code class="docutils literal"><span class="pre">()</span></code>) can be used for grouping.
+For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">50</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="mi">6</span>
+<span class="go">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">50</span> <span class="o">-</span> <span class="mf">5.0</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">8</span> <span class="o">/</span> <span class="mf">5.0</span>
+<span class="go">1.6</span>
+</pre></div>
+</div>
+<p>The integer numbers (e.g. <code class="docutils literal"><span class="pre">2</span></code>, <code class="docutils literal"><span class="pre">4</span></code>, <code class="docutils literal"><span class="pre">20</span></code>) have type <code class="xref py py-class docutils literal"><span class="pre">int</span></code>,
+the ones with a fractional part (e.g. <code class="docutils literal"><span class="pre">5.0</span></code>, <code class="docutils literal"><span class="pre">1.6</span></code>) have type
+<code class="xref py py-class docutils literal"><span class="pre">float</span></code>.  We will see more about numeric types later in the tutorial.</p>
+<p>With Python, it is possible to use the <code class="docutils literal"><span class="pre">**</span></code> operator to calculate powers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c"># 5 squared</span>
+<span class="go">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">**</span> <span class="mi">7</span>  <span class="c"># 2 to the power of 7</span>
+<span class="go">128</span>
+</pre></div>
+</div>
+<p>The equal sign (<code class="docutils literal"><span class="pre">=</span></code>) is used to assign a value to a variable. Afterwards, no
+result is displayed before the next interactive prompt:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">height</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">width</span> <span class="o">*</span> <span class="n">height</span>
+<span class="go">900</span>
+</pre></div>
+</div>
+<p>If a variable is not &#8220;defined&#8221; (assigned a value), trying to use it will
+give you an error:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">n</span>  <span class="c"># try to access an undefined variable</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">NameError</span>: <span class="n">name &#39;n&#39; is not defined</span>
+</pre></div>
+</div>
+<p>There is full support for floating point; operators with mixed type operands
+convert the integer operand to floating point:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">*</span> <span class="mf">3.75</span> <span class="o">/</span> <span class="mf">1.5</span>
+<span class="go">7.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mf">7.0</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="go">3.5</span>
+</pre></div>
+</div>
+<p>In interactive mode, the last printed expression is assigned to the variable
+<code class="docutils literal"><span class="pre">_</span></code>.  This means that when you are using Python as a desk calculator, it is
+somewhat easier to continue calculations, for example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tax</span> <span class="o">=</span> <span class="mf">12.5</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">price</span> <span class="o">=</span> <span class="mf">100.50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">price</span> <span class="o">*</span> <span class="n">tax</span>
+<span class="go">12.5625</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">price</span> <span class="o">+</span> <span class="n">_</span>
+<span class="go">113.0625</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">113.06</span>
+</pre></div>
+</div>
+<p>This variable should be treated as read-only by the user.</p>
+</div>
+<div class="section" id="strings">
+<span id="tut-strings"></span><h3><a class="toc-backref" href="#id8">4.5.3.2. Strings</a><a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<p>Besides numbers, Python can also manipulate strings, which can be expressed in
+several ways.  The following three ways of denoting strings produce exactly the
+same value:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;spam eggs&#39;</span>      <span class="c"># single quotes</span>
+<span class="go">&#39;spam eggs&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;spam eggs&quot;</span>      <span class="c"># double quotes</span>
+<span class="go">&#39;spam eggs&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">&quot;&quot;&quot;spam eggs&quot;&quot;&quot;</span>  <span class="c"># triple double-quotes</span>
+<span class="go">&#39;spam eggs&#39;</span>
+</pre></div>
+</div>
+<p>There are also raw and Unicode strings which we won&#8217;t cover here.</p>
+<p>The way to produce human-readable console output from within a program is the print command:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&#39;spam eggs&#39;</span>
+<span class="go">spam eggs</span>
+</pre></div>
+</div>
+<p>String literals can span multiple lines.  One way is using triple-quotes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s">Usage: thingy [OPTIONS]</span>
+<span class="s">      -h                        Display this usage message</span>
+<span class="s">      -H hostname               Hostname to connect to</span>
+<span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>produces the following output (note that the initial newline is not included):</p>
+<div class="highlight-text"><div class="highlight"><pre>Usage: thingy [OPTIONS]
+     -h                        Display this usage message
+     -H hostname               Hostname to connect to
+</pre></div>
+</div>
+<p>Strings can be concatenated (glued together) with the <code class="docutils literal"><span class="pre">+</span></code> operator, and
+repeated with <code class="docutils literal"><span class="pre">*</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># 3 times &#39;un&#39;, followed by &#39;ium&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">*</span> <span class="s">&#39;un&#39;</span> <span class="o">+</span> <span class="s">&#39;ium&#39;</span>
+<span class="go">&#39;unununium&#39;</span>
+</pre></div>
+</div>
+<p>Two or more <em>string literals</em> (i.e. the ones enclosed between quotes) next
+to each other are automatically concatenated.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Py&#39;</span> <span class="s">&#39;thon&#39;</span>
+<span class="go">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<p>If you want to concatenate variables or a variable and a literal, use <code class="docutils literal"><span class="pre">+</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">prefix</span> <span class="o">=</span> <span class="s">&#39;Py&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prefix</span> <span class="o">+</span> <span class="s">&#39;thon&#39;</span>
+<span class="go">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<p>This course will use arrays of numbers much more than strings, but many of the
+following methods for referring to sub-sequences are identical for both strings
+and other array types.</p>
+<p>Strings can be <em>indexed</em> (subscripted), with the first character having index 0.
+There is no separate character type; a character is simply a string of size
+one:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span> <span class="o">=</span> <span class="s">&#39;Python&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c"># character in position 0</span>
+<span class="go">&#39;P&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>  <span class="c"># character in position 5</span>
+<span class="go">&#39;n&#39;</span>
+</pre></div>
+</div>
+<p>Indices may also be negative numbers, to start counting from the right:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c"># last character</span>
+<span class="go">&#39;n&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># second-last character</span>
+<span class="go">&#39;o&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+<span class="go">&#39;P&#39;</span>
+</pre></div>
+</div>
+<p>Note that since -0 is the same as 0, negative indices start from -1.</p>
+<p>In addition to indexing, <em>slicing</em> is also supported.  While indexing is used
+to obtain individual characters, <em>slicing</em> allows you to obtain a substring:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># characters from position 0 (included) to 2 (excluded)</span>
+<span class="go">&#39;Py&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>  <span class="c"># characters from position 2 (included) to 5 (excluded)</span>
+<span class="go">&#39;tho&#39;</span>
+</pre></div>
+</div>
+<p>Note how the start is always included, and the end always excluded.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="go">&#39;Python&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+<span class="go">&#39;Python&#39;</span>
+</pre></div>
+</div>
+<p>Slice indices have useful defaults; an omitted first index defaults to zero, an
+omitted second index defaults to the size of the string being sliced.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># character from the beginning to position 2 (excluded)</span>
+<span class="go">&#39;Py&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>  <span class="c"># characters from position 4 (included) to the end</span>
+<span class="go">&#39;on&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="c"># characters from the second-last (included) to the end</span>
+<span class="go">&#39;on&#39;</span>
+</pre></div>
+</div>
+<p>Python strings cannot be changed &#8212; they are <cite>immutable</cite>.
+Therefore, assigning to an indexed position in the string results in an error:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;J&#39;</span>
+<span class="go">  ...</span>
+<span class="go">TypeError: &#39;str&#39; object does not support item assignment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="s">&#39;py&#39;</span>
+<span class="go">  ...</span>
+<span class="go">TypeError: &#39;str&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+<p>If you need a different string, you should create a new one:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;J&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="go">&#39;Jython&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">word</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;py&#39;</span>
+<span class="go">&#39;Pypy&#39;</span>
+</pre></div>
+</div>
+<p>The built-in function <code class="xref py py-func docutils literal"><span class="pre">len()</span></code> returns the length of a string:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s">&#39;supercalifragilisticexpialidocious&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">34</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lists">
+<span id="tut-lists"></span><h3><a class="toc-backref" href="#id9">4.5.3.3. Lists</a><a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<p>Python knows a number of <em>compound</em> data types, used to group together other
+values.  The most versatile is the <em>list</em>, which can be written as a list of
+comma-separated values (items) between square brackets.  Lists might contain
+items of different types, but usually the items all have the same type.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span>
+<span class="go">[1, 4, 9, 16, 25]</span>
+</pre></div>
+</div>
+<p>Like strings (and all other built-in <cite>sequence</cite> type), lists can be
+indexed and sliced:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c"># indexing returns the item</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>  <span class="c"># slicing returns a new list</span>
+<span class="go">[9, 16, 25]</span>
+</pre></div>
+</div>
+<p>All slice operations return a new list containing the requested elements.  This
+means that the following slice returns a new (shallow) copy of the list:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span><span class="p">[:]</span>
+<span class="go">[1, 4, 9, 16, 25]</span>
+</pre></div>
+</div>
+<p>Lists also supports operations like concatenation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span> <span class="o">+</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="go">[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span>
+</pre></div>
+</div>
+<p>Unlike strings, which are <cite>immutable</cite>, lists are a <cite>mutable</cite>
+type, i.e. it is possible to change their content:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cubes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">125</span><span class="p">]</span>  <span class="c"># something&#39;s wrong here</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">**</span> <span class="mi">3</span>  <span class="c"># the cube of 4 is 64, not 65!</span>
+<span class="go">64</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cubes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">64</span>  <span class="c"># replace the wrong value</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cubes</span>
+<span class="go">[1, 8, 27, 64, 125]</span>
+</pre></div>
+</div>
+<p>You can also add new items at the end of the list, by using
+the <code class="xref py py-meth docutils literal"><span class="pre">append()</span></code> <em>method</em> (we will see more about methods later):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">cubes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">216</span><span class="p">)</span>  <span class="c"># add the cube of 6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cubes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># and the cube of 7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cubes</span>
+<span class="go">[1, 8, 27, 64, 125, 216, 343]</span>
+</pre></div>
+</div>
+<p>Assignment to slices is also possible, and this can even change the size of the
+list or clear it entirely:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">,</span> <span class="s">&#39;e&#39;</span><span class="p">,</span> <span class="s">&#39;f&#39;</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># replace some values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;C&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;f&#39;, &#39;g&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># now remove them</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;f&#39;, &#39;g&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># clear the list by replacing all the elements with an empty list</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<p>The built-in function <code class="xref py py-func docutils literal"><span class="pre">len()</span></code> also applies to lists:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>It is possible to nest lists (create lists containing other lists), for
+example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">[[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], [1, 2, 3]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;b&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="first-steps-towards-programming">
+<span id="tut-firststeps"></span><h2><a class="toc-backref" href="#id10">4.5.4. First Steps Towards Programming</a><a class="headerlink" href="#first-steps-towards-programming" title="Permalink to this headline">¶</a></h2>
+<p>Of course, we can use Python for more complicated tasks than adding two and two
+together.  For instance, we can write an initial sub-sequence of the <em>Fibonacci</em>
+series as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c"># Fibonacci series:</span>
+<span class="gp">... </span><span class="c"># the sum of two elements defines the next</span>
+<span class="gp">... </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">b</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="gp">...</span>
+<span class="go">1</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">5</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>This example introduces several new features.</p>
+<ul>
+<li><p class="first">The first line contains a <em>multiple assignment</em>: the variables <code class="docutils literal"><span class="pre">a</span></code> and <code class="docutils literal"><span class="pre">b</span></code>
+simultaneously get the new values 0 and 1.  On the last line this is used again,
+demonstrating that the expressions on the right-hand side are all evaluated
+first before any of the assignments take place.  The right-hand side expressions
+are evaluated  from the left to the right.</p>
+</li>
+<li><p class="first">The <cite>while</cite> loop executes as long as the condition (here: <code class="docutils literal"><span class="pre">b</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>)
+remains true.  In Python, like in C, any non-zero integer value is true; zero is
+false.  The condition may also be a string or list value, in fact any sequence;
+anything with a non-zero length is true, empty sequences are false.  The test
+used in the example is a simple comparison.  The standard comparison operators
+are written the same as in C: <code class="docutils literal"><span class="pre">&lt;</span></code> (less than), <code class="docutils literal"><span class="pre">&gt;</span></code> (greater than), <code class="docutils literal"><span class="pre">==</span></code>
+(equal to), <code class="docutils literal"><span class="pre">&lt;=</span></code> (less than or equal to), <code class="docutils literal"><span class="pre">&gt;=</span></code> (greater than or equal to)
+and <code class="docutils literal"><span class="pre">!=</span></code> (not equal to).</p>
+</li>
+<li><p class="first">The <em>body</em> of the loop is <em>indented</em>: indentation is Python&#8217;s way of grouping
+statements.  At the interactive prompt, you have to type a tab or space(s) for
+each indented line.  In practice you will prepare more complicated input
+for Python with a text editor; all decent text editors have an auto-indent
+facility.  When a compound statement is entered interactively, it must be
+followed by a blank line to indicate completion (since the parser cannot
+guess when you have typed the last line).  Note that each line within a basic
+block must be indented by the same amount.</p>
+</li>
+<li><p class="first">The <cite>print</cite> statement writes the value of the expression(s) it is
+given.  It differs from just writing the expression you want to write (as we did
+earlier in the calculator examples) in the way it handles multiple expressions
+and strings.  Strings are printed without quotes, and a space is inserted
+between items, so you can format things nicely, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="mi">256</span><span class="o">*</span><span class="mi">256</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&#39;The value of i is&#39;</span><span class="p">,</span> <span class="n">i</span>
+<span class="go">The value of i is 65536</span>
+</pre></div>
+</div>
+<p>A trailing comma avoids the newline after the output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">b</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="gp">...</span>
+<span class="go">1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</span>
+</pre></div>
+</div>
+<p>Note that the interpreter inserts a newline before it prints the next prompt if
+the last line was not completed.</p>
+</li>
+</ul>
+<p id="tut-morecontrol">Besides the <cite>while</cite> statement just introduced, Python knows the usual
+control flow statements known from other languages, with some twists.</p>
+</div>
+<div class="section" id="interlude-running-code-from-files">
+<h2><a class="toc-backref" href="#id11">4.5.5. Interlude: Running Code from Files</a><a class="headerlink" href="#interlude-running-code-from-files" title="Permalink to this headline">¶</a></h2>
+<p>At this point in the standard Python tutorial, the examples start to include
+many multi-line program fragments, which are increasingly awkward to run by just
+pasting into the Python shell.  I recommend running most of the following
+examples by editing them into individual small scripts saved as files; it will
+make them easier to modify.</p>
+<p>To get you started, several of the examples are available in
+<a class="reference download internal" href="_downloads/tutorial-examples.zip"><code class="xref download docutils literal"><span class="pre">tutorial-examples.zip</span></code></a>.</p>
+</div>
+<div class="section" id="if-statements">
+<span id="tut-if"></span><h2><a class="toc-backref" href="#id12">4.5.6. <cite>if</cite> Statements</a><a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
+<p>Perhaps the most well-known statement type is the <cite>if</cite> statement.  For
+example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&quot;Please enter an integer: &quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">print</span> <span class="s">&#39;Negative changed to zero&#39;</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Zero&#39;</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;Single&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;More&#39;</span>
+</pre></div>
+</div>
+<p>There can be zero or more <cite>elif</cite> parts, and the <cite>else</cite> part is
+optional.  The keyword &#8216;<cite>elif</cite>&#8216; is short for &#8216;else if&#8217;, and is useful
+to avoid excessive indentation.  An  <cite>if</cite> ... <cite>elif</cite> ...
+<cite>elif</cite> ... sequence is a substitute for the <code class="docutils literal"><span class="pre">switch</span></code> or
+<code class="docutils literal"><span class="pre">case</span></code> statements found in other languages.</p>
+</div>
+<div class="section" id="for-statements">
+<span id="tut-for"></span><h2><a class="toc-backref" href="#id13">4.5.7. <cite>for</cite> Statements</a><a class="headerlink" href="#for-statements" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Python&#8217;s <cite>for</cite> statement
+iterates over the items of any sequence (a list or a string), in the order that
+they appear in the sequence:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;window&#39;</span><span class="p">,</span> <span class="s">&#39;defenestrate&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">w</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">cat 3</span>
+<span class="go">window 6</span>
+<span class="go">defenestrate 12</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-range-function">
+<span id="tut-range"></span><h2><a class="toc-backref" href="#id14">4.5.8. The <code class="xref py py-func docutils literal"><span class="pre">range()</span></code> Function</a><a class="headerlink" href="#the-range-function" title="Permalink to this headline">¶</a></h2>
+<p>If you do need to iterate over a sequence of numbers, the built-in function
+<code class="xref py py-func docutils literal"><span class="pre">range()</span></code> comes in handy.  It generates lists containing arithmetic
+progressions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+<p>The given end point is never part of the generated list; <code class="docutils literal"><span class="pre">range(10)</span></code> generates
+a list of 10 values, the legal indices for items of a sequence of length 10.</p>
+<p>To iterate over the indices of a sequence, you can combine <code class="xref py py-func docutils literal"><span class="pre">range()</span></code> and
+<code class="xref py py-func docutils literal"><span class="pre">len()</span></code> as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Mary&#39;</span><span class="p">,</span> <span class="s">&#39;had&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;little&#39;</span><span class="p">,</span> <span class="s">&#39;lamb&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+<span class="gp">... </span>    <span class="k">print</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">...</span>
+<span class="go">0 Mary</span>
+<span class="go">1 had</span>
+<span class="go">2 a</span>
+<span class="go">3 little</span>
+<span class="go">4 lamb</span>
+</pre></div>
+</div>
+<p>In most such cases, however, it is convenient to use the <code class="xref py py-func docutils literal"><span class="pre">enumerate()</span></code>
+function.</p>
+</div>
+<div class="section" id="break-and-continue-statements-and-else-clauses-on-loops">
+<span id="tut-break"></span><h2><a class="toc-backref" href="#id15">4.5.9. <cite>break</cite> and <cite>continue</cite> Statements, and <cite>else</cite> Clauses on Loops</a><a class="headerlink" href="#break-and-continue-statements-and-else-clauses-on-loops" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>break</cite> statement breaks out of the smallest enclosing
+<cite>for</cite> or <cite>while</cite> loop.</p>
+<p>Loop statements may have an <code class="docutils literal"><span class="pre">else</span></code> clause; it is executed when the loop
+terminates through exhaustion of the list (with <cite>for</cite>) or when the
+condition becomes false (with <cite>while</cite>), but not when the loop is
+terminated by a <cite>break</cite> statement.  This is exemplified by the
+following loop, which searches for prime numbers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">print</span> <span class="n">n</span><span class="p">,</span> <span class="s">&#39;equals&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">/</span><span class="n">x</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># loop fell through without finding a factor</span>
+        <span class="k">print</span> <span class="n">n</span><span class="p">,</span> <span class="s">&#39;is a prime number&#39;</span>
+</pre></div>
+</div>
+<p>(Yes, this is the correct code.  Look closely: the <code class="docutils literal"><span class="pre">else</span></code> clause belongs to
+the <cite>for</cite> loop, <strong>not</strong> the <cite>if</cite> statement.)</p>
+<p>When used with a loop, the <code class="docutils literal"><span class="pre">else</span></code> clause has more in common with the
+<code class="docutils literal"><span class="pre">else</span></code> clause of a <cite>try</cite> statement than it does that of
+<cite>if</cite> statements: a <cite>try</cite> statement&#8217;s <code class="docutils literal"><span class="pre">else</span></code> clause runs
+when no exception occurs, and a loop&#8217;s <code class="docutils literal"><span class="pre">else</span></code> clause runs when no <code class="docutils literal"><span class="pre">break</span></code>
+occurs.</p>
+<p>The <cite>continue</cite> statement, also borrowed from C, continues with the next
+iteration of the loop:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&quot;Found an even number&quot;</span><span class="p">,</span> <span class="n">num</span>
+        <span class="k">continue</span>
+    <span class="k">print</span> <span class="s">&quot;Found a number&quot;</span><span class="p">,</span> <span class="n">num</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pass-statements">
+<span id="tut-pass"></span><h2><a class="toc-backref" href="#id16">4.5.10. <cite>pass</cite> Statements</a><a class="headerlink" href="#pass-statements" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>pass</cite> statement does nothing. It can be used when a statement is
+required syntactically but the program requires no action. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">pass</span>  <span class="c"># Busy-wait for keyboard interrupt (Ctrl+C)</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>This is commonly used for creating minimal classes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyEmptyClass</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>Another place <cite>pass</cite> can be used is as a place-holder for a function or
+conditional body when you are working on new code, allowing you to keep thinking
+at a more abstract level.  The <cite>pass</cite> is silently ignored:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">initlog</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>   <span class="c"># Remember to implement this!</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="defining-functions">
+<span id="tut-functions"></span><h2><a class="toc-backref" href="#id17">4.5.11. Defining Functions</a><a class="headerlink" href="#defining-functions" title="Permalink to this headline">¶</a></h2>
+<p>We can create a function that writes the Fibonacci series to an arbitrary
+boundary:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c"># write Fibonacci series up to n</span>
+    <span class="sd">&quot;&quot;&quot;Print a Fibonacci series up to n.&quot;&quot;&quot;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">print</span> <span class="n">a</span><span class="p">,</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+
+<span class="c"># Now call the function we just defined:</span>
+<span class="n">fib</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The keyword <cite>def</cite> introduces a function <em>definition</em>.  It must be
+followed by the function name and the parenthesized list of formal parameters.
+The statements that form the body of the function start at the next line, and
+must be indented.</p>
+<p>The first statement of the function body can optionally be a string literal;
+this string literal is the function&#8217;s documentation string, or <em class="dfn">docstring</em>.
+(More about docstrings can be found in the section <a class="reference internal" href="#tut-docstrings"><span>Documentation Strings</span></a>.)
+There are tools which use docstrings to automatically produce online or printed
+documentation, or to let the user interactively browse through code; it&#8217;s good
+practice to include docstrings in code that you write, so make a habit of it.</p>
+<p>The <em>execution</em> of a function introduces a new symbol table used for the local
+variables of the function.  More precisely, all variable assignments in a
+function store the value in the local symbol table; whereas variable references
+first look in the local symbol table, then in the local symbol tables of
+enclosing functions, then in the global symbol table, and finally in the table
+of built-in names. Thus, global variables cannot be directly assigned a value
+within a function (unless named in a <cite>global</cite> statement), although they
+may be referenced.</p>
+<p>The actual parameters (arguments) to a function call are introduced in the local
+symbol table of the called function when it is called; thus, arguments are
+passed using <em>call by value</em> (where the <em>value</em> is always an object <em>reference</em>,
+not the value of the object). When a function calls another function, a new
+local symbol table is created for that call.</p>
+<p>A function definition introduces the function name in the current symbol table.
+The value of the function name has a type that is recognized by the interpreter
+as a user-defined function.  This value can be assigned to another name which
+can then also be used as a function.  This serves as a general renaming
+mechanism:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span>
+<span class="go">&lt;function fib at 10042ed0&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">fib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">0 1 1 2 3 5 8 13 21 34 55 89</span>
+</pre></div>
+</div>
+<p>Coming from other languages, you might object that <code class="docutils literal"><span class="pre">fib</span></code> is not a function but
+a procedure since it doesn&#8217;t return a value.  In fact, even functions without a
+<cite>return</cite> statement do return a value, albeit a rather boring one.  This
+value is called <code class="docutils literal"><span class="pre">None</span></code> (it&#8217;s a built-in name).  Writing the value <code class="docutils literal"><span class="pre">None</span></code> is
+normally suppressed by the interpreter if it would be the only value written.
+You can see it if you really want to using <cite>print</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<p>It is simple to write a function that returns a list of the numbers of the
+Fibonacci series, instead of printing it:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">fib2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c"># return Fibonacci series up to n</span>
+    <span class="sd">&quot;&quot;&quot;Return a list containing the Fibonacci series up to n.&quot;&quot;&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>    <span class="c"># see below</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">f100</span> <span class="o">=</span> <span class="n">fib2</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>    <span class="c"># call it</span>
+<span class="k">print</span> <span class="n">f100</span>          <span class="c"># write the result</span>
+</pre></div>
+</div>
+<p>This example, as usual, demonstrates some new Python features:</p>
+<ul class="simple">
+<li>The <cite>return</cite> statement returns with a value from a function.
+<cite>return</cite> without an expression argument returns <code class="docutils literal"><span class="pre">None</span></code>. Falling off
+the end of a function also returns <code class="docutils literal"><span class="pre">None</span></code>.</li>
+<li>The statement <code class="docutils literal"><span class="pre">result.append(a)</span></code> calls a <em>method</em> of the list object
+<code class="docutils literal"><span class="pre">result</span></code>.  A method is a function that &#8216;belongs&#8217; to an object and is named
+<code class="docutils literal"><span class="pre">obj.methodname</span></code>, where <code class="docutils literal"><span class="pre">obj</span></code> is some object (this may be an expression),
+and <code class="docutils literal"><span class="pre">methodname</span></code> is the name of a method that is defined by the object&#8217;s type.
+Different types define different methods.  Methods of different types may have
+the same name without causing ambiguity.  (It is possible to define your own
+object types and methods, using <em>classes</em>.)
+The method <code class="xref py py-meth docutils literal"><span class="pre">append()</span></code> shown in the example is defined for list objects; it
+adds a new element at the end of the list.  In this example it is equivalent to
+<code class="docutils literal"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">result</span> <span class="pre">+</span> <span class="pre">[a]</span></code>, but more efficient.</li>
+</ul>
+</div>
+<div class="section" id="more-on-defining-functions">
+<span id="tut-defining"></span><h2><a class="toc-backref" href="#id18">4.5.12. More on Defining Functions</a><a class="headerlink" href="#more-on-defining-functions" title="Permalink to this headline">¶</a></h2>
+<p>It is also possible to define functions with a variable number of arguments.
+There are three forms, which can be combined.</p>
+<div class="section" id="default-argument-values">
+<span id="tut-defaultargs"></span><h3><a class="toc-backref" href="#id19">4.5.12.1. Default Argument Values</a><a class="headerlink" href="#default-argument-values" title="Permalink to this headline">¶</a></h3>
+<p>The most useful form is to specify a default value for one or more arguments.
+This creates a function that can be called with fewer arguments than it is
+defined to allow.  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">ask_ok</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">complaint</span><span class="o">=</span><span class="s">&#39;Yes or no, please!&#39;</span><span class="p">):</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">ok</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ok</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;ye&#39;</span><span class="p">,</span> <span class="s">&#39;yes&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">if</span> <span class="n">ok</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&#39;n&#39;</span><span class="p">,</span> <span class="s">&#39;no&#39;</span><span class="p">,</span> <span class="s">&#39;nop&#39;</span><span class="p">,</span> <span class="s">&#39;nope&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="n">retries</span> <span class="o">=</span> <span class="n">retries</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">retries</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s">&#39;refusenik user&#39;</span><span class="p">)</span>
+        <span class="k">print</span> <span class="n">complaint</span>
+</pre></div>
+</div>
+<p>This function can be called in several ways:</p>
+<ul class="simple">
+<li>giving only the mandatory argument:
+<code class="docutils literal"><span class="pre">ask_ok('Do</span> <span class="pre">you</span> <span class="pre">really</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">quit?')</span></code></li>
+<li>giving one of the optional arguments:
+<code class="docutils literal"><span class="pre">ask_ok('OK</span> <span class="pre">to</span> <span class="pre">overwrite</span> <span class="pre">the</span> <span class="pre">file?',</span> <span class="pre">2)</span></code></li>
+<li>or even giving all arguments:
+<code class="docutils literal"><span class="pre">ask_ok('OK</span> <span class="pre">to</span> <span class="pre">overwrite</span> <span class="pre">the</span> <span class="pre">file?',</span> <span class="pre">2,</span> <span class="pre">'Come</span> <span class="pre">on,</span> <span class="pre">only</span> <span class="pre">yes</span> <span class="pre">or</span> <span class="pre">no!')</span></code></li>
+</ul>
+<p>This example also introduces the <cite>in</cite> keyword. This tests whether or
+not a sequence contains a certain value.</p>
+</div>
+<div class="section" id="keyword-arguments">
+<span id="tut-keywordargs"></span><h3><a class="toc-backref" href="#id20">4.5.12.2. Keyword Arguments</a><a class="headerlink" href="#keyword-arguments" title="Permalink to this headline">¶</a></h3>
+<p>Functions can also be called using <cite>keyword arguments &lt;keyword argument&gt;</cite>
+of the form <code class="docutils literal"><span class="pre">kwarg=value</span></code>.  For instance, the following function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s">&#39;a stiff&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;voom&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&#39;Norwegian Blue&#39;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;-- This parrot wouldn&#39;t&quot;</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span>
+    <span class="k">print</span> <span class="s">&quot;if you put&quot;</span><span class="p">,</span> <span class="n">voltage</span><span class="p">,</span> <span class="s">&quot;volts through it.&quot;</span>
+    <span class="k">print</span> <span class="s">&quot;-- Lovely plumage, the&quot;</span><span class="p">,</span> <span class="nb">type</span>
+    <span class="k">print</span> <span class="s">&quot;-- It&#39;s&quot;</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="s">&quot;!&quot;</span>
+</pre></div>
+</div>
+<p>accepts one required argument (<code class="docutils literal"><span class="pre">voltage</span></code>) and three optional arguments
+(<code class="docutils literal"><span class="pre">state</span></code>, <code class="docutils literal"><span class="pre">action</span></code>, and <code class="docutils literal"><span class="pre">type</span></code>).  This function can be called in any
+of the following ways:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">parrot</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>                                          <span class="c"># 1 positional argument</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>                                  <span class="c"># 1 keyword argument</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s">&#39;VOOOOOM&#39;</span><span class="p">)</span>             <span class="c"># 2 keyword arguments</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">&#39;VOOOOOM&#39;</span><span class="p">,</span> <span class="n">voltage</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span>             <span class="c"># 2 keyword arguments</span>
+<span class="n">parrot</span><span class="p">(</span><span class="s">&#39;a million&#39;</span><span class="p">,</span> <span class="s">&#39;bereft of life&#39;</span><span class="p">,</span> <span class="s">&#39;jump&#39;</span><span class="p">)</span>         <span class="c"># 3 positional arguments</span>
+<span class="n">parrot</span><span class="p">(</span><span class="s">&#39;a thousand&#39;</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s">&#39;pushing up the daisies&#39;</span><span class="p">)</span>  <span class="c"># 1 positional, 1 keyword</span>
+</pre></div>
+</div>
+<p>but all the following calls would be invalid:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">parrot</span><span class="p">()</span>                     <span class="c"># required argument missing</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">voltage</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="s">&#39;dead&#39;</span><span class="p">)</span>  <span class="c"># non-keyword argument after a keyword argument</span>
+<span class="n">parrot</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="n">voltage</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span>     <span class="c"># duplicate value for the same argument</span>
+<span class="n">parrot</span><span class="p">(</span><span class="n">actor</span><span class="o">=</span><span class="s">&#39;John Cleese&#39;</span><span class="p">)</span>  <span class="c"># unknown keyword argument</span>
+</pre></div>
+</div>
+<p>In a function call, keyword arguments must follow positional arguments.
+All the keyword arguments passed must match one of the arguments
+accepted by the function (e.g. <code class="docutils literal"><span class="pre">actor</span></code> is not a valid argument for the
+<code class="docutils literal"><span class="pre">parrot</span></code> function), and their order is not important.  This also includes
+non-optional arguments (e.g. <code class="docutils literal"><span class="pre">parrot(voltage=1000)</span></code> is valid too).
+No argument may receive a value more than once.
+Here&#8217;s an example that fails due to this restriction:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">function</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">?</span>
+<span class="gr">TypeError</span>: <span class="n">function() got multiple values for keyword argument &#39;a&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation-strings">
+<span id="tut-docstrings"></span><h3><a class="toc-backref" href="#id21">4.5.12.3. Documentation Strings</a><a class="headerlink" href="#documentation-strings" title="Permalink to this headline">¶</a></h3>
+<p>There are emerging conventions about the content and formatting of documentation
+strings.</p>
+<p>The first line should always be a short, concise summary of the object&#8217;s
+purpose.  For brevity, it should not explicitly state the object&#8217;s name or type,
+since these are available by other means (except if the name happens to be a
+verb describing a function&#8217;s operation).  This line should begin with a capital
+letter and end with a period.</p>
+<p>If there are more lines in the documentation string, the second line should be
+blank, visually separating the summary from the rest of the description.  The
+following lines should be one or more paragraphs describing the object&#8217;s calling
+conventions, its side effects, etc.</p>
+<p>The Python parser does not strip indentation from multi-line string literals in
+Python, so tools that process documentation have to strip indentation if
+desired.  This is done using the following convention. The first non-blank line
+<em>after</em> the first line of the string determines the amount of indentation for
+the entire documentation string.  (We can&#8217;t use the first line since it is
+generally adjacent to the string&#8217;s opening quotes so its indentation is not
+apparent in the string literal.)  Whitespace &#8220;equivalent&#8221; to this indentation is
+then stripped from the start of all lines of the string.  Lines that are
+indented less should not occur, but if they occur all their leading whitespace
+should be stripped.  Equivalence of whitespace should be tested after expansion
+of tabs (to 8 spaces, normally).</p>
+<p>Here is an example of a multi-line docstring:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Do nothing, but document it.</span>
+
+<span class="sd">    No, really, it doesn&#39;t do anything.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="more-on-lists">
+<span id="tut-morelists"></span><h2><a class="toc-backref" href="#id22">4.5.13. More on Lists</a><a class="headerlink" href="#more-on-lists" title="Permalink to this headline">¶</a></h2>
+<p>The list data type has some more methods.  Here are all of the methods of list
+objects:</p>
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">append</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span></dt>
+<dd><p>Add an item to the end of the list; equivalent to <code class="docutils literal"><span class="pre">a[len(a):]</span> <span class="pre">=</span> <span class="pre">[x]</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">extend</code><span class="sig-paren">(</span><em>L</em><span class="sig-paren">)</span></dt>
+<dd><p>Extend the list by appending all the items in the given list; equivalent to
+<code class="docutils literal"><span class="pre">a[len(a):]</span> <span class="pre">=</span> <span class="pre">L</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">insert</code><span class="sig-paren">(</span><em>i</em>, <em>x</em><span class="sig-paren">)</span></dt>
+<dd><p>Insert an item at a given position.  The first argument is the index of the
+element before which to insert, so <code class="docutils literal"><span class="pre">a.insert(0,</span> <span class="pre">x)</span></code> inserts at the front of
+the list, and <code class="docutils literal"><span class="pre">a.insert(len(a),</span> <span class="pre">x)</span></code> is equivalent to <code class="docutils literal"><span class="pre">a.append(x)</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">remove</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span></dt>
+<dd><p>Remove the first item from the list whose value is <em>x</em>. It is an error if there
+is no such item.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">pop</code><span class="sig-paren">(</span><span class="optional">[</span><em>i</em><span class="optional">]</span><span class="sig-paren">)</span></dt>
+<dd><p>Remove the item at the given position in the list, and return it.  If no index
+is specified, <code class="docutils literal"><span class="pre">a.pop()</span></code> removes and returns the last item in the list.  (The
+square brackets around the <em>i</em> in the method signature denote that the parameter
+is optional, not that you should type square brackets at that position.  You
+will see this notation frequently in the Python Library Reference.)</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">index</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span></dt>
+<dd><p>Return the index in the list of the first item whose value is <em>x</em>. It is an
+error if there is no such item.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">count</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span></dt>
+<dd><p>Return the number of times <em>x</em> appears in the list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">sort</code><span class="sig-paren">(</span><em>cmp=None</em>, <em>key=None</em>, <em>reverse=False</em><span class="sig-paren">)</span></dt>
+<dd><p>Sort the items of the list in place (the arguments can be used for sort
+customization, see <code class="xref py py-func docutils literal"><span class="pre">sorted()</span></code> for their explanation).</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">list.</code><code class="descname">reverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Reverse the elements of the list, in place.</p>
+</dd></dl>
+
+<p>An example that uses most of the list methods:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">66.25</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1234.5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">333</span><span class="p">),</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mf">66.25</span><span class="p">),</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+<span class="go">2 1 0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">333</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[66.25, 333, -1, 333, 1, 1234.5, 333]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">333</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">333</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[66.25, -1, 333, 1, 1234.5, 333]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[333, 1234.5, 1, 333, -1, 66.25]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[-1, 1, 66.25, 333, 333, 1234.5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">1234.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[-1, 1, 66.25, 333, 333]</span>
+</pre></div>
+</div>
+<p>You might have noticed that methods like <code class="docutils literal"><span class="pre">insert</span></code>, <code class="docutils literal"><span class="pre">remove</span></code> or <code class="docutils literal"><span class="pre">sort</span></code> that
+only modify the list have no return value printed &#8211; they return the default
+<code class="docutils literal"><span class="pre">None</span></code>. This is a design principle for all mutable data structures in Python.</p>
+<div class="section" id="list-comprehensions">
+<span id="tut-listcomps"></span><h3><a class="toc-backref" href="#id23">4.5.13.1. List Comprehensions</a><a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h3>
+<p>List comprehensions provide a concise way to create lists.
+Common applications are to make new lists where each element is the result of
+some operations applied to each member of another sequence or iterable, or to
+create a subsequence of those elements that satisfy a certain condition.</p>
+<p>For example, assume we want to create a list of squares, like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">squares</span>
+<span class="go">[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+</pre></div>
+</div>
+<p>We can obtain the same result with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>A list comprehension consists of brackets containing an expression followed
+by a <cite>for</cite> clause, then zero or more <cite>for</cite> or <cite>if</cite>
+clauses.  The result will be a new list resulting from evaluating the expression
+in the context of the <cite>for</cite> and <cite>if</cite> clauses which follow it.
+For example, this listcomp combines the elements of two lists if they are not
+equal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">]</span>
+<span class="go">[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</span>
+</pre></div>
+</div>
+<p>and it&#8217;s equivalent to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">combs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+<span class="gp">... </span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]:</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="n">combs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">combs</span>
+<span class="go">[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]</span>
+</pre></div>
+</div>
+<p>Note how the order of the <cite>for</cite> and <cite>if</cite> statements is the
+same in both these snippets.</p>
+</div>
+</div>
+<div class="section" id="the-del-statement">
+<span id="tut-del"></span><h2><a class="toc-backref" href="#id24">4.5.14. The <cite>del</cite> statement</a><a class="headerlink" href="#the-del-statement" title="Permalink to this headline">¶</a></h2>
+<p>There is a way to remove an item from a list given its index instead of its
+value: the <cite>del</cite> statement.  This differs from the <code class="xref py py-meth docutils literal"><span class="pre">pop()</span></code> method
+which returns a value.  The <cite>del</cite> statement can also be used to remove
+slices from a list or clear the entire list (which we did earlier by assignment
+of an empty list to the slice).  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">66.25</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mf">1234.5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[1, 66.25, 333, 333, 1234.5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[1, 66.25, 1234.5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span><span class="p">[:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<p><cite>del</cite> can also be used to delete entire variables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">a</span>
+</pre></div>
+</div>
+<p>Referencing the name <code class="docutils literal"><span class="pre">a</span></code> hereafter is an error (at least until another value
+is assigned to it).  We&#8217;ll find other uses for <cite>del</cite> later.</p>
+</div>
+<div class="section" id="tuples-and-sequences">
+<span id="tut-tuples"></span><h2><a class="toc-backref" href="#id25">4.5.15. Tuples and Sequences</a><a class="headerlink" href="#tuples-and-sequences" title="Permalink to this headline">¶</a></h2>
+<p>We saw that lists and strings have many common properties, such as indexing and
+slicing operations.  They are two examples of <em>sequence</em> data types.  Since
+Python is an evolving language, other sequence data types may be added.  There
+is also another standard sequence data type: the <em>tuple</em>.</p>
+<p>A tuple consists of a number of values separated by commas, for instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">,</span> <span class="mi">54321</span><span class="p">,</span> <span class="s">&#39;hello!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">12345</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
+<span class="go">(12345, 54321, &#39;hello!&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Tuples may be nested:</span>
+<span class="gp">... </span><span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">u</span>
+<span class="go">((12345, 54321, &#39;hello!&#39;), (1, 2, 3, 4, 5))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># Tuples are immutable:</span>
+<span class="gp">... </span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">88888</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># but they can contain mutable objects:</span>
+<span class="gp">... </span><span class="n">v</span> <span class="o">=</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">([1, 2, 3], [3, 2, 1])</span>
+</pre></div>
+</div>
+<p>As you see, on output tuples are always enclosed in parentheses, so that nested
+tuples are interpreted correctly; they may be input with or without surrounding
+parentheses, although often parentheses are necessary anyway (if the tuple is
+part of a larger expression).  It is not possible to assign to the individual
+items of a tuple, however it is possible to create tuples which contain mutable
+objects, such as lists.</p>
+<p>Though tuples may seem similar to lists, they are often used in different
+situations and for different purposes.
+Tuples are <cite>immutable</cite>, and usually contain an heterogeneous sequence of
+elements that are accessed via unpacking (see later in this section) or indexing.
+Lists are <cite>mutable</cite>, and their elements are usually homogeneous and are
+accessed by iterating over the list.</p>
+<p>A special problem is the construction of tuples containing 0 or 1 items: the
+syntax has some extra quirks to accommodate these.  Empty tuples are constructed
+by an empty pair of parentheses; a tuple with one item is constructed by
+following a value with a comma (it is not sufficient to enclose a single value
+in parentheses). Ugly, but effective.  For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span> <span class="o">=</span> <span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singleton</span> <span class="o">=</span> <span class="s">&#39;hello&#39;</span><span class="p">,</span>    <span class="c"># &lt;-- note trailing comma</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">empty</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">singleton</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">singleton</span>
+<span class="go">(&#39;hello&#39;,)</span>
+</pre></div>
+</div>
+<p>The statement <code class="docutils literal"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">12345,</span> <span class="pre">54321,</span> <span class="pre">'hello!'</span></code> is an example of <em>tuple packing</em>:
+the values <code class="docutils literal"><span class="pre">12345</span></code>, <code class="docutils literal"><span class="pre">54321</span></code> and <code class="docutils literal"><span class="pre">'hello!'</span></code> are packed together in a tuple.
+The reverse operation is also possible:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">t</span>
+</pre></div>
+</div>
+<p>This is called, appropriately enough, <em>sequence unpacking</em> and works for any
+sequence on the right-hand side.  Sequence unpacking requires the list of
+variables on the left to have the same number of elements as the length of the
+sequence.  Note that multiple assignment is really just a combination of tuple
+packing and sequence unpacking.</p>
+</div>
+<div class="section" id="numpy-efficient-numerical-computation">
+<h2><a class="toc-backref" href="#id26">4.5.16. NumPy: Efficient Numerical Computation</a><a class="headerlink" href="#numpy-efficient-numerical-computation" title="Permalink to this headline">¶</a></h2>
+<p>The Python list and tuple types can represent the sequences and matrices of
+numbers we often use for signal-processing for physical computing.  However,
+these are not very efficient when dealing with large arrays of numbers.  For
+that we turn to <a class="reference external" href="http://numpy.org/">NumPy</a>, a library for scientific computing which provides
+powerful numeric array and linear algebra tools.  NumPy is also the basis for
+<a class="reference external" href="http://scipy.org/">SciPy</a>, <a class="reference external" href="http://scikit-learn.org/stable/">scikit-learn</a>, and many other <a class="reference external" href="http://scikits.appspot.com/scikits">SciKits</a> libraries which provide a
+vast set of tools for scientific computing.</p>
+<p>NumPy is not included within the base Python installation but is included by
+default in many distributions and OS installations.  To see if your interpreter
+includes numpy, try importing the library:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p>If that works properly, no error will be printed.  Try creating some numeric
+arrays from the interpreter as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                                 <span class="c"># array of numbers from 0 to 9</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span> <span class="p">)</span>    <span class="c"># convert a Python sequence to a NumPy array</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span> <span class="p">)</span> <span class="c"># convert a Python sequence to a NumPy matrix</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>                                  <span class="c"># create an array of zeros</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                                     <span class="c"># create a 3x3 identity matrix</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>                         <span class="c"># create an uninitialized 3D array shaped 2 x 3 x 4</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>                       <span class="c"># create an uninitialized 4D array shaped 2 x 3 x 4 x 5</span>
+<span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>                     <span class="c"># create an uninitialized 5D array shaped 2 x 3 x 4 x 5 x 6</span>
+</pre></div>
+</div>
+<p>NumPy can also be used for image processing.  The following creates a blank
+24-bit color image at &#8220;standard definition&#8221; as a 640-column, 480-row matrix of
+color values, each of which is a 3-element vector of 8-bit bytes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="mi">480</span><span class="p">,</span><span class="mi">640</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>NumPy supports efficient arithmetic by vectorizing operations using <em>universal
+functions</em> which have logic to map fast numerical operators over entire arrays
+at the fastest possible rate.  So for example, the following will compute a
+20000-element wave-table representing a sine wave:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">wave</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">10000</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>This first generates a sequence of time indices using arange, then applies the
+sine function to each element, returning the result in a new array.  The
+comparable Python code could use list comprehensions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">py_wave</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">10000.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20000</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>We can compare the speed as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">timeit</span>
+<span class="k">print</span> <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">&#39;numpy.sin( numpy.arange(0.0, 2*numpy.pi, numpy.pi/1000))&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="s">&quot;import numpy&quot;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">timeit</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="s">&#39;[math.sin(i*math.pi/10000.0) for i in range(20000)]&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">setup</span><span class="o">=</span><span class="s">&quot;import math&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On my laptop, the numpy versions is about 165 times faster.</p>
+<p>For a complete tutorial, <a class="reference external" href="http://wiki.scipy.org/Tentative_NumPy_Tutorial">see the SciPy.org site</a>.</p>
+</div>
+<div class="section" id="acknowledgement">
+<h2><a class="toc-backref" href="#id27">4.5.17. Acknowledgement</a><a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>Many of the examples on this page were copied directly from the source text for the
+<a class="reference external" href="https://docs.python.org/2/tutorial/index.html">Python 2.7 Tutorial</a> as downloaded from
+<a class="reference external" href="https://docs.python.org/2/_sources/tutorial/">https://docs.python.org/2/_sources/tutorial/</a> and constitute a derivative work,
+and as such is subject to the <a class="reference external" href="https://docs.python.org/2.7/license.html">Python Open Source License Agreement</a> which requires a summmary of
+changes.  Given that the text itself is a transparent rendering of the changes,
+the summary will be limited to the following: most of the explanatory text has
+been removed, many examples have been removed, and many examples have been
+re-ordered.  Many thanks are due to Python Software Foundation keeping such an
+excellent resource available.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.5. Python by Example</a><ul>
+<li><a class="reference internal" href="#reference-links">4.5.1. Reference Links</a></li>
+<li><a class="reference internal" href="#preparation">4.5.2. Preparation</a></li>
+<li><a class="reference internal" href="#using-python-as-a-calculator">4.5.3. Using Python as a Calculator</a><ul>
+<li><a class="reference internal" href="#numbers">4.5.3.1. Numbers</a></li>
+<li><a class="reference internal" href="#strings">4.5.3.2. Strings</a></li>
+<li><a class="reference internal" href="#lists">4.5.3.3. Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#first-steps-towards-programming">4.5.4. First Steps Towards Programming</a></li>
+<li><a class="reference internal" href="#interlude-running-code-from-files">4.5.5. Interlude: Running Code from Files</a></li>
+<li><a class="reference internal" href="#if-statements">4.5.6. <cite>if</cite> Statements</a></li>
+<li><a class="reference internal" href="#for-statements">4.5.7. <cite>for</cite> Statements</a></li>
+<li><a class="reference internal" href="#the-range-function">4.5.8. The <code class="docutils literal"><span class="pre">range()</span></code> Function</a></li>
+<li><a class="reference internal" href="#break-and-continue-statements-and-else-clauses-on-loops">4.5.9. <cite>break</cite> and <cite>continue</cite> Statements, and <cite>else</cite> Clauses on Loops</a></li>
+<li><a class="reference internal" href="#pass-statements">4.5.10. <cite>pass</cite> Statements</a></li>
+<li><a class="reference internal" href="#defining-functions">4.5.11. Defining Functions</a></li>
+<li><a class="reference internal" href="#more-on-defining-functions">4.5.12. More on Defining Functions</a><ul>
+<li><a class="reference internal" href="#default-argument-values">4.5.12.1. Default Argument Values</a></li>
+<li><a class="reference internal" href="#keyword-arguments">4.5.12.2. Keyword Arguments</a></li>
+<li><a class="reference internal" href="#documentation-strings">4.5.12.3. Documentation Strings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-on-lists">4.5.13. More on Lists</a><ul>
+<li><a class="reference internal" href="#list-comprehensions">4.5.13.1. List Comprehensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-del-statement">4.5.14. The <cite>del</cite> statement</a></li>
+<li><a class="reference internal" href="#tuples-and-sequences">4.5.15. Tuples and Sequences</a></li>
+<li><a class="reference internal" href="#numpy-efficient-numerical-computation">4.5.16. NumPy: Efficient Numerical Computation</a></li>
+<li><a class="reference internal" href="#acknowledgement">4.5.17. Acknowledgement</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="computational_behavior.html"
+                        title="previous chapter">4.4. Computation and Behavior</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PureData.html"
+                        title="next chapter">4.6. Physical Computation with Pure Data</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="PureData.html" title="4.6. Physical Computation with Pure Data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="computational_behavior.html" title="4.4. Computation and Behavior"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="guides.html" >4. Topic Area Guides</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-09-18.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

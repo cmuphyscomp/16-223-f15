@@ -9,20 +9,20 @@ For all assignments, please consult the :ref:`calendar` for precise due dates.
 Please also become aware of the stringent requirements of the
 :ref:`lateness-policy`.
 
-   
+
 .. toctree::
 
    project_reports
    project1
 
 
-Project 2 
+Project 2
 =========
 
 Details TBD.
 
 
-Project 3 
+Project 3
 =========
 
 Details TBD.
@@ -80,7 +80,7 @@ It may also be useful to include a meaningful photograph or sketches.  Video
 can be handy for your own reference, but in order to keep grading review
 manageable your videos may or not be examined by the instructor.  If you include
 video, please upload them to a server and note the URL.
- 
+
 **Additional Prompts.**  Here are other suggested questions to consider when completing exercises.
 
   * Did the process fail in an interesting way?
@@ -89,7 +89,7 @@ video, please upload them to a server and note the URL.
   * Is there an error in the exercise text? (If so, please check the
     :ref:`errata` first then consider reporting it.)
   * How could the exercise be improved?
-    
+
 **Physical Format.** The notebook may be kept in either a physical or digital
 form.  There are advantages to each: it is fast and easy to sketch on paper,
 but digital can be duplicated more easily for submission.  Here are some suggestions:
@@ -135,7 +135,7 @@ for this section than time so individuals may choose exercises according to the
 experience and discretion.  If something is too elementary for your experience
 level, please choose something new for you.  If an exercise requires a part
 which is not available, please move on to something feasible.
-  
+
 Please be sure to read the :ref:`basic-circuits-guide` section for a review of
 terminology and concepts.  Also, please skim the :ref:`errata` section if you
 have trouble to identify mistakes in the text or general hints.
@@ -183,6 +183,10 @@ Arduino-related:
 Mechanism-related:
 
    * `Laser Cutting Features and Tolerances <../exercises/mechanism/laser-tolerance/index.html>`__
+   * `Mechanisms for One-Bit Sensing <../exercises/mechanism/mechanical-one-bit-sensing/index.html>`__
+
+Please be sure to read the :ref:`mechanism-guide` section for a review of
+mechanical terminology and concepts.
      
 .. _unit-2-exercises:
 
@@ -192,8 +196,10 @@ Unit 2 Exercises: Signals, Time, and Dynamics
 
 Please be sure to read the :ref:`computation-guide` section for a review of
 computational terminology and concepts.
-   
+
 **Please explore and document at least 6 of the following exercises:**
+
+Arduino-related:
 
    * `event-loop-programming <../exercises/Arduino/event-loop-programming/index.html>`__
    * `resolution-and-mapping <../exercises/Arduino/resolution-and-mapping/index.html>`__
@@ -201,10 +207,13 @@ computational terminology and concepts.
    * `MPU6050-IMU-I2C <../exercises/Arduino/MPU6050-IMU-I2C/index.html>`__
    * `WS2801-LED-SPI <../exercises/Arduino/WS2801-LED-SPI/index.html>`__
 
-.. FIXME need more mechanical exercises
+Mechanism-related:
 
-Please be sure to read the :ref:`mechanism-guide` section for a review of
-mechanical terminology and concepts.
+   * `Electromechanical Oscillation <../exercises/mechanism/mechanical-oscillator/index.html>`__
+
+Raspberry Pi-related:
+
+   * `Getting Started on the Raspberry Pi <../exercises/Raspberry-Pi/rpi-getting-started/index.html>`__
 
 .. _unit-3-exercises:
 
@@ -272,7 +281,7 @@ recommended* that you place your presentation materials online in a format you
 can quickly access in-place or download so we may use one shared cluster Mac
 connected to the projector.  Please arrive a few minutes early on the day of
 your presentation to get your materials in place.
-   
+
 .. _ideation-1:
 
 Ideation Exercise 1
@@ -292,7 +301,7 @@ potential project ideas related to physical computing.
    thinking.
 
 #. **Bring your ideas to class on a physical printout following these rules**:
-   
+
    * all ideas on a single 8.5" x 11" piece of paper
    * one line per idea
    * number the lines
@@ -336,7 +345,7 @@ Please consider the following prompts in advance:
 After some discussion we will formulate a few concrete objectives.  These will
 be reviewed at the mid-semester and final interviews.
 
-   
+
 .. _skills-survey:
 
 Skills Survey

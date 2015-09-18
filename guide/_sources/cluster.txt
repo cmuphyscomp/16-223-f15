@@ -145,7 +145,6 @@ Errata:
 
 #. MacPorts package ``py27-pyqwt`` was omitted from the request list in F15.
 #. MacPorts package ``py27-opengl`` was omitted from the request list in F15.
+#. MacPorts package ``py27-tkinter`` was omitted from the request list in F15.
 #. OpenSCAM is now CAMotics.
 #. Python(x,y) moved from Google Code to github.
-
-.. #. MacPorts package ``eric4`` was omitted from the request list in F15.

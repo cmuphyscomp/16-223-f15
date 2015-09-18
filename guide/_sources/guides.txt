@@ -14,5 +14,6 @@ Topic Area Guides
    Arduino
    mechanism
    computational_behavior
+   Python
    PureData
 

@@ -1,0 +1,48 @@
+.. include:: ../links.rst
+   
+Day 3: Brainstorming
+====================
+
+Notes for 2015-09-09.  See also the :ref:`calendar`.
+
+Notes from Day 2
+----------------
+
+   * Questions about breadboards.  Also, see :ref:`essential-skills-list`.
+   * The meters can't read even register a red LED diode drop in diode test
+     mode, but the diode function will work on a 1N914 or similar small diode
+   * LEDs versus bulbs.
+   * Many questions about lab notebook *reflections*.  Basically, keep it
+     productive for both yourself and me.
+
+   * Pacing: we will be on Unit 1 exercises until Sep 23, spanning roughly five
+     class days; make sure your pace works for you.
+
+     
+Agenda
+------
+
+#. Administrative
+
+   * Please let me know today if your card is *not* working for swipe access.
+   * Fire safety for the laser cutter.
+   * **During class**: individual :ref:`research presentation <research-talk>` sign-ups.
+   * Returning notebooks soon.
+   
+#. Assignments
+
+   * End of today (9/9): First notebook review on whatever you have so far.
+   * Please look carefully at the description in :ref:`research-talk` and ask any questions.
+     
+#. In-class
+
+   * **In-class ideation exercise**.  See :ref:`ideation-1`.
+   * Quick review of symbols and notation.
+   * Continue Unit 1 exercises.  See :ref:`unit-1-exercises`.
+   * **Turn in notebook**.
+
+     
+Video
+-----
+
+.. youtube:: apVR5Htz0K4

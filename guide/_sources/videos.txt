@@ -91,5 +91,31 @@ Raffaello D'Andrea
 
 .. youtube:: Pxq2chA5AT8
 
-* http://raffaello.name/projects/robotic-chair/	     
+* http://raffaello.name/projects/robotic-chair/
 * also https://www.youtube.com/watch?v=vlXh8RvvcuI
+
+Xuedi Chen
+-------------------
+
+*x.pose*
+
+.. raw:: html
+
+   <iframe src="https://player.vimeo.com/video/97703615" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/97703615">x.pose</a> from <a href="https://vimeo.com/zoodzilla">Xuedi Chen</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+* http://xc-xd.com/x-pose
+* https://vimeo.com/97703615
+
+The Principals
+------------------------
+
+*Cosmic Quilt*
+
+.. raw:: html
+
+   <iframe src="https://player.vimeo.com/video/43079257" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/43079257">Cosmic Quilt - REALIZED</a> from <a href="https://vimeo.com/drewseskunas">The Principals</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+* http://theprincipals.us/cosmic-quilt
+* https://vimeo.com/43079257

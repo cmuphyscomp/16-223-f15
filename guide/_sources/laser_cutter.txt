@@ -5,7 +5,7 @@
 IDeATe Laser Cutter Guide
 =========================
 
-The IDeATe\@Hunt fabrication facility includes three Rabbit laser cutters.
+The IDeATe\@Hunt fabrication facility includes three `Rabbit laser cutters`_.
 These are extremely useful tools for cutting complex 2D forms.  The best feature
 of these tools is the speed with which an idea can be tested: it is possible to
 conceive of a part, create a 2D drawing, output a DXF, and cut material to make
@@ -102,3 +102,15 @@ Errata
 
 #. The instructions refer to checking the "equipment room behind the laser
    cutters", but that door is generally locked with physical key access only.
+
+References
+----------
+
+  * `IDeATe Rabbit Laser Power Setting Guide (Google Sheet) <https://docs.google.com/spreadsheets/d/1tsSP6Nljp4vG9elcsIx2tIaj4EGDh8XZRufn1y12Hx4/pubhtml>`__
+  * `15-294 Rabbit Laser Instructions`_
+  * `IDeATe@Hunt Laser Cutter Policy`_    
+  * `IDeATe@Hunt Laser Cutter Procedure`_
+  * `IDeATe@Hunt Rabbit Laser Cutters`_
+  * `IDeATe@Hunt Material Inventory`_
+  * `Rabbit USA LaserCut software manual <http://www.rabbitlaserusa.com/Manuals/User%20Manual(DSP5.3).pdf>`__
+  * `Rabbit USA Power Settings Guide <http://www.rabbitlaserusa.com/Manuals/SpeedsFeeds_RL.pdf>`__
