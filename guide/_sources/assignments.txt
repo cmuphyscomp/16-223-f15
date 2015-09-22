@@ -207,6 +207,10 @@ Arduino-related:
    * `MPU6050-IMU-I2C <../exercises/Arduino/MPU6050-IMU-I2C/index.html>`__
    * `WS2801-LED-SPI <../exercises/Arduino/WS2801-LED-SPI/index.html>`__
 
+Python and Arduino combined:
+
+  * `Python GUI client with Arduino I/O Server <../exercises/Arduino/Python-Arduino/index.html>`__
+
 Mechanism-related:
 
    * `Electromechanical Oscillation <../exercises/mechanism/mechanical-oscillator/index.html>`__
@@ -223,8 +227,6 @@ Unit 3 Exercises: Algorithms and State
 **Please explore and document at least 4 of the following exercises:**
 
    * `input-matching <../exercises/Arduino/input-matching/index.html>`__
-
-.. FIXME need a Python exercise with OneInOneOut
 
 Please be sure to see the :ref:`OneInOneOutASCII-doxygen` section for background
 on dividing a process between the Arduino and a laptop.

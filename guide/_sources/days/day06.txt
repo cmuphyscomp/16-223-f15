@@ -12,24 +12,26 @@ Notes from Day 5
 Agenda
 ------
 
-#. Administrative
-   
-   * During class: Fire safety sign-ups.
-
 #. Assignments
 
-   * Sep 23, start of class: turn in Notebook 1B.
-     
+   * Wed, Sep 23, start of class: turn in Notebook 1B.
+   * Mon, Sep 28: Project 1 presentations and critique.  See :ref:`critiques`.
+   * Wed, Sep 30: Project 1 report.  See :ref:`project-report-requirements`.  See :ref:`lateness-policy`.
+   
 #. In-class
 
    * Second round of research talks (35 minutes).
      
-     * .
-     * .
-     * .
-     * .
-     * .
+     * A: `SuperShoes <http://www.tei-conf.org/13/sites/default/files/page-files/Dand.pdf>`__, `video <https://vimeo.com/90973967>`__
+       
+     * T: `Fiber Optic Ocean <https://vimeo.com/139216831>`__
+
+     * C: `Penguins Mirror <https://vimeo.com/129674054>`__, `pres <https://drive.google.com/a/andrew.cmu.edu/file/d/0BzZCcv3TTaGCelhtazR2VU55dDQ/view?pli=1>`__ 
+     * M: `Coca-Cola Small World <http://www.coca-colacompany.com/stories/happiness-without-borders>`__, `slides <https://docs.google.com/a/andrew.cmu.edu/presentation/d/1ZJSj8hrVjlKwllynE0yr99z_DBYSb05z8nLUgAGjkLU/edit?usp=sharing>`__
+       
+     * J: `Weave Mirror <http://www.smoothware.com/danny/weavemirror.html>`__
 
    * Project 1 proof-of-concept reviews.
 
 .. apalatuc tswarsta cperry mvella jalee     
+.. `Penguins Mirror <http://www.bitforms.com/rozin/penguins-mirror>`__, `slides <https://docs.google.com/presentation/d/1qLU1RodG9EChRAViZJ4QcG8S44USWlqDo_kVybg9HOA/edit?usp=sharing>`__
