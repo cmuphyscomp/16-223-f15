@@ -14,13 +14,7 @@ Please also become aware of the stringent requirements of the
 
    project_reports
    project1
-
-
-Project 2
-=========
-
-Details TBD.
-
+   project2
 
 Project 3
 =========
@@ -187,7 +181,7 @@ Mechanism-related:
 
 Please be sure to read the :ref:`mechanism-guide` section for a review of
 mechanical terminology and concepts.
-     
+
 .. _unit-2-exercises:
 
 Unit 2 Exercises: Signals, Time, and Dynamics
@@ -206,6 +200,7 @@ Arduino-related:
    * `Adafruit-PWM-I2C <../exercises/Arduino/Adafruit-PWM-I2C/index.html>`__
    * `MPU6050-IMU-I2C <../exercises/Arduino/MPU6050-IMU-I2C/index.html>`__
    * `WS2801-LED-SPI <../exercises/Arduino/WS2801-LED-SPI/index.html>`__
+   * `Music Sequencer <../exercises/Arduino/music-sequencer/index.html>`__
 
 Python and Arduino combined:
 

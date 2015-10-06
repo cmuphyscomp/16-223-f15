@@ -52,7 +52,7 @@ generally follow the :ref:`project-report-template`.
    equal skill could replicate the construction of the project.
 
 #. All program source code is required and must be provided within the single zip
-   file.
+   file.  Source code should be provided in original format.
 
 #. Electronic schematics and fabrication diagrams must be provided in PDF form,
    either embedded in the main report or as a separate PDF.  Schematics must

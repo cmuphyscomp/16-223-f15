@@ -1,0 +1,41 @@
+.. include:: ../links.rst
+
+Day 7: Wrapping up Unit 1 (Sep 23)
+==========================================
+
+Notes for 2015-09-23.  See also the :ref:`calendar`.
+
+Notes from Day 6
+------------------
+
+#. Comments about notebooks.
+#. Arduino/Unit 2 tutorial on Sep 30?
+#. New sensor parts.
+
+Agenda
+------
+
+#. Administrative
+
+   * Zach will be away this weekend, but Smokey will have lab hours.  Please see the `Physical Computing Lab Calendar`_.
+
+   * Mandatory fire safety training for the laser cutters, please `sign up with
+     EH&S <https://cmu.bioraft.com/node/284572/sessions>`__ if you have not
+     previously received training.  If you forget to sign up, you can still just
+     show up::
+
+       Sep 28, Mon, 10:30am-11:40am, Experimental FabLab (A5)
+       Sep 29, Tue, 10:30am-11:40am, Studio A (106b)
+       Sep 30, Wed, 11:40am-12:40pm, Experimental FabLab (A5)
+       Oct  1, Thu,  9:30am-10:40pm, Experimental FabLab (A5)
+
+#. Assignments
+
+   * today, start of class: turn in Notebook 1B.
+   * Mon, Sep 28: Project 1 presentations and critique.  See :ref:`critiques`.
+   * Wed, Sep 30: Project 1 report.  See :ref:`project-report-requirements`.  See :ref:`lateness-policy`.
+
+
+#. In-class
+
+   * Individual project meetings.

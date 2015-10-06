@@ -1,0 +1,42 @@
+.. include:: ../links.rst
+
+Day 10: Project 2 Introduction (Oct 5)
+==========================================
+
+Notes for 2015-10-05.  See also the :ref:`calendar`.
+
+Notes from Day 9
+----------------
+
+#. Project 2 prompt is up: :ref:`project-2`.
+
+Agenda
+------
+
+#. Administrative
+
+   * I have asked Zach Ali about more fire safety sessions.
+
+   * Oct 23: IDeATe open house *and* President Suresh’s Global Advisory Council *and* Academic Leadership Council
+
+
+#. Assignments
+
+   * Project group 2 formation.
+
+#. In-class
+
+   * Third round of research talks (30 minutes).
+
+     * M: `airFIELD <http://airfieldsculpture.com/index.html>`__
+     * C: `Cheers <http://dhairyadand.com/works/cheers>`__, `slides <https://docs.google.com/presentation/d/1vdrnnseVXiyatv621I64SeubLcuUvxjRUbojTRQotwI/edit?pli=1#slide=id.p>`__
+     * N: `Shapeshifting display <http://www.fastcodesign.com/3021522/innovation-by-design/mit-invents-a-shapeshifting-display-you-can-reach-through-and-touch?partner=rss>`__, `slides <https://docs.google.com/presentation/d/15Q1hQ0b6BMunP391MyBoco19r3Y1noVDt2G04dvEVWU/edit?usp=sharing>`__
+     * R: `Amazon Drones <https://www.nextnature.net/2013/12/delivery-drones-are-coming/>`__
+
+   * Project 2 Introduction
+
+   * Unit 2 Exercises
+
+   * Project 2 Quick Pitches
+
+.. mastein cchong1 nharmon rkern

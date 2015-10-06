@@ -1,0 +1,40 @@
+.. include:: ../links.rst
+
+Day 9: Arduino Tutorial (Sep 30)
+==========================================
+
+Notes for 2015-09-30.  See also the :ref:`calendar`.
+
+Notes from Day 8
+------------------
+
+#. Excellent project presentations.
+#. Brief followup on equipment usage.
+   
+Agenda
+------
+
+#. Administrative
+
+   * Mandatory fire safety training for the laser cutters, please `sign up with
+     EH&S <https://cmu.bioraft.com/node/284572/sessions>`__ if you have not
+     previously received training.  If you forget to sign up, you can still just
+     show up::
+
+       Sep 30, Wed, 11:40am-12:40pm, Experimental FabLab (A5)
+       Oct  1, Thu,  9:30am-10:40pm, Experimental FabLab (A5)
+
+   * How many people need the fire safety training but are unable to attend?  So
+     far I know of only one.
+       
+#. Assignments
+
+   * Due today: Project 1 report.
+   * Due Mon Oct 5: group 2 selection.  I encourage switching partners.  I have
+     not yet published the project 2 brief but will have it soon.
+   * Soon: third round of research talks on Monday, please send me your URLs.
+
+#. In-class
+
+   * Optional Arduino tutorial.
+   * Start :ref:`unit-2-exercises`.

@@ -41,17 +41,28 @@ Unit 2: Signals, Time, and Dynamics
 ===================================
 
 The purpose of this unit is to explore the role of *time* in processes which
-span physical, electrical, and computational domains.
+span physical, electrical, and computational domains.  
 
+The overall goals include the following:
 
+#. be able to identify characteristic time scales for the physical, electronic,
+   computational, and human processes we use
+#. understand the basic concepts of time-domain sampling
+#. learn the meaning of *sampling rate*, *jitter*, and *Nyquist frequency*
+#. understand the physical nature of sound as pressure oscillations
+#. understand the basics of time-slice computation for simulating simultaneous
+   processes
+#. be able to create rhythmic patterns using computational means   
+#. understand basic concepts of feedback
+#. observe how physical dynamics can complement computational processes
 
+   
 Unit 3: Algorithms and State
 ============================
 
-The purpose of this unit is to explore the meaning of *state*, including the
-essentials of feedback, finite-state machines, and processes with memory.  This
-is an idea with both physical and computational meaning.
-
+The purpose of this unit is to explore the broader meaning of *state*, including
+the essentials of finite-state machines and processes with memory.  This is an
+idea with both physical and computational meaning.
 
 
 Final Project

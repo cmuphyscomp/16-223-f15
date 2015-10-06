@@ -1,0 +1,20 @@
+.. include:: ../links.rst
+   
+Day 8: Project 1 Critique (Sep 28)
+==========================================
+
+Notes for 2015-09-28.  See also the :ref:`calendar`.
+
+.. Notes from Day 7
+
+Agenda
+------
+   
+#. Assignments
+
+   * today, Mon, Sep 28: Project 1 presentations and critique.  See :ref:`critiques`.
+   * Wed, Sep 30: Project 1 report.  See :ref:`project-report-requirements`.  See :ref:`lateness-policy`.
+
+#. In-class
+
+   * Project 1 presentation and critique.

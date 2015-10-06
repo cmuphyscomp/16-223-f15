@@ -11,7 +11,7 @@ evaluation.
 
 #. What were some of the collective strengths and weaknesses of your group?
 
-#. How do you think your performance on Project Two compared to your teammates?
+#. How do you think your performance on the project compared to your teammates?
    Where was your primary contribution(s) to the project (concept, execution, or
    documentation)?
 

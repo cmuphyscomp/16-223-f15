@@ -1,0 +1,54 @@
+.. include:: ../links.rst
+
+Ddeay 11: Project 2 Definition (Oct 7)
+==========================================
+
+Notes for 2015-10-05.  See also the :ref:`calendar`.
+
+Notes from Day 10
+-----------------
+
+#. Oct 23: IDeATe open house *and* President Suresh’s Global Advisory Council
+   *and* Academic Leadership Council
+
+#. There are a regular series of fire extinguisher training sessions still ongoing:
+   sign up at the `CMU BioRAFT site <https://cmu.bioraft.com/node/284572/sessions>`__.
+   This site can also show you whether you were previously certified.
+
+#. I am pushing back and simplifying the project 2 proposal deadline to focus
+   your attention on technical details and acknowledge the late posting of the prompt.
+
+#. Added new music sequencer exercise to introduce the idea of *interpretation*,
+   C++ class structure, and simultaneous processes.  See :ref:`unit-2-exercises`.
+
+Agenda
+------
+
+#. Administrative
+
+   * Purchase requests.
+
+#. Assignments
+
+   * Fri Oct 12: project 2 proposal.  Keep the text minimal, I want your energy
+     go toward thinking through the drawings and proof-of-concept statement. How
+     much can you work out now before you start building?  Could **I** construct
+     your proof-of-concept from your drawing?
+     
+   * Mon Oct 12: project 2 proof-of-concept.
+
+#. In-class
+
+   * Fourth round of research talks (45 minutes).
+
+     * K:
+     * R:
+     * A:
+     * D: `The Marble Answering Machine by Durrell Bishop <http://dataphys.org/list/durrell-bishops-marble-answering-machine/>`__, `video <https://vimeo.com/19930744>`__, `more <https://ccdc11.wordpress.com/2011/02/15/durrell-bishops-marble-answering-machine/>`__
+     * L:
+
+   * Unit 2 Exercises
+
+   * Project 2 meetings
+
+.. kss1 rchang1 arakla dlengenf lramsay

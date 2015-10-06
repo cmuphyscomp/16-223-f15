@@ -26,6 +26,12 @@ General information on the cutters can be found under `IDeATe@Hunt Rabbit Laser
 Cutters`_.  Materials available for puchase at the desk can be found at the
 `IDeATe@Hunt Material Inventory`_.
 
+Dave Touretzky's `lecture slides for the laser cutter
+<http://www.cs.cmu.edu/afs/cs/academic/class/15294-f15/lectures/solid2/laser.pdf>`__
+from the 15-294 Rapid Prototyping mini-course are an excellent walk through the
+whole process.
+
+
 Process Overview
 ----------------
 

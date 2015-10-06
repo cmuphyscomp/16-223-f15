@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6.3. Day 2: Digging into Unit 1 &mdash; 16-223 Introduction to Physical Computing</title>
+    <title>6.9. Day 7: Wrapping up Unit 1 (Sep 23) &mdash; 16-223 Introduction to Physical Computing</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2015-09-16',
+        VERSION:     '2015-10-06',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="../index.html" />
     <link rel="up" title="6. Log Book" href="../logbook.html" />
-    <link rel="next" title="6.4. Day 2: 16-223 vs 60-223 Skill Survey Comparison" href="day2_comparison.html" />
-    <link rel="prev" title="6.2. Day 12: (Oct 12)" href="day12.html" /> 
+    <link rel="next" title="6.10. Day 8: Project 1 Critique (Sep 28)" href="day08.html" />
+    <link rel="prev" title="6.8. Day 6: Project 1 Proof-of-concept (Sep 21)" href="day06.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -39,10 +39,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="day2_comparison.html" title="6.4. Day 2: 16-223 vs 60-223 Skill Survey Comparison"
+          <a href="day08.html" title="6.10. Day 8: Project 1 Critique (Sep 28)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="day12.html" title="6.2. Day 12: (Oct 12)"
+          <a href="day06.html" title="6.8. Day 6: Project 1 Proof-of-concept (Sep 21)"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../logbook.html" accesskey="U">6. Log Book</a> &raquo;</li> 
@@ -54,44 +54,47 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="day-2-digging-into-unit-1">
-<h1>6.3. Day 2: Digging into Unit 1<a class="headerlink" href="#day-2-digging-into-unit-1" title="Permalink to this headline">¶</a></h1>
-<p>Notes for 2015-09-02.  See also the <a class="reference internal" href="../calendar.html#calendar"><span>Fall 2015 Calendar</span></a>.</p>
-<div class="section" id="notes-from-day-1">
-<h2>6.3.1. Notes from Day 1<a class="headerlink" href="#notes-from-day-1" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ul class="simple">
-<li>Electrical safety.</li>
-<li>The power supplies have a current limit.  See <a class="reference internal" href="../errata.html#common-mistakes"><span>Common Mistakes</span></a>.</li>
-<li>LEDs are not the same as incandescent lamps.</li>
-<li>Some meter probes are too short for the AC outlets.</li>
-<li>The most important element of a lab notebook entry is the reflection prompt.  See <a class="reference internal" href="../assignments.html#lab-notebook"><span>Lab Notebook</span></a>.</li>
-<li>Lead soldering.</li>
-<li>Questions?</li>
-</ul>
-</div></blockquote>
+  <div class="section" id="day-7-wrapping-up-unit-1-sep-23">
+<h1>6.9. Day 7: Wrapping up Unit 1 (Sep 23)<a class="headerlink" href="#day-7-wrapping-up-unit-1-sep-23" title="Permalink to this headline">¶</a></h1>
+<p>Notes for 2015-09-23.  See also the <a class="reference internal" href="../calendar.html#calendar"><span>Fall 2015 Calendar</span></a>.</p>
+<div class="section" id="notes-from-day-6">
+<h2>6.9.1. Notes from Day 6<a class="headerlink" href="#notes-from-day-6" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Comments about notebooks.</li>
+<li>Arduino/Unit 2 tutorial on Sep 30?</li>
+<li>New sensor parts.</li>
+</ol>
 </div>
 <div class="section" id="agenda">
-<h2>6.3.2. Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><a class="reference internal" href="day2_survey.html#day2-survey"><span>Day 2: 16-223 Skill Survey Results</span></a></li>
-<li>Administrative<ul>
-<li>Fabrication resources and policy.</li>
-<li>Visitors at 10AM.</li>
-<li>No class on Labor Day.</li>
-<li>During class: interview signups.</li>
-<li>During class: individual <a class="reference internal" href="../assignments.html#research-talk"><span>research presentation</span></a> sign-ups.</li>
-<li>Optional facilities tour.</li>
+<h2>6.9.2. Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Administrative</p>
+<ul>
+<li><p class="first">Zach will be away this weekend, but Smokey will have lab hours.  Please see the <a class="reference external" href="https://www.google.com/calendar/embed?src=giima57s25ht6vr82r0gk9b0ts%40group.calendar.google.com&amp;ctz=America/New_York">Physical Computing Lab Calendar</a>.</p>
+</li>
+<li><p class="first">Mandatory fire safety training for the laser cutters, please <a class="reference external" href="https://cmu.bioraft.com/node/284572/sessions">sign up with
+EH&amp;S</a> if you have not
+previously received training.  If you forget to sign up, you can still just
+show up:</p>
+<div class="highlight-python"><div class="highlight"><pre>Sep 28, Mon, 10:30am-11:40am, Experimental FabLab (A5)
+Sep 29, Tue, 10:30am-11:40am, Studio A (106b)
+Sep 30, Wed, 11:40am-12:40pm, Experimental FabLab (A5)
+Oct  1, Thu,  9:30am-10:40pm, Experimental FabLab (A5)
+</pre></div>
+</div>
+</li>
 </ul>
 </li>
-<li>Assignments<ul>
-<li>Before your interview, please consider the prompts.  See <a class="reference internal" href="../assignments.html#initial-interview"><span>Initial Interview Preparation</span></a>.</li>
-<li>Due 9/9: <a class="reference internal" href="../assignments.html#ideation-1"><span>Ideation Exercise 1</span></a>.</li>
-<li>End of 9/9: First notebook review.  See <a class="reference internal" href="../assignments.html#lab-notebook"><span>Lab Notebook</span></a>.</li>
+<li><p class="first">Assignments</p>
+<ul class="simple">
+<li>today, start of class: turn in Notebook 1B.</li>
+<li>Mon, Sep 28: Project 1 presentations and critique.  See <a class="reference internal" href="../policies.html#critiques"><span>In-Class Project Reviews</span></a>.</li>
+<li>Wed, Sep 30: Project 1 report.  See <a class="reference internal" href="../project_reports.html#project-report-requirements"><span>Project Reports</span></a>.  See <a class="reference internal" href="../policies.html#lateness-policy"><span>Lateness Policy</span></a>.</li>
 </ul>
 </li>
-<li>Exercises<ul>
-<li>Continue Unit 1 exercises.  See <a class="reference internal" href="../assignments.html#unit-1-exercises"><span>Unit 1 Exercises: Energy, Information, Transduction</span></a>.</li>
+<li><p class="first">In-class</p>
+<ul class="simple">
+<li>Individual project meetings.</li>
 </ul>
 </li>
 </ol>
@@ -106,19 +109,19 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">6.3. Day 2: Digging into Unit 1</a><ul>
-<li><a class="reference internal" href="#notes-from-day-1">6.3.1. Notes from Day 1</a></li>
-<li><a class="reference internal" href="#agenda">6.3.2. Agenda</a></li>
+<li><a class="reference internal" href="#">6.9. Day 7: Wrapping up Unit 1 (Sep 23)</a><ul>
+<li><a class="reference internal" href="#notes-from-day-6">6.9.1. Notes from Day 6</a></li>
+<li><a class="reference internal" href="#agenda">6.9.2. Agenda</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="day12.html"
-                        title="previous chapter">6.2. Day 12: (Oct 12)</a></p>
+  <p class="topless"><a href="day06.html"
+                        title="previous chapter">6.8. Day 6: Project 1 Proof-of-concept (Sep 21)</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="day2_comparison.html"
-                        title="next chapter">6.4. Day 2: 16-223 vs 60-223 Skill Survey Comparison</a></p>
+  <p class="topless"><a href="day08.html"
+                        title="next chapter">6.10. Day 8: Project 1 Critique (Sep 28)</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -146,10 +149,10 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="day2_comparison.html" title="6.4. Day 2: 16-223 vs 60-223 Skill Survey Comparison"
+          <a href="day08.html" title="6.10. Day 8: Project 1 Critique (Sep 28)"
              >next</a> |</li>
         <li class="right" >
-          <a href="day12.html" title="6.2. Day 12: (Oct 12)"
+          <a href="day06.html" title="6.8. Day 6: Project 1 Proof-of-concept (Sep 21)"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="../logbook.html" >6. Log Book</a> &raquo;</li> 
@@ -157,7 +160,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-09-16.
+      Last updated on 2015-10-06.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

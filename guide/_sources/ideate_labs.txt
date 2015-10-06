@@ -30,6 +30,8 @@ See also the :ref:`ideate-facilities-policies` and :ref:`cluster` sections.
 
   #. `IDeATe@Hunt Reservations Calendar`_
 
+  #. `IDeATe@Hunt Material Inventory`_
+     
   #. Reservations calendar for A10: `IDeATe@Hunt PhysComp Lab Calendar`_
 
   #. `Hunt Library Hours`_
@@ -45,3 +47,10 @@ See also the :ref:`ideate-facilities-policies` and :ref:`cluster` sections.
 
   #. main `IDeATe`_
      
+**Other campus resources** 
+
+  #. `Global Communication Center <https://www.cmu.edu/gcc/>`__.  Located right
+     here in Hunt, students can consult with the GCC to improve their writing
+     and presentation skills.  They also have a `workshop series
+     <http://www.cmu.edu/gcc/workshops/>`__.
+

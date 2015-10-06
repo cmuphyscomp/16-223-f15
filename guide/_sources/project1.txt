@@ -175,5 +175,7 @@ Summary of Deliverables
 #. In-class proposal review and supporting PDF file.
 #. In-class demonstration of proof-of-concept.
 #. In-class presentation of result for critique.
-#. Report zip file package as per :ref:`project-report-requirements`.
+#. Report zip file package as per :ref:`project-report-requirements`, including
+   link to brief project video (less than one minute).
 #. PDF or plain text file for :ref:`peer evaluation <peer-evaluation-form>`.
+
