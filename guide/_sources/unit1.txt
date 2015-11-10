@@ -1,0 +1,112 @@
+.. _unit-1-exercises:
+
+Unit 1 Exercises: Energy, Information, Transduction
+===================================================
+
+The first unit has many exercises intended familiarize you with the lab and
+basic electronic equipment and are essential for developing the vocabulary and
+skills to fulfill the projects.
+
+The lab exercises are intended to be performed by pairs of students.  The
+exercises will be performed in the lab during class time, but also outside class
+as needed. Each student should keep their own lab notebook as detailed in
+:ref:`lab-notebook`.
+
+The initial exercises are intended to be quick, simple introductions, but please
+be sure that each member of each student pair practices each physical and
+measurement skill. Part of the exercise is absorbing a set of technical terms;
+the meaning will become apparent in time through immersion in practice.
+
+The following is a suggested order which generally develops from simple to more
+complex, however the sequence is not strict.  There are more exercises available
+for this section than time so individuals may choose exercises according to the
+experience and discretion.  If something is too elementary for your experience
+level, please choose something new for you.  If an exercise requires a part
+which is not available, please move on to something feasible.
+
+Please be sure to read the :ref:`basic-circuits-guide` section for a review of
+terminology and concepts.  Also, please skim the :ref:`errata` section if you
+have trouble to identify mistakes in the text or general hints.
+
+Anyone who completes the basic exercises should consider undertaking more of the
+optional challenge activities listed at the end of most exercises.
+
+**Please explore and document at least 8 of the following electronics exercises**:
+
+* :ref:`bench-battery-grid <exercise-bench-battery-grid>`
+* :ref:`continuity-tests <exercise-continuity-tests>`
+* :ref:`power-switch <exercise-power-switch>`
+* :ref:`voltage-divider <exercise-voltage-divider>`
+* :ref:`switch-with-pullup <exercise-switch-with-pullup>`
+* :ref:`led-current-limiter <exercise-led-current-limiter>`
+* :ref:`photocell-with-bias-resistor <exercise-photocell-with-bias-resistor>`
+* :ref:`pressure-pad-with-bias-resistor <exercise-pressure-pad-with-bias-resistor>`
+* :ref:`transducer-with-dmm <exercise-transducer-with-dmm>`
+* :ref:`smoke-a-resistor <exercise-smoke-a-resistor>`
+* :ref:`voltage-regulation <exercise-voltage-regulation>`
+* :ref:`capacitance <exercise-capacitance>`
+* :ref:`op-amp-level-translation <exercise-op-amp-level-translation>`
+* :ref:`relay-driver <exercise-relay-driver>`
+* :ref:`transistor-driver <exercise-transistor-driver>`
+* :ref:`multichannel-driver <exercise-multichannel-driver>`
+* :ref:`transistor-and-sensor-for-power <exercise-transistor-and-sensor-for-power>`
+
+Please be sure to read the :ref:`Arduino-guide` section for a review of
+terminology and concepts.  Also, please skim the :ref:`errata` section if you
+have trouble to identify mistakes in the text or general hints.
+
+**Please explore and document at least 6 of the following exercises:**
+
+Arduino-related:
+
+* :ref:`arduino-intro <exercise-arduino-intro>`
+* :ref:`coding-compiling-deploying <exercise-coding-compiling-deploying>`
+* :ref:`blink-bulb <exercise-blink-bulb>`
+* :ref:`blink-motor <exercise-blink-motor>`
+* :ref:`analog-read-serial <exercise-analog-read-serial>`
+* :ref:`digital-read-serial <exercise-digital-read-serial>`
+* :ref:`servo-sweep <exercise-servo-sweep>`
+* :ref:`stepper-motor-knob <exercise-stepper-motor-knob>`
+
+Mechanism-related:
+
+* :ref:`Laser Cutting Features and Tolerances <exercise-laser-tolerance>`
+* :ref:`Mechanisms for One-Bit Sensing <exercise-mechanical-one-bit-sensing>`
+
+Please be sure to read the :ref:`mechanism-guide` section for a review of
+mechanical terminology and concepts.
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+   :hidden:
+
+   ex/electronics/bench-battery-grid/bench-battery-grid
+   ex/electronics/continuity-tests/continuity-tests
+   ex/electronics/power-switch/power-switch
+   ex/electronics/voltage-divider/voltage-divider
+   ex/electronics/switch-with-pullup/switch-with-pullup
+   ex/electronics/led-current-limiter/led-current-limiter
+   ex/electronics/photocell-with-bias-resistor/photocell-with-bias-resistor
+   ex/electronics/pressure-pad-with-bias-resistor/pressure-pad-with-bias-resistor
+   ex/electronics/transducer-with-dmm/transducer-with-dmm
+   ex/electronics/smoke-a-resistor/smoke-a-resistor
+   ex/electronics/voltage-regulation/voltage-regulation
+   ex/electronics/capacitance/capacitance
+   ex/electronics/op-amp-level-translation/op-amp-level-translation
+   ex/electronics/relay-driver/relay-driver
+   ex/electronics/transistor-driver/transistor-driver
+   ex/electronics/multichannel-driver/multichannel-driver
+   ex/electronics/transistor-and-sensor-for-power/transistor-and-sensor-for-power
+   ex/Arduino/arduino-intro/arduino-intro
+   ex/Arduino/coding-compiling-deploying/coding-compiling-deploying
+   ex/Arduino/blink-bulb/blink-bulb
+   ex/Arduino/blink-motor/blink-motor
+   ex/Arduino/analog-read-serial/analog-read-serial
+   ex/Arduino/digital-read-serial/digital-read-serial
+   ex/Arduino/servo-sweep/servo-sweep
+   ex/Arduino/stepper-motor-knob/stepper-motor-knob
+   ex/mechanism/laser-tolerance/laser-tolerance
+   ex/mechanism/mechanical-one-bit-sensing/mechanical-one-bit-sensing

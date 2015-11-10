@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.3. Exercise: Adafruit PWM I2C Module &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.2.4. Exercise: MPU6050 IMU I2C Module" href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html" />
+    <link rel="prev" title="2.2.2. Exercise: Resolution and Mapping" href="../resolution-and-mapping/resolution-and-mapping.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html" title="2.2.4. Exercise: MPU6050 IMU I2C Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../resolution-and-mapping/resolution-and-mapping.html" title="2.2.2. Exercise: Resolution and Mapping"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-adafruit-pwm-i2c-module">
+<span id="exercise-adafruit-pwm-i2c"></span><h1>2.2.3. Exercise: Adafruit PWM I2C Module<a class="headerlink" href="#exercise-adafruit-pwm-i2c-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.2.3.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Communicate digital data between an Arduino and a PWM module using an
+I<sup>2</sup>C bus.</p>
+<p>The Arduino I/O pins allow it to bridge the gap directly between digital
+information and physical signals. However, it can also transmit data to
+and from other computational devices. The previous examples have
+implicitly used USB and an asynchronous serial UART for downloading
+programs and looking at text output. But even simpler bus standards,
+such as I<sup>2</sup>C and SPI are useful for connecting an Arduino
+to I/O modules or even other Arduinos.</p>
+<p>This capability is useful for rapid prototyping, since many interface
+functions are available in modular form. For example, there exist
+modules:</p>
+<ol class="arabic simple">
+<li>to extend the number of available digital inputs or outputs</li>
+<li>with specialized electrical behavior such as automatic current
+regulation or PWM generation</li>
+<li>which can provide RGB color LED illumination controlled purely by
+digital data, including PWM generation and power drive</li>
+</ol>
+<p>Using digital busses essentially makes the Arduino a node in a network
+comprising multiple computers, possibly including a host desktop or
+laptop. Each type of link has different characteristics:</p>
+<ul class="simple">
+<li>SPI is normally a point-to-point connection, or sometimes
+one-to-many. It can be relatively fast (e.g. up to 25&nbsp;mbps). It
+requires four wires for bidirectional communication but supports
+<em>full-duplex</em> transfer with simultaneous input and output.
+Output-only connections can use just three wires. It is designed for
+short-range connection to simple devices such as a chain of LED
+modules or a high-resolution ADC.</li>
+<li>I<sup>2</sup>C can connect multiple devices on a single bus. It is
+relatively low speed, typically 400&nbsp;kbps to one&nbsp;mbps. It uses three
+wires with separate clock and data but is half-duplex. The protocols
+are more elaborate and involve specific phases of transmitting device
+addresses and receiving replies. It is designed for short-range
+connection within a single system.</li>
+</ul>
+<p>In general, using a device-level serial bus requires using two
+libraries: one to handle the I<sup>2</sup>C or SPI data transfer, and
+one to handle the specific protocol for the device. If no device library
+is available, then this involves understanding the datasheet for the
+particular device well enough to implement the required protocol. This
+can be as simple as emitting a few bytes to write a value to a device
+register, but sophisticated devices can require elaborate programs to
+handle a variety of messages. For example, a real-time clock-calendar
+chip can have dozens of registers available over an I<sup>2</sup>C bus
+to keep track of time and set alarms.</p>
+<p>This exercise will use the <a class="reference external" href="http://www.adafruit.com/products/815">Adafruit 815 16 channel 12-bit PWM driver
+with I2C interface</a>. This
+module is based on the <a class="reference external" href="http://www.adafruit.com/datasheets/PCA9685.pdf">PCA9685 I2C-bus controlled 16-channel LED
+controller</a>. Adafruit
+<a class="reference external" href="https://learn.adafruit.com/16-channel-pwm-servo-driver">provides their own
+tutorial</a>,
+and <a class="reference external" href="https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library">library source code on
+github</a>.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.3.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Download or find the complete <a class="reference external" href="../../../../Arduino/Adafruit_PWM">Adafruit_PWM</a> sketch included with
+the exercise. This is the pwmtest example from
+Adafruit-PWM-Servo-Driver-Library, slightly modified into a
+self-contained sketch. If you have cloned the course materials from
+github, it will be in the same folder as this page, or it can be
+<a class="reference external" href="Adafruit_PWM/index.html">downloaded directly</a>. Be sure to fetch
+all top-level files.</li>
+<li>Load the sketch into the Arduino IDE and use Verify to make sure it
+compiles on your system.</li>
+<li>Plug the PWM module into a breadboard and use solid wire to make the
+following four connections from the Arduino to the module:<ol class="arabic">
+<li>5V -&gt; VCC</li>
+<li>GND -&gt; GND</li>
+<li>A4 -&gt; SDA</li>
+<li>A5 -&gt; SCL</li>
+</ol>
+</li>
+<li>Connect the Arduino to your computer and download the sketch.</li>
+<li>Using an oscilloscope, observe the SCL clock line and the SDA data
+line. You should see complex digital waveforms. At the right time
+scale, you should be able to see regular bursts of pulses on the
+clock line and varying bursts on the data line. Each burst is about
+200 microseconds long and represents a command message being
+sequentially shifted between the two devices.</li>
+<li>Using an oscilloscope, observe several of the PWM pins on the 3x4
+headers. You should see a smoothly varying PWM waveform.</li>
+<li>Touch an LED between a PWM and GND pin (observing polarity) and you
+should see a smoothly varying illumination. This module includes 220
+ohm resistors in series with the output so no dropping resistor is
+necessary. If you attach several LEDs, you can see the smooth pattern
+produced by the example program.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.2.3.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>This example is more about becoming comfortable using vendor libraries
+than the electronics, given how simple it is to make the electrical
+connections.</p>
+<p>For a challenge, clone the original Adafruit library from github and
+install it in your Arduino IDE libraries path, then try compiling the
+original unmodified example.</p>
+</div>
+<div class="section" id="sketch-folder">
+<h2>2.2.3.4. Sketch Folder<a class="headerlink" href="#sketch-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/Adafruit_PWM">Adafruit_PWM</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.3. Exercise: Adafruit PWM I2C Module</a><ul>
+<li><a class="reference internal" href="#objective">2.2.3.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.3.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.2.3.3. Comments</a></li>
+<li><a class="reference internal" href="#sketch-folder">2.2.3.4. Sketch Folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../resolution-and-mapping/resolution-and-mapping.html"
+                        title="previous chapter">2.2.2. Exercise: Resolution and Mapping</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html"
+                        title="next chapter">2.2.4. Exercise: MPU6050 IMU I2C Module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html" title="2.2.4. Exercise: MPU6050 IMU I2C Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../resolution-and-mapping/resolution-and-mapping.html" title="2.2.2. Exercise: Resolution and Mapping"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

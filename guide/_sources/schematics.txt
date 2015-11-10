@@ -34,6 +34,8 @@ useful in creating new parts.
 We also have a few `EAGLE resources <../support/EAGLE/>`__ for those you wish to
 try that route.
 
+Some students have had success with the commercial browser-based `CircuitLab
+<https://www.circuitlab.com/>`__.
 
 PCB Design
 ----------

@@ -1,0 +1,71 @@
+.. _exercise-input-pattern-matching:
+
+Exercise: Input Pattern Matching
+--------------------------------
+
+Objective
+^^^^^^^^^
+
+Understand a simple pattern recognition state machine expressed as an
+Arduino program using several idiomatic C/C++ program structures.
+
+This is a very simple single-input binary pattern recognition system.
+However, even this state machine could be used to recognize synchronous
+inputs from a communications channel.
+
+State Transition Graph
+^^^^^^^^^^^^^^^^^^^^^^
+
+This graph represents the set of discrete states modelled by the system.
+States are illustrated as ovals and transitions as arrows. Each state
+can have an associated output, in this case the LED. Transitions between
+states are defined by condition rules. Each transition has a one-second
+duration to make it feasible to manually manipulate the switch input
+with the right timed sequence to walk through the graph.
+
+.. graphviz:: input_matching_state_transition_diagram.dot
+
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Set up an Arduino UNO with a 10K pullup resistor on PIN4 and a switch
+   connecting PIN4 to ground, e.g. a simple binary input sensor which
+   you can operate.
+#. Upload the `InputMatcher1`_ sketch.
+#. Open the Serial Console and set to 115200 baud.
+#. Observe the console messages and the onboard LED. Can you deduce an
+   input sequence which will get to State 3 and turn on the LED?
+#. Examine the code; you will be comparing this program structure to the
+   following two versions.
+#. Repeat the test for `InputMatcher2`_ and `InputMatcher3`_.
+#. Choose a new pattern for the system to recognize, and choose the
+   input example you prefer to modify. Rewrite the finite-state machine
+   to recognize the pattern of your choosing.
+
+Comments
+^^^^^^^^
+
+This same recognition exercise could be extended to any binary input:
+optical switches, wall contact switches. It could also be extended to
+any possible sampling rate, including cycling loop() as fast as
+possible.
+
+The transition properties could be extended to include other predicates:
+comparisons on elapsed time to prevent exiting a state before time has
+elapsed, more elaborate mappings of linear inputs to transition state.
+
+You may now recognize that the switch debouncing code introduced much
+earlier is a specific case of a finite-state machine implementing
+time-based hysteresis.
+
+Sketch Folders
+^^^^^^^^^^^^^^
+
+#. `InputMatcher1`_
+#. `InputMatcher2`_
+#. `InputMatcher3`_
+
+.. _InputMatcher1: ../../../../Arduino/InputMatcher1
+.. _InputMatcher2: ../../../../Arduino/InputMatcher2
+.. _InputMatcher3: ../../../../Arduino/InputMatcher3

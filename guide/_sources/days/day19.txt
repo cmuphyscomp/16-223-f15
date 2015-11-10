@@ -1,0 +1,10 @@
+.. include:: ../links.rst
+   
+Day 19: Project 3 Progress (Nov 4)
+==========================================
+
+Notes for 2015-11-04.  See also the :ref:`calendar`.
+
+#. In-class
+
+   * Project 3 work and meetings.

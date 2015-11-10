@@ -1,0 +1,23 @@
+.. include:: links.rst
+
+.. _unit-3-exercises:
+
+Unit 3 Exercises: Algorithms and State
+======================================
+
+**Please explore and document at least 1 of the following exercises:**
+
+* :ref:`Input Hysteresis <exercise-input-hysteresis>` introduces state transition diagrams.
+* :ref:`Input Pattern Matching <exercise-input-pattern-matching>` illustrates several canonical coding forms for state machines.
+
+Please be sure to see the :ref:`OneInOneOutASCII-doxygen` section for background
+on dividing a process between the Arduino and a laptop.
+
+
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+   :hidden:
+
+   ex/Arduino/input-hysteresis/input-hysteresis
+   ex/Arduino/input-matching/input-matching

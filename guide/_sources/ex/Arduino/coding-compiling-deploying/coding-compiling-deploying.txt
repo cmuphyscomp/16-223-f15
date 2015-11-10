@@ -1,0 +1,66 @@
+.. _exercise-coding-compiling-deploying:
+
+Exercise: Coding, Compiling, Deploying
+--------------------------------------
+
+Objective
+^^^^^^^^^
+
+Running a program on an Arduino.
+
+The best references for getting started with the Arduino are supplied with the
+IDE: the **Help** menu includes a section for **Getting Started** which covers
+operation and **Reference** which covers the language.
+
+In addition, the main Arduino site has similar introduction pages:
+
+#. `Arduino: Getting Started <http://arduino.cc/en/Guide/HomePage>`__
+#. `Arduino: Reference <http://arduino.cc/en/Reference/HomePage>`__
+
+The `Arduino Tutorial Foundations <http://arduino.cc/en/Tutorial/Foundations>`__
+page addresses many basic ideas and syntax. If you have no programming
+experience at all, please be sure to look at `First Sketch
+<http://arduino.cc/en/Tutorial/Sketch>`__, `Variables
+<http://arduino.cc/en/Tutorial/Variables>`__, and
+`Functions. <http://arduino.cc/en/Reference/FunctionDeclaration>`__ For more
+beginner help, please remember that the Arduino language is a subset of C++, so
+many elementary C or C++ tutorials online can cover the basics of variables,
+functions, control flow, and program logic, e.g., anything which relates purely
+to the internal logic of a computation rather than the physical interface.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Connect an Arduino Uno to the host computer with the IDE.
+#. Configure the IDE for the Uno as per the Getting Started guide.
+#. Load the Examples/01.Basics/Blink sketch. The Examples are found on
+   the File menu, as is the Sketchbook in which you can put your own
+   programs.
+#. This program uses just the LED onboard the Uno, so no additional
+   external circuit is required.
+#. Verify/Compile the program to check that the program text is valid.
+#. Upload to the Uno and check that the LED blinks when the program
+   runs.
+#. Change the numbers in the ``delay`` statements; the units are
+   milliseconds.
+#. Re-upload and observe the change in LED behavior.
+#. Upload the ReadAnalogVoltage sketch.
+#. Find and open the Serial Monitor. Set it to 9600 baud to match the
+   sketch.
+#. Observe the measurements of analog noise printed to the monitor.
+   Attach a wire to A0 and touch it with your finger to change the noise
+   input.
+#. The serial monitor is your primary means for seeing the debugging
+   output from your programs; you should become familiar with the Serial
+   library and printing out text and numbers.
+
+Comments
+^^^^^^^^
+
+It can be quite difficult to debug complex programs when the serial port is the
+only source of information, and especially when it is also being used for
+transmitting data baack to the hosts. It can be helpful to use digital output
+pins for indicating single bits of program state and viewing the voltages on the
+oscilloscope. Later, we will use the OSC library to multiplex different streams
+of data over the same serial port, which also allows transmitting debugging
+cues.

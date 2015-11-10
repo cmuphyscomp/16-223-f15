@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.4. Exercise: Voltage Divider &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.5. Exercise: Switch with pullup" href="../switch-with-pullup/switch-with-pullup.html" />
+    <link rel="prev" title="2.1.3. Exercise: Power Switch" href="../power-switch/power-switch.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../switch-with-pullup/switch-with-pullup.html" title="2.1.5. Exercise: Switch with pullup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../power-switch/power-switch.html" title="2.1.3. Exercise: Power Switch"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-voltage-divider">
+<span id="id1"></span><h1>2.1.4. Exercise: Voltage Divider<a class="headerlink" href="#exercise-voltage-divider" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.4.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Measure voltages and compute current flow in a resistive voltage
+divider.</p>
+<p>Many sensor circuits we use will be built around an arrangement of
+series resistances called a <em>voltage divider</em>. This is a fundamental
+construction will will appear again and again.</p>
+<p>Two resistors in series form a single current pathway, so a voltage
+applied across the pair will cause the same current to flow through each
+of them. However, the voltage drop across each resistor resulting from
+that current is proportional to the resistance (V = i * R), so the
+voltage at the intermediate node depends on the relative resistances. In
+the simplest case, if both resistances are the same, the voltage in the
+middle will be the average of the voltage at each end.</p>
+<p>We will use the voltage divider structure to allow a variable resistance
+(e.g. sensor or switch) to control the voltage at the intermediate
+point. This is useful for us because the analog-to-digital converter on
+the Arduino senses applied voltage.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.4.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Measure the exact resistance of each resistor.</li>
+<li>Carefully measure the voltage Vin applied across the series pair of
+resistors.</li>
+<li>Compute the expected voltage V1 across the grounded resistor:
+<span class="math">\(V_1 = V_{in} * (R_1 / (R_1+R_2))\)</span>
+where <span class="math">\(R_2\)</span> is the &#8216;upper&#8217; resistor connected to
+the positive supply and <span class="math">\(R_1\)</span> is the &#8216;lower&#8217; resistor connected to
+ground.</li>
+<li>Vary the input voltage and repeat; you should be able to convince
+yourself that the intermediate voltage scales proportionately.</li>
+<li>Open the circuit and measure the actual current through the divider.
+Compare against the predicted value: <span class="math">\(i = V_{in} / (R_1 + R_2)\)</span>.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.4.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Also see <a class="reference external" href="http://en.wikipedia.org/wiki/Voltage_divider">Wikipedia</a>.</p>
+<p><img alt="image0" src="../../../_images/voltage-divider_bb.png" /> <img alt="image1" src="../../../_images/voltage-divider_schem.png" /></p>
+</div>
+<div class="section" id="other-files">
+<h2>2.1.4.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/voltage-divider.fzz"><code class="xref download docutils literal"><span class="pre">voltage-divider.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.4. Exercise: Voltage Divider</a><ul>
+<li><a class="reference internal" href="#objective">2.1.4.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.4.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.4.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.4.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../power-switch/power-switch.html"
+                        title="previous chapter">2.1.3. Exercise: Power Switch</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../switch-with-pullup/switch-with-pullup.html"
+                        title="next chapter">2.1.5. Exercise: Switch with pullup</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../switch-with-pullup/switch-with-pullup.html" title="2.1.5. Exercise: Switch with pullup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../power-switch/power-switch.html" title="2.1.3. Exercise: Power Switch"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

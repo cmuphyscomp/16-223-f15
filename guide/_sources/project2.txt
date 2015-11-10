@@ -174,9 +174,6 @@ a brief proposal text or outline with supporting sketches.
 
 #. Are there existing projects you have referenced?  Please include citations.
 
-#. What are the concrete objectives of a one-in one-out formulation of your
-   idea? What's the hardest part?
-
 #. What will your proof-of-concept entail?  Can you sketch it?  Can you sketch
    the engineering elements (circuits, mechanical drawings)?  Good drawings at
    this stage are invaluable, they can identify many potential problems much
@@ -208,8 +205,14 @@ schedule.
   * :ref:`project-report-requirements`
   * :ref:`lateness-policy`
   * :ref:`calendar`
-   
 
+I've been refining the description of the project reports in response to the
+first project.  Specifically, the purpose of the report is to present the
+project as a completed artifact or demonstration.  The emphasis is on relating
+its performance to the human needs of the objectives and explaining the
+technical choices of the implementation.  The details of the development process
+are only important to the degree to which they explain specific features of the
+outcome.
 
 #. In-class proposal review and supporting PDF file.
 #. In-class demonstration of proof-of-concept.

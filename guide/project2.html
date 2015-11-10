@@ -6,15 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.3. Project 2: Temporal Machine &mdash; 16-223 Introduction to Physical Computing</title>
+    <title>2.6. Project 2: Temporal Machine &mdash; 16-223 Introduction to Physical Computing</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/guide.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-10-06',
+        VERSION:     '2015-11-10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +24,11 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
     <link rel="up" title="2. Assignments" href="assignments.html" />
-    <link rel="next" title="3. Resources" href="resources.html" />
-    <link rel="prev" title="2.2. Project 1: One-in One-out" href="project1.html" /> 
+    <link rel="next" title="2.7. Project 3: Autonomous Machine" href="project3.html" />
+    <link rel="prev" title="2.5. Project 1: One-in One-out" href="project1.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -39,10 +41,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="resources.html" title="3. Resources"
+          <a href="project3.html" title="2.7. Project 3: Autonomous Machine"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="project1.html" title="2.2. Project 1: One-in One-out"
+          <a href="project1.html" title="2.5. Project 1: One-in One-out"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="assignments.html" accesskey="U">2. Assignments</a> &raquo;</li> 
@@ -55,7 +57,7 @@
           <div class="body" role="main">
             
   <div class="section" id="project-2-temporal-machine">
-<span id="project-2"></span><h1>2.3. Project 2: Temporal Machine<a class="headerlink" href="#project-2-temporal-machine" title="Permalink to this headline">¶</a></h1>
+<span id="project-2"></span><h1>2.6. Project 2: Temporal Machine<a class="headerlink" href="#project-2-temporal-machine" title="Permalink to this headline">¶</a></h1>
 <p>The goal of this project is to create a behavior in a physical system which
 engages with the time scale of a human or natural system.  The human body has
 its own set of natural time scales ranging from a single heartbeat to a
@@ -108,7 +110,7 @@ collaborations.</p>
 <p>We are also planning an IDeATe open house in late October, so your project may
 be recommended for a showing within the campus community.</p>
 <div class="section" id="objectives">
-<h2>2.3.1. Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<h2>2.6.1. Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
 <p>A key objective of this project is finding the underlying temporal questions
 within one of your big ideas.  As always, a guiding principle of the course is
 that <em>all ideas can be rendered at all scales</em>, so the objective is to focus
@@ -130,7 +132,7 @@ because we want you to learn to assess your own ambitions and skills and don&#82
 want to stand in your way.</p>
 </div>
 <div class="section" id="milestones">
-<h2>2.3.2. Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
+<h2>2.6.2. Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
 <p>(<em>Most of this is the same as the Project 1 milestones, except for bold-face text.</em>)</p>
 <ol class="arabic simple">
 <li><strong>Pair selection.</strong> We prefer that students work in pairs.  Solo workers and
@@ -166,7 +168,7 @@ The same considerations about success and failure outlined above also apply
 to the written documentation.  The report due date comes two days after
 critique to allow incorporating verbal feedback.</li>
 <li><strong>Peer evaluation</strong>.  Each individual should write a brief
-<a class="reference internal" href="peer_evaluation.html#peer-evaluation-form"><span>Peer Evaluation Form</span></a> response about your partner or teammates to be
+<a class="reference internal" href="peer_evaluation.html#peer-evaluation-form"><span>Project 1 Peer Evaluation Form</span></a> response about your partner or teammates to be
 submitted confidentially.  This serves two functions: it is the primary
 opportunity for you to reflect on the collaborative process itself, and it
 helps your instructors identify potential collaboration issues.</li>
@@ -180,7 +182,7 @@ photo or video.</li>
 </ol>
 </div>
 <div class="section" id="proposal-prompt">
-<span id="project2-proposal"></span><h2>2.3.3. Proposal Prompt<a class="headerlink" href="#proposal-prompt" title="Permalink to this headline">¶</a></h2>
+<span id="project2-proposal"></span><h2>2.6.3. Proposal Prompt<a class="headerlink" href="#proposal-prompt" title="Permalink to this headline">¶</a></h2>
 <p>(<em>Most of this is the same as the Project 1 prompt, except for bold-face text.</em>)</p>
 <p>The proposal is the counterpart to the final report: ideally, it raises all the
 questions which the project might answer, even though more will be discovered during
@@ -203,8 +205,6 @@ of your idea?</li>
 <li>Who is the audience?  This might include user, viewers, or passive bystanders.
 What is the experience of the audience?  What might they remember?</li>
 <li>Are there existing projects you have referenced?  Please include citations.</li>
-<li>What are the concrete objectives of a one-in one-out formulation of your
-idea? What&#8217;s the hardest part?</li>
 <li>What will your proof-of-concept entail?  Can you sketch it?  Can you sketch
 the engineering elements (circuits, mechanical drawings)?  Good drawings at
 this stage are invaluable, they can identify many potential problems much
@@ -221,7 +221,7 @@ worked?</li>
 </ol>
 </div>
 <div class="section" id="summary-of-deliverables">
-<h2>2.3.4. Summary of Deliverables<a class="headerlink" href="#summary-of-deliverables" title="Permalink to this headline">¶</a></h2>
+<h2>2.6.4. Summary of Deliverables<a class="headerlink" href="#summary-of-deliverables" title="Permalink to this headline">¶</a></h2>
 <p>The following material is included in this brief by reference.  Please
 familiarize yourself with the details of the documentation requirements and
 schedule.</p>
@@ -232,6 +232,13 @@ schedule.</p>
 <li><a class="reference internal" href="calendar.html#calendar"><span>Fall 2015 Calendar</span></a></li>
 </ul>
 </div></blockquote>
+<p>I&#8217;ve been refining the description of the project reports in response to the
+first project.  Specifically, the purpose of the report is to present the
+project as a completed artifact or demonstration.  The emphasis is on relating
+its performance to the human needs of the objectives and explaining the
+technical choices of the implementation.  The details of the development process
+are only important to the degree to which they explain specific features of the
+outcome.</p>
 <ol class="arabic simple">
 <li>In-class proposal review and supporting PDF file.</li>
 <li>In-class demonstration of proof-of-concept.</li>
@@ -251,21 +258,21 @@ schedule.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">2.3. Project 2: Temporal Machine</a><ul>
-<li><a class="reference internal" href="#objectives">2.3.1. Objectives</a></li>
-<li><a class="reference internal" href="#milestones">2.3.2. Milestones</a></li>
-<li><a class="reference internal" href="#proposal-prompt">2.3.3. Proposal Prompt</a></li>
-<li><a class="reference internal" href="#summary-of-deliverables">2.3.4. Summary of Deliverables</a></li>
+<li><a class="reference internal" href="#">2.6. Project 2: Temporal Machine</a><ul>
+<li><a class="reference internal" href="#objectives">2.6.1. Objectives</a></li>
+<li><a class="reference internal" href="#milestones">2.6.2. Milestones</a></li>
+<li><a class="reference internal" href="#proposal-prompt">2.6.3. Proposal Prompt</a></li>
+<li><a class="reference internal" href="#summary-of-deliverables">2.6.4. Summary of Deliverables</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="project1.html"
-                        title="previous chapter">2.2. Project 1: One-in One-out</a></p>
+                        title="previous chapter">2.5. Project 1: One-in One-out</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="resources.html"
-                        title="next chapter">3. Resources</a></p>
+  <p class="topless"><a href="project3.html"
+                        title="next chapter">2.7. Project 3: Autonomous Machine</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -293,10 +300,10 @@ schedule.</p>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="resources.html" title="3. Resources"
+          <a href="project3.html" title="2.7. Project 3: Autonomous Machine"
              >next</a> |</li>
         <li class="right" >
-          <a href="project1.html" title="2.2. Project 1: One-in One-out"
+          <a href="project1.html" title="2.5. Project 1: One-in One-out"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="assignments.html" >2. Assignments</a> &raquo;</li> 
@@ -304,7 +311,7 @@ schedule.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-10-06.
+      Last updated on 2015-11-10.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

@@ -10,11 +10,12 @@
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/guide.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-10-06',
+        VERSION:     '2015-11-10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,6 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
     <link rel="up" title="1. Fall 2015 Syllabus" href="syllabus.html" />
     <link rel="next" title="1.8. Fall 2015 Calendar" href="calendar.html" />
@@ -93,6 +95,8 @@ span physical, electrical, and computational domains.</p>
 <li>be able to identify characteristic time scales for the physical, electronic,
 computational, and human processes we use</li>
 <li>understand the basic concepts of time-domain sampling</li>
+<li>learn to specify computational representations of physical measurements</li>
+<li>understand basic methods for discretizing continous measurements</li>
 <li>learn the meaning of <em>sampling rate</em>, <em>jitter</em>, and <em>Nyquist frequency</em></li>
 <li>understand the physical nature of sound as pressure oscillations</li>
 <li>understand the basics of time-slice computation for simulating simultaneous
@@ -107,6 +111,17 @@ processes</li>
 <p>The purpose of this unit is to explore the broader meaning of <em>state</em>, including
 the essentials of finite-state machines and processes with memory.  This is an
 idea with both physical and computational meaning.</p>
+<p>The overall goals include the following:</p>
+<ol class="arabic simple">
+<li>be able to identify the <em>degrees of freedom</em> of a physical system</li>
+<li>be able to identify the <em>state variables</em> in a program fragment</li>
+<li>be able to identify <em>continuous</em> versus <em>discrete</em> state dimensions</li>
+<li>be able to read and draw a <em>state transition graph</em> (see <a class="reference external" href="https://en.wikipedia.org/wiki/State_diagram">State Diagram</a>)</li>
+<li>understand the meaning of <em>hysteresis</em> (see <a class="reference external" href="https://en.wikipedia.org/wiki/Hysteresis">Hysteresis</a>)</li>
+<li>learn to construct programs which estimate the state of a physical process</li>
+<li>understand the elements of a <em>computational model</em> and <em>simulation</em></li>
+<li>understand basic pattern recognition</li>
+</ol>
 </div>
 <div class="section" id="final-project">
 <h2>1.7.4. Final Project<a class="headerlink" href="#final-project" title="Permalink to this headline">¶</a></h2>
@@ -176,7 +191,7 @@ develop and demonstrate understanding of the technical material.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-10-06.
+      Last updated on 2015-11-10.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

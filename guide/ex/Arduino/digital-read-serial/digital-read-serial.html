@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.23. Exercise: Digital Read Serial &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.24. Exercise: Servo Sweep" href="../servo-sweep/servo-sweep.html" />
+    <link rel="prev" title="2.1.22. Exercise: Analog Read Serial" href="../analog-read-serial/analog-read-serial.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../servo-sweep/servo-sweep.html" title="2.1.24. Exercise: Servo Sweep"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../analog-read-serial/analog-read-serial.html" title="2.1.22. Exercise: Analog Read Serial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-digital-read-serial">
+<span id="id1"></span><h1>2.1.23. Exercise: Digital Read Serial<a class="headerlink" href="#exercise-digital-read-serial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.23.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Measure a binary physical property as a single-bit number.</p>
+<p>Some devices in the physical world do approximate a digital reality:
+switches are usually either on or off. But even these devices have
+non-ideal properties reflecting the physical reality, e.g. switch
+contacts can “bounce” as they make contact, creating a momentary pulse
+train rather than a clean on/off transition.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.23.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Load and run the DigitalReadSerial sketch.</li>
+<li>Observe the numbers printed in the serial monitor as the switch
+changes state.</li>
+<li>Try to observe switch bounce, e.g. several transitions measured for a
+single physical transition.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.23.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>A digital input is essentially a single-bit analog-to-digital converter,
+albeit with an ambiguously defined threshold between the voltages
+representing zero and one. The digital input sampling rate can be much
+higher than the 10-bit ADC, so much higher frequency digital signals
+could be processed with careful real-time programming.</p>
+<p>A related challenge exercise is the <a class="reference external" href="http://arduino.cc/en/Tutorial/RCtime">Arduino RCtime
+tutorial</a> in which a
+photoresistor-capacitor circuit is used to form an ad-hoc ADC using a
+single digital I/O pin. Multiple bits of conversion resolution are
+obtained from measuring the single input bit over time.</p>
+<a class="reference internal image-reference" href="../../../_images/digital-read-serial_bb.png"><img alt="../../../_images/digital-read-serial_bb.png" src="../../../_images/digital-read-serial_bb.png" style="width: 75%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/digital-read-serial_schem.png"><img alt="../../../_images/digital-read-serial_schem.png" src="../../../_images/digital-read-serial_schem.png" style="width: 75%;" /></a>
+</div>
+<div class="section" id="other-files">
+<h2>2.1.23.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/digital-read-serial.fzz"><code class="xref download docutils literal"><span class="pre">digital-read-serial.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.23. Exercise: Digital Read Serial</a><ul>
+<li><a class="reference internal" href="#objective">2.1.23.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.23.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.23.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.23.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../analog-read-serial/analog-read-serial.html"
+                        title="previous chapter">2.1.22. Exercise: Analog Read Serial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../servo-sweep/servo-sweep.html"
+                        title="next chapter">2.1.24. Exercise: Servo Sweep</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../servo-sweep/servo-sweep.html" title="2.1.24. Exercise: Servo Sweep"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../analog-read-serial/analog-read-serial.html" title="2.1.22. Exercise: Analog Read Serial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.5. Exercise: WS2801 RGB LED SPI Module &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.2.6. Exercise: Music Sequencer" href="../music-sequencer/music-sequencer.html" />
+    <link rel="prev" title="2.2.4. Exercise: MPU6050 IMU I2C Module" href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../music-sequencer/music-sequencer.html" title="2.2.6. Exercise: Music Sequencer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html" title="2.2.4. Exercise: MPU6050 IMU I2C Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-ws2801-rgb-led-spi-module">
+<span id="exercise-ws2801-led-spi"></span><h1>2.2.5. Exercise: WS2801 RGB LED SPI Module<a class="headerlink" href="#exercise-ws2801-rgb-led-spi-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.2.5.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Communicate digital data between an Arduino and a WS2801 LED RGB module
+using an SPI bus.</p>
+<p>Please be sure to review the general information about I<sup>2</sup>C
+and SPI in the <a class="reference external" href="../Adafruit-PWM-I2C/index.html">Adafruit PWM I2C
+Module</a> exercise prior to starting
+this one.</p>
+<p>This exercise will use a <a class="reference external" href="http://www.bestlightingbuy.com/12v-ws2801-digital-intelligent-led-strip.html">RGB LED strip
+module</a>
+based on the <a class="reference external" href="http://www.adafruit.com/datasheets/WS2801.pdf">WS2801 constant current LED
+driver</a>, also
+available in a <a class="reference external" href="http://www.adafruit.com/search?q=ws2801&amp;b=1">variety of other form
+factors</a>.</p>
+<p>These modules accept a 24-bit color value over an SPI bus, then begin to
+relay any additional bits to the downstream SPI connection. This allows
+daisy-chaining many RGB LEDs into an individually addressable array of
+pixels. Once a short pause occurs in the input data, the received values
+are transferred to the internal PWM generator. This allows simultanous
+update of the whole chain for clean animation.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.5.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Download or find the complete <a class="reference external" href="../../../../Arduino/WS2801_test">WS2801_test</a> sketch.</p>
+</li>
+<li><p class="first">Plug the RGB module into a breadboard and use solid wire to make the
+following three connections from the Arduino to the module. Note
+carefully that this module uses 12V; be very careful to keep the 12V
+wiring away from the Arduino:</p>
+<ol class="arabic simple">
+<li>PIN11 (MOSI) -&gt; DAT</li>
+<li>PIN13 (SCK) -&gt; CLK</li>
+<li>GND -&gt; GND</li>
+</ol>
+<p>MOSI is an acronym for Master-Out Slave-In. Since this example only
+outputs data and does not receive, MISO is left unconnected.</p>
+</li>
+<li><p class="first">Set up a bench supply for 12V and attach it to the Arduino GND and
+the 12V input on the module.</p>
+</li>
+<li><p class="first">Attach the Arduino to your computer and install the sketch.</p>
+</li>
+<li><p class="first">Observe the changing colors.</p>
+</li>
+<li><p class="first">Using an oscilloscope, observe the clock and data lines. The data
+rate is fast, so you should see one very short burst per output
+frame.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.2.5.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to control hundreds of LEDs on a single strand. This is becoming
+a very popular way to produce architectural lighting and persistence-of-vision
+(POV) displays.</p>
+</div>
+<div class="section" id="sketch-folder">
+<h2>2.2.5.4. Sketch Folder<a class="headerlink" href="#sketch-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/WS2801_test">WS2801_test</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.5. Exercise: WS2801 RGB LED SPI Module</a><ul>
+<li><a class="reference internal" href="#objective">2.2.5.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.5.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.2.5.3. Comments</a></li>
+<li><a class="reference internal" href="#sketch-folder">2.2.5.4. Sketch Folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html"
+                        title="previous chapter">2.2.4. Exercise: MPU6050 IMU I2C Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../music-sequencer/music-sequencer.html"
+                        title="next chapter">2.2.6. Exercise: Music Sequencer</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../music-sequencer/music-sequencer.html" title="2.2.6. Exercise: Music Sequencer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../MPU6050-IMU-I2C/MPU6050-IMU-I2C.html" title="2.2.4. Exercise: MPU6050 IMU I2C Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

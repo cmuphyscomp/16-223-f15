@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.6. Exercise: LED with current limiter &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.7. Exercise: Photocell with bias resistor" href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html" />
+    <link rel="prev" title="2.1.5. Exercise: Switch with pullup" href="../switch-with-pullup/switch-with-pullup.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html" title="2.1.7. Exercise: Photocell with bias resistor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../switch-with-pullup/switch-with-pullup.html" title="2.1.5. Exercise: Switch with pullup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-led-with-current-limiter">
+<span id="exercise-led-current-limiter"></span><h1>2.1.6. Exercise: LED with current limiter<a class="headerlink" href="#exercise-led-with-current-limiter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.6.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Light an LED using a safely limited current.</p>
+<p>An LED is a <em>Light Emitting Diode</em>, a type of semiconductor component
+which emits light directly from a current. The light results from
+energized electrons moving between quantum states, and so the light
+emitted has narrow spectral bands with color depending upon the specific
+chemical composition. White LEDs are actually a composite structure of
+multiple LEDs of different colors. White LED light is still narrow-band,
+unlike the wide-spectrum black-body white light emitted from
+incandescent bulbs.</p>
+<p>A <em>diode</em> is a two-terminal semiconductor device which only conducts
+current in one direction. For this reason, LEDs are <em>polarized</em>, and
+will not light up if connected backward (<em>reverse-biased</em>).</p>
+<p>Diodes can be modeled as a non-linear resistance which changes with the
+applied voltage: when reverse-biased, the resistance is very high, and
+almost no current flows. When forward-biased at small voltages below the
+<em>forward voltage</em>, the resistance is still high and only a small current
+flows. Above the forward voltage, the resistance rapidly drops and the
+diode can conduct substantial current. For LEDs, this is also the point
+at which they start to light up.</p>
+<p>However, this poses a problem, since an LED connected directly to a
+power source with a voltage higher than the forward voltage will enter a
+very low-resistance state, conduct a lot of current, and often burn out
+or melt. We will frequently solve this by using a <em>ballast resistor</em> in
+series with the LED. This forms a voltage divider which acts as a very
+simple current regulator.</p>
+<p>A typical red LED has a forward voltage of 1.6V and a full-on operating
+current of 20&nbsp;mA.The calculation for choosing the right ballast resistor
+follows this reasoning:</p>
+<ol class="arabic simple">
+<li>the current flow through the resistor and LED should be 20&nbsp;mA for
+full brightness</li>
+<li>the voltage drop across the resistor should bring the LED applied
+voltage to approximately the forward voltage</li>
+<li>assuming a 5V supply voltage, a 3.4V drop across resistor brings the
+LED voltage to 1.6V</li>
+<li>for the resistor, R = V / i, so R can be approximately 170&nbsp;ohms (i.e.
+3.4V / 0.020A).</li>
+</ol>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.6.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Before applying power, measure the variable resistor and adjust it to
+the upper end of its resistance range.</li>
+<li>Apply 5V and observe the LED light output. Reverse the polarity of
+the LED to see both forward and backward states.</li>
+<li>Measure the LED current while full-on.</li>
+<li>Slowly adjust the variable resistor (a <em>potentiometer</em>) until the LED
+current is 20mA.</li>
+<li>Measure the resistor value.</li>
+<li>Measure the LED voltage drop, resistor voltage drop, and supply
+voltage.</li>
+<li>Don&#8217;t reduce the potentiometer setting further or it may be damaged.
+Later you will deliberately destroy an LED to see the outcome.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.6.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>The potentiometer can be damaged by excessive current in this circuit
+when the wiper moves close to the powered end since a lot of current
+will flow through a small resistor.</p>
+<p>Green and blue LEDs usually have a higher forward voltage, sometimes as
+high as 3.5V. Blue LEDs were invented much more recently than red LEDs,
+it took many years to find an affordable chemical composition.</p>
+<p>The lab also stocks infrared (IR) LEDs which emits invisible light; this
+is the same type used by many remote controls.</p>
+<p>For a challenge, find one of the four-terminal RGB LEDs and set up a
+circuit to create different colors.</p>
+<a class="reference internal image-reference" href="../../../_images/led-current-limiter_bb.png"><img alt="../../../_images/led-current-limiter_bb.png" src="../../../_images/led-current-limiter_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/led-current-limiter_schem.png" src="../../../_images/led-current-limiter_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.6.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/led-current-limiter.fzz"><code class="xref download docutils literal"><span class="pre">led-current-limiter.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.6. Exercise: LED with current limiter</a><ul>
+<li><a class="reference internal" href="#objective">2.1.6.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.6.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.6.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.6.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../switch-with-pullup/switch-with-pullup.html"
+                        title="previous chapter">2.1.5. Exercise: Switch with pullup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html"
+                        title="next chapter">2.1.7. Exercise: Photocell with bias resistor</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html" title="2.1.7. Exercise: Photocell with bias resistor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../switch-with-pullup/switch-with-pullup.html" title="2.1.5. Exercise: Switch with pullup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

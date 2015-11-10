@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.10. Exercise: Smoke a Resistor &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.11. Exercise: Voltage Regulation" href="../voltage-regulation/voltage-regulation.html" />
+    <link rel="prev" title="2.1.9. Exercise: Transducer with DMM" href="../transducer-with-dmm/transducer-with-dmm.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../voltage-regulation/voltage-regulation.html" title="2.1.11. Exercise: Voltage Regulation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../transducer-with-dmm/transducer-with-dmm.html" title="2.1.9. Exercise: Transducer with DMM"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-smoke-a-resistor">
+<span id="id1"></span><h1>2.1.10. Exercise: Smoke a Resistor<a class="headerlink" href="#exercise-smoke-a-resistor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.10.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Destroy a resistor to observe the effects of excessive dissipation.
+Destroy a red LED to observe the non-linear current characteristic.</p>
+<p>Resistors generate heat as current flows through them. If the applied voltage
+rises too high, they will heat up until they smoke or melt. The power dissipated
+is the voltage drop multiplied by the current: <span class="math">\(P = V * i\)</span>. Since the
+voltage drop across a resistor is proportional to the current (<span class="math">\(V = i *
+R\)</span>), the power dissipated can also be expressed as <span class="math">\(P = i^2 * R = V^2 /
+R\)</span>.</p>
+<p>The small resistors we use in the lab are rated for 0.25 Watts of
+dissipation. So for example, a 100 ohm resistor will dissipate 0.25
+Watts with an applied voltage of 5V: the current will be 50&nbsp;mA (5V / 100
+ohms), and the power will be 0.25&nbsp;Watts (5V * 0.050 A). As the voltage
+increases they will dissipate power according to the square of the
+voltage, so they will get hotter and hotter and quickly fail.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.10.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Adjust the power supply for 5V output. Measure the resulting current
+through a 100 ohm quarter-watt resistor.</li>
+<li>Check if the resistor is getting warm.</li>
+<li>Raise the power supply to 7V output, which will double the dissipated
+energy to a half-Watt: <span class="math">\(P = V^2/ R = 7*7 / 100 = 0.49W\)</span>.</li>
+<li>Check if the resistor getting warm. Careful not to burn yourself.</li>
+<li>Continue raising the power voltage slowly until the resistor fails.
+Note the final voltage and current.</li>
+<li>As noted in the previous LED exercise, LEDs have a non-linear
+characteristic in which the current rapidly rises as the voltage
+climbs. Find an inexpensive red LED and measure its <em>forward voltage</em>
+using the diode measurement function on the DMM. For a red LED, this
+will typically be in the vicinity of 1.6V.</li>
+<li>Set the power supply about half a volt below the forward voltage.
+Attach the LED. Very slowly increase the applied voltage, observing
+the LED. The light should get very bright very quickly around the
+forward voltage, and at just a slightly higher voltage, the LED will
+heat up and stop working permanently.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.10.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Resistors are cheap, so this is pretty harmless, even if it smells bad.
+It is heartbreaking to overvoltage an expensive component and “let out
+the magic smoke” so it stops working.</p>
+<a class="reference internal image-reference" href="../../../_images/smoke-a-resistor_bb.png"><img alt="../../../_images/smoke-a-resistor_bb.png" src="../../../_images/smoke-a-resistor_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/smoke-a-resistor_schem.png" src="../../../_images/smoke-a-resistor_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.10.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/smoke-a-resistor.fzz"><code class="xref download docutils literal"><span class="pre">smoke-a-resistor.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.10. Exercise: Smoke a Resistor</a><ul>
+<li><a class="reference internal" href="#objective">2.1.10.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.10.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.10.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.10.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../transducer-with-dmm/transducer-with-dmm.html"
+                        title="previous chapter">2.1.9. Exercise: Transducer with DMM</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../voltage-regulation/voltage-regulation.html"
+                        title="next chapter">2.1.11. Exercise: Voltage Regulation</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../voltage-regulation/voltage-regulation.html" title="2.1.11. Exercise: Voltage Regulation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../transducer-with-dmm/transducer-with-dmm.html" title="2.1.9. Exercise: Transducer with DMM"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

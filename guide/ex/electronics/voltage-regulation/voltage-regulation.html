@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.11. Exercise: Voltage Regulation &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.12. Exercise: Capacitance" href="../capacitance/capacitance.html" />
+    <link rel="prev" title="2.1.10. Exercise: Smoke a Resistor" href="../smoke-a-resistor/smoke-a-resistor.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../capacitance/capacitance.html" title="2.1.12. Exercise: Capacitance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../smoke-a-resistor/smoke-a-resistor.html" title="2.1.10. Exercise: Smoke a Resistor"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-voltage-regulation">
+<span id="id1"></span><h1>2.1.11. Exercise: Voltage Regulation<a class="headerlink" href="#exercise-voltage-regulation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.11.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Test different types of voltage regulation components.</p>
+<p>Power supplies are the heart of any electronics project, as every
+circuit needs a source of energy, and usually with very specific
+electrical characteristics. Most of our circuits will require regulated
+DC supplies, with energy coming either from a battery or the building
+electrical system. Unless otherwise specified, <em>regulated</em> means the
+voltage is controlled to a constant level despite changes in the load.</p>
+<p>We will use two basic categories of voltage regulators: linear and
+switching.</p>
+<p>In brief, a linear regulator acts as a variable resistor governed by
+feedback to keep the output voltage at a fixed level. Linear regulators
+can only step voltages down, and the excess energy is dissipated as
+heat. So for example, a 5V linear regulator providing a 500&nbsp;mA current
+from a 12V supply creates a 7V voltage drop. That represents 3.5&nbsp;Watts
+of heat dissipated in the package, which typically means the package
+needs a good heatsink to carry that heat away.</p>
+<p>A switching regulator chops the input current at a high frequency and
+either pulses it through an inductor (a coil) to generate higher
+voltages via inductive effects, or filters it through capacitors and/or
+inductors to generate a lower voltage. The upside of the complexity is
+much higher efficiency, and hence less heat. The downside is the
+potential for supply noise, since the switching frequency can appear in
+the output. But the efficiency almost always outweighs the complexity in
+consumer applications, especially for battery circuits.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.11.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Wire up each circuit, beginning with the 7805 linear regulator. Be
+very careful to observe the correct input polarity. You may
+substitute a lab supply for the battery.</li>
+<li>Measure the unloaded outputs. Not all switching regulators perform
+well without any load at all.</li>
+<li>Find a power resistor or component representing a reasonable load.
+E.g., dissipating 100&nbsp;mA from a 5V regulator can be accomplished
+using a 0.5&nbsp;Watt 50&nbsp;ohm resistor, or a lamp or motor with similar
+properties. (Hint: a half-watt 50&nbsp;ohm resistor can be formed from two
+quarter-watt 100&nbsp;ohm resistors in parallel.)</li>
+<li>Measure the loaded output.</li>
+<li>For the switching regulators, using the oscilloscope try to observe
+the switching rate as a high-frequency fluctuation on the output.
+This signal might be 20-100&nbsp;kHz.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.11.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>In the first example of a linear regulator dropping a 12V input to a 5V
+output, the the load is only consuming 2.5&nbsp;Watts of energy while the
+regulator dissipates 3.5&nbsp;Watts, so this circuit is operating at only 42%
+efficiency. Linear regulator circuits are simple to use and inexpensive,
+so they are applicable for low-power applications or where efficiency
+and heating are not a problem. The primary advantage is they are
+potentially low-noise compared to switching regulators, so they often
+appear in high-fidelity audio applications.</p>
+<p>Despite the power inefficiency, we encourage you to use linear
+regulators such as the 7805 in your projects whenever feasible as they
+are low-cost and robust and well-suited to simple projects.</p>
+<p>In contrast, switching regulators typically operate as 85% efficiency or
+higher. The availability has been remarkably eased by the introduction
+of simple integrated circuits which implement the chopping and feedback
+function. Consumer &#8216;wall-wart&#8217; power supplies used to only use simple
+linear regulation (or no regulation), but nearly all modern power
+supplies for consumer electronics are now switch-mode.</p>
+<p>A good debugging heuristic for any project is to begin solving problems
+by checking the power supply. There are many, many possible problems, so
+for example:</p>
+<ol class="arabic simple">
+<li>overloading a power supply can cause the voltage to drop or current
+limits to trip</li>
+<li>power supplies connect across every circuit subsystem, so signal
+problems can be linked in subtle ways</li>
+<li>high-current signals from motors can create voltages in the ground
+wires (“ground bounce”)</li>
+<li>digital supply noise can couple into analog circuits and inject noise</li>
+<li>etc., etc.</li>
+</ol>
+<p><img alt="image0" src="../../../_images/7805-regulator-schem.png" /> <img alt="image1" src="../../../_images/voltage-regulation-step-down_bb.png" /> <img alt="image2" src="../../../_images/voltage-regulation-step-down_schem.png" /> <img alt="image3" src="../../../_images/voltage-regulation-step-up-step-down_bb.png" /> <img alt="image4" src="../../../_images/voltage-regulation-step-up-step-down_schem.png" /> <img alt="image5" src="../../../_images/voltage-regulation_bb.png" /> <img alt="image6" src="../../../_images/voltage-regulation_schem.png" /></p>
+</div>
+<div class="section" id="reference">
+<h2>2.1.11.4. Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://www.onsemi.com/pub_link/Collateral/NCP7800-D.PDF">datasheet for 7805, 7508, 7512, 7515
+regulators</a></li>
+</ol>
+</div>
+<div class="section" id="other-files">
+<h2>2.1.11.5. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>EAGLE file: <a class="reference download internal" href="../../../_downloads/7805-regulator.sch"><code class="xref download docutils literal"><span class="pre">7805-regulator.sch</span></code></a></li>
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/voltage-regulation-step-down.fzz"><code class="xref download docutils literal"><span class="pre">voltage-regulation-step-down.fzz</span></code></a></li>
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/voltage-regulation-step-up-step-down.fzz"><code class="xref download docutils literal"><span class="pre">voltage-regulation-step-up-step-down.fzz</span></code></a></li>
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/voltage-regulation.fzz"><code class="xref download docutils literal"><span class="pre">voltage-regulation.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.11. Exercise: Voltage Regulation</a><ul>
+<li><a class="reference internal" href="#objective">2.1.11.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.11.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.11.3. Comments</a></li>
+<li><a class="reference internal" href="#reference">2.1.11.4. Reference</a></li>
+<li><a class="reference internal" href="#other-files">2.1.11.5. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../smoke-a-resistor/smoke-a-resistor.html"
+                        title="previous chapter">2.1.10. Exercise: Smoke a Resistor</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../capacitance/capacitance.html"
+                        title="next chapter">2.1.12. Exercise: Capacitance</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../capacitance/capacitance.html" title="2.1.12. Exercise: Capacitance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../smoke-a-resistor/smoke-a-resistor.html" title="2.1.10. Exercise: Smoke a Resistor"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+.. _exercise-pressure-pad-with-bias-resistor:
+
+Exercise: Pressure pad with bias resistor
+-----------------------------------------
+
+Objective
+^^^^^^^^^
+
+Measure mechanical pressure as a varying voltage.
+
+A *pressure pad* (i.e. `force-sensing
+resistor <http://en.wikipedia.org/wiki/Force_Sensitive_Resistor>`__, or
+FSR) is a contact sensor in which the resistance changes in response to
+mechanical pressure. The resistance decreases with increased force. A
+voltage divider circuit can be used for forming a voltage which depends
+on the pressure.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. The circuit diagram shows a homebrew conductive fabric FSR but you
+   may use a commercial FSR at first. These are labeled “pressure
+   sensor” and can be found in the Sensors cabinet.
+#. Measure the resistance of the pressure pad by itself over different
+   pressure conditions.
+#. The exact value of the bias resistor depends on the properties of
+   your sensor. A good starting point is a resistance equal to the
+   mid-range resistance of the sensor.
+#. Measure the pressure pad voltage in the given circuit over different
+   pressure conditions.
+#. Using the oscilloscope to observe the pressure pad voltage, try
+   creating rapidly changing contact to estimate the response speed.
+
+Comments
+^^^^^^^^
+
+Commercial FSRs can be damaged by excessive force. In practice, it can
+take care to design them within a mechanical assembly so they are not
+directly exposed to excessive force or forces which pull them apart. But
+they are a relatively cheap and robust way to make an analog human
+interface.
+
+As a challenge, rather than use a packaged FSR device, make your own
+using tape and conductive fabric. Please see the following as a guide.
+
+#. `Kobakant DIY: extensive guide to homebrew fabric
+   sensors. <http://www.kobakant.at/DIY/?cat=26>`__
+#. `Stickytape Sensors: quick and simple pressure and bend
+   sensors. <http://www.instructables.com/id/Stickytape-Sensors/>`__
+#. `Handcrafting Sensors: long guide to variety of fabric
+   sensors. <http://www.adafruit.com/datasheets/HandcraftingSensors.pdf>`__
+
+Conductive fabric can also be damaged by excessive force and can some
+types can wear out from washing. But these sensors can be incorporated
+into clothing, made with multiple sensitive points, turned into tilt
+sensors and linear controls, etc.
+
+.. image:: pressure-pad-with-bias-resistor_bb.png
+   :width: 75%
+   
+.. image:: pressure-pad-with-bias-resistor_schem.png
+
+Other Files
+^^^^^^^^^^^
+
+#. Fritzing file: :download:`pressure-pad-with-bias-resistor.fzz`
+
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.19. Exercise: Coding, Compiling, Deploying &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.20. Exercise: Blink Bulb" href="../blink-bulb/blink-bulb.html" />
+    <link rel="prev" title="2.1.18. Exercise: Arduino Introduction" href="../arduino-intro/arduino-intro.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../blink-bulb/blink-bulb.html" title="2.1.20. Exercise: Blink Bulb"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../arduino-intro/arduino-intro.html" title="2.1.18. Exercise: Arduino Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-coding-compiling-deploying">
+<span id="id1"></span><h1>2.1.19. Exercise: Coding, Compiling, Deploying<a class="headerlink" href="#exercise-coding-compiling-deploying" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.19.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Running a program on an Arduino.</p>
+<p>The best references for getting started with the Arduino are supplied with the
+IDE: the <strong>Help</strong> menu includes a section for <strong>Getting Started</strong> which covers
+operation and <strong>Reference</strong> which covers the language.</p>
+<p>In addition, the main Arduino site has similar introduction pages:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://arduino.cc/en/Guide/HomePage">Arduino: Getting Started</a></li>
+<li><a class="reference external" href="http://arduino.cc/en/Reference/HomePage">Arduino: Reference</a></li>
+</ol>
+<p>The <a class="reference external" href="http://arduino.cc/en/Tutorial/Foundations">Arduino Tutorial Foundations</a>
+page addresses many basic ideas and syntax. If you have no programming
+experience at all, please be sure to look at <a class="reference external" href="http://arduino.cc/en/Tutorial/Sketch">First Sketch</a>, <a class="reference external" href="http://arduino.cc/en/Tutorial/Variables">Variables</a>, and
+<a class="reference external" href="http://arduino.cc/en/Reference/FunctionDeclaration">Functions.</a> For more
+beginner help, please remember that the Arduino language is a subset of C++, so
+many elementary C or C++ tutorials online can cover the basics of variables,
+functions, control flow, and program logic, e.g., anything which relates purely
+to the internal logic of a computation rather than the physical interface.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.19.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Connect an Arduino Uno to the host computer with the IDE.</li>
+<li>Configure the IDE for the Uno as per the Getting Started guide.</li>
+<li>Load the Examples/01.Basics/Blink sketch. The Examples are found on
+the File menu, as is the Sketchbook in which you can put your own
+programs.</li>
+<li>This program uses just the LED onboard the Uno, so no additional
+external circuit is required.</li>
+<li>Verify/Compile the program to check that the program text is valid.</li>
+<li>Upload to the Uno and check that the LED blinks when the program
+runs.</li>
+<li>Change the numbers in the <code class="docutils literal"><span class="pre">delay</span></code> statements; the units are
+milliseconds.</li>
+<li>Re-upload and observe the change in LED behavior.</li>
+<li>Upload the ReadAnalogVoltage sketch.</li>
+<li>Find and open the Serial Monitor. Set it to 9600 baud to match the
+sketch.</li>
+<li>Observe the measurements of analog noise printed to the monitor.
+Attach a wire to A0 and touch it with your finger to change the noise
+input.</li>
+<li>The serial monitor is your primary means for seeing the debugging
+output from your programs; you should become familiar with the Serial
+library and printing out text and numbers.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.19.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>It can be quite difficult to debug complex programs when the serial port is the
+only source of information, and especially when it is also being used for
+transmitting data baack to the hosts. It can be helpful to use digital output
+pins for indicating single bits of program state and viewing the voltages on the
+oscilloscope. Later, we will use the OSC library to multiplex different streams
+of data over the same serial port, which also allows transmitting debugging
+cues.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.19. Exercise: Coding, Compiling, Deploying</a><ul>
+<li><a class="reference internal" href="#objective">2.1.19.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.19.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.19.3. Comments</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../arduino-intro/arduino-intro.html"
+                        title="previous chapter">2.1.18. Exercise: Arduino Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../blink-bulb/blink-bulb.html"
+                        title="next chapter">2.1.20. Exercise: Blink Bulb</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../blink-bulb/blink-bulb.html" title="2.1.20. Exercise: Blink Bulb"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../arduino-intro/arduino-intro.html" title="2.1.18. Exercise: Arduino Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

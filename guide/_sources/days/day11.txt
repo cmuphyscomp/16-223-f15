@@ -1,12 +1,18 @@
 .. include:: ../links.rst
 
-Ddeay 11: Project 2 Definition (Oct 7)
+Day 11: Project 2 Definition (Oct 7)
 ==========================================
 
 Notes for 2015-10-05.  See also the :ref:`calendar`.
 
 Notes from Day 10
 -----------------
+
+.. image:: /images/2015-10-06-spilled-glue.jpg
+   :alt: I sincerely hope this wasn't due to any members of this class.
+
+#. Maker Faire participants: if you have not positively identified your project
+   to Kelly Delaney, please do so immediately.
 
 #. Oct 23: IDeATe open house *and* President Suresh’s Global Advisory Council
    *and* Academic Leadership Council
@@ -21,6 +27,15 @@ Notes from Day 10
 #. Added new music sequencer exercise to introduce the idea of *interpretation*,
    C++ class structure, and simultaneous processes.  See :ref:`unit-2-exercises`.
 
+#. Comments from report reviews.
+
+   #. Process versus result documentation.
+   #. Voltage dividers.
+   #. Schematic capture.
+   #. Event-loops.
+   #. Grading
+
+
 Agenda
 ------
 
@@ -32,20 +47,20 @@ Agenda
 
    * Fri Oct 12: project 2 proposal.  Keep the text minimal, I want your energy
      go toward thinking through the drawings and proof-of-concept statement. How
-     much can you work out now before you start building?  Could **I** construct
+     much can you work out now **before** you start building?  **Could I construct**
      your proof-of-concept from your drawing?
-     
+
    * Mon Oct 12: project 2 proof-of-concept.
 
 #. In-class
 
    * Fourth round of research talks (45 minutes).
 
-     * K:
-     * R:
-     * A:
+     * K: `Gesture Vocalizer <https://docs.google.com/presentation/d/1QuwI1zWIvoVZhTfoND0y9_z0j9iRrQtxaOmIE__MN0E/edit?usp=sharing_eid&ts=56141f4a>`__
+     * R: `Database <https://docs.google.com/presentation/d/1y_PgLJc-J3IqPFjvVdkYJhd52h6hdSNAvOBPX8u72AU/edit#slide=id.p>`__, `video <https://vimeo.com/124687054/>`__
+     * A: `Liftware <https://docs.google.com/presentation/d/1WtKsS67uLvKbHHu27eG50bCMcuvRPBY8J7WEuxw8gpM/edit#slide=id.p>`__
      * D: `The Marble Answering Machine by Durrell Bishop <http://dataphys.org/list/durrell-bishops-marble-answering-machine/>`__, `video <https://vimeo.com/19930744>`__, `more <https://ccdc11.wordpress.com/2011/02/15/durrell-bishops-marble-answering-machine/>`__
-     * L:
+     * L: `Botanicus Interacticus <http://www.disneyresearch.com/project/botanicus-interacticus-interactive-plant-technology/>`__
 
    * Unit 2 Exercises
 

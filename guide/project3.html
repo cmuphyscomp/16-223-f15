@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.7. Project 3: Autonomous Machine &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
+    <link rel="up" title="2. Assignments" href="assignments.html" />
+    <link rel="next" title="3. Resources" href="resources.html" />
+    <link rel="prev" title="2.6. Project 2: Temporal Machine" href="project2.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="3. Resources"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="project2.html" title="2.6. Project 2: Temporal Machine"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="assignments.html" accesskey="U">2. Assignments</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="project-3-autonomous-machine">
+<span id="project-3"></span><h1>2.7. Project 3: Autonomous Machine<a class="headerlink" href="#project-3-autonomous-machine" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this project is to create a device which inhabits its environment to
+fulfill a purpose without human interaction.  It is <em>autonomous</em> in the sense of
+performing a task without direct human intervention.  The meaning of &#8220;inhabit&#8221;
+is loose but is intended to suggest behavior which exhibit a varied or adaptable
+response to changes in ambient circumstances.</p>
+<p>The definition of machine autonomy is not well-defined, the term has been used
+to describe freedom along a number of different axes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>energy autonomy: machines which carry their own power source</li>
+<li>control autonomy: machine which do not require operator input</li>
+<li>navigational autonomy: machines which can move through a space without guidance</li>
+<li>task autonomy: machines which can solve complex tasks automatically</li>
+<li>shared autonomy: machines which divide a control task between a human operator and the machine</li>
+<li>sliding autonomy: machines which can smoothly shift through varying degrees
+of shared autonomy, i.e. from fully automatic operation towards fully manual
+control</li>
+</ul>
+</div></blockquote>
+<p>The majority of artifacts we construct are <em>passive</em> with no energy source,
+actuation, or computation.  Of the <em>active</em> machines we construct, we are most
+aware of those intended for direct human interaction, e.g. cars, indoor
+lighting, toilets, dishwashers etc.  Each of these combines directly controlled
+mechanisms with behaviors which act autonomously when not actively controlled.
+There are many more of which we are less aware which operate completely
+autonomously, e.g. streetlights, HVAC systems, municipal water systems, factory
+automation.  Many of these systems quietly carry out tasks essential for the
+survival of civilization with no human guidance during normal operation.</p>
+<p>The idea of autonomy raises a number of questions:</p>
+<ol class="arabic simple">
+<li>What does it mean for a machine to have <em>intent</em> or a <em>goal</em>?  Do we make any
+machines concerned only with their own survival?</li>
+<li>In what ways do we encode our goals into machines?  In what ways do others
+encode <em>their</em> goals into machines <em>we</em> use?</li>
+<li>How do humans express intent <em>unconsciously</em>?  What patterns of human
+behavior over time reflect our intent in ways which can be sensed and
+detected?</li>
+<li>How can a machine <em>adapt</em> to changes in its environment to better fulfill
+its purpose?</li>
+</ol>
+<p>There are a number of directions this project might take.  Many of your first
+two projects could be categorized as autonomous but could be improved by
+developing the interpretation of the sensor input or the logic of the response.
+A few suggested starting points follow for brainstorming project ideas.</p>
+<ol class="arabic simple">
+<li>In your first two projects, what kind of information about the world did your
+prototype sense?  What other information could have been inferred?</li>
+<li>What kind of changing conditions would cause your existing projects to fail?
+How could the response have adapted automatically to compensate?</li>
+</ol>
+<p>Some more specific inspirations:</p>
+<ol class="arabic simple">
+<li>Theo Jansen&#8217;s <a class="reference external" href="http://www.strandbeest.com/">Strandbeest</a></li>
+<li><a class="reference external" href="http://www.beam-online.com/Robots/Galleria_other/tilden.html">Mark Tilden</a></li>
+<li><a class="reference external" href="http://simonpenny.net/">Simon Penny</a>, <a class="reference external" href="http://simonpenny.net/works/petitmal.html">Petit Mal</a></li>
+</ol>
+<p>Note that autonomy does not necessarily imply complexity.  If a machine engages
+with a simple physical process, then its model of the world may also be simple.
+If a machine can carefully engage with the right features of a complex system,
+then it may also use a simple model.</p>
+<div class="section" id="objectives">
+<h2>2.7.1. Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>A key objective of this project is understanding how logic and representation
+can be used to decode information about the world in order to respond to events.
+The most reliable sensors are those which are directly tied to the physical
+phenomenon of interest, e.g., the thermistor in a thermostat directly measures
+the temperature and provides an unambiguous feedback measurement.  But many
+properties of interest can only be inferred from multiple measurements over
+time, especially where humans are concerned.</p>
+<p>The second key objective is understanding how to encode a goal as rules which
+can infer appropriate actions from a state estimate.  This can be as difficult
+at the inference problem, since the correct action may depend upon an implicit
+model of how the world is affected, which itself may not be a direct process.</p>
+<p>As before, these are intended to be research and exploration projects.
+Reasonable ambition is encouraged, so we&#8217;d like you to try new things, and
+failure is part of the process.  However, we will attempt to guide you away from
+directions which we think are unlikely to succeed or require unreasonable levels
+of effort.  But you are the ultimate arbiter of this: we won&#8217;t outright say no
+because we want you to learn to assess your own ambitions and skills and don&#8217;t
+want to stand in your way.</p>
+</div>
+<div class="section" id="milestones">
+<h2>2.7.2. Milestones<a class="headerlink" href="#milestones" title="Permalink to this headline">¶</a></h2>
+<p>(<em>Most of this is the same as the Project 2 milestones, except for bold-face text.</em>)</p>
+<ol class="arabic simple">
+<li><strong>Pair selection.</strong> We prefer that students work in pairs.  Solo workers and
+groups of three will need to make a pitch for an exception.  Groups of four
+are too large for this project.</li>
+<li><strong>Proposal.</strong> See <a class="reference internal" href="#project3-proposal"><span>Proposal Prompt</span></a> for specifics.  Ideas are cheap;
+it is in the exploration that the interesting work begins.  We recommend a
+strategy of committing to a general idea early and then thinking through as
+many details as possible at the drawing and planning stage.  We find this is
+much more efficient that jumping into building too soon.</li>
+<li><strong>Proof-of-concept.</strong> Nearly every proposal plan leads to a set of key
+questions which form the primary hurdles.  We recommend a strategy of
+choosing a quick experiment to tackle the most difficult part <em>first</em>.
+Either the unknowns will resolve into a feasible development plan or you can
+<em>fail fast</em> on one approach and revert to another.  Either way, you won&#8217;t
+have wasted effort on secondary development which becomes obviated by a
+problem.  The proof of concept will usually be a partial prototype, and in
+many cases it can be modified into a full prototype if successful.</li>
+<li><strong>Presentation and in-class critique</strong>. See <a class="reference internal" href="policies.html#critiques"><span>In-Class Project Reviews</span></a>. An important
+learning goal of the course is clear and efficient communication between
+disciplines, and the critiques provide an opportunity to hone your skills.
+Ideally, your project will be functional and you can perhaps give a live
+demonstration and succinct explanation.  If your project has failed, then
+please explain <em>why</em> and <em>how</em> it failed and whether there is a general
+lesson to be learned.  Our critiques will consider the relative difficulty of
+the attempt.  Ambitious project ideas frequently do not work out as expected
+but can still be reframed to expose an alternative interpretation as well as
+explain the hidden traps of the original idea.</li>
+<li><strong>Report</strong>. See <a class="reference internal" href="project_reports.html#project-report-requirements"><span>Project Reports</span></a>.  For all of our projects,
+the documentation is the most tangible and durable work product.  It is also
+an important stage for reviewing and reflecting on the process and outcome.
+The same considerations about success and failure outlined above also apply
+to the written documentation.  The report due date comes two days after
+critique to allow incorporating verbal feedback.</li>
+<li><strong>Peer evaluation</strong>.  Each individual should write a brief
+<a class="reference internal" href="peer_evaluation.html#peer-evaluation-form"><span>Project 1 Peer Evaluation Form</span></a> response about your partner or teammates to be
+submitted confidentially.  This serves two functions: it is the primary
+opportunity for you to reflect on the collaborative process itself, and it
+helps your instructors identify potential collaboration issues.</li>
+<li><strong>Disassembly</strong>.  Unfortunately, we do not have enough parts and resources to
+keep all projects intact even for the duration of the semester.  Unless your
+project is designated to keep for the open house show, please disassemble all
+components and return them to the storage bins.  This may seem obvious, but
+please be sure to complete all documentation prior to this point: students
+frequently end up taking something apart and then wishing they had one more
+photo or video.</li>
+</ol>
+</div>
+<div class="section" id="proposal-prompt">
+<span id="project3-proposal"></span><h2>2.7.3. Proposal Prompt<a class="headerlink" href="#proposal-prompt" title="Permalink to this headline">¶</a></h2>
+<p>(<em>Most of this is the same as the Project 2 prompt, except for bold-face text.</em>)</p>
+<p>The proposal is the counterpart to the final report: ideally, it raises all the
+questions which the project might answer, even though more will be discovered during
+the process.</p>
+<p>The primary review of the proposal will be verbal in-class commentary in order
+to provide the fastest possible approval.  To speed this along, please provide
+in-class a <em>one-page document which concisely summarizes the project plan</em>.
+Please also submit a <em>PDF version of the document to Blackboard</em> before the
+end of the day on which the proposal review occurs.  Only one document need be
+submitted per group, but be sure to include the names of all contributors.</p>
+<p>A good proposal will answer as many of the following questions as pertinent.
+These are prompts, not a checklist, so use your judgment as to how to formulate
+a brief proposal text or outline with supporting sketches.</p>
+<ol class="arabic simple">
+<li>What is your big idea, in a sentence or two?  <strong>In what sense is your
+prototype autonomous?  What kind of model of the world state is required?</strong></li>
+<li>If you apply <a class="reference internal" href="ideas.html#regressing-the-question"><span>why-how laddering</span></a>, can you
+identify an essential underlying question?  What is the simplest abstraction
+of your idea?</li>
+<li>Who is the audience?  This might include user, viewers, or passive bystanders.
+What is the experience of the audience?  What might they remember?</li>
+<li>Are there existing projects you have referenced?  Please include citations.</li>
+<li>What will your proof-of-concept entail?  Can you sketch it?  Can you sketch
+the engineering elements (circuits, mechanical drawings)?  Good drawings at
+this stage are invaluable, they can identify many potential problems much
+more efficiently than fabrication.</li>
+<li>How do you propose to divide the tasks among the team?  What <a class="reference internal" href="description.html#group-roles"><span>roles</span></a> will you each undertake and for which parts?</li>
+<li>What features do you specifically propose to <em>ignore</em>?  E.g., a project
+involving a wearable device could focus on sensing and actuation but choose
+to ignore battery operation in favor of a wired supply.  In general, we&#8217;d
+prefer you keep your workload under control by emphasizing interesting
+behavior or interactivity over fit and finish.</li>
+<li>What features do you specifically propose to <em>test</em>?  How will we know if it
+worked?</li>
+<li>How might the final project look?  Can you sketch it?</li>
+</ol>
+</div>
+<div class="section" id="summary-of-deliverables">
+<h2>2.7.4. Summary of Deliverables<a class="headerlink" href="#summary-of-deliverables" title="Permalink to this headline">¶</a></h2>
+<p>The following material is included in this brief by reference.  Please
+familiarize yourself with the details of the documentation requirements and
+schedule.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="project_reports.html#project-report-requirements"><span>Project Reports</span></a></li>
+<li><a class="reference internal" href="policies.html#lateness-policy"><span>Lateness Policy</span></a></li>
+<li><a class="reference internal" href="calendar.html#calendar"><span>Fall 2015 Calendar</span></a></li>
+</ul>
+</div></blockquote>
+<p>I&#8217;ve been refining the description of the project reports in response to the
+first project.  Specifically, the purpose of the report is to present the
+project as a completed artifact or demonstration.  The emphasis is on relating
+its performance to the human needs of the objectives and explaining the
+technical choices of the implementation.  The details of the development process
+are only important to the degree to which they explain specific features of the
+outcome.</p>
+<ol class="arabic simple">
+<li>In-class proposal review and supporting PDF file.</li>
+<li>In-class demonstration of proof-of-concept.</li>
+<li>In-class presentation of result for critique.</li>
+<li>Report zip file package as per <a class="reference internal" href="project_reports.html#project-report-requirements"><span>Project Reports</span></a></li>
+<li>Please keep the linked project video to less than <strong>two minutes</strong>.</li>
+<li>Fill in the Project 3 Peer Evaluation &#8216;test&#8217; on Blackboard.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.7. Project 3: Autonomous Machine</a><ul>
+<li><a class="reference internal" href="#objectives">2.7.1. Objectives</a></li>
+<li><a class="reference internal" href="#milestones">2.7.2. Milestones</a></li>
+<li><a class="reference internal" href="#proposal-prompt">2.7.3. Proposal Prompt</a></li>
+<li><a class="reference internal" href="#summary-of-deliverables">2.7.4. Summary of Deliverables</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="project2.html"
+                        title="previous chapter">2.6. Project 2: Temporal Machine</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="resources.html"
+                        title="next chapter">3. Resources</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="resources.html" title="3. Resources"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="project2.html" title="2.6. Project 2: Temporal Machine"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="assignments.html" >2. Assignments</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

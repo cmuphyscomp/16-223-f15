@@ -1,0 +1,114 @@
+.. _exercise-voltage-regulation:
+
+Exercise: Voltage Regulation
+----------------------------
+
+Objective
+^^^^^^^^^
+
+Test different types of voltage regulation components.
+
+Power supplies are the heart of any electronics project, as every
+circuit needs a source of energy, and usually with very specific
+electrical characteristics. Most of our circuits will require regulated
+DC supplies, with energy coming either from a battery or the building
+electrical system. Unless otherwise specified, *regulated* means the
+voltage is controlled to a constant level despite changes in the load.
+
+We will use two basic categories of voltage regulators: linear and
+switching.
+
+In brief, a linear regulator acts as a variable resistor governed by
+feedback to keep the output voltage at a fixed level. Linear regulators
+can only step voltages down, and the excess energy is dissipated as
+heat. So for example, a 5V linear regulator providing a 500 mA current
+from a 12V supply creates a 7V voltage drop. That represents 3.5 Watts
+of heat dissipated in the package, which typically means the package
+needs a good heatsink to carry that heat away.
+
+A switching regulator chops the input current at a high frequency and
+either pulses it through an inductor (a coil) to generate higher
+voltages via inductive effects, or filters it through capacitors and/or
+inductors to generate a lower voltage. The upside of the complexity is
+much higher efficiency, and hence less heat. The downside is the
+potential for supply noise, since the switching frequency can appear in
+the output. But the efficiency almost always outweighs the complexity in
+consumer applications, especially for battery circuits.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Wire up each circuit, beginning with the 7805 linear regulator. Be
+   very careful to observe the correct input polarity. You may
+   substitute a lab supply for the battery.
+#. Measure the unloaded outputs. Not all switching regulators perform
+   well without any load at all.
+#. Find a power resistor or component representing a reasonable load.
+   E.g., dissipating 100 mA from a 5V regulator can be accomplished
+   using a 0.5 Watt 50 ohm resistor, or a lamp or motor with similar
+   properties. (Hint: a half-watt 50 ohm resistor can be formed from two
+   quarter-watt 100 ohm resistors in parallel.)
+#. Measure the loaded output.
+#. For the switching regulators, using the oscilloscope try to observe
+   the switching rate as a high-frequency fluctuation on the output.
+   This signal might be 20-100 kHz.
+
+Comments
+^^^^^^^^
+
+In the first example of a linear regulator dropping a 12V input to a 5V
+output, the the load is only consuming 2.5 Watts of energy while the
+regulator dissipates 3.5 Watts, so this circuit is operating at only 42%
+efficiency. Linear regulator circuits are simple to use and inexpensive,
+so they are applicable for low-power applications or where efficiency
+and heating are not a problem. The primary advantage is they are
+potentially low-noise compared to switching regulators, so they often
+appear in high-fidelity audio applications.
+
+Despite the power inefficiency, we encourage you to use linear
+regulators such as the 7805 in your projects whenever feasible as they
+are low-cost and robust and well-suited to simple projects.
+
+In contrast, switching regulators typically operate as 85% efficiency or
+higher. The availability has been remarkably eased by the introduction
+of simple integrated circuits which implement the chopping and feedback
+function. Consumer 'wall-wart' power supplies used to only use simple
+linear regulation (or no regulation), but nearly all modern power
+supplies for consumer electronics are now switch-mode.
+
+A good debugging heuristic for any project is to begin solving problems
+by checking the power supply. There are many, many possible problems, so
+for example:
+
+#. overloading a power supply can cause the voltage to drop or current
+   limits to trip
+#. power supplies connect across every circuit subsystem, so signal
+   problems can be linked in subtle ways
+#. high-current signals from motors can create voltages in the ground
+   wires (“ground bounce”)
+#. digital supply noise can couple into analog circuits and inject noise
+#. etc., etc.
+
+|image0| |image1| |image2| |image3| |image4| |image5| |image6|
+
+Reference
+^^^^^^^^^
+
+#. `datasheet for 7805, 7508, 7512, 7515
+   regulators <http://www.onsemi.com/pub_link/Collateral/NCP7800-D.PDF>`__
+
+Other Files
+^^^^^^^^^^^
+
+#. EAGLE file: :download:`7805-regulator.sch`
+#. Fritzing file: :download:`voltage-regulation-step-down.fzz`
+#. Fritzing file: :download:`voltage-regulation-step-up-step-down.fzz`
+#. Fritzing file: :download:`voltage-regulation.fzz`
+
+.. |image0| image:: 7805-regulator-schem.png
+.. |image1| image:: voltage-regulation-step-down_bb.png
+.. |image2| image:: voltage-regulation-step-down_schem.png
+.. |image3| image:: voltage-regulation-step-up-step-down_bb.png
+.. |image4| image:: voltage-regulation-step-up-step-down_schem.png
+.. |image5| image:: voltage-regulation_bb.png
+.. |image6| image:: voltage-regulation_schem.png

@@ -1,0 +1,73 @@
+.. _exercise-MPU6050-IMU-I2C:
+
+Exercise: MPU6050 IMU I2C Module
+--------------------------------
+
+Objective
+^^^^^^^^^
+
+Communicate digital data between an Arduino and a MPU6050 inertial
+motion sensor over a |I2C| bus.
+
+Please be sure to review the general information about |I2C|
+and SPI in the previous exercise prior to starting this one.
+
+This exercise will use a `MPU6050 I2C Accelerometer/Gyro inertial sensor
+module from Sparkfun <https://www.sparkfun.com/products/11028>`__. This
+modules is based on the `InvenSense MPU-6050 Motion Processing
+Unit <https://cdn.sparkfun.com/datasheets/Components/General%20IC/PS-MPU-6000A.pdf>`__.
+`Example Arduino
+code <https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050>`__
+is available from github as part of the larger
+`i2cdevlib <https://github.com/jrowberg/i2cdevlib>`__, which provides
+drivers for many I\ :sup:`2`\ C devices.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download or find the complete `MPU6050_DMP6`_ sketch.  This is an example
+   from i2cdevlib, reorganized into a self-contained sketch. Be sure to fetch
+   all top-level files.
+#. Plug the IMU module into a breadboard and use solid wire to make the
+   following five connections from the Arduino to the module. Note
+   carefully that this module uses 3.3V, unlike the previous example:
+
+   #. 3.3V -> VCC
+   #. GND -> GND
+   #. A4 -> SDA
+   #. A5 -> SCL
+   #. D2 -> INT
+
+#. Attach the Arduino to your computer and install the sketch.
+#. Open the Arduino IDE Serial Monitor and make sure it is set to 115200
+   baud.
+#. Reset the Arduino. You should see a wakeup message on the console
+   followed by the following prompt:
+   ``Send any character to begin DMP programming and demo:``
+#. Type a character in the input box and press enter.
+#. You should see a rapid series of messages in the following form:
+   ``ypr    -87.92  74.39   1.85``
+#. Physically rotate the IMU and watch the numbers change.
+
+Comments
+^^^^^^^^
+
+The sketch is a relatively complex piece of software for a
+microcontroller, and it uses more than half of the available Arduino Uno
+program space. But it is also solving a complex example of processing 3D
+motion data.
+
+For a challenge, clone the original i2cdev library from github and
+install it in your Arduino IDE libraries path, then try compiling the
+original unmodified example.
+
+Sketch Folder
+^^^^^^^^^^^^^
+
+#. `MPU6050\_DMP6`_
+
+.. _MPU6050_DMP6: ../../../../Arduino/MPU6050_DMP6
+.. _Adafruit_PWM: ../../../../Arduino/Adafruit_PWM
+
+.. |I2C| replace:: I\ :sup:`2`\ C
+

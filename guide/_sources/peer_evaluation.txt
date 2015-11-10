@@ -1,7 +1,7 @@
 .. _peer-evaluation-form:
 
-Peer Evaluation Form
-====================
+Project 1 Peer Evaluation Form
+==============================
 
 The deliverable for each project includes a brief peer evaluation response to be
 submitted confidentially.  Please answer the following questions in your
@@ -25,3 +25,9 @@ evaluation.
 #. Take a moment to provide feedback on the project and its delivery. What
    elements of the project need work? Logistically, what would help the project
    run more smoothly?
+
+   
+Project 2 Peer Evaluation Form
+==============================
+
+The Project 2 Peer Evaluation Form is presented as a short survey on Blackboard.

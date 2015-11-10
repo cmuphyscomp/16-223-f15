@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.1. Exercise: Event-Loop Programming &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.2.2. Exercise: Resolution and Mapping" href="../resolution-and-mapping/resolution-and-mapping.html" />
+    <link rel="prev" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../resolution-and-mapping/resolution-and-mapping.html" title="2.2.2. Exercise: Resolution and Mapping"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../../unit2.html" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-event-loop-programming">
+<span id="id1"></span><h1>2.2.1. Exercise: Event-Loop Programming<a class="headerlink" href="#exercise-event-loop-programming" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.2.1.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Create several simultaneous signals to explore program event scheduling.</p>
+<p>The world is intrinsically a parallel, simultaneous place, but computers
+are serial, sequential devices. Even modern multi-core machines are
+still constructed around many small execution units rapidly performing
+many tiny computations in sequence. So bridging the gap between
+information in the physical world and as represented in a computation
+ultimately requires creating the illusion of simultaneity through
+careful attention to time within a program.</p>
+<p>The essence of multiprocessing is rapidly alternating between multiple
+tasks through some form of time-slicing. Operating systems perform this
+at the level of applications or threads, but on a tiny computer such as
+the Arduino we can do essentially the same at the level of individual
+I/O operations. So rather than initiating an I/O operation and waiting
+for it to finish, the time is recorded for when to next check the
+operation, and the program continues checking whether some other action
+is ready. This sequential testing for readiness is called <em>polling</em>, and
+this iteration is one form of an <em>event loop</em> or event-driven
+programming.</p>
+<p>This process also highlights that all digitized signals are sampled in
+time. It is useful if those samples are also periodic at a fixed rate,
+since that is what allows predictable filtering such as smoothing and
+boundary detection.</p>
+<p>The simplest form of polling is a synchronous system in which all
+computations run within a single fixed time cycle. However, in this
+example the input and output can run at very different rates, since each
+output must change at a different audio rate and the input changes at a
+much slower human control rate. So this example uses a form of
+asynchronous polling.</p>
+<p>The basic structure of our event loop will be built around a set of
+timers which are polled as fast as possible. Each timer is simply a
+timestamp with associated interval:</p>
+<div class="highlight-python"><div class="highlight"><pre>long next_output_time_1 = 0;        // timestamp in microseconds for when next to update output 1
+long next_output_time_2 = 0;        // timestamp in microseconds for when next to update output 2
+
+long output_interval_1 = 500;       // interval in microseconds between output 1 updates
+long output_interval_2 = 700;       // interval in microseconds between output 2 updates
+
+int output_state_1 = LOW;           // current state of output 1
+int output_state_2 = LOW;           // current state of output 2
+
+void loop()
+{
+  // read the current time in microseconds
+  long now = micros();
+
+  // Polled task 1 for output 1.  Check if the next_output_time_1 timestamp has
+  // been reached; if so then update the output 1 state.
+  if (now &gt; next_output_time_1) {
+
+    // reset the timer for the next polling point
+    next_output_time_1 = now + output_interval_1;
+
+    // toggle the output_state_1 variable
+    output_state_1 = !output_state_1;
+
+    // update output pin 1 with the new value
+    digitalWrite( outputPin1, output_state_1 );
+  }
+
+  // Polled task 2 for output 2.  Check if the next_output_time_2 timestamp has
+  // been reached; if so then update the output 2 state.
+  if (now &gt; next_output_time_2) {
+
+    // reset the timer for the next polling point
+    next_output_time_2 = now + output_interval_2;
+
+    // toggle the output_state_2 variable
+    output_state_2 = !output_state_2;
+
+    // update output pin 2 with the new value
+    digitalWrite( outputPin2, output_state_2 );
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.1.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Load and run the <a class="reference external" href="../../../../Arduino/EventLoopDemo">EventLoopDemo</a> sketch. The example program generates
+audio-frequency square waves at different pitches on pins 4 and 5 to
+demonstrate a simple event-loop control structure allowing parallel execution
+of two timed tasks. In a later step you will read an analog potentiometer
+input and use the input value to modulate the pitch by varying the waveform
+timing.</li>
+<li>Observe the initial outputs on an oscilloscope and measure the period
+of the waveforms.</li>
+<li>Design and construct an Arduino circuit incorporating a potentiometer
+for analog input and two audio speakers for digital output. The
+speakers can be driven by digital outputs using a ULN2803, attached
+the output pins defined in the sample sketch. The speaker drive
+circuit can use the same structure as the previous ULN2303 exercise,
+replacing the LED with the speaker. A small speaker is typically
+about 8&nbsp;ohms and can handle a fraction of a Watt; assuming 1/8&nbsp;Watt,
+the power supply voltage would be typically be about a volt above the
+ULN2803 forward drop, so start with a power supply voltage of 1.6V
+and experiment.</li>
+<li>Add an additional timed task to read the potentiometer at a slower
+rate.</li>
+<li>Add a simple linear mapping to update the output frequencies based on
+the potentiometer input value, i.e., map the analog input to the
+output intervals.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.2.1.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>The event loop example as shown is subject to variation in the sample
+rate termed <em>jitter</em> since each time stamp is computed from the current
+time rather than the previous time stamp. So variation in the execution
+time of each polling loop can create variation in the overall sampling
+rate. This can be fixed by computing new time stamps from the previous
+time stamps, but care must be taken to handle initialization correctly,
+e.g., checking whether the current time is very different from the time
+stamps.</p>
+<p>Experienced programmers will also recognize the possibility of creating
+a data object type representing a timed task, either as a C structure or
+a C++ class. This would reduce the repetition in the code.</p>
+</div>
+<div class="section" id="sketch-folder">
+<h2>2.2.1.4. Sketch Folder<a class="headerlink" href="#sketch-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/EventLoopDemo">EventLoopDemo</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.1. Exercise: Event-Loop Programming</a><ul>
+<li><a class="reference internal" href="#objective">2.2.1.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.1.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.2.1.3. Comments</a></li>
+<li><a class="reference internal" href="#sketch-folder">2.2.1.4. Sketch Folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../../unit2.html"
+                        title="previous chapter">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../resolution-and-mapping/resolution-and-mapping.html"
+                        title="next chapter">2.2.2. Exercise: Resolution and Mapping</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../resolution-and-mapping/resolution-and-mapping.html" title="2.2.2. Exercise: Resolution and Mapping"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../../unit2.html" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

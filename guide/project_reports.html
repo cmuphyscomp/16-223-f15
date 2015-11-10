@@ -6,15 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>2.1. Project Reports &mdash; 16-223 Introduction to Physical Computing</title>
+    <title>2.4. Project Reports &mdash; 16-223 Introduction to Physical Computing</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/guide.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-10-06',
+        VERSION:     '2015-11-10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +24,11 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
     <link rel="up" title="2. Assignments" href="assignments.html" />
-    <link rel="next" title="2.2. Project 1: One-in One-out" href="project1.html" />
-    <link rel="prev" title="2. Assignments" href="assignments.html" /> 
+    <link rel="next" title="2.5. Project 1: One-in One-out" href="project1.html" />
+    <link rel="prev" title="2.3.2. Exercise: Input Pattern Matching" href="ex/Arduino/input-matching/input-matching.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -39,10 +41,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="project1.html" title="2.2. Project 1: One-in One-out"
+          <a href="project1.html" title="2.5. Project 1: One-in One-out"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="assignments.html" title="2. Assignments"
+          <a href="ex/Arduino/input-matching/input-matching.html" title="2.3.2. Exercise: Input Pattern Matching"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="assignments.html" accesskey="U">2. Assignments</a> &raquo;</li> 
@@ -55,20 +57,22 @@
           <div class="body" role="main">
             
   <div class="section" id="project-reports">
-<span id="project-report-requirements"></span><h1>2.1. Project Reports<a class="headerlink" href="#project-reports" title="Permalink to this headline">¶</a></h1>
+<span id="project-report-requirements"></span><h1>2.4. Project Reports<a class="headerlink" href="#project-reports" title="Permalink to this headline">¶</a></h1>
 <p>All projects require an accompanying report document in <strong>PDF</strong> format.  An outline
 of specific prompt questions will be provided for each assignment, with a
 denotation of specific required and optional elements.  The following specifies
 the detailed formatting requirements for all reports.  The content itself should
 generally follow the <a class="reference internal" href="report_template.html#project-report-template"><span>Project Report Template</span></a>.</p>
 <ol class="arabic simple">
+<li>The purpose of the report is to present the project as a completed artifact
+or demonstration.  The emphasis is on relating its performance to the human
+needs of the objectives and explaining the technical choices of the
+implementation.  The details of the development process are only important to
+the degree to which they explain specific features of the outcome.</li>
 <li>All report documents must be submitted as PDF files.  Original document
 formats (.doc, Word, .tex, etc.) will be returned unread.</li>
 <li>Report documents must be submitted within a single zip file which also
 contains the implementation supporting code and engineering files.</li>
-<li>The zip file name must include a unique project identifier.  E.g. it should
-have a meaningful name (&#8216;talking-clock.zip&#8217;) not a generic name
-(&#8216;project.zip&#8217;).</li>
 <li>Each group must submit one joint report.  If a group member fails to fulfill
 their documentation role, the other group members should submit what they can
 on time and ask for an extension with an explanation.</li>
@@ -77,11 +81,10 @@ Individual grades may be adjusted from group grades if it becomes apparent
 that contribution is not equitable.  A separate confidential peer evaluation
 may be requested individually from each group member at the instructor&#8217;s
 discretion.</li>
-<li>Reports must generally include a statement of objectives, general descriptive
-text, narrative, results, photos, technical documentation, and citations of
+<li>Reports must generally include a statement of objectives, general
+description, results, photos, technical documentation, and citations of
 related work.</li>
-<li>Any project photos must be embedded within the PDF document, and provided at
-a print-ready resolution (e.g. 300dpi).</li>
+<li>Any project photos must be embedded within the PDF document.</li>
 <li>Project videos must be uploaded to the hosting service of your choice and an
 <em>active, clickable link</em> provided within the body of the PDF report.  Please
 check the documentation of your authoring software if you need help making
@@ -116,11 +119,11 @@ design won&#8217;t be rewarded, so please use your effort wisely.</li>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="assignments.html"
-                        title="previous chapter">2. Assignments</a></p>
+  <p class="topless"><a href="ex/Arduino/input-matching/input-matching.html"
+                        title="previous chapter">2.3.2. Exercise: Input Pattern Matching</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="project1.html"
-                        title="next chapter">2.2. Project 1: One-in One-out</a></p>
+                        title="next chapter">2.5. Project 1: One-in One-out</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -148,10 +151,10 @@ design won&#8217;t be rewarded, so please use your effort wisely.</li>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="project1.html" title="2.2. Project 1: One-in One-out"
+          <a href="project1.html" title="2.5. Project 1: One-in One-out"
              >next</a> |</li>
         <li class="right" >
-          <a href="assignments.html" title="2. Assignments"
+          <a href="ex/Arduino/input-matching/input-matching.html" title="2.3.2. Exercise: Input Pattern Matching"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="assignments.html" >2. Assignments</a> &raquo;</li> 
@@ -159,7 +162,7 @@ design won&#8217;t be rewarded, so please use your effort wisely.</li>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-10-06.
+      Last updated on 2015-11-10.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

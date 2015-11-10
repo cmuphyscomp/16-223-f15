@@ -9,6 +9,33 @@ There are a huge number of projects related to physical computing documented
 online.  The following resources represent a tiny slice of where to look for
 inspiring examples.
 
+Fall 2015 Research Talks
+------------------------
+
+The following projects were presented in-class by students in Fall 2015.
+
+  * `Cosmic Quilt <http://theprincipals.us/cosmic-quilt>`__
+  * `Aurora LED Wall <http://thecolorofthin.gs/post/25415779978/the-aurora-led-wall-a-4-foot-by-8-foot>`__
+  * `x.pose <http://xc-xd.com/x-pose>`__
+  * `Helio Curve <http://www.reubenmargolin.com/waves/Helio/Helio_video.html>`__
+  * `SuperShoes <http://www.tei-conf.org/13/sites/default/files/page-files/Dand.pdf>`__, `video <https://vimeo.com/90973967>`__
+  * `Fiber Optic Ocean <https://vimeo.com/139216831>`__
+  * `Penguins Mirror <http://www.bitforms.com/rozin/penguins-mirror>`__, `video <https://vimeo.com/129674054>`__
+  * `Coca-Cola Small World <http://www.coca-colacompany.com/stories/happiness-without-borders>`__
+  * `Weave Mirror <http://www.smoothware.com/danny/weavemirror.html>`__
+  * `airFIELD <http://airfieldsculpture.com/index.html>`__
+  * `Cheers <http://dhairyadand.com/works/cheers>`__
+  * `inFORM shapeshifting display <http://www.fastcodesign.com/3021522/innovation-by-design/mit-invents-a-shapeshifting-display-you-can-reach-through-and-touch?partner=rss>`__
+  * `Amazon Drones <https://www.nextnature.net/2013/12/delivery-drones-are-coming/>`__
+  * `Gesture Vocalizer <http://signlanguagewitharduino.tumblr.com/>`__
+  * `Database <https://vimeo.com/124687054/>`__
+  * `Liftware <https://www.liftware.com/>`__
+  * `The Marble Answering Machine by Durrell Bishop <http://dataphys.org/list/durrell-bishops-marble-answering-machine/>`__, `video <https://vimeo.com/19930744>`__, `more <https://ccdc11.wordpress.com/2011/02/15/durrell-bishops-marble-answering-machine/>`__
+  * `Botanicus Interacticus <http://www.disneyresearch.com/project/botanicus-interacticus-interactive-plant-technology/>`__
+  * `Lily Camera <https://www.lily.camera>`__, `video <https://www.youtube.com/watch?v=4vGcH0Bk3hg>`__
+  * `Tactum <http://www.madlab.cc/tactum>`__
+  * `The Magic Carpet <https://vimeo.com/104787763>`__
+
 
 Pinterest
 ---------

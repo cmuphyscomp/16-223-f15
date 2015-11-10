@@ -1,0 +1,58 @@
+.. _exercise-servo-sweep:
+
+Exercise: Servo Sweep
+---------------------
+
+Objective
+^^^^^^^^^
+
+Control a hobby servomotor module.
+
+Hobby servos are feedback-controlled motors which move an output shaft
+to a specified position. Internally they use a potentiometer to measure
+the actual position. The internal circuit compares the actual and
+commanded position and generates positive and negative motor current
+pulses to operate a tiny gearmotor. They are a very convenient modular
+way to create controlled physical motion.
+
+The commanded position is specified using a specific format of PWM in
+which pulses with duration approximately 1-2 ms repeat at approximately
+50 Hz. The different pulse widths correspond to different positions.
+Note that this a significantly different waveform than the motor PWM,
+since the *duty cycle* is always very low, i.e., the pulse on-time is
+always much shorter than the cycle time.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Load and run the Servo/Sweep sketch. This uses the Servo library, an
+   included add-on to the base library.
+#. Observe the servo motion.
+#. Observe the PWM command signal on the oscilloscope.
+#. Try varying the numbers governing the motion limits.
+#. Try varying the delay to change the speed.
+#. Determine the maximum speed possible.
+
+Comments
+^^^^^^^^
+
+Note that trajectories and speed control are only possible by issuing
+position commands at intervals.
+
+As a challenge, rewrite the program to avoid ``delay()`` and operate two
+servos simultanously on different trajectories. This will be taken up in
+more detail in an upcoming exercise.
+
+.. image:: servo-sweep_bb.png
+   :width: 75%
+
+.. image:: servo-sweep_img.jpg
+
+.. image:: servo-sweep_schem.png
+   :width: 75%
+
+
+Other Files
+^^^^^^^^^^^
+
+#. Fritzing file: :download:`servo-sweep.fzz`

@@ -43,6 +43,7 @@ probably many will be obsolete by the time you read this.
    + http://opencircuitdesign.com/xcircuit/goodschem/goodschem.html
    + http://fritzing.org/learning/
    + https://learn.sparkfun.com/tutorials/using-eagle-schematic
+   + commercial browser-based `CircuitLab <https://www.circuitlab.com/>`__
 
 #. identifying electronic components
 

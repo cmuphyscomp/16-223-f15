@@ -1,0 +1,66 @@
+.. _exercise-WS2801-LED-SPI:
+
+Exercise: WS2801 RGB LED SPI Module
+-----------------------------------
+
+Objective
+^^^^^^^^^
+
+Communicate digital data between an Arduino and a WS2801 LED RGB module
+using an SPI bus.
+
+Please be sure to review the general information about I\ :sup:`2`\ C
+and SPI in the `Adafruit PWM I2C
+Module <../Adafruit-PWM-I2C/index.html>`__ exercise prior to starting
+this one.
+
+This exercise will use a `RGB LED strip
+module <http://www.bestlightingbuy.com/12v-ws2801-digital-intelligent-led-strip.html>`__
+based on the `WS2801 constant current LED
+driver <http://www.adafruit.com/datasheets/WS2801.pdf>`__, also
+available in a `variety of other form
+factors <http://www.adafruit.com/search?q=ws2801&b=1>`__.
+
+These modules accept a 24-bit color value over an SPI bus, then begin to
+relay any additional bits to the downstream SPI connection. This allows
+daisy-chaining many RGB LEDs into an individually addressable array of
+pixels. Once a short pause occurs in the input data, the received values
+are transferred to the internal PWM generator. This allows simultanous
+update of the whole chain for clean animation.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download or find the complete `WS2801_test`_ sketch.
+#. Plug the RGB module into a breadboard and use solid wire to make the
+   following three connections from the Arduino to the module. Note
+   carefully that this module uses 12V; be very careful to keep the 12V
+   wiring away from the Arduino:
+
+   #. PIN11 (MOSI) -> DAT
+   #. PIN13 (SCK) -> CLK
+   #. GND -> GND
+
+   MOSI is an acronym for Master-Out Slave-In. Since this example only
+   outputs data and does not receive, MISO is left unconnected.
+#. Set up a bench supply for 12V and attach it to the Arduino GND and
+   the 12V input on the module.
+#. Attach the Arduino to your computer and install the sketch.
+#. Observe the changing colors.
+#. Using an oscilloscope, observe the clock and data lines. The data
+   rate is fast, so you should see one very short burst per output
+   frame.
+
+Comments
+^^^^^^^^
+
+It is possible to control hundreds of LEDs on a single strand. This is becoming
+a very popular way to produce architectural lighting and persistence-of-vision
+(POV) displays.
+
+Sketch Folder
+^^^^^^^^^^^^^
+
+#. `WS2801_test`_
+
+.. _WS2801_test: ../../../../Arduino/WS2801_test
