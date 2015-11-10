@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.9. Exercise: Getting Started on the Raspberry Pi &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.3. Unit 3 Exercises: Algorithms and State" href="../../../unit3.html" />
+    <link rel="prev" title="2.2.8. Exercise: Electromechanical Oscillation" href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../unit3.html" title="2.3. Unit 3 Exercises: Algorithms and State"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html" title="2.2.8. Exercise: Electromechanical Oscillation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-getting-started-on-the-raspberry-pi">
+<span id="exercise-rpi-getting-started"></span><h1>2.2.9. Exercise: Getting Started on the Raspberry Pi<a class="headerlink" href="#exercise-getting-started-on-the-raspberry-pi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.2.9.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Learn basic usage of a Raspberry Pi: connecting to a laptop or monitor,
+running programs, updating the system.</p>
+<p>The Raspberry Pi exercises assume you have the following baseline
+materials:</p>
+<ol class="arabic simple">
+<li>Raspberry Pi B+ or Raspberry Pi 2</li>
+<li>power supply cable (USB micro)</li>
+<li>microSD card containing course Raspbian image</li>
+<li>Pi Cobbler or T-Cobbler breakout board w/ribbon cable</li>
+<li>breadboard</li>
+<li>ideally: wall-wart power supply for Raspberry Pi (5.0V to 5.25V, min
+1 Amp). If not available a laptop can power the Pi, but this is not
+an ideal solution.</li>
+<li>occasional use: powered speakers or earphones</li>
+</ol>
+<p>If you have a blank microSD card (minimum 8G) onto which you would like
+to load a Raspberry Pi operating system, we maintain several customized
+images in a <a class="reference external" href="https://cmu.box.com/s/o08zhb7vt26bch2akklb">folder on box.com accessible to the CMU
+community</a>. Please see
+the README.txt file for notes on the current versions and links to
+instructions for writing the image file to a card.</p>
+<p>If using from a cluster laptop:</p>
+<ol class="arabic simple">
+<li>short Ethernet cable</li>
+<li>Ethernet adapter (Thunderbolt or USB)</li>
+</ol>
+<p>If using with a monitor:</p>
+<ol class="arabic simple">
+<li>HDMI monitor and HDMI cable</li>
+<li>USB keyboard and mouse</li>
+<li>USB WiFi adapter</li>
+</ol>
+</div>
+<div class="section" id="overview">
+<h2>2.2.9.2. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://www.raspberrypi.org/">Raspberry Pi</a> is a powerful
+microcontroller which runs the Linux operating system. We have both two
+versions which are very similar physically, but with different
+computational power: the Raspberry Pi B+ with 512&nbsp;Mb RAM and a
+single-core ARM Cortex-A6 CPU, and the newer Raspberry Pi 2 with 1024&nbsp;Mb
+RAM and a quad-core ARM Cortex-A7. Both have a 40-pin connector for
+hardware I/O. A Raspberry Pi boots from a microSD card which acts as its
+hard drive. It is about as powerful as a low-end cell phone, which puts
+it orders of magnitude more complex than an Arduino, but much less
+capable than a current laptop.</p>
+<p>The Raspberry Pi is a vastly more powerful computer than the Arduino and
+has access to a vast array of Linux software, much of which is easily
+available in packaged form. It makes it possible to easily embed
+computer vision, audio processing, networking, data logging, 3D
+graphics, web services, etc. in a small device.</p>
+<p>The downside of this is increased complexity. Unlike the Arduino, it
+takes a few tens of seconds to boot up. Programs can be written using
+many languages but the programming environment generally lacks the
+simplicity of the Arduino IDE.</p>
+<p>We have tried to bundle a rich set of tools in a standard system to make
+it as easy as we can to get started. We have the [wiringPi] object for
+Pd which can directly control hardware I/O pins. For those so inclined,
+the wiringPi-Python library allows easy programming in Python. If you
+want to blend the two, the [pdpython] object enables building mixed
+systems. And it is also possible to program in C, C++, Javascript, Perl,
+e.g., any major language available for Linux.</p>
+</div>
+<div class="section" id="interaction-with-the-pi">
+<h2>2.2.9.3. Interaction with the Pi<a class="headerlink" href="#interaction-with-the-pi" title="Permalink to this headline">¶</a></h2>
+<p>This exercise is about becoming familiar with the infrastructure and
+getting to the point of basic usability. There are a couple of different
+ways in which people use the Pi:</p>
+<p><strong>As a standalone computer.</strong> It is possible to plug a monitor,
+keyboard, mouse, and network port directly into a Pi and just treat it
+like a desktop computer. The upside is the relative simplicity of
+getting started and the possibility of generating 3D graphics directly
+on a monitor. The downside is that the Pi is a slow computer, and
+burdening it with generating a desktop display makes it feel slow. Plus
+needing all the accessories defeats some of the point of using a tiny
+computer. We only recommend this mode as a startup step or for a
+disconnected system off the network.</p>
+<p><strong>As a X11 client.</strong> The X11 system dates back to the 1980s but is still
+a viable means for running graphical user interfaces across the network.
+The laptop runs an X11 server (e.g. XQuartz.app) which handles drawing
+on the screen on behalf of a program running on the Pi, communicating
+over the network via SSH. This method works well for running Pure Data
+on the Pi from a laptop. This method can work over WiFi, but is much
+more reliable on a direct Ethernet connection.</p>
+<p><strong>As a SSH server.</strong> Much of the Pi can be operated from the command
+line. An ssh client on a laptop can connect to the Pi for an interactive
+console session. This works over even a slow network connection, and
+works fine for text editors with console modes (e.g. emacs).</p>
+<p><strong>As a remote desktop.</strong> It is possible to use a standard remote desktop
+interface on a laptop to open the Raspberry Pi desktop as a window. This
+can be familiar, but also can feel slow since the Pi is still generating
+a full display. The advantage is the minimal amount of hardware, since
+the only accessory needed is a network connection. This is really only a
+usable method across a direct Ethernet connection; the WiFi will be
+unusably slow.</p>
+<p><strong>As a Web server.</strong> We have installed Node-RED, which can be launched
+to provide a web-based programming interface. This is not used in the
+course exercises, but might be viable for advanced students seeking to
+integrate the Pi hardware with web services.</p>
+</div>
+<div class="section" id="data-storage-on-the-pi">
+<h2>2.2.9.4. Data Storage on the Pi<a class="headerlink" href="#data-storage-on-the-pi" title="Permalink to this headline">¶</a></h2>
+<p>We have installed an updatable image of the course materials on the Pi
+microSD, so it should be possible to work through the exercises as-is.
+But once you begin copying the templates and generating your own project
+code and data, you&#8217;ll want ways to get your personal files on and off
+the Pi.</p>
+<p><strong>Using shared folders.</strong> We have set up a Samba server on the Pi which
+allows drag and drop file access from a laptop.</p>
+<p><strong>Using a USB drive.</strong> The Pi can mount filesystems from USB sticks and
+external hard drives.</p>
+<p><strong>Using a SFTP client.</strong> Desktop and command-line SFTP clients (e.g.
+Fugu.app or sftp) can remotely access the Pi filesystem. In many ways,
+this is more reliable than the Samba system, since there is no
+persistent connection. Sftp is better for transferring individual files
+rather than nested folders.</p>
+<p><strong>Using rsync or unison.</strong> These are programs which perform single- or
+bi-directional file synchronization between a laptop and the Pi, but
+which require some careful configuration. These are suitable for nested
+folders and large sets of files.</p>
+</div>
+<div class="section" id="maintenance-of-the-pi">
+<h2>2.2.9.5. Maintenance of the Pi<a class="headerlink" href="#maintenance-of-the-pi" title="Permalink to this headline">¶</a></h2>
+<p>The Linux system on the Pi is a complex infrastructure involving many
+parts which can be individually updated. Your program is always one of
+many.</p>
+<p>We have provided an update system (the &#8216;puppet&#8217; system) which can help
+with keeping your Pi up to date as the course evolves.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.9.6. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<p>We will walk through these steps as a class demonstration, since there
+are many steps which are hard to document.</p>
+<p><strong>Preparation.</strong> Gather the materials listed above. Install your microSD
+card.</p>
+<p><strong>Getting connected.</strong> If using a cluster laptop, install the Ethernet
+adapter and attach an Ethernet cable from it to the Pi.</p>
+<p><strong>First contact using ssh.</strong> If using a cluster laptop, configure as
+follows:</p>
+<ol class="arabic simple">
+<li>Open System Preferences/Network and configure the Thunderbolt
+Ethernet as follows: Configure IPv4 Manually, IP Address 192.168.2.1,
+Subnet mask 255.255.255.0.</li>
+<li>Open System Preferences/Sharing and enable Internet Sharing so the
+laptop can bridge the Pi to the internet. Enable the &#8220;Internet
+Sharing&#8221; setting and set it to share from Wi-Fi to Thunderbolt
+Ethernet.</li>
+</ol>
+<p>This particular configuration takes advantage of the fact that OS X
+defaults to assigning addresses in the 192.168.2.x subnet when using
+Internet Sharing. However, if you are using Windows or wish to use a
+different setup, the network configuration of the Pi is stored in the
+interfaces.txt file in a FAT32 partition on the microSD card. This can
+be changed as needed using a normal text editor when the card is
+attached to a laptop.</p>
+<p>Attach power to the Pi and watch the lights flicker as it boots. Try a
+command-line ssh connection from a Terminal window. The Pi is
+preconfigured to use address 192.168.2.3, so from a Terminal window try
+the following: <code class="docutils literal"><span class="pre">ssh</span> <span class="pre">pi&#64;192.168.2.3</span></code>. If successful, you&#8217;ll see a
+password prompt: the default password is <code class="docutils literal"><span class="pre">raspberry</span></code>. If successful,
+you&#8217;ll see a Linux command prompt. Try <code class="docutils literal"><span class="pre">ls</span> <span class="pre">-l</span></code> to get a listing of
+files.</p>
+<p><strong>First contact using monitor.</strong> If using a monitor, connect the HDMI
+monitor, USB keyboard and mouse, and then attach power to the Pi. You
+should see a stream of boot messages on the screen culminating in a
+login prompt. The default username is <code class="docutils literal"><span class="pre">pi</span></code> and password is
+<code class="docutils literal"><span class="pre">raspberry</span></code>. If successful, you should see a Linux desktop.</p>
+<p><strong>Graphical operation using X11 over ssh.</strong> If using a cluster laptop,
+log out of the console connection, and the log back in with the -X flag:
+<code class="docutils literal"><span class="pre">ssh</span> <span class="pre">-X</span> <span class="pre">pi&#64;192.168.2.3</span></code>. You&#8217;ll again see a Linux command prompt. Try
+the <code class="docutils literal"><span class="pre">xterm</span></code> command; the laptop should automatically launch XQuartz
+and open a window with a terminal emulator. If that works, try the
+<code class="docutils literal"><span class="pre">pd</span></code> command; it should launch Pure Data with windows appearing on the
+laptop.</p>
+<p><strong>Updating using the puppet system.</strong> If using a cluster laptop, try the
+following command to check your network connectivity:
+<code class="docutils literal"><span class="pre">ping</span> <span class="pre">www.cmu.edu</span></code>. If that fails, you&#8217;ll need to debug the
+network connection. The <code class="docutils literal"><span class="pre">ifconfig</span></code> command will show you the current
+network configuration on the Pi. Other useful network commands:
+<code class="docutils literal"><span class="pre">hostname</span> <span class="pre">-I</span></code> to check the current IP address, <code class="docutils literal"><span class="pre">host</span> <span class="pre">www.cmu.edu</span></code> to
+test name service, and <code class="docutils literal"><span class="pre">dig</span> <span class="pre">www.cmu.edu</span></code> to test name service in
+detail. (For details: <code class="docutils literal"><span class="pre">man</span> <span class="pre">dig</span></code> to read the manual page).</p>
+<p>If your Pi is able to connect to the internet, try running an update
+with <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pi_update</span> <span class="pre">--course</span></code>. That will update the contents of the
+<code class="docutils literal"><span class="pre">/opt/cmuphyscomp/physcomp-f15/</span></code> folder to the current course
+materials. To run all available updates, you may use
+<code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pi_update</span></code>, but that can take a few minutes.</p>
+<p><strong>Graphical operation using RDP.</strong> If using a cluster laptop, launch
+&#8220;Remote Desktop Connection.app&#8221; and enter 192.168.2.3 for Computer. You
+may need to confirm Connect at a security warning. You should then see a
+Login to xrdp window, enter pi and raspberry as username and password.
+It should then proceed to show a Linux LXDE desktop within the RDC
+window. You can log out using the red button at lower right. It is also
+possible to use &#8220;Microsoft Remote Desktop.app&#8221;: you&#8217;ll need to create a
+new connection but leave the Credentials section blank.</p>
+<p><strong>Getting files on and off the Pi using Samba.</strong> If using a cluster
+laptop, open a Finder window and look under the Shared list on the
+sidebar. Select raspberry and click Connect As.. and enter the
+pi/raspberry username and login. It should open a folder representing
+the pi home folder on the Pi; you can drag and drop to copy files back
+and forth.</p>
+<p><strong>Resizing the filesystem.</strong> The course system image is sized to fit on
+a 4Gb card, but has likely been written to a card larger than 4Gb. You
+can check whether it has been properly expanded to make use of all
+available space by running <code class="docutils literal"><span class="pre">df</span> <span class="pre">-h</span> <span class="pre">/</span></code> and seeing whether the size
+column still says 3.6G or is a larger number commensurate with your
+actual card. If it needs to be resized, run <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">raspi-config</span></code> and
+select <code class="docutils literal"><span class="pre">1</span> <span class="pre">Expand</span> <span class="pre">Filesystem</span></code> at the menu, followed by interface item
+<code class="docutils literal"><span class="pre">Finish</span></code>, then confirm an immediate reboot.</p>
+<p><strong>Enabling the Pi Camera or SPI ports.</strong> The drivers for these devices
+are not enabled by default. To turn then on, run
+<code class="docutils literal"><span class="pre">sudo</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">raspi-config</span></code> and select either or both of
+<code class="docutils literal"><span class="pre">5</span> <span class="pre">Enable</span> <span class="pre">Camera</span></code> and <code class="docutils literal"><span class="pre">8</span> <span class="pre">Advanced</span> <span class="pre">Options</span></code> followed by <code class="docutils literal"><span class="pre">A6</span> <span class="pre">SPI</span></code>.</p>
+<p><strong>Installing openFrameworks.</strong> The <a class="reference external" href="http://www.openframeworks.cc/">openFrameworks
+libraries</a> are not included by default
+in the newer system images, but can be downloaded and compiled directly
+on your Pi 2. If you would like to work with openFrameworks, a script is
+provided to build it in /opt/openFrameworks by running
+<code class="docutils literal"><span class="pre">sudo</span> <span class="pre">setup_openframeworks</span></code>. It will take some time to run.</p>
+<p><strong>Shutting down the Pi.</strong> It is best to do a proper shutdown on the Pi
+rather than just unplugging it to avoid corrupting the memory card. From
+a command line enter <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.9. Exercise: Getting Started on the Raspberry Pi</a><ul>
+<li><a class="reference internal" href="#objective">2.2.9.1. Objective</a></li>
+<li><a class="reference internal" href="#overview">2.2.9.2. Overview</a></li>
+<li><a class="reference internal" href="#interaction-with-the-pi">2.2.9.3. Interaction with the Pi</a></li>
+<li><a class="reference internal" href="#data-storage-on-the-pi">2.2.9.4. Data Storage on the Pi</a></li>
+<li><a class="reference internal" href="#maintenance-of-the-pi">2.2.9.5. Maintenance of the Pi</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.9.6. Steps and observations</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html"
+                        title="previous chapter">2.2.8. Exercise: Electromechanical Oscillation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../unit3.html"
+                        title="next chapter">2.3. Unit 3 Exercises: Algorithms and State</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../../unit3.html" title="2.3. Unit 3 Exercises: Algorithms and State"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html" title="2.2.8. Exercise: Electromechanical Oscillation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

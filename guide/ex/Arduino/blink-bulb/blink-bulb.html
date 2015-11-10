@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.20. Exercise: Blink Bulb &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.21. Exercise: Blink Motor" href="../blink-motor/blink-motor.html" />
+    <link rel="prev" title="2.1.19. Exercise: Coding, Compiling, Deploying" href="../coding-compiling-deploying/coding-compiling-deploying.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../blink-motor/blink-motor.html" title="2.1.21. Exercise: Blink Motor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../coding-compiling-deploying/coding-compiling-deploying.html" title="2.1.19. Exercise: Coding, Compiling, Deploying"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-blink-bulb">
+<span id="id1"></span><h1>2.1.20. Exercise: Blink Bulb<a class="headerlink" href="#exercise-blink-bulb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.20.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Drive a light bulb from an Arduino program.</p>
+<p>A microcontroller isn&#8217;t very useful without some kind of hardware
+attached. This exercise introduces driving an incandescent bulb from a
+digital signal. The transistor is used as a switch to control a higher
+current flow through the bulb than the Arduino output pin can sink, and
+at a voltage unsafe for the Arduino.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.20.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Adjust the lamp power supply for a safe full-on voltage. (Many lab
+incandescent lamps are designed for less than than the 12V shown on
+the schematic.)</li>
+<li>Note that pin 13 is still connected to the onboard LED. Observe the
+bulb and LED activity.</li>
+<li>Add additional <code class="docutils literal"><span class="pre">digitalWrite()</span></code> and <code class="docutils literal"><span class="pre">delay()</span></code> statements to
+create a different blink pattern.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.20.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>This simple example cannot drive two separate patterns on two pins
+simultaneously, since it just stalls during <code class="docutils literal"><span class="pre">delay()</span></code>. Much of the
+challenge of programming a multi-function Arduino program comes down to
+structuring control flow so the program never stalls so it can service
+multiple inputs and outputs simultaneously.</p>
+<p>For a challenge, restructure this program to use <code class="docutils literal"><span class="pre">millis()</span></code> to test
+for the loop cycles on which to change the output state, then add a
+second channel of output with different timing. This will covered in
+more detail in a later exercise.</p>
+<a class="reference internal image-reference" href="../../../_images/blink-bulb_bb.png"><img alt="../../../_images/blink-bulb_bb.png" src="../../../_images/blink-bulb_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/blink-bulb_img.jpg" src="../../../_images/blink-bulb_img.jpg" />
+<img alt="../../../_images/blink-bulb_schem.png" src="../../../_images/blink-bulb_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.20.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/blink-bulb.fzz"><code class="xref download docutils literal"><span class="pre">blink-bulb.fzz</span></code></a></li>
+<li>EAGLE file: <a class="reference download internal" href="../../../_downloads/blink-bulb.sch"><code class="xref download docutils literal"><span class="pre">blink-bulb.sch</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.20. Exercise: Blink Bulb</a><ul>
+<li><a class="reference internal" href="#objective">2.1.20.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.20.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.20.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.20.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../coding-compiling-deploying/coding-compiling-deploying.html"
+                        title="previous chapter">2.1.19. Exercise: Coding, Compiling, Deploying</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../blink-motor/blink-motor.html"
+                        title="next chapter">2.1.21. Exercise: Blink Motor</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../blink-motor/blink-motor.html" title="2.1.21. Exercise: Blink Motor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../coding-compiling-deploying/coding-compiling-deploying.html" title="2.1.19. Exercise: Coding, Compiling, Deploying"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

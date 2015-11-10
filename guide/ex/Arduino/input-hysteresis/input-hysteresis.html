@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.3.1. Exercise: Input Hysteresis &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.3. Unit 3 Exercises: Algorithms and State" href="../../../unit3.html" />
+    <link rel="next" title="2.3.2. Exercise: Input Pattern Matching" href="../input-matching/input-matching.html" />
+    <link rel="prev" title="2.3. Unit 3 Exercises: Algorithms and State" href="../../../unit3.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../input-matching/input-matching.html" title="2.3.2. Exercise: Input Pattern Matching"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../../unit3.html" title="2.3. Unit 3 Exercises: Algorithms and State"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit3.html" accesskey="U">2.3. Unit 3 Exercises: Algorithms and State</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-input-hysteresis">
+<span id="id1"></span><h1>2.3.1. Exercise: Input Hysteresis<a class="headerlink" href="#exercise-input-hysteresis" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note: this is a new exercise, please provide feedback on errors and
+clarity.</strong></p>
+<div class="section" id="objective">
+<h2>2.3.1.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Understand the application of a single state variable to produce
+<a class="reference external" href="https://en.wikipedia.org/wiki/Hysteresis">hysteresis</a>, the
+time-based dependence of a system&#8217;s output on present <strong>and past</strong>
+inputs.</p>
+<p>Hysteresis arises in a process when internal state causes the output
+response to vary based on the history of the input. It can be a useful
+property to engineer into systems involving thresholds in order to avoid
+unwanted ambiguous behavior. For example, a thermostat typically turns
+on when the temperature drops somewhat below the target and keeps the
+furnace running until the temperature is somewhat above the target. This
+keeps the furnace from cycling on and off too rapidly.</p>
+<p>However, the phenomenon can also interfere with control of mechanical
+systems. Most mechanical transmissions exhibit some degree of
+<a class="reference external" href="https://en.wikipedia.org/wiki/Backlash_%28engineering%29">backlash</a>,
+e.g. the slight gap between gear teeth, for which changing the direction
+of torque causes the contact to be lost and zero torque to be
+transmitted for a short displacement until load contact is
+re-established. The extra state variable is the relative position of the
+parts, which are ideally intended to have a fixed relationship. This can
+lead to motor chatter when trying to control an exact position with both
+positive and negative torques.</p>
+<p>This example presents a simple light-responsive system which
+incorporates hysteresis. This might be a model for the behavior of a
+light-sensitive streetlight to allow it to turn off at dusk without
+oscillating in response to its own illumination.</p>
+</div>
+<div class="section" id="state-transition-graph">
+<h2>2.3.1.2. State Transition Graph<a class="headerlink" href="#state-transition-graph" title="Permalink to this headline">¶</a></h2>
+<p>This graph represents a set of discrete states modelled by the system.
+States are illustrated as ovals and transitions as arrows. Each state
+can have an associated output, in this case the LED. Transitions between
+states are defined by condition rules. There is no representation of
+time in this graph; transitions are assumed to trigger instantaneously.</p>
+<p class="graphviz">
+<img src="../../../_images/graphviz-9d8f1f74c17655af2e71ee270d5412ec3342921a.png" alt="// To compile:
+// dot -T png input_hysteresis_state_transition_diagram.dot -o input_hysteresis_state_transition_diagram.png
+
+digraph input_hysteresis {
+	node [fontsize=10]
+	edge [fontsize=8]
+	dpi=&quot;72&quot;
+	size=&quot;5,5!&quot;
+	
+	// declare all nodes
+	WAITING_FOR_LIGHT [ label = &quot;state WAITING_FOR_LIGHT\nLED is ON\n(world is perceived to be dark)&quot;, color=&quot;blue&quot; ]
+	WAITING_FOR_DARK  [ label = &quot;state WAITING_FOR_DARK\nLED is OFF\n(world is perceived to be light)&quot;, color=&quot;#00ffff&quot; ]
+
+	// declare all edges with labels
+	WAITING_FOR_DARK -&gt; WAITING_FOR_LIGHT [ label = &quot;transition rule:\nlight input &lt; dark_threshold&quot; ]
+	WAITING_FOR_LIGHT -&gt; WAITING_FOR_DARK [ label = &quot;transition rule:\nlight input &gt; light_threshold&quot; ]
+
+	label = &quot;InputHysteresis\nState Transition Diagram&quot;
+}" />
+</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.3.1.3. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Set up an Arduino UNO with a photoresistor between +5V and A0 and a
+4.7K resistor between A0 and GND, e.g. a basic voltage divider to
+sense a varying light level using A0. Check with a DMM that the A0
+voltage varies over a wide range with changes in light level. You may
+need to choose a different fixed resistor depending on your specific
+photoresistor.</li>
+<li>Upload the <a class="reference external" href="../../../../Arduino/InputHysteresis">InputHysteresis</a> sketch.</li>
+<li>Open the Serial Console and set to 115200 baud.</li>
+<li>Observe the console messages and the onboard LED. Can you observe the
+correct shadow and light levels to transition from off to on and back
+again? If it fails to transition, check that the A0 voltage is
+varying widely enough; you may need to adjust the values for
+<code class="docutils literal"><span class="pre">light_threshold</span></code> and <code class="docutils literal"><span class="pre">dark_threshold</span></code>.</li>
+<li>Compare the code against the state transition diagram shown above.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.3.1.4. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>You may now recognize that the switch debouncing code introduced much
+earlier is a specific case of a finite-state machine implementing
+time-based hysteresis.</p>
+</div>
+<div class="section" id="optional-challenge">
+<h2>2.3.1.5. Optional Challenge<a class="headerlink" href="#optional-challenge" title="Permalink to this headline">¶</a></h2>
+<p>Can you introduce time measurements into the state graph? Adding
+intermediate wait states conditioned on elapsed time would be another
+way to improve the hysteresis.</p>
+</div>
+<div class="section" id="sketch-folder">
+<h2>2.3.1.6. Sketch Folder<a class="headerlink" href="#sketch-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/InputHysteresis">InputHysteresis</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.3.1. Exercise: Input Hysteresis</a><ul>
+<li><a class="reference internal" href="#objective">2.3.1.1. Objective</a></li>
+<li><a class="reference internal" href="#state-transition-graph">2.3.1.2. State Transition Graph</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.3.1.3. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.3.1.4. Comments</a></li>
+<li><a class="reference internal" href="#optional-challenge">2.3.1.5. Optional Challenge</a></li>
+<li><a class="reference internal" href="#sketch-folder">2.3.1.6. Sketch Folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../../unit3.html"
+                        title="previous chapter">2.3. Unit 3 Exercises: Algorithms and State</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../input-matching/input-matching.html"
+                        title="next chapter">2.3.2. Exercise: Input Pattern Matching</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../input-matching/input-matching.html" title="2.3.2. Exercise: Input Pattern Matching"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../../unit3.html" title="2.3. Unit 3 Exercises: Algorithms and State"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit3.html" >2.3. Unit 3 Exercises: Algorithms and State</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

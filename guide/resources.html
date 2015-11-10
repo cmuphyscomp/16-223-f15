@@ -10,11 +10,12 @@
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/guide.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '2015-10-06',
+        VERSION:     '2015-11-10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +24,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="index.html" />
     <link rel="next" title="3.1. Errata" href="errata.html" />
-    <link rel="prev" title="2.3. Project 2: Temporal Machine" href="project2.html" /> 
+    <link rel="prev" title="2.7. Project 3: Autonomous Machine" href="project3.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -41,7 +43,7 @@
           <a href="errata.html" title="3.1. Errata"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="project2.html" title="2.3. Project 2: Temporal Machine"
+          <a href="project3.html" title="2.7. Project 3: Autonomous Machine"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li> 
       </ul>
@@ -92,12 +94,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="related_work.html">3.6. Related Work</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="related_work.html#pinterest">3.6.1. Pinterest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work.html#other-courses-in-ideate">3.6.2. Other courses in IDeATe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work.html#tutorials-and-guides">3.6.3. Tutorials and Guides</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work.html#diy-fabric-sensors">3.6.4. DIY Fabric Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work.html#other-academic-programs">3.6.5. Other Academic Programs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work.html#academic-papers">3.6.6. Academic papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#fall-2015-research-talks">3.6.1. Fall 2015 Research Talks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#pinterest">3.6.2. Pinterest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#other-courses-in-ideate">3.6.3. Other courses in IDeATe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#tutorials-and-guides">3.6.4. Tutorials and Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#diy-fabric-sensors">3.6.5. DIY Fabric Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#other-academic-programs">3.6.6. Other Academic Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="related_work.html#academic-papers">3.6.7. Academic papers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ideas.html">3.7. Ideation and Brainstorming</a><ul>
@@ -127,21 +130,22 @@
 <li class="toctree-l2"><a class="reference internal" href="report_template.html#required-supporting-material">3.13.1. Required Supporting Material</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="peer_evaluation.html">3.14. Peer Evaluation Form</a></li>
-<li class="toctree-l1"><a class="reference internal" href="videos.html">3.15. Videos</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#arthur-ganson">3.15.1. Arthur Ganson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#louis-phillipe-demers">3.15.2. Louis-Phillipe Demers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#norman-white">3.15.3. Norman White</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#useless-box-with-surprises">3.15.4. Useless Box With Surprises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#reuben-margolin">3.15.5. Reuben Margolin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#simon-penny">3.15.6. Simon Penny</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#stelarc">3.15.7. Stelarc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#beatbots-marek-michalowski">3.15.8. Beatbots, Marek Michalowski</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#jacob-tonski">3.15.9. Jacob Tonski</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#jordan-wolfson">3.15.10. Jordan Wolfson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#raffaello-d-andrea">3.15.11. Raffaello D&#8217;Andrea</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#xuedi-chen">3.15.12. Xuedi Chen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="videos.html#the-principals">3.15.13. The Principals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peer_evaluation.html">3.14. Project 1 Peer Evaluation Form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peer_evaluation.html#project-2-peer-evaluation-form">3.15. Project 2 Peer Evaluation Form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="videos.html">3.16. Videos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#arthur-ganson">3.16.1. Arthur Ganson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#louis-phillipe-demers">3.16.2. Louis-Phillipe Demers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#norman-white">3.16.3. Norman White</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#useless-box-with-surprises">3.16.4. Useless Box With Surprises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#reuben-margolin">3.16.5. Reuben Margolin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#simon-penny">3.16.6. Simon Penny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#stelarc">3.16.7. Stelarc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#beatbots-marek-michalowski">3.16.8. Beatbots, Marek Michalowski</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#jacob-tonski">3.16.9. Jacob Tonski</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#jordan-wolfson">3.16.10. Jordan Wolfson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#raffaello-d-andrea">3.16.11. Raffaello D&#8217;Andrea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#xuedi-chen">3.16.12. Xuedi Chen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="videos.html#the-principals">3.16.13. The Principals</a></li>
 </ul>
 </li>
 </ul>
@@ -155,8 +159,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="project2.html"
-                        title="previous chapter">2.3. Project 2: Temporal Machine</a></p>
+  <p class="topless"><a href="project3.html"
+                        title="previous chapter">2.7. Project 3: Autonomous Machine</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="errata.html"
                         title="next chapter">3.1. Errata</a></p>
@@ -190,14 +194,14 @@
           <a href="errata.html" title="3.1. Errata"
              >next</a> |</li>
         <li class="right" >
-          <a href="project2.html" title="2.3. Project 2: Temporal Machine"
+          <a href="project3.html" title="2.7. Project 3: Autonomous Machine"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">16-223 Introduction to Physical Computing</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-10-06.
+      Last updated on 2015-11-10.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

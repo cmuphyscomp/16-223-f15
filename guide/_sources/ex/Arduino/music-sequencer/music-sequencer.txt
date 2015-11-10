@@ -1,0 +1,86 @@
+.. _exercise-music-sequencer:
+
+Exercise: Music Sequencer
+-------------------------
+
+**Note: this is a new exercise, please provide feedback on errors and
+clarity.**
+
+Objective
+^^^^^^^^^
+
+Generate tone patterns over time from a string representation of a
+melody.
+
+Many physical systems require generating patterns of control outputs
+over time. For example, a dishwasher or washing machine controller is
+primarily a clock which times the phases of spraying or agitation. There
+is some sensor feedback for process transitions based on physical state
+(e.g. the water level reaching a threshold), but much of the process is
+simply timed.
+
+Performance machines, especially musical ones, also frequently utilize
+timed sequences. It is also convenient for these machines to have a
+representation of the pattern which can easily be used for authoring and
+editing the performances.
+
+This exercise introduces a very simple pattern language which represents
+a rhythmic tone pattern as a fixed string of text. The pattern string is
+*interpreted* by the program. This data-driven approach allows more
+compact representation than the equivalent code sequence. It also
+integrates much more easily alongside simultaneous processes such as
+sensor data acquisition.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Load and run the `MusicSequenceDemo`_ sketch. The example program generates
+   audio-frequency square wave tones with different rhythms and pitches on pins
+   4 and 5. This demonstrates an event-loop and rhythm pattern control structure
+   allowing parallel execution of multiple timed tasks.
+#. Observe the initial outputs on an oscilloscope.
+#. Design and construct an Arduino circuit incorporating two audio speakers for
+   digital output.  The speakers can be driven by digital outputs using a
+   ULN2803 attached to the output pins defined in the sample sketch. The speaker
+   drive circuit can use the same structure as the :ref:`previous ULN2303
+   exercise <exercise-multichannel-driver>`, using the speakers on the output
+   side.  A small speaker is typically about 8 ohms and can handle a fraction of
+   a Watt; assuming 1/8 Watt, the power supply voltage would be typically be
+   about a volt above the ULN2803 forward drop, so start with a power supply
+   voltage of 1.6V and experiment.
+#. Modify the rhythm pattern string to generate a different beat pattern
+   or melody.
+
+Comments
+^^^^^^^^
+
+This exercise uses a C++ class named MelodyGenerator to implement the
+tone and rhythm pattern generator. This was written as one class for
+simplicity, but logically might be broken out into separate
+ToneGenerator and PatternGenerator classes. This class was also
+incorporated directly into the sketch but would more conventionally be
+provided in separate files as a generic re-usable component.
+
+Challenges
+^^^^^^^^^^
+
+#. Add a sensor acquisition process to read an external input and
+   modulate the performance.
+#. Extend the pattern language to include more tones.
+#. Extend the timing control to include articulation (short silences) to
+   define boundaries of repeated notes.
+#. Extend the timing control to vary the pulse width to control tone
+   volume.
+#. Rewrite the MelodyGenerator class into generic ToneGenerator and
+   PatternGenerator classes.
+#. Add a phase-lock algorithm to beat-match to an external sensor input.
+
+Sketch Folder
+^^^^^^^^^^^^^
+
+#. `MusicSequenceDemo`_
+
+.. _MusicSequenceDemo: ../../../../Arduino/MusicSequenceDemo
+
+
+   

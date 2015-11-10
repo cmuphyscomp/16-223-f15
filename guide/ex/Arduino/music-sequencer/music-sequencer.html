@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.6. Exercise: Music Sequencer &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.2.7. Exercise: Python and Arduino" href="../Python-Arduino/Python-Arduino.html" />
+    <link rel="prev" title="2.2.5. Exercise: WS2801 RGB LED SPI Module" href="../WS2801-LED-SPI/WS2801-LED-SPI.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../Python-Arduino/Python-Arduino.html" title="2.2.7. Exercise: Python and Arduino"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../WS2801-LED-SPI/WS2801-LED-SPI.html" title="2.2.5. Exercise: WS2801 RGB LED SPI Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-music-sequencer">
+<span id="id1"></span><h1>2.2.6. Exercise: Music Sequencer<a class="headerlink" href="#exercise-music-sequencer" title="Permalink to this headline">¶</a></h1>
+<p><strong>Note: this is a new exercise, please provide feedback on errors and
+clarity.</strong></p>
+<div class="section" id="objective">
+<h2>2.2.6.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Generate tone patterns over time from a string representation of a
+melody.</p>
+<p>Many physical systems require generating patterns of control outputs
+over time. For example, a dishwasher or washing machine controller is
+primarily a clock which times the phases of spraying or agitation. There
+is some sensor feedback for process transitions based on physical state
+(e.g. the water level reaching a threshold), but much of the process is
+simply timed.</p>
+<p>Performance machines, especially musical ones, also frequently utilize
+timed sequences. It is also convenient for these machines to have a
+representation of the pattern which can easily be used for authoring and
+editing the performances.</p>
+<p>This exercise introduces a very simple pattern language which represents
+a rhythmic tone pattern as a fixed string of text. The pattern string is
+<em>interpreted</em> by the program. This data-driven approach allows more
+compact representation than the equivalent code sequence. It also
+integrates much more easily alongside simultaneous processes such as
+sensor data acquisition.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.6.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Load and run the <a class="reference external" href="../../../../Arduino/MusicSequenceDemo">MusicSequenceDemo</a> sketch. The example program generates
+audio-frequency square wave tones with different rhythms and pitches on pins
+4 and 5. This demonstrates an event-loop and rhythm pattern control structure
+allowing parallel execution of multiple timed tasks.</li>
+<li>Observe the initial outputs on an oscilloscope.</li>
+<li>Design and construct an Arduino circuit incorporating two audio speakers for
+digital output.  The speakers can be driven by digital outputs using a
+ULN2803 attached to the output pins defined in the sample sketch. The speaker
+drive circuit can use the same structure as the <a class="reference internal" href="../../electronics/multichannel-driver/multichannel-driver.html#exercise-multichannel-driver"><span>previous ULN2303
+exercise</span></a>, using the speakers on the output
+side.  A small speaker is typically about 8&nbsp;ohms and can handle a fraction of
+a Watt; assuming 1/8&nbsp;Watt, the power supply voltage would be typically be
+about a volt above the ULN2803 forward drop, so start with a power supply
+voltage of 1.6V and experiment.</li>
+<li>Modify the rhythm pattern string to generate a different beat pattern
+or melody.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.2.6.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>This exercise uses a C++ class named MelodyGenerator to implement the
+tone and rhythm pattern generator. This was written as one class for
+simplicity, but logically might be broken out into separate
+ToneGenerator and PatternGenerator classes. This class was also
+incorporated directly into the sketch but would more conventionally be
+provided in separate files as a generic re-usable component.</p>
+</div>
+<div class="section" id="challenges">
+<h2>2.2.6.4. Challenges<a class="headerlink" href="#challenges" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add a sensor acquisition process to read an external input and
+modulate the performance.</li>
+<li>Extend the pattern language to include more tones.</li>
+<li>Extend the timing control to include articulation (short silences) to
+define boundaries of repeated notes.</li>
+<li>Extend the timing control to vary the pulse width to control tone
+volume.</li>
+<li>Rewrite the MelodyGenerator class into generic ToneGenerator and
+PatternGenerator classes.</li>
+<li>Add a phase-lock algorithm to beat-match to an external sensor input.</li>
+</ol>
+</div>
+<div class="section" id="sketch-folder">
+<h2>2.2.6.5. Sketch Folder<a class="headerlink" href="#sketch-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/MusicSequenceDemo">MusicSequenceDemo</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.6. Exercise: Music Sequencer</a><ul>
+<li><a class="reference internal" href="#objective">2.2.6.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.6.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.2.6.3. Comments</a></li>
+<li><a class="reference internal" href="#challenges">2.2.6.4. Challenges</a></li>
+<li><a class="reference internal" href="#sketch-folder">2.2.6.5. Sketch Folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../WS2801-LED-SPI/WS2801-LED-SPI.html"
+                        title="previous chapter">2.2.5. Exercise: WS2801 RGB LED SPI Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../Python-Arduino/Python-Arduino.html"
+                        title="next chapter">2.2.7. Exercise: Python and Arduino</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../Python-Arduino/Python-Arduino.html" title="2.2.7. Exercise: Python and Arduino"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../WS2801-LED-SPI/WS2801-LED-SPI.html" title="2.2.5. Exercise: WS2801 RGB LED SPI Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

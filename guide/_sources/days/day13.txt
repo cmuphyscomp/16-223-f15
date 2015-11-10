@@ -1,0 +1,34 @@
+.. include:: ../links.rst
+   
+Day 13: Project 2 Progress (Oct 14)
+==========================================
+
+Notes for 2015-10-14.  See also the :ref:`calendar`.
+
+Notes from Day 12
+------------------
+
+#. Notebook 2 deadline pushed back until Oct 26.
+   
+Administrative
+--------------
+
+  * October 23: President’s GAC Visit/IDeATe Open House
+
+    * 10:15 - 11:30 President’s GAC Visit
+    * 11:30 - 12:00 Break
+    * 12:00 - 2:00 IDeATe Open House
+
+  * I am being asked to commit the following:
+  
+    #. names of students participating
+    #. description of exhibits
+    #. resource requirements for setting up
+
+
+Agenda
+------
+     
+#. In-class
+
+   * Project 2 work, individual meetings.

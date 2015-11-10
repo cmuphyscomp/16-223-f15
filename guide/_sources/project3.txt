@@ -1,0 +1,235 @@
+.. include:: links.rst
+
+.. _project-3:
+
+Project 3: Autonomous Machine
+=============================
+
+The goal of this project is to create a device which inhabits its environment to
+fulfill a purpose without human interaction.  It is *autonomous* in the sense of
+performing a task without direct human intervention.  The meaning of "inhabit"
+is loose but is intended to suggest behavior which exhibit a varied or adaptable
+response to changes in ambient circumstances.
+
+The definition of machine autonomy is not well-defined, the term has been used
+to describe freedom along a number of different axes:
+
+ * energy autonomy: machines which carry their own power source
+ * control autonomy: machine which do not require operator input
+ * navigational autonomy: machines which can move through a space without guidance
+ * task autonomy: machines which can solve complex tasks automatically
+ * shared autonomy: machines which divide a control task between a human operator and the machine
+ * sliding autonomy: machines which can smoothly shift through varying degrees
+   of shared autonomy, i.e. from fully automatic operation towards fully manual
+   control
+
+The majority of artifacts we construct are *passive* with no energy source,
+actuation, or computation.  Of the *active* machines we construct, we are most
+aware of those intended for direct human interaction, e.g. cars, indoor
+lighting, toilets, dishwashers etc.  Each of these combines directly controlled
+mechanisms with behaviors which act autonomously when not actively controlled.
+There are many more of which we are less aware which operate completely
+autonomously, e.g. streetlights, HVAC systems, municipal water systems, factory
+automation.  Many of these systems quietly carry out tasks essential for the
+survival of civilization with no human guidance during normal operation.
+
+The idea of autonomy raises a number of questions:
+
+#. What does it mean for a machine to have *intent* or a *goal*?  Do we make any
+   machines concerned only with their own survival?
+
+#. In what ways do we encode our goals into machines?  In what ways do others
+   encode *their* goals into machines *we* use?
+
+#. How do humans express intent *unconsciously*?  What patterns of human
+   behavior over time reflect our intent in ways which can be sensed and
+   detected?
+
+#. How can a machine *adapt* to changes in its environment to better fulfill
+   its purpose?
+
+There are a number of directions this project might take.  Many of your first
+two projects could be categorized as autonomous but could be improved by
+developing the interpretation of the sensor input or the logic of the response.
+A few suggested starting points follow for brainstorming project ideas.
+
+#. In your first two projects, what kind of information about the world did your
+   prototype sense?  What other information could have been inferred?
+
+#. What kind of changing conditions would cause your existing projects to fail?
+   How could the response have adapted automatically to compensate?
+
+
+Some more specific inspirations:
+
+#. Theo Jansen's `Strandbeest`_
+#. `Mark Tilden`_
+#. `Simon Penny`_, `Petit Mal`_
+
+Note that autonomy does not necessarily imply complexity.  If a machine engages
+with a simple physical process, then its model of the world may also be simple.
+If a machine can carefully engage with the right features of a complex system,
+then it may also use a simple model.
+
+
+Objectives
+----------
+
+A key objective of this project is understanding how logic and representation
+can be used to decode information about the world in order to respond to events.
+The most reliable sensors are those which are directly tied to the physical
+phenomenon of interest, e.g., the thermistor in a thermostat directly measures
+the temperature and provides an unambiguous feedback measurement.  But many
+properties of interest can only be inferred from multiple measurements over
+time, especially where humans are concerned.
+
+The second key objective is understanding how to encode a goal as rules which
+can infer appropriate actions from a state estimate.  This can be as difficult
+at the inference problem, since the correct action may depend upon an implicit
+model of how the world is affected, which itself may not be a direct process.
+
+As before, these are intended to be research and exploration projects.
+Reasonable ambition is encouraged, so we'd like you to try new things, and
+failure is part of the process.  However, we will attempt to guide you away from
+directions which we think are unlikely to succeed or require unreasonable levels
+of effort.  But you are the ultimate arbiter of this: we won't outright say no
+because we want you to learn to assess your own ambitions and skills and don't
+want to stand in your way.
+
+
+Milestones
+----------
+
+(*Most of this is the same as the Project 2 milestones, except for bold-face text.*)
+
+#. **Pair selection.** We prefer that students work in pairs.  Solo workers and
+   groups of three will need to make a pitch for an exception.  Groups of four
+   are too large for this project.
+
+#. **Proposal.** See :ref:`project3-proposal` for specifics.  Ideas are cheap;
+   it is in the exploration that the interesting work begins.  We recommend a
+   strategy of committing to a general idea early and then thinking through as
+   many details as possible at the drawing and planning stage.  We find this is
+   much more efficient that jumping into building too soon.
+
+#. **Proof-of-concept.** Nearly every proposal plan leads to a set of key
+   questions which form the primary hurdles.  We recommend a strategy of
+   choosing a quick experiment to tackle the most difficult part *first*.
+   Either the unknowns will resolve into a feasible development plan or you can
+   *fail fast* on one approach and revert to another.  Either way, you won't
+   have wasted effort on secondary development which becomes obviated by a
+   problem.  The proof of concept will usually be a partial prototype, and in
+   many cases it can be modified into a full prototype if successful.
+
+#. **Presentation and in-class critique**. See :ref:`critiques`. An important
+   learning goal of the course is clear and efficient communication between
+   disciplines, and the critiques provide an opportunity to hone your skills.
+   Ideally, your project will be functional and you can perhaps give a live
+   demonstration and succinct explanation.  If your project has failed, then
+   please explain *why* and *how* it failed and whether there is a general
+   lesson to be learned.  Our critiques will consider the relative difficulty of
+   the attempt.  Ambitious project ideas frequently do not work out as expected
+   but can still be reframed to expose an alternative interpretation as well as
+   explain the hidden traps of the original idea.
+
+#. **Report**. See :ref:`project-report-requirements`.  For all of our projects,
+   the documentation is the most tangible and durable work product.  It is also
+   an important stage for reviewing and reflecting on the process and outcome.
+   The same considerations about success and failure outlined above also apply
+   to the written documentation.  The report due date comes two days after
+   critique to allow incorporating verbal feedback.
+
+#. **Peer evaluation**.  Each individual should write a brief
+   :ref:`peer-evaluation-form` response about your partner or teammates to be
+   submitted confidentially.  This serves two functions: it is the primary
+   opportunity for you to reflect on the collaborative process itself, and it
+   helps your instructors identify potential collaboration issues.
+
+#. **Disassembly**.  Unfortunately, we do not have enough parts and resources to
+   keep all projects intact even for the duration of the semester.  Unless your
+   project is designated to keep for the open house show, please disassemble all
+   components and return them to the storage bins.  This may seem obvious, but
+   please be sure to complete all documentation prior to this point: students
+   frequently end up taking something apart and then wishing they had one more
+   photo or video.
+
+
+.. _project3-proposal:
+
+Proposal Prompt
+---------------
+
+(*Most of this is the same as the Project 2 prompt, except for bold-face text.*)
+
+The proposal is the counterpart to the final report: ideally, it raises all the
+questions which the project might answer, even though more will be discovered during
+the process.
+
+The primary review of the proposal will be verbal in-class commentary in order
+to provide the fastest possible approval.  To speed this along, please provide
+in-class a *one-page document which concisely summarizes the project plan*.
+Please also submit a *PDF version of the document to Blackboard* before the
+end of the day on which the proposal review occurs.  Only one document need be
+submitted per group, but be sure to include the names of all contributors.
+
+A good proposal will answer as many of the following questions as pertinent.
+These are prompts, not a checklist, so use your judgment as to how to formulate
+a brief proposal text or outline with supporting sketches.
+
+#. What is your big idea, in a sentence or two?  **In what sense is your
+   prototype autonomous?  What kind of model of the world state is required?**
+
+#. If you apply :ref:`why-how laddering <regressing-the-question>`, can you
+   identify an essential underlying question?  What is the simplest abstraction
+   of your idea?
+
+#. Who is the audience?  This might include user, viewers, or passive bystanders.
+   What is the experience of the audience?  What might they remember?
+
+#. Are there existing projects you have referenced?  Please include citations.
+
+#. What will your proof-of-concept entail?  Can you sketch it?  Can you sketch
+   the engineering elements (circuits, mechanical drawings)?  Good drawings at
+   this stage are invaluable, they can identify many potential problems much
+   more efficiently than fabrication.
+
+#. How do you propose to divide the tasks among the team?  What :ref:`roles
+   <group-roles>` will you each undertake and for which parts?
+
+#. What features do you specifically propose to *ignore*?  E.g., a project
+   involving a wearable device could focus on sensing and actuation but choose
+   to ignore battery operation in favor of a wired supply.  In general, we'd
+   prefer you keep your workload under control by emphasizing interesting
+   behavior or interactivity over fit and finish.
+
+#. What features do you specifically propose to *test*?  How will we know if it
+   worked?
+
+#. How might the final project look?  Can you sketch it?
+
+
+Summary of Deliverables
+-----------------------
+
+The following material is included in this brief by reference.  Please
+familiarize yourself with the details of the documentation requirements and
+schedule.
+
+  * :ref:`project-report-requirements`
+  * :ref:`lateness-policy`
+  * :ref:`calendar`
+
+I've been refining the description of the project reports in response to the
+first project.  Specifically, the purpose of the report is to present the
+project as a completed artifact or demonstration.  The emphasis is on relating
+its performance to the human needs of the objectives and explaining the
+technical choices of the implementation.  The details of the development process
+are only important to the degree to which they explain specific features of the
+outcome.
+
+#. In-class proposal review and supporting PDF file.
+#. In-class demonstration of proof-of-concept.
+#. In-class presentation of result for critique.
+#. Report zip file package as per :ref:`project-report-requirements`
+#. Please keep the linked project video to less than **two minutes**.
+#. Fill in the Project 3 Peer Evaluation 'test' on Blackboard.

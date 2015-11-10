@@ -47,7 +47,7 @@ Full Source Code
 ----------------
 
 The full code is all in one file `OneInOneOutASCII.ino
-<../support/Arduino/OneInOneOutASCII/OneInOneOutASCII.ino>`__.
+<../Arduino/OneInOneOutASCII/OneInOneOutASCII.ino>`__.
 
 .. literalinclude:: ../Arduino/OneInOneOutASCII/OneInOneOutASCII.ino
    :language: cpp

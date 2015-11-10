@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.25. Exercise: Stepper Motor Knob &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.26. Exercise: Laser Cutting Features and Tolerances" href="../../mechanism/laser-tolerance/laser-tolerance.html" />
+    <link rel="prev" title="2.1.24. Exercise: Servo Sweep" href="../servo-sweep/servo-sweep.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../mechanism/laser-tolerance/laser-tolerance.html" title="2.1.26. Exercise: Laser Cutting Features and Tolerances"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../servo-sweep/servo-sweep.html" title="2.1.24. Exercise: Servo Sweep"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-stepper-motor-knob">
+<span id="id1"></span><h1>2.1.25. Exercise: Stepper Motor Knob<a class="headerlink" href="#exercise-stepper-motor-knob" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.25.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Control a stepper motor using a driver module.</p>
+<p>A <a class="reference external" href="http://en.wikipedia.org/wiki/Stepper_motor">stepper motor</a> uses a
+toothed rotor and multiple drive coils to create motion in discrete
+steps. The fundamental angular size of the steps is determined by the
+physical spacing of the internal magnetic teeth. Steppers motors are
+<em>open-loop</em> since there is no sensor involved in controlling position,
+the driver simply cycles the coil currents and assumes the motor moves
+synchronously. If the motor encounters too high a torque, the magnetic
+forces can be overcome and the rotor will slip to a different position.
+The microcontroller has have no means of detecting this error.</p>
+<p>This exercise uses an <a class="reference external" href="http://www.allegromicro.com/~/media/Files/Datasheets/A4988-Datasheet.ashx">stepper motor
+driver</a>
+module which takes care of cycling the currents appropriately through
+the two coils of a bipolar stepper motor. The primary inputs to the
+driver are <em>direction</em> and <em>step</em>. The additional inputs control
+fractional stepping and the overall driver power state.</p>
+<p>As a simple one-in one-out demonstration, the exercise uses a
+potentiometer as an analog position command control input.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.25.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Use a DMM to measure the winding resistance of the stepper motor. A
+bipolar stepper motor will have two independent windings which should
+be clearly observable as a low resistance between two separate wire
+pairs.</li>
+<li>The lab stocks several different kinds of stepper motors and stepper
+motor drivers. Please check the motor type; it should have a rated
+voltage lower than your supply voltage. These drivers control the
+current by chopping the power supply, so the supply voltage can be
+higher than the motor rating. If the chosen supply voltage is between
+2.5-8V (e.g. 5V), you will need to use the <a class="reference external" href="http://www.pololu.com/product/2134">low-voltage DRV8834
+stepper motor driver</a>. If the
+supply voltage is between 8-35V (e.g. 12V), you should use the <a class="reference external" href="http://www.pololu.com/product/1182">A4988
+stepper motor driver</a>, which
+is a newer replacement for the
+<a class="reference external" href="http://www.allegromicro.com/~/media/Files/Datasheets/A4983-Datasheet.ashx">A4983</a>.</li>
+<li>You will need to set the current limiting potentiometer on the driver
+to the correct level for the stepper motor you have chosen. To set
+it, you will need to use a thin piece of plastic or small screwdriver
+to rotate the surface-mount potentiometer while measuring the voltage
+at the wiper pin with a DMM. The driver will need motor power applied
+for this to work. For the A4988, the voltage is
+V<sub>ref</sub>=I<sub>limit</sub>/2.5, for the DRV8834 the voltage is
+V<sub>ref</sub>=I<sub>limit</sub>/2.0. So for example, if using the
+NEMA14 SY35ST28-0504A stepper with 0.5A/Phase rating, with a A4988
+the current limit reference voltage should be 0.2V, and for the
+NEMA14 SY35ST36-1004A with a 1.0A/phase rating, the voltage should be
+0.4V.</li>
+<li>Load and run the <a class="reference external" href="../../../../Arduino/KnobToStepperMotor">KnobToStepperMotor</a> sketch.  (Note: there is a MotorKnob sketch
+included in the Arduino IDE which assumes the stepper motor is directly
+driven from the Arduino; instead we will use a modular driver for this
+exercise.)</li>
+<li>Observe the stepper motor motion.</li>
+<li>Try moving the MS1 pull-up resistor between 5V and GND and observing
+the resulting change in step rate. The driver is capable of
+<em>microstepping</em> in which the coils can be driven using PWM rather
+simply on or off in order to divide the fundamental step into smaller
+angles.</li>
+<li>Read the data sheet for the driver and configure the driver for even
+finer steps.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.25.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Stepper motors can move relatively fast but at too high a rate can lose
+count.</p>
+</div>
+<div class="section" id="figures">
+<h2>2.1.25.4. Figures<a class="headerlink" href="#figures" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../../../_images/stepper-motor-knob_bb.png"><img alt="../../../_images/stepper-motor-knob_bb.png" src="../../../_images/stepper-motor-knob_bb.png" style="width: 75%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/stepper-motor-knob_schem.png"><img alt="../../../_images/stepper-motor-knob_schem.png" src="../../../_images/stepper-motor-knob_schem.png" style="width: 75%;" /></a>
+</div>
+<div class="section" id="other-files">
+<h2>2.1.25.5. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/stepper-motor-knob.fzz"><code class="xref download docutils literal"><span class="pre">stepper-motor-knob.fzz</span></code></a></li>
+</ol>
+</div>
+<div class="section" id="sketch">
+<h2>2.1.25.6. Sketch<a class="headerlink" href="#sketch" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/KnobToStepperMotor">KnobToStepperMotor</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.25. Exercise: Stepper Motor Knob</a><ul>
+<li><a class="reference internal" href="#objective">2.1.25.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.25.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.25.3. Comments</a></li>
+<li><a class="reference internal" href="#figures">2.1.25.4. Figures</a></li>
+<li><a class="reference internal" href="#other-files">2.1.25.5. Other Files</a></li>
+<li><a class="reference internal" href="#sketch">2.1.25.6. Sketch</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../servo-sweep/servo-sweep.html"
+                        title="previous chapter">2.1.24. Exercise: Servo Sweep</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../mechanism/laser-tolerance/laser-tolerance.html"
+                        title="next chapter">2.1.26. Exercise: Laser Cutting Features and Tolerances</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../mechanism/laser-tolerance/laser-tolerance.html" title="2.1.26. Exercise: Laser Cutting Features and Tolerances"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../servo-sweep/servo-sweep.html" title="2.1.24. Exercise: Servo Sweep"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

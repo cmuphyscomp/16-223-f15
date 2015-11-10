@@ -1,0 +1,58 @@
+.. _exercise-voltage-divider:
+
+Exercise: Voltage Divider
+-------------------------
+
+Objective
+^^^^^^^^^
+
+Measure voltages and compute current flow in a resistive voltage
+divider.
+
+Many sensor circuits we use will be built around an arrangement of
+series resistances called a *voltage divider*. This is a fundamental
+construction will will appear again and again.
+
+Two resistors in series form a single current pathway, so a voltage
+applied across the pair will cause the same current to flow through each
+of them. However, the voltage drop across each resistor resulting from
+that current is proportional to the resistance (V = i \* R), so the
+voltage at the intermediate node depends on the relative resistances. In
+the simplest case, if both resistances are the same, the voltage in the
+middle will be the average of the voltage at each end.
+
+We will use the voltage divider structure to allow a variable resistance
+(e.g. sensor or switch) to control the voltage at the intermediate
+point. This is useful for us because the analog-to-digital converter on
+the Arduino senses applied voltage.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Measure the exact resistance of each resistor.
+#. Carefully measure the voltage Vin applied across the series pair of
+   resistors.
+#. Compute the expected voltage V1 across the grounded resistor:
+   :math:`V_1 = V_{in} * (R_1 / (R_1+R_2))`
+   where :math:`R_2` is the 'upper' resistor connected to
+   the positive supply and :math:`R_1` is the 'lower' resistor connected to
+   ground.
+#. Vary the input voltage and repeat; you should be able to convince
+   yourself that the intermediate voltage scales proportionately.
+#. Open the circuit and measure the actual current through the divider.
+   Compare against the predicted value: :math:`i = V_{in} / (R_1 + R_2)`.
+
+Comments
+^^^^^^^^
+
+Also see `Wikipedia <http://en.wikipedia.org/wiki/Voltage_divider>`__.
+
+|image0| |image1|
+
+Other Files
+^^^^^^^^^^^
+
+#. Fritzing file: :download:`voltage-divider.fzz`
+
+.. |image0| image:: voltage-divider_bb.png
+.. |image1| image:: voltage-divider_schem.png

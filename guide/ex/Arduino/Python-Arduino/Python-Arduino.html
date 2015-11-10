@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.7. Exercise: Python and Arduino &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.2.8. Exercise: Electromechanical Oscillation" href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html" />
+    <link rel="prev" title="2.2.6. Exercise: Music Sequencer" href="../music-sequencer/music-sequencer.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html" title="2.2.8. Exercise: Electromechanical Oscillation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../music-sequencer/music-sequencer.html" title="2.2.6. Exercise: Music Sequencer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-python-and-arduino">
+<span id="exercise-python-arduino"></span><h1>2.2.7. Exercise: Python and Arduino<a class="headerlink" href="#exercise-python-and-arduino" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.2.7.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Communicate data between Python and an Arduino using the USB serial bus.</p>
+<p>The Arduino IDE and Python solve different problems well. The Arduino
+has easy direct access to its hardware interface, and can create and
+respond to electrical signals with very low latency. Python is
+well-suited to interactive programming, but the latency is considerable
+higher than on a microcontroller, and on a laptop lacks access to
+hardware interfaces. This exercise will demonstrate one way of
+coordinating Python and the Arduino to take advantage of the best
+features of each by linking them using a simple ASCII message protocol
+over the USB serial bus.</p>
+<p>The serial communication does introduce significant latency between the
+Arduino and Python so this approach is strongest for systems in which
+Python is used for tasks such as the GUI, visual display, sequencing,
+and overall event control. It would not be suitable for high-bandwidth
+tasks such as cycling individual digital outputs to create a stepper
+motor waveform. However, the extensibility of the protocol means that
+you can add those low-level hardware behaviors to the Arduino server
+program and invoke them via messages.</p>
+<p>Setting up the exercise requires a couple of preparatory steps:</p>
+<ol class="arabic simple">
+<li>Compiling and loading the OneInOneOutASCII Arduino sketch onto an
+Arduino Uno.</li>
+<li>Determining the exact name of the serial port offered by the Arduino
+over USB.</li>
+<li>Running the OneInOneOutGUI module in Python on a laptop.</li>
+<li>Verifying or setting the serial port name in the interface.</li>
+</ol>
+<p>The OneInOneOutASCII sketch is provided in the course distribution in the
+<a class="reference external" href="../../../../Arduino/OneInOneOutASCII">OneInOneOutASCII</a> folder. The source code of the sketch provides details of
+the messaging scheme.</p>
+<p>The Python patch is also available in the course distribution in the
+<a class="reference external" href="../../../../python/OneInOneOutGUI">OneInOneOutGUI</a> folder. This also requires the <a class="reference external" href="../../../../python/ArduinoGUI">ArduinoGUI</a> supporting
+library. Because of the number of files involved, it is <strong>highly recommended</strong>
+that you clone the git repository to download them to your laptop.</p>
+<p>N.B. the cluster laptops include a MacPorts installation of Python which
+already includes the following required libraries: py27-numpy,
+py27-pyqt4, py27-pyqwt, and py27-serial.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.7.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Upload the OneInOneOutASCII sketch onto an Arduino Uno.</li>
+<li>Open the Serial Monitor, set the baud rate to 115200 and the line
+ending to Newline. You should see data messages start to stream by.</li>
+<li>Enter &#8216;poll 1000&#8217; in the input box and press enter. The message rate
+should slow.</li>
+<li>Enter &#8216;led 0&#8217; in the input box and press enter. The LED marked L
+should go off.</li>
+<li>Enter &#8216;led 1&#8217; in the input box and press enter. The LED marked L
+should go on again.</li>
+<li>Note the exact serial port name from the Tools/Port menu in the
+Arduino IDE.</li>
+<li>Exit the Arduino IDE.</li>
+<li>The easiest way to run the Python GUI client from OS&nbsp;X is to
+double-click on the <code class="docutils literal"><span class="pre">run_gui.command</span></code> script found within the
+OneInOneOutGUI folder. However, in the long run it is more versatile
+to run it from the command line (or necessary if you are using
+Windows or a Raspberry Pi). If you are using a cluster Mac the
+command is <code class="docutils literal"><span class="pre">python2.7</span> <span class="pre">run_gui.py</span></code>. This will use our MacPorts
+installation of Python which includes the required libraries instead
+of the system-provided Python. On a Raspberry Pi use
+<code class="docutils literal"><span class="pre">python</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="pre">run_gui.py</span></code>. On Windows the exact command will depend
+on which Python distribution you are using.</li>
+<li>Near the bottom of the panel is a text field labeled Arduino Port. If
+that doesn&#8217;t match the name of the serial device you noted before,
+please correct it. Then toggle the Connected button to open the
+Arduino serial port. If you toggle the Show Raw Data button, you
+should see a stream of messages in the text area similar to those you
+saw before from the Arduino IDE.</li>
+<li>Try the LED On and LED Off buttons and observe the Arduino LED. On
+each press you should also see the RX LED flash briefly as the
+message is received on the Arduino.</li>
+<li>The plot at the top labeled ArduinoScope shows the stream of readings
+from the A0 analog input. If the input is disconnected, this will
+just be electrical noise. Try touching the A0 pin from the back of
+the Arduino board; you should see a change in the plot from the
+electrical noise conducted by your skin.</li>
+<li>The Command Input text field allows manually sending commands much as
+you did with the Arduino IDE.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.2.7.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>This particular Arduino IDE sketch is going to serve as the basis for
+all the following exercises in which we connect hardware to the Arduino
+and control it from Python.</p>
+<p>For a challenge, examine the source code for both the sketch and the GUI
+and work out how to add additional message types.</p>
+</div>
+<div class="section" id="other-files">
+<h2>2.2.7.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/OneInOneOutASCII">OneInOneOutASCII</a> folder with Arduino server</li>
+<li><a class="reference external" href="../../../../python/OneInOneOutGUI">OneInOneOutGUI</a> folder with Python client</li>
+<li><a class="reference external" href="../../../../python/ArduinoGUI">ArduinoGUI</a> folder with Python supporting library</li>
+</ol>
+<p><img alt="image0" src="../../../_images/OneInOneOutGUI-screenshot1.png" /></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.7. Exercise: Python and Arduino</a><ul>
+<li><a class="reference internal" href="#objective">2.2.7.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.7.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.2.7.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.2.7.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../music-sequencer/music-sequencer.html"
+                        title="previous chapter">2.2.6. Exercise: Music Sequencer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html"
+                        title="next chapter">2.2.8. Exercise: Electromechanical Oscillation</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../mechanism/mechanical-oscillator/mechanical-oscillator.html" title="2.2.8. Exercise: Electromechanical Oscillation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../music-sequencer/music-sequencer.html" title="2.2.6. Exercise: Music Sequencer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

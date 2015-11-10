@@ -1,0 +1,55 @@
+.. _exercise-transducer-with-dmm:
+
+Exercise: Transducer with DMM
+-----------------------------
+
+Objective
+^^^^^^^^^
+
+Measure the response of a modular sensor.
+
+Many sensors are available as convenient modules which incorporate the
+required support components. In this example, the module simply requires
+regulated power to directly output an analog voltage representing a
+physical property.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Double-check the power supply voltage before connecting to the
+   circuit. Many modules require tightly regulated voltage and will be
+   destroyed at higher input voltages and malfunction at lower input
+   voltages.
+#. Measure the output voltage at different physical conditions.
+
+Comments
+^^^^^^^^
+
+A *buffered* or *amplified* module can drive a modest current through
+the output if needed; it has a *low-impedance* output. Many unbuffered
+or unamplified sensors only output a small current or voltage and
+require an amplifier to bring the signal to a usable level.
+
+When in doubt, consult the datasheet or spec sheet for the module for
+specific ratings on supply voltage and details of the output signal.
+
+For a challenge, try testing a GP2Y0A21YK0F Analog Distance Sensor:
+these are very useful active sensors which emit infrared light and
+measure the distance to the nearest object using the parallax of the
+reflection.
+
+Other challenges: try testing a joystick, the “Electret Microphone”
+module which measures the overall sound energy level, or the ENC-03RC
+single axis gyro. These are all sensors with analog outputs; some of the
+other stock communicates digitally over I\ :sup:`2`\ C, which will use
+in a later exercise.
+
+.. image:: transducer-with-dmm_bb.png
+   :width: 75%
+
+.. image:: transducer-with-dmm_schem.png
+
+Other Files
+^^^^^^^^^^^
+
+#. Fritzing file: :download:`transducer-with-dmm.fzz`

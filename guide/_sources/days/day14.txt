@@ -1,0 +1,25 @@
+.. include:: ../links.rst
+   
+Day 14: Project 2 Critique (Oct 19)
+==========================================
+
+Notes for 2015-10-19.  See also the :ref:`calendar`.
+
+Notes from Day 13
+------------------
+
+Agenda
+------
+
+#. Administrative
+
+   * For Friday: `members of the GAC <http://www.cmu.edu/leadership/pgac/>`__
+   
+#. Assignments
+
+   * Due Wed: Project 2 Report
+   * Due Wed: Project 2 Peer Eval, now a brief BB survey
+   
+#. In-class
+
+   * Project 2 Presentations and critique.  Guest critic: George Kantor

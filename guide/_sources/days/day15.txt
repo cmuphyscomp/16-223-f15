@@ -1,0 +1,27 @@
+.. include:: ../links.rst
+   
+Day 15: Finishing Unit 2 (Oct 21)
+==========================================
+
+Notes for 2015-10-21.  See also the :ref:`calendar`.
+
+Notes from Day 14
+------------------
+
+
+Agenda
+------
+
+#. Administrative
+
+   * Friday demos: we must be fully set up by 10AM.
+   
+#. Assignments
+
+   * Due Mon: Notebook 2
+   * For Mon: Ideas for Project 3.  See :ref:`project-3`.
+     
+#. In-class
+
+   * Finish up Unit 2 Exercises
+   * **Lab cleanup!**

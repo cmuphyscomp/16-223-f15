@@ -1,0 +1,25 @@
+.. include:: ../links.rst
+   
+Day 17: Project 3 Proposal and Mid-Term Interviews (Oct 28)
+===========================================================
+
+Notes for 2015-10-28.  See also the :ref:`calendar`.
+
+
+Agenda
+------
+
+#. Administrative
+
+   * Mixer with 60-223: "Halloween costume blinging party", Saturday 11AM
+     onward, 10AM if your costume idea is complicated.
+
+#. Assignments
+
+   * Due Mon 11/2: early proof-of-concept for Project 3.
+   * Due Mon 11/9: Project 3 prototype (i.e. second milestone).
+
+#. In-class
+
+   * Mid-term individual interviews.
+   * Work on Project 3 proof-of-concept.

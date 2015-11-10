@@ -1,0 +1,90 @@
+.. _exercise-input-hysteresis:
+
+Exercise: Input Hysteresis
+--------------------------
+
+**Note: this is a new exercise, please provide feedback on errors and
+clarity.**
+
+Objective
+^^^^^^^^^
+
+Understand the application of a single state variable to produce
+`hysteresis <https://en.wikipedia.org/wiki/Hysteresis>`__, the
+time-based dependence of a system's output on present **and past**
+inputs.
+
+Hysteresis arises in a process when internal state causes the output
+response to vary based on the history of the input. It can be a useful
+property to engineer into systems involving thresholds in order to avoid
+unwanted ambiguous behavior. For example, a thermostat typically turns
+on when the temperature drops somewhat below the target and keeps the
+furnace running until the temperature is somewhat above the target. This
+keeps the furnace from cycling on and off too rapidly.
+
+However, the phenomenon can also interfere with control of mechanical
+systems. Most mechanical transmissions exhibit some degree of
+`backlash <https://en.wikipedia.org/wiki/Backlash_%28engineering%29>`__,
+e.g. the slight gap between gear teeth, for which changing the direction
+of torque causes the contact to be lost and zero torque to be
+transmitted for a short displacement until load contact is
+re-established. The extra state variable is the relative position of the
+parts, which are ideally intended to have a fixed relationship. This can
+lead to motor chatter when trying to control an exact position with both
+positive and negative torques.
+
+This example presents a simple light-responsive system which
+incorporates hysteresis. This might be a model for the behavior of a
+light-sensitive streetlight to allow it to turn off at dusk without
+oscillating in response to its own illumination.
+
+State Transition Graph
+^^^^^^^^^^^^^^^^^^^^^^
+
+This graph represents a set of discrete states modelled by the system.
+States are illustrated as ovals and transitions as arrows. Each state
+can have an associated output, in this case the LED. Transitions between
+states are defined by condition rules. There is no representation of
+time in this graph; transitions are assumed to trigger instantaneously.
+
+.. graphviz:: input_hysteresis_state_transition_diagram.dot
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Set up an Arduino UNO with a photoresistor between +5V and A0 and a
+   4.7K resistor between A0 and GND, e.g. a basic voltage divider to
+   sense a varying light level using A0. Check with a DMM that the A0
+   voltage varies over a wide range with changes in light level. You may
+   need to choose a different fixed resistor depending on your specific
+   photoresistor.
+#. Upload the `InputHysteresis`_ sketch.
+#. Open the Serial Console and set to 115200 baud.
+#. Observe the console messages and the onboard LED. Can you observe the
+   correct shadow and light levels to transition from off to on and back
+   again? If it fails to transition, check that the A0 voltage is
+   varying widely enough; you may need to adjust the values for
+   ``light_threshold`` and ``dark_threshold``.
+#. Compare the code against the state transition diagram shown above.
+
+Comments
+^^^^^^^^
+
+You may now recognize that the switch debouncing code introduced much
+earlier is a specific case of a finite-state machine implementing
+time-based hysteresis.
+
+Optional Challenge
+^^^^^^^^^^^^^^^^^^
+
+Can you introduce time measurements into the state graph? Adding
+intermediate wait states conditioned on elapsed time would be another
+way to improve the hysteresis.
+
+Sketch Folder
+^^^^^^^^^^^^^
+
+#. `InputHysteresis`_
+
+.. _InputHysteresis: ../../../../Arduino/InputHysteresis
+

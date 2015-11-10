@@ -1,0 +1,262 @@
+.. _exercise-rpi-getting-started:
+
+Exercise: Getting Started on the Raspberry Pi
+---------------------------------------------
+
+Objective
+^^^^^^^^^
+
+Learn basic usage of a Raspberry Pi: connecting to a laptop or monitor,
+running programs, updating the system.
+
+The Raspberry Pi exercises assume you have the following baseline
+materials:
+
+#. Raspberry Pi B+ or Raspberry Pi 2
+#. power supply cable (USB micro)
+#. microSD card containing course Raspbian image
+#. Pi Cobbler or T-Cobbler breakout board w/ribbon cable
+#. breadboard
+#. ideally: wall-wart power supply for Raspberry Pi (5.0V to 5.25V, min
+   1 Amp). If not available a laptop can power the Pi, but this is not
+   an ideal solution.
+#. occasional use: powered speakers or earphones
+
+If you have a blank microSD card (minimum 8G) onto which you would like
+to load a Raspberry Pi operating system, we maintain several customized
+images in a `folder on box.com accessible to the CMU
+community <https://cmu.box.com/s/o08zhb7vt26bch2akklb>`__. Please see
+the README.txt file for notes on the current versions and links to
+instructions for writing the image file to a card.
+
+If using from a cluster laptop:
+
+#. short Ethernet cable
+#. Ethernet adapter (Thunderbolt or USB)
+
+If using with a monitor:
+
+#. HDMI monitor and HDMI cable
+#. USB keyboard and mouse
+#. USB WiFi adapter
+
+Overview
+^^^^^^^^
+
+The `Raspberry Pi <http://www.raspberrypi.org/>`__ is a powerful
+microcontroller which runs the Linux operating system. We have both two
+versions which are very similar physically, but with different
+computational power: the Raspberry Pi B+ with 512 Mb RAM and a
+single-core ARM Cortex-A6 CPU, and the newer Raspberry Pi 2 with 1024 Mb
+RAM and a quad-core ARM Cortex-A7. Both have a 40-pin connector for
+hardware I/O. A Raspberry Pi boots from a microSD card which acts as its
+hard drive. It is about as powerful as a low-end cell phone, which puts
+it orders of magnitude more complex than an Arduino, but much less
+capable than a current laptop.
+
+The Raspberry Pi is a vastly more powerful computer than the Arduino and
+has access to a vast array of Linux software, much of which is easily
+available in packaged form. It makes it possible to easily embed
+computer vision, audio processing, networking, data logging, 3D
+graphics, web services, etc. in a small device.
+
+The downside of this is increased complexity. Unlike the Arduino, it
+takes a few tens of seconds to boot up. Programs can be written using
+many languages but the programming environment generally lacks the
+simplicity of the Arduino IDE.
+
+We have tried to bundle a rich set of tools in a standard system to make
+it as easy as we can to get started. We have the [wiringPi] object for
+Pd which can directly control hardware I/O pins. For those so inclined,
+the wiringPi-Python library allows easy programming in Python. If you
+want to blend the two, the [pdpython] object enables building mixed
+systems. And it is also possible to program in C, C++, Javascript, Perl,
+e.g., any major language available for Linux.
+
+Interaction with the Pi
+^^^^^^^^^^^^^^^^^^^^^^^
+
+This exercise is about becoming familiar with the infrastructure and
+getting to the point of basic usability. There are a couple of different
+ways in which people use the Pi:
+
+**As a standalone computer.** It is possible to plug a monitor,
+keyboard, mouse, and network port directly into a Pi and just treat it
+like a desktop computer. The upside is the relative simplicity of
+getting started and the possibility of generating 3D graphics directly
+on a monitor. The downside is that the Pi is a slow computer, and
+burdening it with generating a desktop display makes it feel slow. Plus
+needing all the accessories defeats some of the point of using a tiny
+computer. We only recommend this mode as a startup step or for a
+disconnected system off the network.
+
+**As a X11 client.** The X11 system dates back to the 1980s but is still
+a viable means for running graphical user interfaces across the network.
+The laptop runs an X11 server (e.g. XQuartz.app) which handles drawing
+on the screen on behalf of a program running on the Pi, communicating
+over the network via SSH. This method works well for running Pure Data
+on the Pi from a laptop. This method can work over WiFi, but is much
+more reliable on a direct Ethernet connection.
+
+**As a SSH server.** Much of the Pi can be operated from the command
+line. An ssh client on a laptop can connect to the Pi for an interactive
+console session. This works over even a slow network connection, and
+works fine for text editors with console modes (e.g. emacs).
+
+**As a remote desktop.** It is possible to use a standard remote desktop
+interface on a laptop to open the Raspberry Pi desktop as a window. This
+can be familiar, but also can feel slow since the Pi is still generating
+a full display. The advantage is the minimal amount of hardware, since
+the only accessory needed is a network connection. This is really only a
+usable method across a direct Ethernet connection; the WiFi will be
+unusably slow.
+
+**As a Web server.** We have installed Node-RED, which can be launched
+to provide a web-based programming interface. This is not used in the
+course exercises, but might be viable for advanced students seeking to
+integrate the Pi hardware with web services.
+
+Data Storage on the Pi
+^^^^^^^^^^^^^^^^^^^^^^
+
+We have installed an updatable image of the course materials on the Pi
+microSD, so it should be possible to work through the exercises as-is.
+But once you begin copying the templates and generating your own project
+code and data, you'll want ways to get your personal files on and off
+the Pi.
+
+**Using shared folders.** We have set up a Samba server on the Pi which
+allows drag and drop file access from a laptop.
+
+**Using a USB drive.** The Pi can mount filesystems from USB sticks and
+external hard drives.
+
+**Using a SFTP client.** Desktop and command-line SFTP clients (e.g.
+Fugu.app or sftp) can remotely access the Pi filesystem. In many ways,
+this is more reliable than the Samba system, since there is no
+persistent connection. Sftp is better for transferring individual files
+rather than nested folders.
+
+**Using rsync or unison.** These are programs which perform single- or
+bi-directional file synchronization between a laptop and the Pi, but
+which require some careful configuration. These are suitable for nested
+folders and large sets of files.
+
+Maintenance of the Pi
+^^^^^^^^^^^^^^^^^^^^^
+
+The Linux system on the Pi is a complex infrastructure involving many
+parts which can be individually updated. Your program is always one of
+many.
+
+We have provided an update system (the 'puppet' system) which can help
+with keeping your Pi up to date as the course evolves.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+We will walk through these steps as a class demonstration, since there
+are many steps which are hard to document.
+
+**Preparation.** Gather the materials listed above. Install your microSD
+card.
+
+**Getting connected.** If using a cluster laptop, install the Ethernet
+adapter and attach an Ethernet cable from it to the Pi.
+
+**First contact using ssh.** If using a cluster laptop, configure as
+follows:
+
+#. Open System Preferences/Network and configure the Thunderbolt
+   Ethernet as follows: Configure IPv4 Manually, IP Address 192.168.2.1,
+   Subnet mask 255.255.255.0.
+#. Open System Preferences/Sharing and enable Internet Sharing so the
+   laptop can bridge the Pi to the internet. Enable the "Internet
+   Sharing" setting and set it to share from Wi-Fi to Thunderbolt
+   Ethernet.
+
+This particular configuration takes advantage of the fact that OS X
+defaults to assigning addresses in the 192.168.2.x subnet when using
+Internet Sharing. However, if you are using Windows or wish to use a
+different setup, the network configuration of the Pi is stored in the
+interfaces.txt file in a FAT32 partition on the microSD card. This can
+be changed as needed using a normal text editor when the card is
+attached to a laptop.
+
+Attach power to the Pi and watch the lights flicker as it boots. Try a
+command-line ssh connection from a Terminal window. The Pi is
+preconfigured to use address 192.168.2.3, so from a Terminal window try
+the following: ``ssh pi@192.168.2.3``. If successful, you'll see a
+password prompt: the default password is ``raspberry``. If successful,
+you'll see a Linux command prompt. Try ``ls -l`` to get a listing of
+files.
+
+**First contact using monitor.** If using a monitor, connect the HDMI
+monitor, USB keyboard and mouse, and then attach power to the Pi. You
+should see a stream of boot messages on the screen culminating in a
+login prompt. The default username is ``pi`` and password is
+``raspberry``. If successful, you should see a Linux desktop.
+
+**Graphical operation using X11 over ssh.** If using a cluster laptop,
+log out of the console connection, and the log back in with the -X flag:
+``ssh -X pi@192.168.2.3``. You'll again see a Linux command prompt. Try
+the ``xterm`` command; the laptop should automatically launch XQuartz
+and open a window with a terminal emulator. If that works, try the
+``pd`` command; it should launch Pure Data with windows appearing on the
+laptop.
+
+**Updating using the puppet system.** If using a cluster laptop, try the
+following command to check your network connectivity:
+``ping www.cmu.edu``. If that fails, you'll need to debug the
+network connection. The ``ifconfig`` command will show you the current
+network configuration on the Pi. Other useful network commands:
+``hostname -I`` to check the current IP address, ``host www.cmu.edu`` to
+test name service, and ``dig www.cmu.edu`` to test name service in
+detail. (For details: ``man dig`` to read the manual page).
+
+If your Pi is able to connect to the internet, try running an update
+with ``sudo pi_update --course``. That will update the contents of the
+``/opt/cmuphyscomp/physcomp-f15/`` folder to the current course
+materials. To run all available updates, you may use
+``sudo pi_update``, but that can take a few minutes.
+
+**Graphical operation using RDP.** If using a cluster laptop, launch
+"Remote Desktop Connection.app" and enter 192.168.2.3 for Computer. You
+may need to confirm Connect at a security warning. You should then see a
+Login to xrdp window, enter pi and raspberry as username and password.
+It should then proceed to show a Linux LXDE desktop within the RDC
+window. You can log out using the red button at lower right. It is also
+possible to use "Microsoft Remote Desktop.app": you'll need to create a
+new connection but leave the Credentials section blank.
+
+**Getting files on and off the Pi using Samba.** If using a cluster
+laptop, open a Finder window and look under the Shared list on the
+sidebar. Select raspberry and click Connect As.. and enter the
+pi/raspberry username and login. It should open a folder representing
+the pi home folder on the Pi; you can drag and drop to copy files back
+and forth.
+
+**Resizing the filesystem.** The course system image is sized to fit on
+a 4Gb card, but has likely been written to a card larger than 4Gb. You
+can check whether it has been properly expanded to make use of all
+available space by running ``df -h /`` and seeing whether the size
+column still says 3.6G or is a larger number commensurate with your
+actual card. If it needs to be resized, run ``sudo raspi-config`` and
+select ``1 Expand Filesystem`` at the menu, followed by interface item
+``Finish``, then confirm an immediate reboot.
+
+**Enabling the Pi Camera or SPI ports.** The drivers for these devices
+are not enabled by default. To turn then on, run
+``sudo       raspi-config`` and select either or both of
+``5 Enable Camera`` and ``8 Advanced Options`` followed by ``A6 SPI``.
+
+**Installing openFrameworks.** The `openFrameworks
+libraries <http://www.openframeworks.cc/>`__ are not included by default
+in the newer system images, but can be downloaded and compiled directly
+on your Pi 2. If you would like to work with openFrameworks, a script is
+provided to build it in /opt/openFrameworks by running
+``sudo setup_openframeworks``. It will take some time to run.
+
+**Shutting down the Pi.** It is best to do a proper shutdown on the Pi
+rather than just unplugging it to avoid corrupting the memory card. From
+a command line enter ``sudo shutdown -h now``.

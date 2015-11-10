@@ -1,0 +1,51 @@
+.. include:: links.rst
+
+.. _unit-2-exercises:
+
+Unit 2 Exercises: Signals, Time, and Dynamics
+=============================================
+
+Please be sure to read the :ref:`computation-guide` section for a review of
+computational terminology and concepts.
+
+**Please explore and document at least 6 of the following exercises:**
+
+Arduino-related:
+
+* :ref:`event-loop-programming <exercise-event-loop-programming>`, event-loop time-slicing for executing multiple simultaneous tasks
+* :ref:`resolution-and-mapping <exercise-resolution-and-mapping>`, smoothing filter for sampled analog input
+* :ref:`Adafruit-PWM-I2C <exercise-Adafruit-PWM-I2C>`, demonstrates |I2C| bus for PWM actuation
+* :ref:`MPU6050-IMU-I2C <exercise-MPU6050-IMU-I2C>`, demonstrates |I2C| bus for inertial sensing
+* :ref:`WS2801-LED-SPI <exercise-WS2801-LED-SPI>`, demonstrates SPI bus for digital LED output
+* :ref:`Music Sequencer <exercise-music-sequencer>`, state-machine interpretation of performance data with musical audio output
+
+Python and Arduino combined:
+
+* :ref:`Python GUI client with Arduino I/O Server <exercise-Python-Arduino>`
+
+Mechanism-related:
+
+* :ref:`Electromechanical Oscillation <exercise-mechanical-oscillator>`
+
+Raspberry Pi-related:
+
+* :ref:`Getting Started on the Raspberry Pi <exercise-rpi-getting-started>`
+
+.. |I2C| replace:: I\ :sup:`2`\ C
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+   :hidden:
+
+   ex/Arduino/event-loop-programming/event-loop-programming
+   ex/Arduino/resolution-and-mapping/resolution-and-mapping
+   ex/Arduino/Adafruit-PWM-I2C/Adafruit-PWM-I2C
+   ex/Arduino/MPU6050-IMU-I2C/MPU6050-IMU-I2C
+   ex/Arduino/WS2801-LED-SPI/WS2801-LED-SPI
+   ex/Arduino/music-sequencer/music-sequencer
+   ex/Arduino/Python-Arduino/Python-Arduino
+   ex/mechanism/mechanical-oscillator/mechanical-oscillator
+   ex/Raspberry-Pi/rpi-getting-started/rpi-getting-started

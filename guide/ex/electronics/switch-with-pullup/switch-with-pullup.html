@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.5. Exercise: Switch with pullup &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.6. Exercise: LED with current limiter" href="../led-current-limiter/led-current-limiter.html" />
+    <link rel="prev" title="2.1.4. Exercise: Voltage Divider" href="../voltage-divider/voltage-divider.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../led-current-limiter/led-current-limiter.html" title="2.1.6. Exercise: LED with current limiter"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../voltage-divider/voltage-divider.html" title="2.1.4. Exercise: Voltage Divider"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-switch-with-pullup">
+<span id="id1"></span><h1>2.1.5. Exercise: Switch with pullup<a class="headerlink" href="#exercise-switch-with-pullup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.5.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Sense a mechanical action as a varying voltage.</p>
+<p>A switch is a special case of a resistor with two states, either
+near-zero resistance or near-infinite resistance. A resistor in series
+with a switch is a very common voltage divider construction in which the
+<em>pull-up resistor</em> can supply a small current through the switch. If the
+switch is closed, it&#8217;s resistance is near zero, so the output is
+connected directly to ground. If the switch is open, the current through
+the resistor is zero, so there is no voltage drop and the output is
+<em>pulled up</em> to the supply voltage.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.5.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Measure the exact resistor value.</li>
+<li>Measure the supply voltage.</li>
+<li>Measure the voltage across the switch in both states.</li>
+<li>Measure the current through the resistor in both states. Compare to
+predictions.</li>
+<li>Create a simple switch from wire and use it to sense some kind of
+mechanical activity. (Keep this simple, this should only take a
+minute or two.)</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.5.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>The DMM in voltage mode has a very high effective resistance, so it
+senses a voltage without any significant current flowing through the
+probes. If the circuit attached to a voltage divider has a resistance
+closer to the values in the divider, then the analysis is more
+complicated since current also flows out through the output node.
+Arduino inputs, both digital and analog, have very high resistance and
+only very small currents flow into them.</p>
+<p>Note that with the switch closed a current flows through the resistor
+which is entirely dissipated as heat. The higher the resistor value, the
+smaller the dissipation. In practice, the resistor value isn&#8217;t very
+critical and values from 1K to 100K will work fine with our components.
+Overall, the higher the value, the lower the power loss, but the weaker
+the signal available at the output. However, designing electronics for
+long-life battery operation requires careful attention to minimizing
+these dissipation losses.</p>
+<a class="reference internal image-reference" href="../../../_images/switch-with-pullup.png"><img alt="../../../_images/switch-with-pullup.png" src="../../../_images/switch-with-pullup.png" style="width: 75%;" /></a>
+<a class="reference internal image-reference" href="../../../_images/switch-with-pullup_bb.png"><img alt="../../../_images/switch-with-pullup_bb.png" src="../../../_images/switch-with-pullup_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/switch-with-pullup_schem.png" src="../../../_images/switch-with-pullup_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.5.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/switch-with-pullup.fzz"><code class="xref download docutils literal"><span class="pre">switch-with-pullup.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.5. Exercise: Switch with pullup</a><ul>
+<li><a class="reference internal" href="#objective">2.1.5.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.5.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.5.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.5.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../voltage-divider/voltage-divider.html"
+                        title="previous chapter">2.1.4. Exercise: Voltage Divider</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../led-current-limiter/led-current-limiter.html"
+                        title="next chapter">2.1.6. Exercise: LED with current limiter</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../led-current-limiter/led-current-limiter.html" title="2.1.6. Exercise: LED with current limiter"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../voltage-divider/voltage-divider.html" title="2.1.4. Exercise: Voltage Divider"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

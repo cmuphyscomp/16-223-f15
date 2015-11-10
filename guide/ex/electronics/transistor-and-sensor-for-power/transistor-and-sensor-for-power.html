@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.17. Exercise: Linear One-In One-Out &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.18. Exercise: Arduino Introduction" href="../../Arduino/arduino-intro/arduino-intro.html" />
+    <link rel="prev" title="2.1.16. Exercise: Multichannel Bipolar Transistor Driver" href="../multichannel-driver/multichannel-driver.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../Arduino/arduino-intro/arduino-intro.html" title="2.1.18. Exercise: Arduino Introduction"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../multichannel-driver/multichannel-driver.html" title="2.1.16. Exercise: Multichannel Bipolar Transistor Driver"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-linear-one-in-one-out">
+<span id="exercise-transistor-and-sensor-for-power"></span><h1>2.1.17. Exercise: Linear One-In One-Out<a class="headerlink" href="#exercise-linear-one-in-one-out" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.17.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Connect light to motion via electricity.</p>
+<p>This exercise uses a single-input single-output system which couples a
+light level to a motor activation. A photoresistor modulates the base
+current of a bipolar transistor, controlling the current flowing through
+the collector and emitter to operate a motor. This represents one
+possible minimal solution to the first graded assignment.</p>
+<p>This is an analog circuit inasmuch as the photoresistor current can be
+set to keep the transistor operating in a linear range, continuously
+varying the motor speed. If the base current is high or low enough, the
+transistor will either saturate or shutoff and act as a digital device
+in that it will simply be ON or OFF.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.17.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Wire up the circuit, trying to use only the schematic.</li>
+<li>Modulate the incident light, observing the motor, trying to find the
+linear operating region. If necessary, adjust the supply voltages.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.17.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>In practice, transistor circuits usually have additional <em>bias
+resistors</em> to supply positive or negative currents to keep the
+transistor operating in the desired region. This is a deep topic which
+leads into the art of analog circuit design. For an idea of this, look
+up “audio circuits” on Google Images and <a class="reference external" href="https://www.google.com/search?q=audio+circuits&amp;tbm=isch">see what comes
+out</a>.</p>
+<p>This circuit is a very simple example of a <a class="reference external" href="http://en.wikipedia.org/wiki/Amplifier#Class_A">class-A
+amplifier</a> using a
+<a class="reference external" href="http://en.wikipedia.org/wiki/Common-emitter">common-emitter
+topology</a>; there are
+many other types of amplifying transistor circuits. In general we will
+use PWM to control motor speed using a simple type of class-D amplifier
+for better power efficiency.</p>
+<a class="reference internal image-reference" href="../../../_images/transistor-and-sensor-for-power_bb.png"><img alt="../../../_images/transistor-and-sensor-for-power_bb.png" src="../../../_images/transistor-and-sensor-for-power_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/transistor-and-sensor-for-power_schem.png" src="../../../_images/transistor-and-sensor-for-power_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.17.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/transistor-and-sensor-for-power.fzz"><code class="xref download docutils literal"><span class="pre">transistor-and-sensor-for-power.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.17. Exercise: Linear One-In One-Out</a><ul>
+<li><a class="reference internal" href="#objective">2.1.17.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.17.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.17.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.17.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../multichannel-driver/multichannel-driver.html"
+                        title="previous chapter">2.1.16. Exercise: Multichannel Bipolar Transistor Driver</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../Arduino/arduino-intro/arduino-intro.html"
+                        title="next chapter">2.1.18. Exercise: Arduino Introduction</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../../Arduino/arduino-intro/arduino-intro.html" title="2.1.18. Exercise: Arduino Introduction"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../multichannel-driver/multichannel-driver.html" title="2.1.16. Exercise: Multichannel Bipolar Transistor Driver"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

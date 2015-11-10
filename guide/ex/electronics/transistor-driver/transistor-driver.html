@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.15. Exercise: MOSFET Transistor Driver &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.16. Exercise: Multichannel Bipolar Transistor Driver" href="../multichannel-driver/multichannel-driver.html" />
+    <link rel="prev" title="2.1.14. Exercise: Relay Driver" href="../relay-driver/relay-driver.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../multichannel-driver/multichannel-driver.html" title="2.1.16. Exercise: Multichannel Bipolar Transistor Driver"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../relay-driver/relay-driver.html" title="2.1.14. Exercise: Relay Driver"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-mosfet-transistor-driver">
+<span id="exercise-transistor-driver"></span><h1>2.1.15. Exercise: MOSFET Transistor Driver<a class="headerlink" href="#exercise-mosfet-transistor-driver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.15.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Amplify a control signal using a MOSFET transistor.</p>
+<p>A <a class="reference external" href="http://en.wikipedia.org/wiki/Transistor">transistor</a> is a type of
+three-terminal semiconductor component which allows a control current or
+voltage at the <em>base</em> or <em>gate</em> terminal to affect the current flowing
+through the device. A <a class="reference external" href="http://en.wikipedia.org/wiki/MOSFET">MOSFET</a>
+is a particular type of transistor with very high current gain; the gate
+input has very high impedance, such that a gate voltage with very little
+current can control the current flowing between the <em>source</em> and
+<em>drain</em>. This makes it very convenient for interfacing logic-level
+signals to loads such as motors.</p>
+<p>MOSFETs have a linear range in which the current is proportional to the
+gate voltage, but this exercise will use it in a <em>saturation</em> mode in
+which it is either on or off. MOSFETS come in both P-channel and
+N-channel varieties exhibiting different polarities; this exercise uses
+an N-channel MOSFET in which a small positive gate voltage relative to
+the source terminal will cause a positive current to flow from drain to
+source, activating the motor.</p>
+<p>MOSFETs have very low forward voltage, i.e., the voltage drop across the
+source and drain can be very low, meaning there is very little power
+dissipated for a given current.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.15.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Set the power supplies to the specified voltages first. We are using
+a low-voltage motor so the 1V is actually the ‘high-power’ energy
+supply and the 5V is the logic supply. The MOSFET can handle
+substantially higher currents than used by this motor.</li>
+<li>Manually connect and disconnect the gate voltage, observing the motor
+operation. If disconnecting the gate does not turn off the
+transistor, try grounding the gate. Even a small static charge on the
+gate can be enough to turn it on.</li>
+<li>Measure the gate current and resistance, and compute the power
+dissipated by the gate input. (It should be very low.)</li>
+<li>Measure the motor current, and compute the power dissipated by the
+motor.</li>
+<li>Compute the power gain of the amplifier: the output power divided by
+the input power.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.15.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Note that unlike the relay circuit, the input and output circuits are
+not isolated from each other.</p>
+<p>MOSFETS are fast and silent. Modern MOSFETS can handle relatively high
+power loads with minimal dissipation. The parts are polarized, and
+driving an output with both positive and negative current (e.g. for
+directional control) requires multiple parts and steering logic, e.g. an
+H-Bridge configuration. The polarization also makes them unsuitable for
+controlling AC circuits. More details can be found on the <a class="reference external" href="http://www.irf.com/product-info/datasheets/data/irf540n.pdf">data sheet
+for the IRF540 MOSFETs we stock in the
+lab</a>.</p>
+<p>Note that the MOSFET symbol includes a reverse-biased <a class="reference external" href="http://en.wikipedia.org/wiki/Zener_diode">Zener
+diode</a> which exists as a
+byproduct of the transistor structure. If the voltage across the MOSFET
+becomes sufficiently reversed, it will begin to conduct (“avalanche”)
+and can be destroyed. This circuit has no apparent negative voltages,
+however, the motor coil is an inductor which can create negative voltage
+spikes as it turns off. With larger motors in particular, it can be
+important to place a <a class="reference external" href="http://en.wikipedia.org/wiki/Flyback_diode">protective clamp
+diode</a> around the motor
+which normally does not conduct but turns on to absorb large reverse
+voltages.</p>
+<a class="reference internal image-reference" href="../../../_images/transistor-driver_bb.png"><img alt="../../../_images/transistor-driver_bb.png" src="../../../_images/transistor-driver_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/transistor-driver_schem.png" src="../../../_images/transistor-driver_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.15.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/transistor-driver.fzz"><code class="xref download docutils literal"><span class="pre">transistor-driver.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.15. Exercise: MOSFET Transistor Driver</a><ul>
+<li><a class="reference internal" href="#objective">2.1.15.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.15.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.15.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.15.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../relay-driver/relay-driver.html"
+                        title="previous chapter">2.1.14. Exercise: Relay Driver</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../multichannel-driver/multichannel-driver.html"
+                        title="next chapter">2.1.16. Exercise: Multichannel Bipolar Transistor Driver</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../multichannel-driver/multichannel-driver.html" title="2.1.16. Exercise: Multichannel Bipolar Transistor Driver"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../relay-driver/relay-driver.html" title="2.1.14. Exercise: Relay Driver"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

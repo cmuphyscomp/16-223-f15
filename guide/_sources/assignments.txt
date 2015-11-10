@@ -11,16 +11,16 @@ Please also become aware of the stringent requirements of the
 
 
 .. toctree::
+   :maxdepth: 1
+   :includehidden:
 
+   unit1
+   unit2
+   unit3
    project_reports
    project1
    project2
-
-Project 3
-=========
-
-Details TBD.
-
+   project3
 
 Final Project
 =============
@@ -103,128 +103,6 @@ but digital can be duplicated more easily for submission.  Here are some suggest
   * Whatever you do, please consider that your instructor will need to skim
     through 25 of these and make comments, so please keep it legible, organized,
     and concise.
-
-.. _unit-1-exercises:
-
-Unit 1 Exercises: Energy, Information, Transduction
-===================================================
-
-The first unit has many exercises intended familiarize you with the lab and
-basic electronic equipment and are essential for developing the vocabulary and
-skills to fulfill the projects.
-
-The lab exercises are intended to be performed by pairs of students.  The
-exercises will be performed in the lab during class time, but also outside class
-as needed. Each student should keep their own lab notebook as detailed in
-:ref:`lab-notebook`.
-
-The initial exercises are intended to be quick, simple introductions, but please
-be sure that each member of each student pair practices each physical and
-measurement skill. Part of the exercise is absorbing a set of technical terms;
-the meaning will become apparent in time through immersion in practice.
-
-The following is a suggested order which generally develops from simple to more
-complex, however the sequence is not strict.  There are more exercises available
-for this section than time so individuals may choose exercises according to the
-experience and discretion.  If something is too elementary for your experience
-level, please choose something new for you.  If an exercise requires a part
-which is not available, please move on to something feasible.
-
-Please be sure to read the :ref:`basic-circuits-guide` section for a review of
-terminology and concepts.  Also, please skim the :ref:`errata` section if you
-have trouble to identify mistakes in the text or general hints.
-
-Anyone who completes the basic exercises should consider undertaking more of the
-optional challenge activities listed at the end of most exercises.
-
-**Please explore and document at least 8 of the following electronics exercises**:
-
-   * `bench-battery-grid <../exercises/electronics/bench-battery-grid/index.html>`__
-   * `continuity-tests <../exercises/electronics/continuity-tests/index.html>`__
-   * `power-switch <../exercises/electronics/power-switch/index.html>`__
-   * `voltage-divider <../exercises/electronics/voltage-divider/index.html>`__
-   * `switch-with-pullup <../exercises/electronics/switch-with-pullup/index.html>`__
-   * `led-current-limiter <../exercises/electronics/led-current-limiter/index.html>`__
-   * `photocell-with-bias-resistor <../exercises/electronics/photocell-with-bias-resistor/index.html>`__
-   * `pressure-pad-with-bias-resistor <../exercises/electronics/pressure-pad-with-bias-resistor/index.html>`__
-   * `transducer-with-dmm <../exercises/electronics/transducer-with-dmm/index.html>`__
-   * `smoke-a-resistor <../exercises/electronics/smoke-a-resistor/index.html>`__
-   * `voltage-regulation <../exercises/electronics/voltage-regulation/index.html>`__
-   * `capacitance <../exercises/electronics/capacitance/index.html>`__
-   * `op-amp-level-translation <../exercises/electronics/op-amp-level-translation/index.html>`__
-   * `relay-driver <../exercises/electronics/relay-driver/index.html>`__
-   * `transistor-driver <../exercises/electronics/transistor-driver/index.html>`__
-   * `multichannel-driver <../exercises/electronics/multichannel-driver/index.html>`__
-   * `transistor-and-sensor-for-power <../exercises/electronics/transistor-and-sensor-for-power/index.html>`__
-
-Please be sure to read the :ref:`Arduino-guide` section for a review of
-terminology and concepts.  Also, please skim the :ref:`errata` section if you
-have trouble to identify mistakes in the text or general hints.
-
-**Please explore and document at least 6 of the following exercises:**
-
-Arduino-related:
-
-   * `arduino-intro <../exercises/Arduino/arduino-intro/index.html>`__
-   * `coding-compiling-deploying <../exercises/Arduino/coding-compiling-deploying/index.html>`__
-   * `blink-bulb <../exercises/Arduino/blink-bulb/index.html>`__
-   * `blink-motor <../exercises/Arduino/blink-motor/index.html>`__
-   * `analog-read-serial <../exercises/Arduino/analog-read-serial/index.html>`__
-   * `digital-read-serial <../exercises/Arduino/digital-read-serial/index.html>`__
-   * `servo-sweep <../exercises/Arduino/servo-sweep/index.html>`__
-   * `stepper-motor-knob <../exercises/Arduino/stepper-motor-knob/index.html>`__
-
-Mechanism-related:
-
-   * `Laser Cutting Features and Tolerances <../exercises/mechanism/laser-tolerance/index.html>`__
-   * `Mechanisms for One-Bit Sensing <../exercises/mechanism/mechanical-one-bit-sensing/index.html>`__
-
-Please be sure to read the :ref:`mechanism-guide` section for a review of
-mechanical terminology and concepts.
-
-.. _unit-2-exercises:
-
-Unit 2 Exercises: Signals, Time, and Dynamics
-=============================================
-
-
-Please be sure to read the :ref:`computation-guide` section for a review of
-computational terminology and concepts.
-
-**Please explore and document at least 6 of the following exercises:**
-
-Arduino-related:
-
-   * `event-loop-programming <../exercises/Arduino/event-loop-programming/index.html>`__
-   * `resolution-and-mapping <../exercises/Arduino/resolution-and-mapping/index.html>`__
-   * `Adafruit-PWM-I2C <../exercises/Arduino/Adafruit-PWM-I2C/index.html>`__
-   * `MPU6050-IMU-I2C <../exercises/Arduino/MPU6050-IMU-I2C/index.html>`__
-   * `WS2801-LED-SPI <../exercises/Arduino/WS2801-LED-SPI/index.html>`__
-   * `Music Sequencer <../exercises/Arduino/music-sequencer/index.html>`__
-
-Python and Arduino combined:
-
-  * `Python GUI client with Arduino I/O Server <../exercises/Arduino/Python-Arduino/index.html>`__
-
-Mechanism-related:
-
-   * `Electromechanical Oscillation <../exercises/mechanism/mechanical-oscillator/index.html>`__
-
-Raspberry Pi-related:
-
-   * `Getting Started on the Raspberry Pi <../exercises/Raspberry-Pi/rpi-getting-started/index.html>`__
-
-.. _unit-3-exercises:
-
-Unit 3 Exercises: Algorithms and State
-======================================
-
-**Please explore and document at least 4 of the following exercises:**
-
-   * `input-matching <../exercises/Arduino/input-matching/index.html>`__
-
-Please be sure to see the :ref:`OneInOneOutASCII-doxygen` section for background
-on dividing a process between the Arduino and a laptop.
 
 .. _research-talk:
 

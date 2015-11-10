@@ -1,0 +1,29 @@
+.. include:: ../links.rst
+   
+Day 12: Project 2 Proof-of-Concept (Oct 12)
+============================================
+
+Notes for 2015-10-12.  See also the :ref:`calendar`.
+
+Notes from Day 11
+------------------
+
+
+Agenda
+------
+
+#. Administrative
+   
+#. Assignments
+     
+#. In-class
+
+
+   * Fifth round of research talks (30 minutes).
+     
+     * E: `Lily Camera <https://www.lily.camera>`__, `video <https://www.youtube.com/watch?v=4vGcH0Bk3hg>`__, `slides <https://docs.google.com/presentation/d/1S7Gp6T_s_Iyi13IFc4uQjv9As6JZPZrOiPiohlujsB8/edit?usp=sharing>`__
+     * A: `Tactum <http://www.madlab.cc/tactum>`__, `slides <https://docs.google.com/presentation/d/12ABzXz8UFcMuRPddqBlpEf1JGn3Xr8OECkG-5xM3RdY/edit?usp=sharing_eid&ts=561a6269>`__
+     * V: `The Magic Carpet <https://vimeo.com/104787763>`__
+
+.. ejcollaz avantid vyong
+     

@@ -1,0 +1,42 @@
+.. include:: ../links.rst
+
+Day 16: Project 3 Introduction (Oct 26)
+==========================================
+
+Notes for 2015-10-26.  See also the :ref:`calendar`.
+
+Notes from Day 15
+------------------
+
+#. Learn to use a tripod or Magic Arm.  Your video is of pretty limited use when
+   only handheld.
+
+#. Project 2 Peer Evaluation results.
+
+Agenda
+------
+
+#. Assignments
+
+   * Due today: Notebook 2.
+   * Due Wednesday: Project 3 proposal.
+   * Wednesday: brief in-class individual interviews.
+
+#. In-class
+
+   * Disassemble Project 2 and put components away, unless it is the basis for
+     your Project 3 or you have approval to keep it intact.
+
+   * Form your project 3 group.
+     
+     * If you have worked with the same partner twice, I would greatly prefer
+       you change partners for Project 3.  If you have a compelling reason to
+       stay with the same partner, please be prepared to provide a strong
+       justification.
+
+     * I still prefer working pairs but no solo teams.  We have an odd number of
+       students, so there will necessarily be one group of three.
+     
+   * Start developing your project idea and preparing **sketches** and
+     **drawings** and a **project schedule**.  Please be sure to identify the
+     *hardest* elements and clearly identify an early proof-of-concept goal.

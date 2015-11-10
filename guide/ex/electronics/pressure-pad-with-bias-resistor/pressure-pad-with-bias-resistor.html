@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.1.8. Exercise: Pressure pad with bias resistor &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.1. Unit 1 Exercises: Energy, Information, Transduction" href="../../../unit1.html" />
+    <link rel="next" title="2.1.9. Exercise: Transducer with DMM" href="../transducer-with-dmm/transducer-with-dmm.html" />
+    <link rel="prev" title="2.1.7. Exercise: Photocell with bias resistor" href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../transducer-with-dmm/transducer-with-dmm.html" title="2.1.9. Exercise: Transducer with DMM"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html" title="2.1.7. Exercise: Photocell with bias resistor"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" accesskey="U">2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-pressure-pad-with-bias-resistor">
+<span id="id1"></span><h1>2.1.8. Exercise: Pressure pad with bias resistor<a class="headerlink" href="#exercise-pressure-pad-with-bias-resistor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.1.8.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Measure mechanical pressure as a varying voltage.</p>
+<p>A <em>pressure pad</em> (i.e. <a class="reference external" href="http://en.wikipedia.org/wiki/Force_Sensitive_Resistor">force-sensing
+resistor</a>, or
+FSR) is a contact sensor in which the resistance changes in response to
+mechanical pressure. The resistance decreases with increased force. A
+voltage divider circuit can be used for forming a voltage which depends
+on the pressure.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.1.8.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The circuit diagram shows a homebrew conductive fabric FSR but you
+may use a commercial FSR at first. These are labeled “pressure
+sensor” and can be found in the Sensors cabinet.</li>
+<li>Measure the resistance of the pressure pad by itself over different
+pressure conditions.</li>
+<li>The exact value of the bias resistor depends on the properties of
+your sensor. A good starting point is a resistance equal to the
+mid-range resistance of the sensor.</li>
+<li>Measure the pressure pad voltage in the given circuit over different
+pressure conditions.</li>
+<li>Using the oscilloscope to observe the pressure pad voltage, try
+creating rapidly changing contact to estimate the response speed.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.1.8.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Commercial FSRs can be damaged by excessive force. In practice, it can
+take care to design them within a mechanical assembly so they are not
+directly exposed to excessive force or forces which pull them apart. But
+they are a relatively cheap and robust way to make an analog human
+interface.</p>
+<p>As a challenge, rather than use a packaged FSR device, make your own
+using tape and conductive fabric. Please see the following as a guide.</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://www.kobakant.at/DIY/?cat=26">Kobakant DIY: extensive guide to homebrew fabric
+sensors.</a></li>
+<li><a class="reference external" href="http://www.instructables.com/id/Stickytape-Sensors/">Stickytape Sensors: quick and simple pressure and bend
+sensors.</a></li>
+<li><a class="reference external" href="http://www.adafruit.com/datasheets/HandcraftingSensors.pdf">Handcrafting Sensors: long guide to variety of fabric
+sensors.</a></li>
+</ol>
+<p>Conductive fabric can also be damaged by excessive force and can some
+types can wear out from washing. But these sensors can be incorporated
+into clothing, made with multiple sensitive points, turned into tilt
+sensors and linear controls, etc.</p>
+<a class="reference internal image-reference" href="../../../_images/pressure-pad-with-bias-resistor_bb.png"><img alt="../../../_images/pressure-pad-with-bias-resistor_bb.png" src="../../../_images/pressure-pad-with-bias-resistor_bb.png" style="width: 75%;" /></a>
+<img alt="../../../_images/pressure-pad-with-bias-resistor_schem.png" src="../../../_images/pressure-pad-with-bias-resistor_schem.png" />
+</div>
+<div class="section" id="other-files">
+<h2>2.1.8.4. Other Files<a class="headerlink" href="#other-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Fritzing file: <a class="reference download internal" href="../../../_downloads/pressure-pad-with-bias-resistor.fzz"><code class="xref download docutils literal"><span class="pre">pressure-pad-with-bias-resistor.fzz</span></code></a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.1.8. Exercise: Pressure pad with bias resistor</a><ul>
+<li><a class="reference internal" href="#objective">2.1.8.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.1.8.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.1.8.3. Comments</a></li>
+<li><a class="reference internal" href="#other-files">2.1.8.4. Other Files</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html"
+                        title="previous chapter">2.1.7. Exercise: Photocell with bias resistor</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../transducer-with-dmm/transducer-with-dmm.html"
+                        title="next chapter">2.1.9. Exercise: Transducer with DMM</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../transducer-with-dmm/transducer-with-dmm.html" title="2.1.9. Exercise: Transducer with DMM"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../photocell-with-bias-resistor/photocell-with-bias-resistor.html" title="2.1.7. Exercise: Photocell with bias resistor"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit1.html" >2.1. Unit 1 Exercises: Energy, Information, Transduction</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

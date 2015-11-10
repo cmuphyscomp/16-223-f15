@@ -6,15 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>6.13. Ddeay 11: Project 2 Definition (Oct 7) &mdash; 16-223 Introduction to Physical Computing</title>
+    <title>6.13. Day 11: Project 2 Definition (Oct 7) &mdash; 16-223 Introduction to Physical Computing</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/guide.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2015-10-06',
+        VERSION:     '2015-11-10',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,8 +24,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="16-223 Introduction to Physical Computing" href="../index.html" />
     <link rel="up" title="6. Log Book" href="../logbook.html" />
+    <link rel="next" title="6.14. Day 12: Project 2 Proof-of-Concept (Oct 12)" href="day12.html" />
     <link rel="prev" title="6.12. Day 10: Project 2 Introduction (Oct 5)" href="day10.html" /> 
   </head>
   <body role="document">
@@ -38,6 +41,9 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="day12.html" title="6.14. Day 12: Project 2 Proof-of-Concept (Oct 12)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="day10.html" title="6.12. Day 10: Project 2 Introduction (Oct 5)"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
@@ -50,12 +56,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ddeay-11-project-2-definition-oct-7">
-<h1>6.13. Ddeay 11: Project 2 Definition (Oct 7)<a class="headerlink" href="#ddeay-11-project-2-definition-oct-7" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="day-11-project-2-definition-oct-7">
+<h1>6.13. Day 11: Project 2 Definition (Oct 7)<a class="headerlink" href="#day-11-project-2-definition-oct-7" title="Permalink to this headline">¶</a></h1>
 <p>Notes for 2015-10-05.  See also the <a class="reference internal" href="../calendar.html#calendar"><span>Fall 2015 Calendar</span></a>.</p>
 <div class="section" id="notes-from-day-10">
 <h2>6.13.1. Notes from Day 10<a class="headerlink" href="#notes-from-day-10" title="Permalink to this headline">¶</a></h2>
+<img alt="I sincerely hope this wasn't due to any members of this class." src="../_images/2015-10-06-spilled-glue.jpg" />
 <ol class="arabic simple">
+<li>Maker Faire participants: if you have not positively identified your project
+to Kelly Delaney, please do so immediately.</li>
 <li>Oct 23: IDeATe open house <em>and</em> President Suresh’s Global Advisory Council
 <em>and</em> Academic Leadership Council</li>
 <li>There are a regular series of fire extinguisher training sessions still ongoing:
@@ -64,7 +73,15 @@ This site can also show you whether you were previously certified.</li>
 <li>I am pushing back and simplifying the project 2 proposal deadline to focus
 your attention on technical details and acknowledge the late posting of the prompt.</li>
 <li>Added new music sequencer exercise to introduce the idea of <em>interpretation</em>,
-C++ class structure, and simultaneous processes.  See <a class="reference internal" href="../assignments.html#unit-2-exercises"><span>Unit 2 Exercises: Signals, Time, and Dynamics</span></a>.</li>
+C++ class structure, and simultaneous processes.  See <a class="reference internal" href="../unit2.html#unit-2-exercises"><span>Unit 2 Exercises: Signals, Time, and Dynamics</span></a>.</li>
+<li>Comments from report reviews.<ol class="arabic">
+<li>Process versus result documentation.</li>
+<li>Voltage dividers.</li>
+<li>Schematic capture.</li>
+<li>Event-loops.</li>
+<li>Grading</li>
+</ol>
+</li>
 </ol>
 </div>
 <div class="section" id="agenda">
@@ -77,18 +94,18 @@ C++ class structure, and simultaneous processes.  See <a class="reference intern
 <li>Assignments<ul>
 <li>Fri Oct 12: project 2 proposal.  Keep the text minimal, I want your energy
 go toward thinking through the drawings and proof-of-concept statement. How
-much can you work out now before you start building?  Could <strong>I</strong> construct
+much can you work out now <strong>before</strong> you start building?  <strong>Could I construct</strong>
 your proof-of-concept from your drawing?</li>
 <li>Mon Oct 12: project 2 proof-of-concept.</li>
 </ul>
 </li>
 <li>In-class<ul>
 <li>Fourth round of research talks (45 minutes).<ul>
-<li>K:</li>
-<li>R:</li>
-<li>A:</li>
+<li>K: <a class="reference external" href="https://docs.google.com/presentation/d/1QuwI1zWIvoVZhTfoND0y9_z0j9iRrQtxaOmIE__MN0E/edit?usp=sharing_eid&amp;ts=56141f4a">Gesture Vocalizer</a></li>
+<li>R: <a class="reference external" href="https://docs.google.com/presentation/d/1y_PgLJc-J3IqPFjvVdkYJhd52h6hdSNAvOBPX8u72AU/edit#slide=id.p">Database</a>, <a class="reference external" href="https://vimeo.com/124687054/">video</a></li>
+<li>A: <a class="reference external" href="https://docs.google.com/presentation/d/1WtKsS67uLvKbHHu27eG50bCMcuvRPBY8J7WEuxw8gpM/edit#slide=id.p">Liftware</a></li>
 <li>D: <a class="reference external" href="http://dataphys.org/list/durrell-bishops-marble-answering-machine/">The Marble Answering Machine by Durrell Bishop</a>, <a class="reference external" href="https://vimeo.com/19930744">video</a>, <a class="reference external" href="https://ccdc11.wordpress.com/2011/02/15/durrell-bishops-marble-answering-machine/">more</a></li>
-<li>L:</li>
+<li>L: <a class="reference external" href="http://www.disneyresearch.com/project/botanicus-interacticus-interactive-plant-technology/">Botanicus Interacticus</a></li>
 </ul>
 </li>
 <li>Unit 2 Exercises</li>
@@ -107,7 +124,7 @@ your proof-of-concept from your drawing?</li>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">6.13. Ddeay 11: Project 2 Definition (Oct 7)</a><ul>
+<li><a class="reference internal" href="#">6.13. Day 11: Project 2 Definition (Oct 7)</a><ul>
 <li><a class="reference internal" href="#notes-from-day-10">6.13.1. Notes from Day 10</a></li>
 <li><a class="reference internal" href="#agenda">6.13.2. Agenda</a></li>
 </ul>
@@ -117,6 +134,9 @@ your proof-of-concept from your drawing?</li>
   <h4>Previous topic</h4>
   <p class="topless"><a href="day10.html"
                         title="previous chapter">6.12. Day 10: Project 2 Introduction (Oct 5)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="day12.html"
+                        title="next chapter">6.14. Day 12: Project 2 Proof-of-Concept (Oct 12)</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
@@ -144,6 +164,9 @@ your proof-of-concept from your drawing?</li>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
+          <a href="day12.html" title="6.14. Day 12: Project 2 Proof-of-Concept (Oct 12)"
+             >next</a> |</li>
+        <li class="right" >
           <a href="day10.html" title="6.12. Day 10: Project 2 Introduction (Oct 5)"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
@@ -152,7 +175,7 @@ your proof-of-concept from your drawing?</li>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Garth Zeglin.
-      Last updated on 2015-10-06.
+      Last updated on 2015-11-10.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>

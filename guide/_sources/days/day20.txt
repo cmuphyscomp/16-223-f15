@@ -1,0 +1,37 @@
+.. include:: ../links.rst
+   
+Day 20: Project 3 Prototype (Nov 9)
+==========================================
+
+Notes for 2015-11-09.  See also the :ref:`calendar`.
+
+Notes from Day 19
+------------------
+
+#. I have returned your lab notebooks, they are sitting on the desk.  I
+   apologize for taking so long.
+
+#. In light of the fact that I am still calibrating the appropriate difficulty
+   of the exercises, I am cancelling the Notebook 3 deadline.
+
+#. Instead, you may optionally earn up to three extra points by exploring and
+   writing up any three exercises of your choosing which you have not previously
+   attempted.  However, you **must write up a reasonable reflection statement**
+   and show a reasonable record of your investigation.  Several of you have
+   received low notebook scores for not providing adequate documentation or
+   insight.
+   
+
+Agenda
+------
+
+#. Administrative
+
+   * For more fun with electronics, see: `Build 18
+     <http://build18.org/>`__. "Build week" is in first week of Spring semester,
+     with a showcase that Friday.  Even if you don't participate, the showcase
+     can be fun to see.
+     
+#. In-class
+
+   * Project 3 prototype/progress review.

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2.2.4. Exercise: MPU6050 IMU I2C Module &mdash; 16-223 Introduction to Physical Computing</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/guide.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2015-11-10',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="16-223 Introduction to Physical Computing" href="../../../index.html" />
+    <link rel="up" title="2.2. Unit 2 Exercises: Signals, Time, and Dynamics" href="../../../unit2.html" />
+    <link rel="next" title="2.2.5. Exercise: WS2801 RGB LED SPI Module" href="../WS2801-LED-SPI/WS2801-LED-SPI.html" />
+    <link rel="prev" title="2.2.3. Exercise: Adafruit PWM I2C Module" href="../Adafruit-PWM-I2C/Adafruit-PWM-I2C.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../WS2801-LED-SPI/WS2801-LED-SPI.html" title="2.2.5. Exercise: WS2801 RGB LED SPI Module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../Adafruit-PWM-I2C/Adafruit-PWM-I2C.html" title="2.2.3. Exercise: Adafruit PWM I2C Module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" accesskey="U">2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="exercise-mpu6050-imu-i2c-module">
+<span id="exercise-mpu6050-imu-i2c"></span><h1>2.2.4. Exercise: MPU6050 IMU I2C Module<a class="headerlink" href="#exercise-mpu6050-imu-i2c-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>2.2.4.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Communicate digital data between an Arduino and a MPU6050 inertial
+motion sensor over a I<sup>2</sup>C bus.</p>
+<p>Please be sure to review the general information about I<sup>2</sup>C
+and SPI in the previous exercise prior to starting this one.</p>
+<p>This exercise will use a <a class="reference external" href="https://www.sparkfun.com/products/11028">MPU6050 I2C Accelerometer/Gyro inertial sensor
+module from Sparkfun</a>. This
+modules is based on the <a class="reference external" href="https://cdn.sparkfun.com/datasheets/Components/General%20IC/PS-MPU-6000A.pdf">InvenSense MPU-6050 Motion Processing
+Unit</a>.
+<a class="reference external" href="https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050">Example Arduino
+code</a>
+is available from github as part of the larger
+<a class="reference external" href="https://github.com/jrowberg/i2cdevlib">i2cdevlib</a>, which provides
+drivers for many I<sup>2</sup>C devices.</p>
+</div>
+<div class="section" id="steps-and-observations">
+<h2>2.2.4.2. Steps and observations<a class="headerlink" href="#steps-and-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Download or find the complete <a class="reference external" href="../../../../Arduino/MPU6050_DMP6">MPU6050_DMP6</a> sketch.  This is an example
+from i2cdevlib, reorganized into a self-contained sketch. Be sure to fetch
+all top-level files.</li>
+<li>Plug the IMU module into a breadboard and use solid wire to make the
+following five connections from the Arduino to the module. Note
+carefully that this module uses 3.3V, unlike the previous example:<ol class="arabic">
+<li>3.3V -&gt; VCC</li>
+<li>GND -&gt; GND</li>
+<li>A4 -&gt; SDA</li>
+<li>A5 -&gt; SCL</li>
+<li>D2 -&gt; INT</li>
+</ol>
+</li>
+<li>Attach the Arduino to your computer and install the sketch.</li>
+<li>Open the Arduino IDE Serial Monitor and make sure it is set to 115200
+baud.</li>
+<li>Reset the Arduino. You should see a wakeup message on the console
+followed by the following prompt:
+<code class="docutils literal"><span class="pre">Send</span> <span class="pre">any</span> <span class="pre">character</span> <span class="pre">to</span> <span class="pre">begin</span> <span class="pre">DMP</span> <span class="pre">programming</span> <span class="pre">and</span> <span class="pre">demo:</span></code></li>
+<li>Type a character in the input box and press enter.</li>
+<li>You should see a rapid series of messages in the following form:
+<code class="docutils literal"><span class="pre">ypr</span>&nbsp;&nbsp;&nbsp; <span class="pre">-87.92</span>&nbsp; <span class="pre">74.39</span>&nbsp;&nbsp; <span class="pre">1.85</span></code></li>
+<li>Physically rotate the IMU and watch the numbers change.</li>
+</ol>
+</div>
+<div class="section" id="comments">
+<h2>2.2.4.3. Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>The sketch is a relatively complex piece of software for a
+microcontroller, and it uses more than half of the available Arduino Uno
+program space. But it is also solving a complex example of processing 3D
+motion data.</p>
+<p>For a challenge, clone the original i2cdev library from github and
+install it in your Arduino IDE libraries path, then try compiling the
+original unmodified example.</p>
+</div>
+<div class="section" id="sketch-folder">
+<h2>2.2.4.4. Sketch Folder<a class="headerlink" href="#sketch-folder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="../../../../Arduino/MPU6050_DMP6">MPU6050_DMP6</a></li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2.2.4. Exercise: MPU6050 IMU I2C Module</a><ul>
+<li><a class="reference internal" href="#objective">2.2.4.1. Objective</a></li>
+<li><a class="reference internal" href="#steps-and-observations">2.2.4.2. Steps and observations</a></li>
+<li><a class="reference internal" href="#comments">2.2.4.3. Comments</a></li>
+<li><a class="reference internal" href="#sketch-folder">2.2.4.4. Sketch Folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../Adafruit-PWM-I2C/Adafruit-PWM-I2C.html"
+                        title="previous chapter">2.2.3. Exercise: Adafruit PWM I2C Module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../WS2801-LED-SPI/WS2801-LED-SPI.html"
+                        title="next chapter">2.2.5. Exercise: WS2801 RGB LED SPI Module</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../WS2801-LED-SPI/WS2801-LED-SPI.html" title="2.2.5. Exercise: WS2801 RGB LED SPI Module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../Adafruit-PWM-I2C/Adafruit-PWM-I2C.html" title="2.2.3. Exercise: Adafruit PWM I2C Module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">16-223 Introduction to Physical Computing</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../../assignments.html" >2. Assignments</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="../../../unit2.html" >2.2. Unit 2 Exercises: Signals, Time, and Dynamics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Garth Zeglin.
+      Last updated on 2015-11-10.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

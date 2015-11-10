@@ -1,0 +1,52 @@
+.. _exercise-blink-bulb:
+
+Exercise: Blink Bulb
+--------------------
+
+Objective
+^^^^^^^^^
+
+Drive a light bulb from an Arduino program.
+
+A microcontroller isn't very useful without some kind of hardware
+attached. This exercise introduces driving an incandescent bulb from a
+digital signal. The transistor is used as a switch to control a higher
+current flow through the bulb than the Arduino output pin can sink, and
+at a voltage unsafe for the Arduino.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Adjust the lamp power supply for a safe full-on voltage. (Many lab
+   incandescent lamps are designed for less than than the 12V shown on
+   the schematic.)
+#. Note that pin 13 is still connected to the onboard LED. Observe the
+   bulb and LED activity.
+#. Add additional ``digitalWrite()`` and ``delay()`` statements to
+   create a different blink pattern.
+
+Comments
+^^^^^^^^
+
+This simple example cannot drive two separate patterns on two pins
+simultaneously, since it just stalls during ``delay()``. Much of the
+challenge of programming a multi-function Arduino program comes down to
+structuring control flow so the program never stalls so it can service
+multiple inputs and outputs simultaneously.
+
+For a challenge, restructure this program to use ``millis()`` to test
+for the loop cycles on which to change the output state, then add a
+second channel of output with different timing. This will covered in
+more detail in a later exercise.
+
+.. image:: blink-bulb_bb.png
+   :width: 75%
+
+.. image:: blink-bulb_img.jpg
+.. image:: blink-bulb_schem.png
+
+Other Files
+^^^^^^^^^^^
+
+#. Fritzing file: :download:`blink-bulb.fzz`
+#. EAGLE file: :download:`blink-bulb.sch`

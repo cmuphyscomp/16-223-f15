@@ -1,0 +1,121 @@
+.. _exercise-Adafruit-PWM-I2C:
+
+Exercise: Adafruit PWM I2C Module
+---------------------------------
+
+Objective
+^^^^^^^^^
+
+Communicate digital data between an Arduino and a PWM module using an
+|I2C| bus.
+
+The Arduino I/O pins allow it to bridge the gap directly between digital
+information and physical signals. However, it can also transmit data to
+and from other computational devices. The previous examples have
+implicitly used USB and an asynchronous serial UART for downloading
+programs and looking at text output. But even simpler bus standards,
+such as |I2C| and SPI are useful for connecting an Arduino
+to I/O modules or even other Arduinos.
+
+This capability is useful for rapid prototyping, since many interface
+functions are available in modular form. For example, there exist
+modules:
+
+#. to extend the number of available digital inputs or outputs
+#. with specialized electrical behavior such as automatic current
+   regulation or PWM generation
+#. which can provide RGB color LED illumination controlled purely by
+   digital data, including PWM generation and power drive
+
+Using digital busses essentially makes the Arduino a node in a network
+comprising multiple computers, possibly including a host desktop or
+laptop. Each type of link has different characteristics:
+
+-  SPI is normally a point-to-point connection, or sometimes
+   one-to-many. It can be relatively fast (e.g. up to 25 mbps). It
+   requires four wires for bidirectional communication but supports
+   *full-duplex* transfer with simultaneous input and output.
+   Output-only connections can use just three wires. It is designed for
+   short-range connection to simple devices such as a chain of LED
+   modules or a high-resolution ADC.
+-  |I2C| can connect multiple devices on a single bus. It is
+   relatively low speed, typically 400 kbps to one mbps. It uses three
+   wires with separate clock and data but is half-duplex. The protocols
+   are more elaborate and involve specific phases of transmitting device
+   addresses and receiving replies. It is designed for short-range
+   connection within a single system.
+
+In general, using a device-level serial bus requires using two
+libraries: one to handle the |I2C| or SPI data transfer, and
+one to handle the specific protocol for the device. If no device library
+is available, then this involves understanding the datasheet for the
+particular device well enough to implement the required protocol. This
+can be as simple as emitting a few bytes to write a value to a device
+register, but sophisticated devices can require elaborate programs to
+handle a variety of messages. For example, a real-time clock-calendar
+chip can have dozens of registers available over an |I2C| bus
+to keep track of time and set alarms.
+
+This exercise will use the `Adafruit 815 16 channel 12-bit PWM driver
+with I2C interface <http://www.adafruit.com/products/815>`__. This
+module is based on the `PCA9685 I2C-bus controlled 16-channel LED
+controller <http://www.adafruit.com/datasheets/PCA9685.pdf>`__. Adafruit
+`provides their own
+tutorial <https://learn.adafruit.com/16-channel-pwm-servo-driver>`__,
+and `library source code on
+github <https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library>`__.
+
+Steps and observations
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Download or find the complete `Adafruit_PWM`_ sketch included with
+   the exercise. This is the pwmtest example from
+   Adafruit-PWM-Servo-Driver-Library, slightly modified into a
+   self-contained sketch. If you have cloned the course materials from
+   github, it will be in the same folder as this page, or it can be
+   `downloaded directly <Adafruit_PWM/index.html>`__. Be sure to fetch
+   all top-level files.
+#. Load the sketch into the Arduino IDE and use Verify to make sure it
+   compiles on your system.
+#. Plug the PWM module into a breadboard and use solid wire to make the
+   following four connections from the Arduino to the module:
+
+   #. 5V -> VCC
+   #. GND -> GND
+   #. A4 -> SDA
+   #. A5 -> SCL
+
+#. Connect the Arduino to your computer and download the sketch.
+#. Using an oscilloscope, observe the SCL clock line and the SDA data
+   line. You should see complex digital waveforms. At the right time
+   scale, you should be able to see regular bursts of pulses on the
+   clock line and varying bursts on the data line. Each burst is about
+   200 microseconds long and represents a command message being
+   sequentially shifted between the two devices.
+#. Using an oscilloscope, observe several of the PWM pins on the 3x4
+   headers. You should see a smoothly varying PWM waveform.
+#. Touch an LED between a PWM and GND pin (observing polarity) and you
+   should see a smoothly varying illumination. This module includes 220
+   ohm resistors in series with the output so no dropping resistor is
+   necessary. If you attach several LEDs, you can see the smooth pattern
+   produced by the example program.
+
+Comments
+^^^^^^^^
+
+This example is more about becoming comfortable using vendor libraries
+than the electronics, given how simple it is to make the electrical
+connections.
+
+For a challenge, clone the original Adafruit library from github and
+install it in your Arduino IDE libraries path, then try compiling the
+original unmodified example.
+
+Sketch Folder
+^^^^^^^^^^^^^
+
+#. `Adafruit_PWM`_
+
+.. _Adafruit_PWM: ../../../../Arduino/Adafruit_PWM
+
+.. |I2C| replace:: I\ :sup:`2`\ C
